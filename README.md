@@ -43,6 +43,6 @@ Merging Strategy:
      - kolejność importów - zachowuj spójność w kolejności importów. Na przykład, najpierw importuj biblioteki zewnętrzne, potem komponenty, a na końcu style.
      - reużywalność - staraj się tworzyć reużywalne komponenty. Każda sekcja może mieć ten sam layout, ale przyjmować inną zawartość jako children
    - elementy wektorowe, takie jak ikony zaimportuj do projektu jako tag svg
-   - możesz stworzyć strukturę danych jako
+   - możesz stworzyć strukturę danych jako tablice obiektów których wartości są przekazywane do komponentów, oraz przekazywać treści do reużywalnych komponentów jako propsy
    - jest to single page app, więc nie musimy dodawać elementów nawigacji - to dodamy na kolejnej lekcji :)
    - DLA CHĘTNYCH\* - możesz dodać działanie nawigacji, które będzie po kliknięciu scrollować do danej sekcji strony
