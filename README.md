@@ -1,3 +1,6 @@
+Przemek Woźniak  // Start 4ED_styles_homework
+Termin: 9 października 2023
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
