@@ -1,12 +1,12 @@
-import './App.css'
+import Navbar from './navbar/Navbar';
+import styles from './App.module.css'
 
 function App() {
 
   return (
-    <>
-      <h1>4ED_styles_homework</h1>
-    </>
+    <div className={styles.app}>
+      <Navbar />
+    </div>
   )
 }
-
-export default App
+export default App;

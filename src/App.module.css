@@ -1,0 +1,13 @@
+body {
+  background-color: #333;
+}
+
+.app {
+  max-width: 1536px;
+  margin: 0 auto;
+  font-family: Inter;
+  text-align: center;
+  color:#FFF;
+  display: flex;
+  justify-content: center;
+}

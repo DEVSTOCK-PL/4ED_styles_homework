@@ -1,4 +1,6 @@
-Przemek Woźniak  // Start 4ED_styles_homework
+Komponent App jest stylowany przez css.module
+Inne komponenty przez 'styled-components'
+
 Termin: 9 października 2023
 
 # React + Vite
