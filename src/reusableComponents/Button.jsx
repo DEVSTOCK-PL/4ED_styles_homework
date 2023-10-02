@@ -14,7 +14,7 @@ const StyledButton = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-`;
+`
 const IconLeft = styled.img`
 	margin-right: 8px;		
 ` 
@@ -36,3 +36,4 @@ const Button = ( { description, backgroundColor, width, height, color, iconLeft,
 	);
 }
 export default Button;
+ 
