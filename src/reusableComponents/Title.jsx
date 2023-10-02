@@ -8,13 +8,13 @@ const Container = styled.p`
 	color: ${ (props) => props.color || '#FFF' };
 	font-family: Inter;
 	display: flex;
-	text-align: left;
+	text-align: ${ (props) => props.textAlign || 'left' };
 	line-height: ${ (props) => props.lineHeight || '40px' };
 	margin: 0;
 	padding: 0;
 `
 
-const Title = ( { text, width, height, fontSize, fontWeight, color, lineHeight} ) => {
+const Title = ( { text, width, height, fontSize, fontWeight, color, lineHeight, textAlign} ) => {
 	return (
 		<Container 
 			width={width}
@@ -22,7 +22,8 @@ const Title = ( { text, width, height, fontSize, fontWeight, color, lineHeight} 
 			fontSize={fontSize}
 			fontWeight={fontWeight}
 			color={color}
-			lineHeight={lineHeight}>
+			lineHeight={lineHeight}
+			textAlign={textAlign}>
 				{text}
 		</Container>
 	);

@@ -7,14 +7,14 @@ const Container = styled.p`
 	font-weight: ${ (props) => props.fontWeight || '400' };
 	color: ${ (props) => props.color || '#9CA3AF' };
 	line-height: ${ (props) => props.lineHeight || '30px' };
+	text-align: ${ (props) => props.textAlign || 'left' };
 	font-family: Inter;
 	display: flex;
-	text-align: left;
 	margin: 0;
 	padding: 0;
 `
 
-const TextSupporting = ( { text, width, height, fontSize, fontWeight, color, lineHeight} ) => {
+const TextSupporting = ( { text, width, height, fontSize, fontWeight, color, lineHeight, textAlign} ) => {
 	return (
 		<Container 
 			width={width}
@@ -22,7 +22,8 @@ const TextSupporting = ( { text, width, height, fontSize, fontWeight, color, lin
 			fontSize={fontSize}
 			fontWeight={fontWeight}
 			color={color}
-			lineHeight={lineHeight}>
+			lineHeight={lineHeight}
+			textAlign={textAlign}>
 				{text}
 		</Container>
 	);
