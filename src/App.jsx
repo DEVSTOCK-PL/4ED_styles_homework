@@ -2,6 +2,8 @@ import Navbar from './navbar/Navbar'
 import Hero from './hero/Hero'
 import SocialProof from './socialProof/SocialProof'
 import CtaOne from './ctaOne/CtaOne'
+import CustomerLogos from './customerLogos/CustomerLogos'
+
 import styles from './App.module.css'
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
       <Hero />
       <SocialProof />
       <CtaOne />
+      <CustomerLogos />
     </div>
   );
 }

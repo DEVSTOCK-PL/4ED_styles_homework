@@ -134,9 +134,9 @@ const Hero = () => {
 						<Sponsors>Sponsors:</Sponsors>
 						<SvgContainer>
 							<Svg><Image xlinkHref={intel}  alt="Logo"/></Svg>
-							<Svg><Image xlinkHref={FedEx}  alt="Logo"/></Svg>
-							<Svg><Image xlinkHref={visa}  alt="Logo"/></Svg>
-							<Svg><Image xlinkHref={Disney}  alt="Logo"/></Svg>
+							<Svg><g transform="translate(0, +3)"><Image xlinkHref={FedEx}  alt="Logo"/></g></Svg>
+							<Svg><g transform="translate(+3, +4)"><Image xlinkHref={visa}  alt="Logo"/></g></Svg>
+							<Svg><g transform="translate(0, 0)"><Image xlinkHref={Disney}  alt="Logo"/></g></Svg>
 						</SvgContainer>
 					</SponsorsContainer>
 				</LeftItem>

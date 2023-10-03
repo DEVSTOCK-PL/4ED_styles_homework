@@ -7,7 +7,7 @@ const Container = styled.p`
 	font-weight: ${ (props) => props.fontWeight || '800' };
 	color: ${ (props) => props.color || '#FFF' };
 	font-family: Inter;
-	display: flex;
+	/* display: flex; */
 	text-align: ${ (props) => props.textAlign || 'left' };
 	line-height: ${ (props) => props.lineHeight || '40px' };
 	margin: 0;

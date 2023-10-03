@@ -6,14 +6,16 @@ const StyledButton = styled.button`
 	height: ${ (props) => props.height || '41px' };
 	color: ${ (props) => props.color || '#FFF' };
 	border: ${ (props) => props.border || 'none' };
-	border-radius: 8px;
-	font-size: 14px;
+	
+	font-size: ${ (props) => props.fontSize || '14px' };
 	font-family: Inter;
-	line-height: 21px;
+	border-radius: 8px;
+	line-height: 24px;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 0;
 `
 const IconLeft = styled.img`
 	margin-right: 8px;		
@@ -23,12 +25,13 @@ const IconRight = styled.img`
 ` 
 
 // eslint-disable-next-line
-const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border } ) => {
+const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border, fontSize } ) => {
 	return (
 		<StyledButton 
 			backgroundColor={backgroundColor} 
 			width={width} 
 			height={height}
+			fontSize={fontSize}
 			color={color}
 			border={border}>
 				<IconLeft src={iconLeft}/> {description} <IconRight src={iconRight}/>

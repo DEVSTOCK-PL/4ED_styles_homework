@@ -9,7 +9,7 @@ const Container = styled.p`
 	line-height: ${ (props) => props.lineHeight || '30px' };
 	text-align: ${ (props) => props.textAlign || 'left' };
 	font-family: Inter;
-	display: flex;
+	/* display: flex; */
 	margin: 0;
 	padding: 0;
 `
