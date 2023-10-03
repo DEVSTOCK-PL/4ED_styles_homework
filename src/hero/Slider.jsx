@@ -10,7 +10,7 @@ const SliderContainer = styled.div`
 `
 const Image = styled.img`
 	position: absolute;
-	transform: translateX(-5%); 
+	transform: translateX(-50%); 
 	width: 120%;
 	height: 120%;
 	opacity: 0;
