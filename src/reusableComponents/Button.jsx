@@ -8,23 +8,24 @@ const StyledButton = styled.button`
 	border: ${ (props) => props.border || 'none' };
 	font-weight: ${ (props) => props.fontWeight || '500' };
 	font-size: ${ (props) => props.fontSize || '14px' };
-	line-height: ${ (props) => props.lineHeight|| '24px' };
+	line-height: ${ (props) => props.lineHeight || '24px' };
 	font-family: Inter;
 	border-radius: 8px;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: ${ (props) => props.alignItems || 'center' };
+	justify-content: ${ (props) => props.justifyContent || 'center' };
 	padding: 0;
+	margin-left: 0px;
 `
 const IconLeft = styled.img`
-	margin-right: 8px;		
+	margin-right: ${ (props) => props.marginRight || '8px' };		
 ` 
 const IconRight = styled.img`
 	margin-left: 8px;		
 ` 
 
 // eslint-disable-next-line
-const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border, fontSize, fontWeight, lineHeight } ) => {
+const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border, fontSize, fontWeight, lineHeight, alignItems, justifyContent,marginLeft, marginRight } ) => {
 	return (
 		<StyledButton 
 			backgroundColor={backgroundColor} 
@@ -33,9 +34,19 @@ const Button = ( { description, backgroundColor, width, height, color, iconLeft,
 			fontSize={fontSize}
 			fontWeight={fontWeight}
 			lineHeight={lineHeight}
+			alignItems={alignItems}
+			justifyContent={justifyContent}
+			marginLeft={marginLeft}
+			marginRight={marginRight}
 			color={color}
 			border={border}>
-				<IconLeft src={iconLeft}/> {description} <IconRight src={iconRight}/>
+				<IconLeft 
+					src={iconLeft}
+					marginRight={marginRight}/>
+				{description} 
+				<IconRight 
+					src={iconRight}
+					marginLeft={marginLeft}/>
 		</StyledButton>
 	);
 }
