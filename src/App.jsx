@@ -3,6 +3,7 @@ import Hero from './hero/Hero'
 import SocialProof from './socialProof/SocialProof'
 import CtaOne from './ctaOne/CtaOne'
 import CustomerLogos from './customerLogos/CustomerLogos'
+import CtaTwo from './ctaTwo/CtaTwo'
 
 import styles from './App.module.css'
 
@@ -14,6 +15,7 @@ function App() {
       <SocialProof />
       <CtaOne />
       <CustomerLogos />
+      <CtaTwo />
     </div>
   );
 }
