@@ -14,7 +14,7 @@ const Container = styled.p`
 	padding: 0;
 `
 
-const Title = ( { text, width, height, fontSize, fontWeight, color, lineHeight, textAlign} ) => {
+const Title = ( { text, width, height, fontSize, fontWeight, color, lineHeight, textAlign } ) => {
 	return (
 		<Container 
 			width={width}

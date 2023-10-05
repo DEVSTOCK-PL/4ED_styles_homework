@@ -5,6 +5,7 @@ import CtaOne from './ctaOne/CtaOne'
 import CustomerLogos from './customerLogos/CustomerLogos'
 import CtaTwo from './ctaTwo/CtaTwo'
 import Blog from './blog/Blog'
+import Contact from './contact/Contact'
 
 import styles from './App.module.css'
 
@@ -18,6 +19,7 @@ function App() {
       <CustomerLogos />
       <CtaTwo />
       <Blog />
+      <Contact />
     </div>
   );
 }

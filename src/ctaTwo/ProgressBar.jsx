@@ -65,14 +65,21 @@ const BarProgress = styled.div`
 const ProgressBar = ( {colected, goal, donors} ) => {
 	let progress = (colected * 100 / goal);
 	let goalK = goal/1000;
+	
+	let colectedToNumber = parseInt(colected, 10);
+	let formattedColected = colectedToNumber.toLocaleString('en-US');
+	
+	let donorsToNumber = parseInt(donors, 10);
+	let formattedDonors = donorsToNumber.toLocaleString('en-US');
+	
 	return (
 		<Container>
 			<Label>
 				<LeftItem>
-					<Sum>${colected}</Sum>
+					<Sum>${formattedColected}</Sum>
 					<Goal>of {goalK}k goal</Goal>
 				</LeftItem>
-				<RightItem>{donors} donors</RightItem>
+				<RightItem>{formattedDonors} donors</RightItem>
 			</Label>
 			<BarComplite>
 				<BarProgress progress={progress}></BarProgress>

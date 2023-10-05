@@ -14,7 +14,7 @@ const Container = styled.p`
 	padding: 0;
 `
 
-const TextSupporting = ( { text, width, height, fontSize, fontWeight, color, lineHeight, textAlign} ) => {
+const TextSupporting = ( { text, width, height, fontSize, fontWeight, color, lineHeight, textAlign } ) => {
 	return (
 		<Container 
 			width={width}
