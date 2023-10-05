@@ -6,6 +6,7 @@ import CustomerLogos from './customerLogos/CustomerLogos'
 import CtaTwo from './ctaTwo/CtaTwo'
 import Blog from './blog/Blog'
 import Contact from './contact/Contact'
+import Footer from './footer/Footer'
 
 import styles from './App.module.css'
 
@@ -20,6 +21,7 @@ function App() {
       <CtaTwo />
       <Blog />
       <Contact />
+      <Footer />
     </div>
   );
 }

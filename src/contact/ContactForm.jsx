@@ -43,6 +43,19 @@ const Input = styled.input`
 		color: #9CA3AF;
 	}
 `
+const Textarea = styled.textarea`
+	height: 162px;
+	width: 635px;
+	background-color: #374151;
+	border: 1px solid #4B5563;
+	border-radius: 8px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #9CA3AF;
+	padding-left: 10px;
+	padding-top: 4px;
+	box-sizing: border-box;
+`
 const ContactForm = () => {
 	return (
 		<Form>
@@ -62,10 +75,10 @@ const ContactForm = () => {
 			</InputBox>
 			<InputBox>
 				<Label>Your message</Label>
-				<Input
-					type="text"
-					height="162px">
-				</Input>
+				<Textarea
+					rows="6"
+					cols="20">
+				</Textarea>
 			</InputBox>
 			<Button 
 				description="Send message"

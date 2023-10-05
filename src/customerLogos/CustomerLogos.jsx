@@ -30,7 +30,8 @@ const Container = styled.div`
 	flex-direction: column;
 	gap: 64px;
 	padding-top: 96px;
-	
+	border-top: 1px solid #374151;
+	border-bottom: 1px solid #374151;
 `
 const Haeding = styled.div`
 	width: 672px;

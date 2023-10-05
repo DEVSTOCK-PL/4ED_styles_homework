@@ -14,6 +14,8 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-color: #1F2A37;
+	border-top: 1px solid #374151;
+	border-bottom: 1px solid #374151;
 `
 const Content = styled.div`
 	width: 1280px;

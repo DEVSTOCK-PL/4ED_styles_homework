@@ -21,7 +21,7 @@ const IconLeft = styled.img`
 	margin-right: ${ (props) => props.marginRight || '8px' };		
 ` 
 const IconRight = styled.img`
-	margin-left: 8px;		
+	margin-left: ${ (props) => props.marginLeft || '8px' };		
 ` 
 
 // eslint-disable-next-line
