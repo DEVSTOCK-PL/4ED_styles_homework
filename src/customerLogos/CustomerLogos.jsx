@@ -37,6 +37,11 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 36px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
+		height: auto;
+		padding-top: 36px;
+	}
 `
 const Haeding = styled.div`
 	width: 672px;
@@ -48,6 +53,10 @@ const Haeding = styled.div`
 	align-items: center;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: auto;
 	}
@@ -67,6 +76,13 @@ const Logos = styled.div`
 		justify-content: center;
 		gap: 5px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 543px;
+		height: auto;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	}
 `
 const Row = styled.div`
 	width: 1280px;
@@ -76,6 +92,13 @@ const Row = styled.div`
 	
 	@media( max-width: 640px) {
 		width: 343px;
+		height: auto;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: space-between;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 543px;
 		height: auto;
 		flex-wrap: wrap;
 		justify-content: space-around;
@@ -93,6 +116,11 @@ const Card = styled.div`
 	
 	@media( max-width: 640px) {
 		width: 142px;
+		height: 132px;
+		margin-bottom: 30px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 242px;
 		height: 132px;
 		margin-bottom: 30px;
 	}
@@ -114,7 +142,7 @@ const Image = styled.image`
 	height: 44px;
 	transform: translateX(+25%);
 `
-const titleProps = window.innerWidth <= 640 ? {
+const titleProps = window.innerWidth <= 768 ? {
   	fontSize: '30px', 
   	lineHeight: '37.5px', 
   	width: '343px',
@@ -126,7 +154,7 @@ const titleProps = window.innerWidth <= 640 ? {
 	height: '45px',
 };
 
-const textSupportingProps = window.innerWidth <= 640 ? {
+const textSupportingProps = window.innerWidth <= 768 ? {
   	fontSize: '16px', 
   	lineHeight: '24px', 
   	width: '343px',

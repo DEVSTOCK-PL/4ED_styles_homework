@@ -24,6 +24,11 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
+		height: auto;
+		padding-top: 10px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -36,6 +41,13 @@ const Content = styled.div`
 	
 	@media( max-width: 640px) {
 		width: 343px;
+		height: auto;
+		gap: 16px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 643px;
 		height: auto;
 		gap: 16px;
 		margin-bottom: 20px;
@@ -54,6 +66,10 @@ const Heading = styled.div`
 		width: 343px;
 		height: auto;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 643px;
+		height: auto;
+	}
 `
 const Cards = styled.div`
 	width: 1280px;
@@ -67,6 +83,13 @@ const Cards = styled.div`
 		height: auto;
 		flex-direction: column;
 		gap: 16px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 643px;
+		height: auto;
+		flex-direction: column;
+		gap: 16px;
+		align-items: center;
 	}
 `
 const Card = styled.div`
@@ -87,6 +110,12 @@ const Card = styled.div`
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 443px;
+		height: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 	
 `
 const ImgBox = styled.div`
@@ -97,6 +126,10 @@ const ImgBox = styled.div`
 	
 	@media( max-width: 640px) {
 		width: 303px;
+		height: 288px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 403px;
 		height: 288px;
 	}
 `
@@ -114,6 +147,11 @@ const ProgressBarContainer = styled.div`
 		width: 303px;
 		height: 41px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 403px;
+		height: 41px;
+		margin-bottom: 10px;
+	}
 `
 const Buttons = styled.div`
 	width: 552px;
@@ -127,8 +165,14 @@ const Buttons = styled.div`
 		flex-direction: column;
 		align-items: center;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 314px;
+		height: auto;
+		flex-direction: column;
+		align-items: center;
+	}
 `
-const titleProps = window.innerWidth <= 640 ? {
+const titleProps = window.innerWidth <= 768 ? {
   	fontSize: '30px', 
   	lineHeight: '37.5px', 
   	width: '343px',
@@ -140,7 +184,7 @@ const titleProps = window.innerWidth <= 640 ? {
 	lineHeight: "45px",
 };
 
-const textSupportingProps = window.innerWidth <= 640 ? {
+const textSupportingProps = window.innerWidth <= 768 ? {
   	fontSize: '16px', 
   	lineHeight: '24px', 
   	width: '343px',
@@ -153,6 +197,9 @@ const textSupportingProps = window.innerWidth <= 640 ? {
 const title2Props = window.innerWidth <= 640 ? {
   	width: '303px',
   	height: 'auto',
+} : (window.innerWidth >= 641 && window.innerWidth <= 768) ? {
+	width: '403px',
+  	height: 'auto',
 } : {
   	width: "552px",
 	height: "23px",
@@ -161,24 +208,27 @@ const title2Props = window.innerWidth <= 640 ? {
 const textSupporting2Props = window.innerWidth <= 640 ? {
   	width: '303px',
   	height: 'auto',
+} : (window.innerWidth >= 641 && window.innerWidth <= 768) ? {
+	width: '403px',
+  	height: 'auto',
 } : {
   	width: "552px",
 	height: "72px",
 };
 
-const buttonProps = window.innerWidth <= 640 ? {
+const buttonProps = window.innerWidth <= 768 ? {
 	width: '303px',
 } : {
 	width: '121px',
 };
 
-const button2Props = window.innerWidth <= 640 ? {
+const button2Props = window.innerWidth <= 768 ? {
 	width: '303px',
 } : {
 	width: '210px',
 };
 
-const image88 = window.innerWidth <= 640 ? image3 : image2; 
+const image88 = window.innerWidth <= 768 ? image3 : image2; 
 
 const CtaTwo = () => {
 	return (

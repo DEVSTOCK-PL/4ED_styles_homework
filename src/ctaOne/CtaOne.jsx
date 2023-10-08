@@ -26,6 +26,11 @@ const Container = styled.div`
 		height: auto;
 		align-items: center;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
+		height: auto;
+		align-items: center;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -36,6 +41,13 @@ const Content = styled.div`
 	flex-direction: column;
 	
 	@media( max-width: 640px) {
+		width: 375px;
+		height: auto;
+		align-items: center;
+		gap: 32px;
+		padding-bottom: 30px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 375px;
 		height: auto;
 		align-items: center;
@@ -54,6 +66,10 @@ const Row = styled.div`
 		width: 343px;
 		height: auto;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Mockup = styled.div`
 	width: 540px;
@@ -61,6 +77,9 @@ const Mockup = styled.div`
 	border-radius: 8px;
 	
 	@media( max-width: 640px) {
+		display: none;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		display: none;
 	}
 `
@@ -75,6 +94,10 @@ const SmallContainer = styled.div`
 		width: 343px;
 		height: auto;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Img = styled.img`
 	width: 105%;
@@ -86,7 +109,7 @@ const Buttons = styled.div`
 	gap: 16px;
 	display: flex;
 `
-const titleProps = window.innerWidth <= 640 ? {
+const titleProps = window.innerWidth <= 768 ? {
   	fontSize: '30px', 
   	lineHeight: '37.5px', 
   	width: '343px',
@@ -97,7 +120,7 @@ const titleProps = window.innerWidth <= 640 ? {
 	width: '620px',
 };
 
-const textSupportingProps = window.innerWidth <= 640 ? {
+const textSupportingProps = window.innerWidth <= 768 ? {
   	width: '343px',
   	height: '162px',
 } : {

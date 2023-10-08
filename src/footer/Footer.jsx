@@ -22,6 +22,11 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
+		height: auto;
+		padding-top: 10px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -36,6 +41,11 @@ const Content = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+		padding-top: 10px;
+	}
 `
 const NavLinks = styled.div`
 	width: 1280px;
@@ -44,6 +54,12 @@ const NavLinks = styled.div`
 	justify-content: space-between;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		flex-direction: column;
+		padding-top: 96px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: auto;
 		flex-direction: column;
@@ -64,6 +80,11 @@ const LogoAndSocialLinks = styled.div`
 		height: auto;
 		align-items: start;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+		align-items: center;
+	}
 `
 const Column = styled.div`
 	width: 176px;
@@ -78,6 +99,12 @@ const Column = styled.div`
 		align-items: start;
 		padding-top: 36px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+		align-items: center;
+		padding-top: 36px;
+	}
 `
 const HeadingLinks = styled.div`
 	width: 176px;
@@ -87,6 +114,10 @@ const HeadingLinks = styled.div`
 	font-size: 14px;
 	font-weight: 500;
 	text-align: left;
+	
+	@media (min-width: 641px) and (max-width: 768px) {
+		text-align: center;
+	}
 `
 const Link = styled.a`
 	width: 176px;
@@ -96,6 +127,10 @@ const Link = styled.a`
 	line-height: 24px;
 	color: #9CA3AF;
 	text-align: left;
+	
+	@media (min-width: 641px) and (max-width: 768px) {
+		text-align: center;
+	}
 `
 const LogoFlowbite = styled.div`
 	width: 144px;
@@ -124,6 +159,11 @@ const CopyRight = styled.div`
 		height: auto;
 		text-align: left;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+		text-align: center;
+	}
 `
 const SocialLinks = styled.div`
 	width: 156px;
@@ -135,6 +175,11 @@ const SocialLinks = styled.div`
 		width: 156px;
 		height: auto;
 		align-items: left;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 156px;
+		height: auto;
+		align-items: center;
 	}
 `
 const Footer = () => {

@@ -11,8 +11,13 @@ const NavbarContainer = styled.div`
 	justify-content: center;
 	align-items: end;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 375px;
+		height: 60px;
+	}
+	
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
 		height: 60px;
 	}
 `
@@ -23,9 +28,15 @@ const NavbarContent = styled.div`
 	height: 41px;
 	gap: 64px;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 		height: 36px;
+	}
+	
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 643px;
+		height: 60px;
+		justify-content: space-between;
 	}
 `
 const Logo = styled.div`
@@ -51,7 +62,11 @@ const LogIn = styled.div`
 	font-weight: 500;
 	gap: 16px;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		display: none;
+	}
+	
+	@media (min-width: 641px) and (max-width: 768px) {
 		display: none;
 	}
 `
@@ -61,7 +76,13 @@ const Menu = styled.div`
 	display: none;
 	
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		display: block;
+		display: flex;
+		justify-content: end;
+	}
+	
+	@media (min-width: 641px) and (max-width: 768px) {
 		display: block;
 		display: flex;
 		justify-content: end;
@@ -76,7 +97,11 @@ const Links = styled.div`
 	gap: 32px;
 	padding-bottom: 8px;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		display: none;
+	}
+	
+	@media (min-width: 641px) and (max-width: 768px) {
 		display: none;
 	}
 `

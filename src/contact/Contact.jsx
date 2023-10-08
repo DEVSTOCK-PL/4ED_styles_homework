@@ -17,6 +17,11 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 30px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
+		height: auto;
+		padding-top: 30px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -30,6 +35,10 @@ const Content = styled.div`
 		width: 343px;
 		height: auto;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 443px;
+		height: auto;
+	}
 `
 const Heading = styled.div`
 	width: 672px;
@@ -38,7 +47,12 @@ const Heading = styled.div`
 	display: flex;
 	flex-direction: column;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		width: 343px;
+		height: auto;
+		padding-bottom: 20px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: auto;
 		padding-bottom: 20px;
@@ -52,14 +66,18 @@ const Form = styled.div`
 		width: 343px;
 		height: auto;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+	}
 `
-const titleProps = window.innerWidth <= 640 ? {
+const titleProps = window.innerWidth <= 768 ? {
   	width: '343px',
 } : {
   	width: '672px',
 };
 
-const textSupportingProps = window.innerWidth <= 640 ? {
+const textSupportingProps = window.innerWidth <= 768 ? {
   	width: '343px',
 	height: 'auto',
 	fontSize: '16px',

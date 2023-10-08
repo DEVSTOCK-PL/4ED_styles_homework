@@ -15,12 +15,20 @@ const Form = styled.div`
 		padding-bottom: 30px;
 		padding-top: 10px; 
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		padding-bottom: 30px;
+		padding-top: 10px; 
+	}
 `
 const InputBox = styled.div`
 	width: 640px;
 	height: auto;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 	}
 `
@@ -34,6 +42,9 @@ const Label = styled.div`
 	margin-bottom: 8px;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 	}
 `
@@ -60,6 +71,9 @@ const Input = styled.input`
 	@media( max-width: 640px) {
 		width: 343px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+	}
 `
 const Textarea = styled.textarea`
 	height: 162px;
@@ -75,6 +89,9 @@ const Textarea = styled.textarea`
 	box-sizing: border-box;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 	}
 `

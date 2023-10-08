@@ -22,6 +22,11 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
+		height: auto;
+		padding-top: 10px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -33,6 +38,11 @@ const Content = styled.div`
 	background-color: #1F2A37;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		margin-top: 20px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: auto;
 		margin-top: 20px;
@@ -49,6 +59,10 @@ const Haeding = styled.div`
 		width: 343px;
 		height: auto;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Row = styled.div`
 	width: 1280px;
@@ -57,6 +71,11 @@ const Row = styled.div`
 	justify-content: space-between;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		flex-direction: column;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: auto;
 		flex-direction: column;
@@ -74,6 +93,11 @@ const Column = styled.div`
 		height: auto;
 		gap: 0px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+		gap: 0px;
+	}
 `
 const Separator = styled.div`
 	width: 1px;
@@ -83,6 +107,9 @@ const Separator = styled.div`
 	@media( max-width: 640px) {
 		display: none;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		display: none;
+	}
 `
 const Image = styled.img`
 	width: 383px;
@@ -90,6 +117,12 @@ const Image = styled.img`
 	border-radius: 8px;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: auto;
 		margin-top: 20px;
@@ -108,8 +141,13 @@ const BlogCard = styled.div`
 		height: auto;
 		padding-bottom: 20px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: auto;
+		padding-bottom: 20px;
+	}
 `
-const titleProps1 = window.innerWidth <= 640 ? {
+const titleProps1 = window.innerWidth <= 768 ? {
   	fontSize: '30px', 
   	lineHeight: '37.5px', 
   	width: '343px',
@@ -119,7 +157,7 @@ const titleProps1 = window.innerWidth <= 640 ? {
 	width: '576px',
 };
 
-const textSupportingProps1 = window.innerWidth <= 640 ? {
+const textSupportingProps1 = window.innerWidth <= 768 ? {
   	fontSize: '16px', 
   	lineHeight: '24px', 
   	width: '343px',
@@ -129,7 +167,7 @@ const textSupportingProps1 = window.innerWidth <= 640 ? {
   	width: '576px',
 };
 
-const textWidth = window.innerWidth <= 640 ? {
+const textWidth = window.innerWidth <= 768 ? {
 	width: '340px',
 } : {
 	width: '383px',

@@ -26,8 +26,13 @@ const HeroContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 375px;
+		height: 638px;
+	}
+	
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
 		height: 638px;
 	}
 `
@@ -38,11 +43,18 @@ const HeroContent = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 		height: 638px;
 		flex-direction: column;
 		justify-content: space-around;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 643px;
+		height: 638px;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
 	}
 `
 const LeftItem = styled.div`
@@ -53,10 +65,16 @@ const LeftItem = styled.div`
 	flex-direction: column;
 	gap: 16px;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 		height: 382px;
 		flex-direction: column;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 343px;
+		height: 382px;
+		flex-direction: column;
+		align-items: center;
 	}
 `
 const TitleDesc = styled.div`
@@ -68,7 +86,11 @@ const TitleDesc = styled.div`
 	display: flex;
 	flex-direction: column;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		width: 343px;
+		height: 206px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: 206px;
 	}
@@ -81,7 +103,15 @@ const Buttons = styled.div`
 	margin-top: 15px;
 	margin-bottom: 15px;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		width: 343px;
+		height: 112px;
+		gap: 16px;
+		flex-direction: column;
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: 112px;
 		gap: 16px;
@@ -96,7 +126,13 @@ const SponsorsContainer = styled.div`
 	padding-top: 32px;
 	border-top: 1px solid #374151;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		width: 340px;
+		height: 32px;
+		padding-top: 0;
+		border-top: none;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 340px;
 		height: 32px;
 		padding-top: 0;
@@ -111,7 +147,10 @@ const Sponsors = styled.p`
 	text-align: left;
 	margin: 0;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		display: none;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		display: none;
 	}
 `
@@ -120,7 +159,11 @@ const RightItem = styled.div`
 	height: 360px;
 	border-radius: 8px;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		width: 343px;
+		height: 176px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: 176px;
 	}
@@ -133,7 +176,13 @@ const SvgContainer = styled.div`
 	gap: 45px;
 	position: relative;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
+		width: 340px;
+		height: 32px;
+		margin-top: 0;
+		gap: 10px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 340px;
 		height: 32px;
 		margin-top: 0;
@@ -147,12 +196,15 @@ const Svg = styled.svg`
 	align-items: center;
 	position: relative;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		padding-top: 0px;
 		width: 80px;
 		height: 32px;
-		
-		
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		padding-top: 0px;
+		width: 80px;
+		height: 32px;
 	}
 `
 const Image = styled.image`
@@ -163,7 +215,7 @@ const Image = styled.image`
 	
 `
 
-const titleProps = window.innerWidth <= 640 ? {
+const titleProps = window.innerWidth <= 768 ? {
   	fontSize: '30px', 
   	lineHeight: '30px', 
   	width: '343px',
@@ -173,14 +225,14 @@ const titleProps = window.innerWidth <= 640 ? {
   	lineHeight: '48px',
 };
 
-const textSupportingProps = window.innerWidth <= 640 ? {
+const textSupportingProps = window.innerWidth <= 768 ? {
   	fontSize: '16px', 
   	lineHeight: '24px', 
   	width: '343px',
   	height: '96px',
 } : {};
 
-const buttonProps = window.innerWidth <= 640 ? {
+const buttonProps = window.innerWidth <= 768 ? {
 	width: '343px',
 } : {
 	width: '182px',

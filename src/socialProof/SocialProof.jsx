@@ -13,6 +13,10 @@ const Container = styled.div`
 		width: 375px;
 		height: 360px;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 675px;
+		height: 360px;
+	}
 `
 const Row = styled.div`
 	width: 1024px;
@@ -25,6 +29,13 @@ const Row = styled.div`
 	align-items: center;
 	
 	@media( max-width: 640px) {
+		width: 343px;
+		height: 328px;
+		flex-direction: column;
+		justify-content: space-around;
+		margin-top: 10px;
+	}
+	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: 328px;
 		flex-direction: column;
@@ -47,6 +58,12 @@ const Stat = styled.div`
 		flex-direction: column;
 		border-right: none;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 311px;
+		height: 62px;
+		flex-direction: column;
+		border-right: none;
+	}
 `
 const StatEnd = styled.div`
 	width: 248px;
@@ -62,9 +79,15 @@ const StatEnd = styled.div`
 		flex-direction: column;
 		border-right: none;
 	}
+	@media (min-width: 641px) and (max-width: 768px) {
+		width: 311px;
+		height: 62px;
+		flex-direction: column;
+		border-right: none;
+	}
 `
 
-const titleProps = window.innerWidth <= 640 ? {
+const titleProps = window.innerWidth <= 768 ? {
   	fontSize: '30px', 
   	lineHeight: '37.5px', 
   	width: '311px',
