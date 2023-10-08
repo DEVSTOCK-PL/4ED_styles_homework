@@ -42,6 +42,12 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 36px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
+		height: auto;
+		padding-bottom: 46px;
+		padding-top: 46px;
+	}
 `
 const Haeding = styled.div`
 	width: 672px;
@@ -83,6 +89,10 @@ const Logos = styled.div`
 		justify-content: center;
 		gap: 5px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: auto;
+	}
 `
 const Row = styled.div`
 	width: 1280px;
@@ -104,6 +114,11 @@ const Row = styled.div`
 		justify-content: space-around;
 		align-items: space-between;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: auto;
+		justify-content: space-around;
+	}
 `
 const Card = styled.div`
 	display: flex;
@@ -123,6 +138,11 @@ const Card = styled.div`
 		width: 242px;
 		height: 132px;
 		margin-bottom: 30px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 120px;
+		height: auto;
+		gap: 7px;
 	}
 `
 const Svg = styled.svg`

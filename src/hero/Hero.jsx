@@ -30,10 +30,13 @@ const HeroContainer = styled.div`
 		width: 375px;
 		height: 638px;
 	}
-	
 	@media (min-width: 641px) and (max-width: 768px) {
 		width: 675px;
 		height: 638px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
+		height: 484px;
 	}
 `
 const HeroContent = styled.div`
@@ -56,6 +59,10 @@ const HeroContent = styled.div`
 		justify-content: space-around;
 		align-items: center;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: 434px;
+	}
 `
 const LeftItem = styled.div`
 	width: 576px;
@@ -76,6 +83,10 @@ const LeftItem = styled.div`
 		flex-direction: column;
 		align-items: center;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 450px;
+		height: 384px;
+	}
 `
 const TitleDesc = styled.div`
 	margin: 0;
@@ -93,6 +104,10 @@ const TitleDesc = styled.div`
 	@media (min-width: 641px) and (max-width: 768px) {
 		width: 343px;
 		height: 206px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 450px;
+		gap: 10px;
 	}
 `
 const Buttons = styled.div`
@@ -119,6 +134,11 @@ const Buttons = styled.div`
 		margin-top: 5px;
 		margin-bottom: 10px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		margin-top: 15px;	
+		margin-bottom: 10px;	
+	}
+	
 `
 const SponsorsContainer = styled.div`
 	width: 576px;
@@ -137,6 +157,11 @@ const SponsorsContainer = styled.div`
 		height: 32px;
 		padding-top: 0;
 		border-top: none;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 450px;
+		height: auto;
+		padding-top: 16px;
 	}
 `
 const Sponsors = styled.p`
@@ -167,6 +192,11 @@ const RightItem = styled.div`
 		width: 343px;
 		height: 176px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 400px;
+		display: flex;
+		align-items: center;
+	}
 `
 const SvgContainer = styled.div`
 	width: 576px;
@@ -188,6 +218,10 @@ const SvgContainer = styled.div`
 		margin-top: 0;
 		gap: 10px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 450px;
+		margin-top: 0px;
+	}
 `
 const Svg = styled.svg`
 	padding-top: 10px;
@@ -206,6 +240,9 @@ const Svg = styled.svg`
 		width: 80px;
 		height: 32px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		height: 32px;
+	}
 `
 const Image = styled.image`
 	width: 100%;
@@ -220,6 +257,10 @@ const titleProps = window.innerWidth <= 768 ? {
   	lineHeight: '30px', 
   	width: '343px',
   	height: '90px',
+} : (window.innerWidth >= 769 && window.innerWidth <= 1024) ? {
+	width: '450px',
+  	height: 'auto',
+	fontSize: '40px',
 } : {
   	fontSize: '48px',
   	lineHeight: '48px',
@@ -230,6 +271,10 @@ const textSupportingProps = window.innerWidth <= 768 ? {
   	lineHeight: '24px', 
   	width: '343px',
   	height: '96px',
+} : (window.innerWidth >= 769 && window.innerWidth <= 1024) ? {
+	width: '450px',
+  	height: 'auto',
+	fontSize: '18px',
 } : {};
 
 const buttonProps = window.innerWidth <= 768 ? {

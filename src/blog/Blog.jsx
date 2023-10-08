@@ -27,6 +27,12 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
+		height: auto;
+		padding-top: 30px;
+		padding-bottom: 40px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -46,6 +52,10 @@ const Content = styled.div`
 		width: 343px;
 		height: auto;
 		margin-top: 20px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: auto;
 	}
 `
 const Haeding = styled.div`
@@ -80,6 +90,11 @@ const Row = styled.div`
 		height: auto;
 		flex-direction: column;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: auto;
+		padding-top: 30px;
+	}
 `
 const Column = styled.div`
 	width: 383px;
@@ -98,6 +113,10 @@ const Column = styled.div`
 		height: auto;
 		gap: 0px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 250px;
+		height: auto;
+	}
 `
 const Separator = styled.div`
 	width: 1px;
@@ -109,6 +128,9 @@ const Separator = styled.div`
 	}
 	@media (min-width: 641px) and (max-width: 768px) {
 		display: none;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		height: auto;
 	}
 `
 const Image = styled.img`
@@ -128,6 +150,10 @@ const Image = styled.img`
 		margin-top: 20px;
 		margin-bottom: 20px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 250px;
+		height: auto;
+	}
 `
 const BlogCard = styled.div`
 	width: 383px;
@@ -145,6 +171,10 @@ const BlogCard = styled.div`
 		width: 343px;
 		height: auto;
 		padding-bottom: 20px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 250px;
+		height: auto;
 	}
 `
 const titleProps1 = window.innerWidth <= 768 ? {
@@ -169,6 +199,8 @@ const textSupportingProps1 = window.innerWidth <= 768 ? {
 
 const textWidth = window.innerWidth <= 768 ? {
 	width: '340px',
+} : (window.innerWidth >= 769 && window.innerWidth <= 1024) ? {
+	width: '250px', 
 } : {
 	width: '383px',
 }; 

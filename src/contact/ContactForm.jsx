@@ -10,7 +10,7 @@ const Form = styled.div`
 	background-color: #111928;
 	justify-content: space-between;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 		padding-bottom: 30px;
 		padding-top: 10px; 
@@ -25,7 +25,7 @@ const InputBox = styled.div`
 	width: 640px;
 	height: auto;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 	}
 	@media (min-width: 641px) and (max-width: 768px) {
@@ -41,7 +41,7 @@ const Label = styled.div`
 	text-align: left;
 	margin-bottom: 8px;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 	}
 	@media (min-width: 641px) and (max-width: 768px) {
@@ -68,7 +68,7 @@ const Input = styled.input`
 		color: #9CA3AF;
 	}
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 	}
 	@media (min-width: 641px) and (max-width: 768px) {
@@ -88,7 +88,7 @@ const Textarea = styled.textarea`
 	padding-top: 4px;
 	box-sizing: border-box;
 	
-	@media( max-width: 640px) {
+	@media (max-width: 640px) {
 		width: 343px;
 	}
 	@media (min-width: 641px) and (max-width: 768px) {

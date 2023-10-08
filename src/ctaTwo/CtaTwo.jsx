@@ -29,6 +29,12 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
+		height: auto;
+		padding-top: 42px;
+		padding-bottom: 42px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -52,6 +58,10 @@ const Content = styled.div`
 		gap: 16px;
 		margin-bottom: 20px;
 		margin-top: 20px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: auto;
 	}
 `
 const Heading = styled.div`
@@ -90,6 +100,11 @@ const Cards = styled.div`
 		flex-direction: column;
 		gap: 16px;
 		align-items: center;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		flex-direction: column;
+		align-items: center;
+		height: auto;
 	}
 `
 const Card = styled.div`

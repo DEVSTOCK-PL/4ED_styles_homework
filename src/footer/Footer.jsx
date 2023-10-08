@@ -27,6 +27,10 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
+		height: auto;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -46,6 +50,10 @@ const Content = styled.div`
 		height: auto;
 		padding-top: 10px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: auto;
+	}
 `
 const NavLinks = styled.div`
 	width: 1280px;
@@ -64,6 +72,9 @@ const NavLinks = styled.div`
 		height: auto;
 		flex-direction: column;
 		padding-top: 96px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		justify-content: center;
 	}
 `
 const LogoAndSocialLinks = styled.div`

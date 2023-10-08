@@ -17,6 +17,10 @@ const Container = styled.div`
 		width: 675px;
 		height: 360px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
+		height: 180px;
+	}
 `
 const Row = styled.div`
 	width: 1024px;
@@ -41,6 +45,10 @@ const Row = styled.div`
 		flex-direction: column;
 		justify-content: space-around;
 		margin-top: 10px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: 117px;
 	}
 `
 const Stat = styled.div`

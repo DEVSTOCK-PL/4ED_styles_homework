@@ -22,6 +22,12 @@ const Container = styled.div`
 		height: auto;
 		padding-top: 30px;
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
+		height: auto;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -37,6 +43,10 @@ const Content = styled.div`
 	}
 	@media (min-width: 641px) and (max-width: 768px) {
 		width: 443px;
+		height: auto;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
 		height: auto;
 	}
 `
@@ -56,6 +66,9 @@ const Heading = styled.div`
 		width: 343px;
 		height: auto;
 		padding-bottom: 20px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		padding-bottom: 30px;
 	}
 `
 const Form = styled.div`

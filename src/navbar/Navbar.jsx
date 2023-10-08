@@ -15,9 +15,12 @@ const NavbarContainer = styled.div`
 		width: 375px;
 		height: 60px;
 	}
-	
 	@media (min-width: 641px) and (max-width: 768px) {
 		width: 675px;
+		height: 60px;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 980px;
 		height: 60px;
 	}
 `
@@ -32,10 +35,15 @@ const NavbarContent = styled.div`
 		width: 343px;
 		height: 36px;
 	}
-	
 	@media (min-width: 641px) and (max-width: 768px) {
 		width: 643px;
 		height: 60px;
+		justify-content: space-between;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		width: 900px;
+		height: 60px;
+		gap: 20px;
 		justify-content: space-between;
 	}
 `
@@ -65,7 +73,6 @@ const LogIn = styled.div`
 	@media (max-width: 640px) {
 		display: none;
 	}
-	
 	@media (min-width: 641px) and (max-width: 768px) {
 		display: none;
 	}
@@ -75,13 +82,11 @@ const Menu = styled.div`
 	height: 33px;
 	display: none;
 	
-	
 	@media (max-width: 640px) {
 		display: block;
 		display: flex;
 		justify-content: end;
 	}
-	
 	@media (min-width: 641px) and (max-width: 768px) {
 		display: block;
 		display: flex;
@@ -103,6 +108,10 @@ const Links = styled.div`
 	
 	@media (min-width: 641px) and (max-width: 768px) {
 		display: none;
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		gap: 20px;
+		width: 500px;
 	}
 `
 
