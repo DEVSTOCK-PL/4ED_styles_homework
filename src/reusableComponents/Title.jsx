@@ -12,6 +12,7 @@ const Container = styled.p`
 	line-height: ${ (props) => props.lineHeight || '40px' };
 	margin: 0;
 	padding: 0;
+	
 `
 
 const Title = ( { text, width, height, fontSize, fontWeight, color, lineHeight, textAlign } ) => {

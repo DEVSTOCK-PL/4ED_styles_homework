@@ -8,6 +8,11 @@ const Container = styled.div`
 	background-color: #111928;
 	display: flex;
 	justify-content: center;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: 360px;
+	}
 `
 const Row = styled.div`
 	width: 1024px;
@@ -18,6 +23,14 @@ const Row = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: 328px;
+		flex-direction: column;
+		justify-content: space-around;
+		margin-top: 10px;
+	}
 `
 const Stat = styled.div`
 	width: 248px;
@@ -27,6 +40,13 @@ const Stat = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 311px;
+		height: 62px;
+		flex-direction: column;
+		border-right: none;
+	}
 `
 const StatEnd = styled.div`
 	width: 248px;
@@ -35,7 +55,28 @@ const StatEnd = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 311px;
+		height: 62px;
+		flex-direction: column;
+		border-right: none;
+	}
 `
+
+const titleProps = window.innerWidth <= 640 ? {
+  	fontSize: '30px', 
+  	lineHeight: '37.5px', 
+  	width: '311px',
+  	height: '38px',
+	textAlign: 'center',
+} : {
+  	fontSize: '36px',
+  	lineHeight: '45px',
+	width: "248",
+	height: "45px",
+};
+
 const SocialProof = () => {
 	return (
 		<Container>
@@ -43,10 +84,11 @@ const SocialProof = () => {
 				<Stat>
 					<Title 
 						text="104M"
-						lineHeight="45px"
-						fontSize="36px"
-						width="248"
-						height="45px"/>
+						fontSize={titleProps.fontSize}
+  						lineHeight={titleProps.lineHeight}
+						width={titleProps.width}
+						height={titleProps.height}
+						textAlign={titleProps.textAlign}/>
 					<TextSupporting 
 						text="Trees planted"
 						lineHeight="24px"
@@ -59,10 +101,11 @@ const SocialProof = () => {
 				<Stat>
 					<Title 
 						text="20k+"
-						lineHeight="45px"
-						fontSize="36px"
-						width="248"
-						height="45px"/>
+						fontSize={titleProps.fontSize}
+  						lineHeight={titleProps.lineHeight}
+						width={titleProps.width}
+						height={titleProps.height}
+						textAlign={titleProps.textAlign}/>
 					<TextSupporting 
 						text="Partners & Donors"
 						lineHeight="24px"
@@ -75,10 +118,11 @@ const SocialProof = () => {
 				<Stat>
 					<Title 
 						text="90M"
-						lineHeight="45px"
-						fontSize="36px"
-						width="248"
-						height="45px"/>
+						fontSize={titleProps.fontSize}
+  						lineHeight={titleProps.lineHeight}
+						width={titleProps.width}
+						height={titleProps.height}
+						textAlign={titleProps.textAlign}/>
 					<TextSupporting 
 						text="Tonnes of Carbon Stored"
 						lineHeight="24px"
@@ -91,10 +135,11 @@ const SocialProof = () => {
 				<StatEnd>
 					<Title 
 						text="50+"
-						lineHeight="45px"
-						fontSize="36px"
-						width="248"
-						height="45px"/>
+						fontSize={titleProps.fontSize}
+  						lineHeight={titleProps.lineHeight}
+						width={titleProps.width}
+						height={titleProps.height}
+						textAlign={titleProps.textAlign}/>
 					<TextSupporting 
 						text="People-Powered Projects"
 						lineHeight="24px"

@@ -2,11 +2,16 @@ import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 const SliderContainer = styled.div`
-	width: 576px;
-	height: 360px;
+	width: ${ (props) => props.width || '576px' };
+	height: ${ (props) => props.height || '360px' };
 	border-radius: 8px;
 	position: relative;
 	overflow: hidden;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: 176px;
+	}
 `
 const Image = styled.img`
 	position: absolute;
@@ -33,7 +38,7 @@ const Circle = styled.div`
 	border-radius: 12px;
 `
 
-function Slider ( { images } ) {
+function Slider ( { images, width, height } ) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	
 	useEffect(() => {
@@ -45,7 +50,7 @@ function Slider ( { images } ) {
 	
 	
 	return (
-		<SliderContainer>
+		<SliderContainer width={width} height={height}>
 			{images.map((image, index) => (<Image
 				key={index}
 				src={image}

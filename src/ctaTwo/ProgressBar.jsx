@@ -6,6 +6,10 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	
+	@media( max-width: 640px) {
+		width: 303px;
+	}
 `
 const Label = styled.div`
 	width: 552px;
@@ -14,6 +18,10 @@ const Label = styled.div`
 	justify-content: space-between;
 	align-items: space-between;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 303px;
+	}
 `
 const LeftItem = styled.div`
 	width: 178px;
@@ -54,6 +62,10 @@ const BarComplite = styled.div`
 	height: 10px;
 	border-radius: 2px;
 	background-color: #374151;
+	
+	@media( max-width: 640px) {
+		width: 303px;
+	}
 `
 const BarProgress = styled.div`
 	width: ${props => props.progress}%;

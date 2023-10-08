@@ -20,7 +20,6 @@ import netflix from '../assets/netflix.png'
 import Nestle from '../assets/Nestle.png'
 import bmw from '../assets/bmw.png'
 
-
 const Container = styled.div`
 	background-color: #1F2A37;
 	width: 1440px;
@@ -32,6 +31,12 @@ const Container = styled.div`
 	padding-top: 96px;
 	border-top: 1px solid #374151;
 	border-bottom: 1px solid #374151;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: auto;
+		padding-top: 36px;
+	}
 `
 const Haeding = styled.div`
 	width: 672px;
@@ -41,6 +46,11 @@ const Haeding = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Logos = styled.div`
 	width: 1280px;
@@ -49,12 +59,28 @@ const Logos = styled.div`
 	display: flex;
 	align-items: space-between;
 	flex-direction: column;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	}
 `
 const Row = styled.div`
 	width: 1280px;
 	height: 132px;
 	display: flex;
 	justify-content: space-between;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: space-between;
+	}
 `
 const Card = styled.div`
 	display: flex;
@@ -65,6 +91,11 @@ const Card = styled.div`
 	height: 132px;
 	gap: 20px;
 	
+	@media( max-width: 640px) {
+		width: 142px;
+		height: 132px;
+		margin-bottom: 30px;
+	}
 `
 const Svg = styled.svg`
 	text-align: center;
@@ -83,25 +114,48 @@ const Image = styled.image`
 	height: 44px;
 	transform: translateX(+25%);
 `
+const titleProps = window.innerWidth <= 640 ? {
+  	fontSize: '30px', 
+  	lineHeight: '37.5px', 
+  	width: '343px',
+  	height: 'auto',
+} : {
+  	fontSize: '36px',
+  	lineHeight: '45px',
+	width: 'auto',
+	height: '45px',
+};
+
+const textSupportingProps = window.innerWidth <= 640 ? {
+  	fontSize: '16px', 
+  	lineHeight: '24px', 
+  	width: '343px',
+  	height: 'auto',
+} : {
+	fontSize: '20px', 
+  	lineHeight: '30px', 
+  	width: '650px',
+  	height: '60px',
+};
 
 const CustomerLogos = () => {
 	return (
 		<Container>
 			<Haeding>
 				<Title 
-					width="auto"
-					height="45px"
 					text="Donors, Partners & Sponsors"
-					fontSize="36px"
-					lineHeight="45px"
-					textAlign="center"/>
+					textAlign="center"
+					fontSize={titleProps.fontSize}
+  					lineHeight={titleProps.lineHeight}
+					width={titleProps.width}
+					height={titleProps.height}/>
 				<TextSupporting 
-					width="650px"
-					height="60px"
 					text="Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value."
-					fontSize="20px"
-					lineHeight="30px"
-					textAlign="center"/>
+					textAlign="center"
+					fontSize={textSupportingProps.fontSize}
+  					lineHeight={textSupportingProps.lineHeight}
+					width={textSupportingProps.width}
+					height={textSupportingProps.height}/>
 				<Button 
 					description="Become a sponsor"
 					backgroundColor='#1F2A37'

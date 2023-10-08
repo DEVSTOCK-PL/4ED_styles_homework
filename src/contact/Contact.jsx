@@ -11,6 +11,12 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-color: #111928;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: auto;
+		padding-top: 30px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -19,6 +25,11 @@ const Content = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Heading = styled.div`
 	width: 672px;
@@ -26,18 +37,47 @@ const Heading = styled.div`
 	gap: 16px;
 	display: flex;
 	flex-direction: column;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		padding-bottom: 20px;
+	}
 `
 const Form = styled.div`
 	width: 640px;
 	height: 478px;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+	}
 `
+const titleProps = window.innerWidth <= 640 ? {
+  	width: '343px',
+} : {
+  	width: '672px',
+};
+
+const textSupportingProps = window.innerWidth <= 640 ? {
+  	width: '343px',
+	height: 'auto',
+	fontSize: '16px',
+	lineHeight: '24px',
+} : {
+  	width: '672px',
+	height: '60px',
+	fontSize: '20px',
+	lineHeight: '30px',
+};
+
 const Contact = () => {
 	return (
 		<Container>
 			<Content>
 				<Heading>
 					<Title 
-						width="672px"
+						width={titleProps.width}
 						height="45px"
 						text="Contact us"
 						fontSize="36px"
@@ -45,12 +85,12 @@ const Contact = () => {
 						textAlign="center"
 						/>
 					<TextSupporting 
-						width="672px"
-						height="60px"
 						text="Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know."
-						fontSize="20px"
-						lineHeight="30px"
 						textAlign="center"
+						width={textSupportingProps.width}
+						height={textSupportingProps.height}
+						fontSize={textSupportingProps.fontSize}
+						lineHeight={textSupportingProps.lineHeight}
 						/>
 				</Heading>
 				<Form>

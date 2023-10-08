@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Button from '../reusableComponents/Button'
 import Logotyp from '../assets/Logo.png'
+import menu from '../assets/menu.png'
 
 const NavbarContainer = styled.div`
 	background-color: #111928;
@@ -9,6 +10,11 @@ const NavbarContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: end;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: 60px;
+	}
 `
 const NavbarContent = styled.div`
 	display: flex;
@@ -16,6 +22,11 @@ const NavbarContent = styled.div`
 	width: 1280px;
 	height: 41px;
 	gap: 64px;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: 36px;
+	}
 `
 const Logo = styled.div`
 	display: flex;
@@ -39,6 +50,22 @@ const LogIn = styled.div`
 	font-size: 14px;
 	font-weight: 500;
 	gap: 16px;
+	
+	@media( max-width: 640px) {
+		display: none;
+	}
+`
+const Menu = styled.div`
+	width: 177px;
+	height: 33px;
+	display: none;
+	
+	
+	@media( max-width: 640px) {
+		display: block;
+		display: flex;
+		justify-content: end;
+	}
 `
 const Links = styled.div`
 	display: flex;
@@ -48,6 +75,10 @@ const Links = styled.div`
 	height: 24px;
 	gap: 32px;
 	padding-bottom: 8px;
+	
+	@media( max-width: 640px) {
+		display: none;
+	}
 `
 
 function Navbar () {
@@ -66,6 +97,14 @@ function Navbar () {
 					<a>Contact</a>
 				</Links>
 				<LogIn>Log In<Button description="Get Started"/></LogIn>
+				<Menu><Button 
+						iconLeft={menu}
+						backgroundColor="transparent"
+						width="32px"
+						height="32px"
+						marginRight="0px"
+						marginLeft="0px"/>
+				</Menu>
 			</NavbarContent>
 		</NavbarContainer>
 	)

@@ -16,6 +16,12 @@ const Container = styled.div`
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: auto;
+		padding-top: 10px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -24,12 +30,25 @@ const Content = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 64px;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		padding-top: 10px;
+	}
 `
 const NavLinks = styled.div`
 	width: 1280px;
 	height: 221px;
 	display: flex;
 	justify-content: space-between;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		flex-direction: column;
+		padding-top: 96px;
+	}
 `
 const LogoAndSocialLinks = styled.div`
 	width: 384px;
@@ -39,6 +58,12 @@ const LogoAndSocialLinks = styled.div`
 	justify-content: space-between;
 	flex-direction: column;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		align-items: start;
+	}
 `
 const Column = styled.div`
 	width: 176px;
@@ -46,6 +71,13 @@ const Column = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		align-items: start;
+		padding-top: 36px;
+	}
 `
 const HeadingLinks = styled.div`
 	width: 176px;
@@ -86,12 +118,24 @@ const CopyRight = styled.div`
 	font-weight: 400;
 	color: #9CA3AF;
 	text-align: center;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		text-align: left;
+	}
 `
 const SocialLinks = styled.div`
 	width: 156px;
 	height: 24px;
 	display: flex;
 	gap: 20px;
+	
+	@media( max-width: 640px) {
+		width: 156px;
+		height: auto;
+		align-items: left;
+	}
 `
 const Footer = () => {
 	return (

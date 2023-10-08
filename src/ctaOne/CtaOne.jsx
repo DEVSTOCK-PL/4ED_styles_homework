@@ -20,6 +20,12 @@ const Container = styled.div`
 	background-color: #111928;
 	display: flex;
 	justify-content: center;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: auto;
+		align-items: center;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -28,6 +34,14 @@ const Content = styled.div`
 	display: flex;
 	align-items: space-between;
 	flex-direction: column;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: auto;
+		align-items: center;
+		gap: 32px;
+		padding-bottom: 30px;
+	}
 `
 const Row = styled.div`
 	width: 1280px;
@@ -35,11 +49,20 @@ const Row = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Mockup = styled.div`
 	width: 540px;
 	height: 406px;
 	border-radius: 8px;
+	
+	@media( max-width: 640px) {
+		display: none;
+	}
 `
 const SmallContainer = styled.div`
 	width: 640px;
@@ -47,6 +70,11 @@ const SmallContainer = styled.div`
 	gap: 24px;
 	display: flex;
 	flex-direction: column;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Img = styled.img`
 	width: 105%;
@@ -57,8 +85,25 @@ const Buttons = styled.div`
 	height: 41px;
 	gap: 16px;
 	display: flex;
-	
 `
+const titleProps = window.innerWidth <= 640 ? {
+  	fontSize: '30px', 
+  	lineHeight: '37.5px', 
+  	width: '343px',
+  	height: 'auto',
+} : {
+  	fontSize: '36px',
+  	lineHeight: '45px',
+	width: '620px',
+};
+
+const textSupportingProps = window.innerWidth <= 640 ? {
+  	width: '343px',
+  	height: '162px',
+} : {
+	width: '630px',
+};
+
 const CtaOne = () => {
 	return (
 		<Container>
@@ -67,14 +112,16 @@ const CtaOne = () => {
 					<Mockup><Img src={image1}/></Mockup>
 					<SmallContainer>
 						<Title 	text={title1}
-								fontSize="36px"
-								lineHeight="45px"
-								width="620px"/>
+								fontSize={titleProps.fontSize}
+  								lineHeight={titleProps.lineHeight}
+								width={titleProps.width}
+								height={titleProps.height} />
 						<TextSupporting 
 								text={textSupporting}
 								lineHeight="27px"
 								fontSize="18px"
-								width="630px" />
+								width={textSupportingProps.width}
+								height={textSupportingProps.height} />
 						<Buttons>
 							<Button 
 							description="Get involved"
@@ -92,14 +139,16 @@ const CtaOne = () => {
 				<Row>
 					<SmallContainer>
 						<Title text={title2}
-								fontSize="36px"
-								lineHeight="45px"
-								width="620px"/>
+								fontSize={titleProps.fontSize}
+  								lineHeight={titleProps.lineHeight}
+								width={titleProps.width}
+								height={titleProps.height} />
 						<TextSupporting 
 								text={textSupporting}
 								lineHeight="27px"
 								fontSize="18px"
-								width="630px" />
+								width={textSupportingProps.width}
+								height={textSupportingProps.height} />
 						<Buttons>
 							<Button 
 							description="View all activities"
@@ -113,14 +162,16 @@ const CtaOne = () => {
 					<Mockup><Img src={image3}/></Mockup>
 					<SmallContainer>
 						<Title text={title3}
-								fontSize="36px"
-								lineHeight="45px"
-								width="620px"/>
+								fontSize={titleProps.fontSize}
+  								lineHeight={titleProps.lineHeight}
+								width={titleProps.width}
+								height={titleProps.height} />
 						<TextSupporting 
 								text={textSupporting}
 								lineHeight="27px"
 								fontSize="18px"
-								width="630px" />
+								width={textSupportingProps.width}
+								height={textSupportingProps.height} />
 						<Buttons>
 							<Button 
 							description="Read more"

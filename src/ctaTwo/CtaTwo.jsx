@@ -8,6 +8,7 @@ import TextSupporting from '../reusableComponents/TextSupporting'
 import arrowRightBlue from '../assets/arrowRightBlue.png'
 import image1 from '../assets/foto/mockup2.png'
 import image2 from '../assets/foto/mockup5.png'
+import image3 from '../assets/foto/mockup6.png'
 import share from '../assets/share.png'
 
 const Container = styled.div`
@@ -17,6 +18,12 @@ const Container = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 375px;
+		height: auto;
+		padding-top: 10px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -26,6 +33,14 @@ const Content = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		gap: 16px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
 `
 const Heading = styled.div`
 	width: 676px;
@@ -34,6 +49,11 @@ const Heading = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+	}
 `
 const Cards = styled.div`
 	width: 1280px;
@@ -41,6 +61,13 @@ const Cards = styled.div`
 	gap: 48px;
 	display: flex;
 	justify-content: space-between;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		flex-direction: column;
+		gap: 16px;
+	}
 `
 const Card = styled.div`
 	width: 616px;
@@ -54,12 +81,24 @@ const Card = styled.div`
 	justify-content: center;
 	gap: 16px;
 	
+	@media( max-width: 640px) {
+		width: 343px;
+		height: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	
 `
 const ImgBox = styled.div`
 	width: 552px;
 	height: 288px;
 	border-radius: 8px;
 	overflow: hidden;
+	
+	@media( max-width: 640px) {
+		width: 303px;
+		height: 288px;
+	}
 `
 const Img = styled.img`
 	width: 110%;
@@ -70,13 +109,76 @@ const Img = styled.img`
 const ProgressBarContainer = styled.div`
 	width: 552px;
 	height: 41px;
+	
+	@media( max-width: 640px) {
+		width: 303px;
+		height: 41px;
+	}
 `
 const Buttons = styled.div`
 	width: 552px;
 	height: 41px;
 	gap: 16px;
 	display: flex;
+	
+	@media( max-width: 640px) {
+		width: 314px;
+		height: auto;
+		flex-direction: column;
+		align-items: center;
+	}
 `
+const titleProps = window.innerWidth <= 640 ? {
+  	fontSize: '30px', 
+  	lineHeight: '37.5px', 
+  	width: '343px',
+  	height: 'auto',
+} : {
+  	width: "640px",
+	height: "45px",
+	fontSize: "36px",
+	lineHeight: "45px",
+};
+
+const textSupportingProps = window.innerWidth <= 640 ? {
+  	fontSize: '16px', 
+  	lineHeight: '24px', 
+  	width: '343px',
+  	height: 'auto',
+} : {
+  	width: "640px",
+	height: "60px",
+};
+
+const title2Props = window.innerWidth <= 640 ? {
+  	width: '303px',
+  	height: 'auto',
+} : {
+  	width: "552px",
+	height: "23px",
+};
+
+const textSupporting2Props = window.innerWidth <= 640 ? {
+  	width: '303px',
+  	height: 'auto',
+} : {
+  	width: "552px",
+	height: "72px",
+};
+
+const buttonProps = window.innerWidth <= 640 ? {
+	width: '303px',
+} : {
+	width: '121px',
+};
+
+const button2Props = window.innerWidth <= 640 ? {
+	width: '303px',
+} : {
+	width: '210px',
+};
+
+const image88 = window.innerWidth <= 640 ? image3 : image2; 
 
 const CtaTwo = () => {
 	return (
@@ -84,17 +186,19 @@ const CtaTwo = () => {
 			<Content>
 				<Heading>
 					<Title 
-						width="640px"
-						height="45px"
 						text="Fundraising events"
-						fontSize="36px"
 						textAlign="center"
-						lineHeight="45px"/>
+						fontSize={titleProps.fontSize}
+  						lineHeight={titleProps.lineHeight}
+						width={titleProps.width}
+						height={titleProps.height}/>
 					<TextSupporting 
 						text="Flowbite helps you connect with friends, family and communities of people who share your interests. "
 						textAlign="center"
-						width="640px"
-						height="60px"/>
+						fontSize={textSupportingProps.fontSize}
+  						lineHeight={textSupportingProps.lineHeight}
+						width={textSupportingProps.width}
+						height={textSupportingProps.height}/>
 				</Heading>
 				<Cards>
 					<Card>
@@ -110,22 +214,22 @@ const CtaTwo = () => {
 							fontWeight="700"
 							fontSize="18px"
 							lineHeight="22.5px"
-							width="552px"
-							height="23px"/>
+							width={title2Props.width}
+							height={title2Props.height}/>
 						<TextSupporting 
 							text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
 							fontSize="16px"
-							width="552px"
-							height="72px"
-							lineHeight="24px"/>
+							lineHeight="24px"
+							width={textSupporting2Props.width}
+							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
 							description="Donate now"
-							width="121px"
+							width={buttonProps.width}
 							lineHeight="21px"/>
 							<Button 
 							description="Share this Fundraiser"
-							width="210px"
+							width={button2Props.width}
 							lineHeight="21px"
 							border="1px solid #4B5563"
 							backgroundColor="#1F2A37" 
@@ -134,7 +238,7 @@ const CtaTwo = () => {
 						</Buttons>
 					</Card>
 					<Card>
-						<ImgBox><Img src={image2} /></ImgBox>
+						<ImgBox><Img src={image88} /></ImgBox>
 						<ProgressBarContainer>
 							<ProgressBar 
 							donors="473"
@@ -146,22 +250,22 @@ const CtaTwo = () => {
 							fontWeight="700"
 							fontSize="18px"
 							lineHeight="22.5px"
-							width="552px"
-							height="23px"/>
+							width={title2Props.width}
+							height={title2Props.height}/>
 						<TextSupporting 
 							text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
 							fontSize="16px"
-							width="552px"
-							height="72px"
-							lineHeight="24px"/>
+							lineHeight="24px"
+							width={textSupporting2Props.width}
+							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
 							description="Donate now"
-							width="121px"
+							width={buttonProps.width}
 							lineHeight="21px"/>
 							<Button 
 							description="Share this Fundraiser"
-							width="210px"
+							width={button2Props.width}
 							lineHeight="21px"
 							border="1px solid #4B5563"
 							backgroundColor="#1F2A37" 

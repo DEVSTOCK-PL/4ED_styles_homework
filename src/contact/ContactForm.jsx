@@ -9,10 +9,20 @@ const Form = styled.div`
 	gap: 10px;
 	background-color: #111928;
 	justify-content: space-between;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+		padding-bottom: 30px;
+		padding-top: 10px; 
+	}
 `
 const InputBox = styled.div`
 	width: 640px;
 	height: auto;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+	}
 `
 const Label = styled.div`
 	width: 640px;
@@ -22,10 +32,14 @@ const Label = styled.div`
 	line-height: 21px;
 	text-align: left;
 	margin-bottom: 8px;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+	}
 `
 
 const Input = styled.input`
-	height: ${ (props) => props.height || '52px' };
+	height: 52px;
 	width: 635px;
 	background-color: #374151;
 	border: 1px solid #4B5563;
@@ -42,6 +56,10 @@ const Input = styled.input`
 		line-height: 24px;
 		color: #9CA3AF;
 	}
+	
+	@media( max-width: 640px) {
+		width: 343px;
+	}
 `
 const Textarea = styled.textarea`
 	height: 162px;
@@ -55,6 +73,10 @@ const Textarea = styled.textarea`
 	padding-left: 10px;
 	padding-top: 4px;
 	box-sizing: border-box;
+	
+	@media( max-width: 640px) {
+		width: 343px;
+	}
 `
 const ContactForm = () => {
 	return (
