@@ -38,6 +38,12 @@ const HeroContainer = styled.div`
 		width: 980px;
 		height: 484px;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1220px;
+		height: auto;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
 `
 const HeroContent = styled.div`
 	width: 1280px;
@@ -62,6 +68,10 @@ const HeroContent = styled.div`
 	@media (min-width: 769px) and (max-width: 1024px) {
 		width: 900px;
 		height: 434px;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
+		height: auto;
 	}
 `
 const LeftItem = styled.div`
@@ -196,6 +206,10 @@ const RightItem = styled.div`
 		width: 400px;
 		display: flex;
 		align-items: center;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 450px;
+		height: auto;
 	}
 `
 const SvgContainer = styled.div`

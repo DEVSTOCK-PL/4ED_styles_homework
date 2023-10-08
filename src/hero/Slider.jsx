@@ -20,6 +20,10 @@ const SliderContainer = styled.div`
 		width: 400px;
 		height: 250px;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 450px;
+		height: 300px;
+	}
 `
 const Image = styled.img`
 	position: absolute;

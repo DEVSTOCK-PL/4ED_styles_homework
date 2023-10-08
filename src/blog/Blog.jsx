@@ -33,6 +33,12 @@ const Container = styled.div`
 		padding-top: 30px;
 		padding-bottom: 40px;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1220px;
+		height: auto;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -55,6 +61,10 @@ const Content = styled.div`
 	}
 	@media (min-width: 769px) and (max-width: 1024px) {
 		width: 900px;
+		height: auto;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
 		height: auto;
 	}
 `
@@ -95,6 +105,11 @@ const Row = styled.div`
 		height: auto;
 		padding-top: 30px;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
+		height: auto;
+		padding-top: 30px;
+	}
 `
 const Column = styled.div`
 	width: 383px;
@@ -117,6 +132,10 @@ const Column = styled.div`
 		width: 250px;
 		height: auto;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 330px;
+		height: auto;
+	}
 `
 const Separator = styled.div`
 	width: 1px;
@@ -130,6 +149,9 @@ const Separator = styled.div`
 		display: none;
 	}
 	@media (min-width: 769px) and (max-width: 1024px) {
+		height: auto;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
 		height: auto;
 	}
 `
@@ -154,6 +176,10 @@ const Image = styled.img`
 		width: 250px;
 		height: auto;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 330px;
+		height: auto;
+	}
 `
 const BlogCard = styled.div`
 	width: 383px;
@@ -174,6 +200,10 @@ const BlogCard = styled.div`
 	}
 	@media (min-width: 769px) and (max-width: 1024px) {
 		width: 250px;
+		height: auto;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 330px;
 		height: auto;
 	}
 `
@@ -201,6 +231,8 @@ const textWidth = window.innerWidth <= 768 ? {
 	width: '340px',
 } : (window.innerWidth >= 769 && window.innerWidth <= 1024) ? {
 	width: '250px', 
+} : (window.innerWidth >= 1025 && window.innerWidth <= 1280) ? {
+	width: '330px', 
 } : {
 	width: '383px',
 }; 

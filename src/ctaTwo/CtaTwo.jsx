@@ -35,6 +35,12 @@ const Container = styled.div`
 		padding-top: 42px;
 		padding-bottom: 42px;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1220px;
+		height: auto;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -61,6 +67,10 @@ const Content = styled.div`
 	}
 	@media (min-width: 769px) and (max-width: 1024px) {
 		width: 900px;
+		height: auto;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
 		height: auto;
 	}
 `
@@ -106,6 +116,11 @@ const Cards = styled.div`
 		align-items: center;
 		height: auto;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
+		height: auto;
+		gap: 20px;
+	}
 `
 const Card = styled.div`
 	width: 616px;
@@ -131,7 +146,6 @@ const Card = styled.div`
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
-	
 `
 const ImgBox = styled.div`
 	width: 552px;

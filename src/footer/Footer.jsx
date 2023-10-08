@@ -31,6 +31,12 @@ const Container = styled.div`
 		width: 980px;
 		height: auto;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1220px;
+		height: auto;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
 `
 const Content = styled.div`
 	width: 1280px;
@@ -54,6 +60,10 @@ const Content = styled.div`
 		width: 900px;
 		height: auto;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
+		height: auto;
+	}
 `
 const NavLinks = styled.div`
 	width: 1280px;
@@ -75,6 +85,12 @@ const NavLinks = styled.div`
 	}
 	@media (min-width: 769px) and (max-width: 1024px) {
 		justify-content: center;
+		width: 900px;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
+		height: auto;
+		justify-content: space-around;
 	}
 `
 const LogoAndSocialLinks = styled.div`

@@ -48,6 +48,12 @@ const Container = styled.div`
 		padding-bottom: 46px;
 		padding-top: 46px;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1220px;
+		height: auto;
+		padding-bottom: 40px;
+		padding-top: 66px;
+	}
 `
 const Haeding = styled.div`
 	width: 672px;

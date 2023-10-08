@@ -23,6 +23,10 @@ const NavbarContainer = styled.div`
 		width: 980px;
 		height: 60px;
 	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1220px;
+		height: 65px;
+	}
 `
 const NavbarContent = styled.div`
 	display: flex;
@@ -44,6 +48,11 @@ const NavbarContent = styled.div`
 		width: 900px;
 		height: 60px;
 		gap: 20px;
+		justify-content: space-between;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		width: 1160px;
+		height: 65px;
 		justify-content: space-between;
 	}
 `
@@ -110,6 +119,10 @@ const Links = styled.div`
 		display: none;
 	}
 	@media (min-width: 769px) and (max-width: 1024px) {
+		gap: 20px;
+		width: 500px;
+	}
+	@media (min-width: 1025px) and (max-width: 1280px) {
 		gap: 20px;
 		width: 500px;
 	}
