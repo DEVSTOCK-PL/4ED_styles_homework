@@ -1,3 +1,8 @@
+Komponent App jest stylowany przez css.module
+Inne komponenty przez 'styled-components'
+
+Termin: 9 października 2023
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
