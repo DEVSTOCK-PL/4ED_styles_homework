@@ -1,0 +1,26 @@
+// import React from 'react'
+import styled from 'styled-components';
+import { Row } from './Row';
+
+const SocialProofContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 96px;
+  background-color: #111928;
+
+  @media (max-width: 768px) {
+    padding: 0 20px 96px;
+  }
+  @media (max-width: 640px) {
+    /* justify-content: center; */
+    padding: 0 10px 96px;
+  }
+`;
+
+export const SocialProof = () => {
+  return (
+    <SocialProofContainer>
+      <Row />
+    </SocialProofContainer>
+  );
+};
