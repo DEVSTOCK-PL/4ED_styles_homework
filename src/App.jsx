@@ -5,6 +5,8 @@ import SocialProof from './social-proof/SocialProof'
 import CTAtop from './CTAtop'
 import CustomerLogos from './CustomerLogos'
 import CTAbottom from './CTAbottom'
+import Blog from './Blog'
+import Contact from './ContactUs'
 
 const Main = styled.div`
   display: flex;
@@ -31,6 +33,10 @@ function App() {
       <CustomerLogos />
       <Main>
         <CTAbottom />
+      </Main>
+      <Blog />
+      <Main>
+        <Contact />
       </Main>
     </>
   )

@@ -220,3 +220,18 @@
   font-weight: 400;
   line-height: 150%;
 }
+
+.blogHeader {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}
+.blogText {
+  color: #9ca3af;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
