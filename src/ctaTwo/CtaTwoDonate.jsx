@@ -19,7 +19,7 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-bottom: 90px;
 	
 	@media( max-width: 640px) {
 		width: 375px;
@@ -429,7 +429,7 @@ const CtaTwo = () => {
 						</Buttons>
 					</Card>
 				</Cards>
-				<Button 
+				{/* <Button 
 					description="View all fundraising events"
 					backgroundColor='#111928'
 					width="280px"
@@ -437,7 +437,7 @@ const CtaTwo = () => {
 					color="#3F83F8"
 					iconRight={arrowRightBlue}
 					fontSize="18px"
-					fontWeight="400"/>
+					fontWeight="400"/> */}
 			</Content>
 		</Container>
 	);
