@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Button from '../reusableComponents/Button'
 import Logotyp from '../assets/Logo.png'
@@ -127,6 +128,17 @@ const Links = styled.div`
 		width: 500px;
 	}
 `
+const StyledLink = styled(Link)`
+	text-decoration: none;
+	color: #FFF;
+	
+	&:hover {
+		color: #1A56DB;
+	}
+	&:active {
+		color: #1A56DB;
+	}
+`
 
 function Navbar () {
 	return(
@@ -137,11 +149,11 @@ function Navbar () {
 					Logo
 				</Logo>
 				<Links>
-					<a>Company</a>
-					<a>Marketplace</a>
-					<a>Features</a>
-					<a>Team</a>
-					<a>Contact</a>
+					<StyledLink to="/">HOME</StyledLink>
+					<StyledLink to="/news">NEWS</StyledLink>
+					<StyledLink to="/events">EVENTS</StyledLink>
+					<StyledLink to="/contact">CONTACT</StyledLink>
+					
 				</Links>
 				<LogIn>Log In<Button description="Get Started"/></LogIn>
 				<Menu><Button 

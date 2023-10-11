@@ -14,10 +14,12 @@ import share from '../assets/share.png'
 const Container = styled.div`
 	background-color: #111928;
 	width: 1440px;
-	height: 997px;
+	height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	
 	@media( max-width: 640px) {
 		width: 375px;
@@ -44,7 +46,7 @@ const Container = styled.div`
 `
 const Content = styled.div`
 	width: 1280px;
-	height: 805px;
+	height: auto;
 	gap: 32px;
 	display: flex;
 	justify-content: space-between;
@@ -93,7 +95,7 @@ const Heading = styled.div`
 `
 const Cards = styled.div`
 	width: 1280px;
-	height: 593px;
+	height: auto;
 	gap: 48px;
 	display: flex;
 	justify-content: space-between;
@@ -131,9 +133,7 @@ const Card = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: start;
-	padding-top: 30px;
-	box-sizing: border-box;
+	justify-content: center;
 	gap: 16px;
 	
 	@media( max-width: 640px) {
@@ -303,7 +303,7 @@ const CtaTwo = () => {
 							lineHeight="24px"
 							width={textSupporting2Props.width}
 							height={textSupporting2Props.height}/>
-						{/* <Buttons>
+						<Buttons>
 							<Button 
 							description="Donate now"
 							width={buttonProps.width}
@@ -316,7 +316,7 @@ const CtaTwo = () => {
 							backgroundColor="#1F2A37" 
 							color="#9CA3AF"
 							iconLeft={share}/>
-						</Buttons> */}
+						</Buttons>
 					</Card>
 					<Card>
 						<ImgBox><Img src={image88} /></ImgBox>
@@ -339,7 +339,7 @@ const CtaTwo = () => {
 							lineHeight="24px"
 							width={textSupporting2Props.width}
 							height={textSupporting2Props.height}/>
-						{/* <Buttons>
+						<Buttons>
 							<Button 
 							description="Donate now"
 							width={buttonProps.width}
@@ -352,7 +352,81 @@ const CtaTwo = () => {
 							backgroundColor="#1F2A37" 
 							color="#9CA3AF"
 							iconLeft={share}/>
-						</Buttons> */}
+						</Buttons>
+					</Card>
+				</Cards>
+				<Cards>
+					<Card>
+						<ImgBox><Img src={image88} /></ImgBox>
+						<ProgressBarContainer>
+							<ProgressBar 
+							donors="3473"
+							colected="176856"
+							goal="400000"/>
+						</ProgressBarContainer>
+						<Title 
+							text="Thank you for supporting in planting trees work. "
+							fontWeight="700"
+							fontSize="18px"
+							lineHeight="22.5px"
+							width={title2Props.width}
+							height={title2Props.height}/>
+						<TextSupporting 
+							text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
+							fontSize="16px"
+							lineHeight="24px"
+							width={textSupporting2Props.width}
+							height={textSupporting2Props.height}/>
+						<Buttons>
+							<Button 
+							description="Donate now"
+							width={buttonProps.width}
+							lineHeight="21px"/>
+							<Button 
+							description="Share this Fundraiser"
+							width={button2Props.width}
+							lineHeight="21px"
+							border="1px solid #4B5563"
+							backgroundColor="#1F2A37" 
+							color="#9CA3AF"
+							iconLeft={share}/>
+						</Buttons>
+					</Card>
+					<Card>
+						<ImgBox><Img src={image1} /></ImgBox>
+						<ProgressBarContainer>
+							<ProgressBar 
+							donors="473"
+							colected="136856"
+							goal="150000"/>
+						</ProgressBarContainer>
+						<Title 
+							text="Thank you for supporting our lifesaving work."
+							fontWeight="700"
+							fontSize="18px"
+							lineHeight="22.5px"
+							width={title2Props.width}
+							height={title2Props.height}/>
+						<TextSupporting 
+							text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
+							fontSize="16px"
+							lineHeight="24px"
+							width={textSupporting2Props.width}
+							height={textSupporting2Props.height}/>
+						<Buttons>
+							<Button 
+							description="Donate now"
+							width={buttonProps.width}
+							lineHeight="21px"/>
+							<Button 
+							description="Share this Fundraiser"
+							width={button2Props.width}
+							lineHeight="21px"
+							border="1px solid #4B5563"
+							backgroundColor="#1F2A37" 
+							color="#9CA3AF"
+							iconLeft={share}/>
+						</Buttons>
 					</Card>
 				</Cards>
 				<Button 

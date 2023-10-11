@@ -49,6 +49,7 @@ const Content = styled.div`
 	display: flex;
 	align-items: space-between;
 	flex-direction: column;
+	padding-top: 30px;
 	
 	@media( max-width: 640px) {
 		width: 375px;
