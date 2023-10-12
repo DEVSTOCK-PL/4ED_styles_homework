@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Logo from './footer/FooterLogo'
+import Menu from './footer/FooterMenu'
 
 const WrapperFooter = styled.div`
   display: flex;
@@ -13,16 +14,20 @@ const WrapperFooter = styled.div`
 `
 const WrapperFooterContent = styled.div`
   display: flex;
-  width: 1280px;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   gap: 64px;
+  @media (max-width) {
+    padding: 32px 16px;
+  }
 `
 
 const Footer = () => {
   return (
     <WrapperFooter>
       <WrapperFooterContent>
+        <Menu />
         <Logo />
       </WrapperFooterContent>
     </WrapperFooter>
