@@ -1,15 +1,32 @@
 import styled from 'styled-components'
 import Header from './blog/Header'
 import BlogCard from './blog/BlogCard'
-import BlogPost from './blog/BlogPost'
 
-// import Post1 from './Post1'
-// import Post2 from './Post2'
-// import Post3 from './Post3'
-// import Post4 from './Post4'
-// import Post5 from './Post5'
-// import Post6 from './Post6'
 import blogs from './blog/blogposts/posts'
+const SeparatorLeft = styled.div`
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: var(--gray-700, #374151);
+  top: 0;
+  left: 32.3333%;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
+const SeparatorRight = styled.div`
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: var(--gray-700, #374151);
+  top: 0;
+  right: 34.3333%;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
 
 const BlogWrapper = styled.div`
   display: flex;
@@ -40,14 +57,15 @@ const Container = styled.div`
 `
 const BlogArea = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
   align-self: stretch;
   align-items: start;
   grid-auto-rows: auto;
+  position: relative;
 
   @media (max-width: 767px) {
-    grid-template-columns: 1fr; /
+    grid-template-columns: 1fr;
   }
 `
 
@@ -58,13 +76,18 @@ const Blog = () => {
         <Header />
         <BlogArea>
           <BlogCard />
-
           {blogs.slice(0, 2).map((BlogPost, index) => (
-            <BlogPost key={index} />
+            <>
+              <BlogPost key={index} />
+              {index < 1 && <SeparatorLeft />}
+            </>
           ))}
           <div className='fillerDiv'></div>
           {blogs.slice(2, 4).map((BlogPost, index) => (
-            <BlogPost key={index} />
+            <>
+              <BlogPost key={index} />
+              {index < 1 && <SeparatorRight />}
+            </>
           ))}
           <div className='fillerDiv'></div>
           {blogs.slice(4, 6).map((BlogPost, index) => (

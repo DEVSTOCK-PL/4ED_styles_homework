@@ -44,7 +44,7 @@ const CustomerLogosWrapper = styled.div`
     justify-content: space-around;
   }
   @media (max-width: 767px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-gap: 32px;
   }
 `

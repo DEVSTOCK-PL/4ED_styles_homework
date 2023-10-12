@@ -7,8 +7,10 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  padding: 96px 0px;
   @media (max-width: 767px) {
     gap: 16px;
+    padding: 32px 16px;
   }
 `
 const Contact = () => {

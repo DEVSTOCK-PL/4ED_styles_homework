@@ -11,6 +11,7 @@ const PostWrapper = styled.div`
   align-self: stretch;
   @media (max-width: 767px) {
     flex-wrap: wrap;
+    min-width: 343px;
   }
 `
 const BlogPost = ({ header, blurb }) => {

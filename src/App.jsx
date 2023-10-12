@@ -7,6 +7,7 @@ import CustomerLogos from './CustomerLogos'
 import CTAbottom from './CTAbottom'
 import Blog from './Blog'
 import Contact from './ContactUs'
+import Footer from './Footer'
 
 const Main = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ function App() {
       <Main>
         <Contact />
       </Main>
+      <Footer />
     </>
   )
 }
