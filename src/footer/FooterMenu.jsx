@@ -9,7 +9,7 @@ import legal from './links/legalLinks'
 
 const FooterMenuWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   align-self: stretch;
   @media (max-width: 767px) {
