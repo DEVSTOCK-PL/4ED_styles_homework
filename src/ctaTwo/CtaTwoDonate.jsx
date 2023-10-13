@@ -1,3 +1,5 @@
+import useDonationLogic from '../hooks/useDonationLogic'
+
 import styled from 'styled-components'
 
 import ProgressBar from '../ctaTwo/ProgressBar'
@@ -5,7 +7,6 @@ import Button from '../reusableComponents/Button'
 import Title from '../reusableComponents/Title'
 import TextSupporting from '../reusableComponents/TextSupporting'
 
-import arrowRightBlue from '../assets/arrowRightBlue.png'
 import image1 from '../assets/foto/mockup2.png'
 import image2 from '../assets/foto/mockup5.png'
 import image3 from '../assets/foto/mockup6.png'
@@ -261,7 +262,9 @@ const button2Props = window.innerWidth <= 768 ? {
 
 const image88 = window.innerWidth <= 768 ? image3 : image2; 
 
-const CtaTwo = () => {
+const CtaTwoDonate = () => {
+	const { donate1, donateUp1, donate2, donateUp2, donate3, donateUp3, donate4, donateUp4 } = useDonationLogic();
+	
 	return (
 		<Container>
 			<Content>
@@ -287,7 +290,7 @@ const CtaTwo = () => {
 						<ProgressBarContainer>
 							<ProgressBar 
 							donors="3473"
-							colected="276856"
+							colected={donate1}
 							goal="400000"/>
 						</ProgressBarContainer>
 						<Title 
@@ -305,6 +308,7 @@ const CtaTwo = () => {
 							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
+							onClick={donateUp1}
 							description="Donate now"
 							width={buttonProps.width}
 							lineHeight="21px"/>
@@ -323,7 +327,7 @@ const CtaTwo = () => {
 						<ProgressBarContainer>
 							<ProgressBar 
 							donors="473"
-							colected="36856"
+							colected={donate2}
 							goal="150000"/>
 						</ProgressBarContainer>
 						<Title 
@@ -341,6 +345,7 @@ const CtaTwo = () => {
 							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
+							onClick={donateUp2}
 							description="Donate now"
 							width={buttonProps.width}
 							lineHeight="21px"/>
@@ -361,7 +366,7 @@ const CtaTwo = () => {
 						<ProgressBarContainer>
 							<ProgressBar 
 							donors="3473"
-							colected="176856"
+							colected={donate3}
 							goal="400000"/>
 						</ProgressBarContainer>
 						<Title 
@@ -379,6 +384,7 @@ const CtaTwo = () => {
 							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
+							onClick={donateUp3}
 							description="Donate now"
 							width={buttonProps.width}
 							lineHeight="21px"/>
@@ -397,7 +403,7 @@ const CtaTwo = () => {
 						<ProgressBarContainer>
 							<ProgressBar 
 							donors="473"
-							colected="136856"
+							colected={donate4}
 							goal="150000"/>
 						</ProgressBarContainer>
 						<Title 
@@ -415,6 +421,7 @@ const CtaTwo = () => {
 							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
+							onClick={donateUp4}
 							description="Donate now"
 							width={buttonProps.width}
 							lineHeight="21px"/>
@@ -429,17 +436,8 @@ const CtaTwo = () => {
 						</Buttons>
 					</Card>
 				</Cards>
-				{/* <Button 
-					description="View all fundraising events"
-					backgroundColor='#111928'
-					width="280px"
-					height="27px"
-					color="#3F83F8"
-					iconRight={arrowRightBlue}
-					fontSize="18px"
-					fontWeight="400"/> */}
 			</Content>
 		</Container>
 	);
 }
-export default CtaTwo;
+export default CtaTwoDonate;

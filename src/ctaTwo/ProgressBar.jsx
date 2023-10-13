@@ -68,6 +68,7 @@ const BarComplite = styled.div`
 	height: 10px;
 	border-radius: 2px;
 	background-color: #374151;
+	overflow: hidden;
 	
 	@media( max-width: 640px) {
 		width: 303px;

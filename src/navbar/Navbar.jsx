@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Button from '../reusableComponents/Button'
 import Logotyp from '../assets/Logo.png'
@@ -135,12 +135,19 @@ const StyledLink = styled(Link)`
 	&:hover {
 		color: #1A56DB;
 	}
-	&:active {
-		color: #1A56DB;
+`
+const LinkItem = styled.div`
+	padding: 4px;
+	
+	&.active {
+		border: 1px solid #1A56DB;
+		border-radius: 5px;
 	}
 `
 
 function Navbar () {
+	const { pathname } = useLocation();
+	
 	return(
 		<NavbarContainer>
 			<NavbarContent>
@@ -149,11 +156,21 @@ function Navbar () {
 					Logo
 				</Logo>
 				<Links>
-					<StyledLink to="/">HOME</StyledLink>
-					<StyledLink to="/news">NEWS</StyledLink>
-					<StyledLink to="/events">EVENTS</StyledLink>
-					<StyledLink to="/contact">CONTACT</StyledLink>
-					
+					<LinkItem className={pathname === "/home" && "active"}>
+						<StyledLink to="/home">HOME</StyledLink>
+					</LinkItem>
+					<LinkItem className={pathname === "/news" && "active"}>
+						<StyledLink to="/news">NEWS</StyledLink>
+					</LinkItem>
+					<LinkItem className={pathname === "/events" && "active"}>
+						<StyledLink to="/events">EVENTS</StyledLink>
+					</LinkItem>
+					<LinkItem className={pathname === "/contact" && "active"}>
+						<StyledLink to="/contact">CONTACT</StyledLink>
+					</LinkItem>
+					<LinkItem className={pathname === "/home" && "active"}>
+						<StyledLink to="/home">RICK & MORTY</StyledLink>
+					</LinkItem>
 				</Links>
 				<LogIn>Log In<Button description="Get Started"/></LogIn>
 				<Menu><Button 

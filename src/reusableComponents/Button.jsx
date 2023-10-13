@@ -16,6 +16,10 @@ const StyledButton = styled.button`
 	justify-content: ${ (props) => props.justifyContent || 'center' };
 	padding: 0;
 	margin-left: 0px;
+	
+	&:active {
+		border: 1px solid #020e27;
+	}
 `
 const IconLeft = styled.img`
 	margin-right: ${ (props) => props.marginRight || '8px' };		
@@ -25,9 +29,10 @@ const IconRight = styled.img`
 ` 
 
 // eslint-disable-next-line
-const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border, fontSize, fontWeight, lineHeight, alignItems, justifyContent,marginLeft, marginRight } ) => {
+const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border, fontSize, fontWeight, lineHeight, alignItems, justifyContent,marginLeft, marginRight, onClick } ) => {
 	return (
 		<StyledButton 
+			onClick={onClick}
 			backgroundColor={backgroundColor} 
 			width={width} 
 			height={height}
