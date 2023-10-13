@@ -18,7 +18,7 @@ const StyledButton = styled.button`
 	margin-left: 0px;
 	
 	&:active {
-		border: 1px solid #020e27;
+		border: ${ props => (props.isDisabled ? '3px solid red' : '1px solid #020e27')};
 	}
 `
 const IconLeft = styled.img`
@@ -29,9 +29,10 @@ const IconRight = styled.img`
 ` 
 
 // eslint-disable-next-line
-const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border, fontSize, fontWeight, lineHeight, alignItems, justifyContent,marginLeft, marginRight, onClick } ) => {
+const Button = ( { description, backgroundColor, width, height, color, iconLeft, iconRight, border, fontSize, fontWeight, lineHeight, alignItems, justifyContent,marginLeft, marginRight, onClick, isDisabled } ) => {
 	return (
 		<StyledButton 
+			isDisabled={isDisabled}
 			onClick={onClick}
 			backgroundColor={backgroundColor} 
 			width={width} 

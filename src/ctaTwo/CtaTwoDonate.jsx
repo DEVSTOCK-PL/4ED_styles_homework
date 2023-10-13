@@ -265,6 +265,18 @@ const image88 = window.innerWidth <= 768 ? image3 : image2;
 const CtaTwoDonate = () => {
 	const { donate1, donateUp1, donate2, donateUp2, donate3, donateUp3, donate4, donateUp4 } = useDonationLogic();
 	
+	const isDonate1Exceeded = donate1 >= 400000 ? true : false;
+	console.log("isDonate1Exceeded", isDonate1Exceeded);
+	
+	const isDonate2Exceeded = donate2 >= 150000 ? true : false;
+	console.log("isDonate2Exceeded", isDonate2Exceeded);
+	
+	const isDonate3Exceeded = donate3 >= 400000 ? true : false;
+	console.log("isDonate3Exceeded", isDonate3Exceeded);
+	
+	const isDonate4Exceeded = donate4 >= 150000 ? true : false;
+	console.log("isDonate4Exceeded", isDonate4Exceeded);
+	
 	return (
 		<Container>
 			<Content>
@@ -308,8 +320,10 @@ const CtaTwoDonate = () => {
 							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
-							onClick={donateUp1}
-							description="Donate now"
+							onClick={isDonate1Exceeded ? null : donateUp1}
+							isDisabled={isDonate1Exceeded}
+							description={isDonate1Exceeded ? "STOP" : "Donate now"}
+							backgroundColor={isDonate1Exceeded ? 'red' : '#1A56DB'}
 							width={buttonProps.width}
 							lineHeight="21px"/>
 							<Button 
@@ -345,8 +359,10 @@ const CtaTwoDonate = () => {
 							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
-							onClick={donateUp2}
-							description="Donate now"
+							onClick={isDonate2Exceeded ? null : donateUp2}
+							isDisabled={isDonate2Exceeded}
+							description={isDonate2Exceeded ? "STOP" : "Donate now"}
+							backgroundColor={isDonate2Exceeded ? 'red' : '#1A56DB'}
 							width={buttonProps.width}
 							lineHeight="21px"/>
 							<Button 
@@ -384,8 +400,10 @@ const CtaTwoDonate = () => {
 							height={textSupporting2Props.height}/>
 						<Buttons>
 							<Button 
-							onClick={donateUp3}
-							description="Donate now"
+							onClick={isDonate3Exceeded ? null : donateUp3}
+							isDisabled={isDonate3Exceeded}
+							description={isDonate3Exceeded ? "STOP" : "Donate now"}
+							backgroundColor={isDonate3Exceeded ? 'red' : '#1A56DB'}
 							width={buttonProps.width}
 							lineHeight="21px"/>
 							<Button 
@@ -420,9 +438,11 @@ const CtaTwoDonate = () => {
 							width={textSupporting2Props.width}
 							height={textSupporting2Props.height}/>
 						<Buttons>
-							<Button 
-							onClick={donateUp4}
-							description="Donate now"
+							<Button
+							onClick={isDonate4Exceeded ? null : donateUp4}
+							isDisabled={isDonate4Exceeded}
+							description={isDonate4Exceeded ? "STOP" : "Donate now"}
+							backgroundColor={isDonate4Exceeded ? 'red' : '#1A56DB'}
 							width={buttonProps.width}
 							lineHeight="21px"/>
 							<Button 
