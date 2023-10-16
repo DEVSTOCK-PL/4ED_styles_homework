@@ -5,6 +5,8 @@
 :root {
   --font-family: 'Inter', sans-serif;
   background-color: #111928;
+  display: flex;
+  flex-direction: column;
 }
 
 body * {

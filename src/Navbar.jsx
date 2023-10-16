@@ -7,12 +7,16 @@ import SignOptions from './navbar/SignOptions'
 import Toggle from './navbar/Toggle'
 
 const NavWrapper = styled.div`
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 64px;
-
+  width: 100%;
   @media (768px <= width <= 1024px) {
     width: 100%;
     flex-wrap: nowrap;
@@ -23,7 +27,6 @@ const NavWrapper = styled.div`
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    /* new */
     display: flex;
     max-width: 100%;
     max-height: fit-content;
