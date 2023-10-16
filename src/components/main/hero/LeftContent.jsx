@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { Container } from '../../Container';
 import { Button } from '../../Button';
 import video_camera from '../../../assets/video_camera.svg';
 import intel_logo from '../../../assets/intel_logo.svg';
@@ -37,7 +36,6 @@ const StyledH1 = styled.h1`
 `;
 
 const StyledP = styled.p`
-  /* margin-bottom: 26px; */
   font-size: 20px;
   font-weight: 400;
 `;

@@ -7,19 +7,23 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 16px 40px;
   gap: 80px;
-  max-width: 100%;
+  /* width: 100%; */
 
   ${(props) => ({ flexDirection: props.flexDirection })}
 
+  @media (max-width: 1024px) {
+    gap: 40px;
+  }
+
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 16px 20px;
+    gap: 20px;
   }
   @media (max-width: 640px) {
     flex-direction: column;
-    padding: 0 10px;
-    gap: 20px;
+    padding: 16px 10px;
   }
 `;
 

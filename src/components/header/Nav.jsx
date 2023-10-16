@@ -15,10 +15,16 @@ const NavContainer = styled(Container)`
       column-gap: 30px;
     }
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1280px) {
     margin-left: 30px;
     .ul {
       column-gap: 20px;
+    }
+  }
+  @media (max-width: 1024px) {
+    margin-left: 25px;
+    .ul {
+      column-gap: 15px;
     }
   }
   @media (max-width: 768px) {

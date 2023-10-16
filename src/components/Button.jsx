@@ -2,11 +2,15 @@
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
   ${(props) => ({
     className: props.className,
     width: props.width,
+    minWidth: props.minWidth,
     height: props.height,
     padding: props.padding,
     margin: props.margin,
@@ -16,12 +20,15 @@ const StyledButton = styled.button`
     borderRadius: props.borderRadius,
     fontSize: props.fontSize,
     fontWeight: props.fontWeight,
+    gap: props.gap,
+    alignSelf: props.alignSelf,
   })}
 `;
 
 export const Button = ({
   className,
   width,
+  minWidth,
   height,
   padding,
   margin,
@@ -31,12 +38,15 @@ export const Button = ({
   borderRadius,
   fontSize,
   fontWeight,
+  gap,
+  alignSelf,
   children,
 }) => {
   return (
     <StyledButton
       className={className}
       width={width}
+      minWidth={minWidth}
       height={height}
       padding={padding}
       margin={margin}
@@ -46,6 +56,8 @@ export const Button = ({
       borderRadius={borderRadius}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      gap={gap}
+      alignSelf={alignSelf}
     >
       {children}
     </StyledButton>

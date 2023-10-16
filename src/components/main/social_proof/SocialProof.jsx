@@ -1,4 +1,3 @@
-// import React from 'react'
 import styled from 'styled-components';
 import { Row } from './Row';
 
@@ -12,8 +11,7 @@ const SocialProofContainer = styled.div`
     padding: 0 20px 96px;
   }
   @media (max-width: 640px) {
-    /* justify-content: center; */
-    padding: 0 10px 96px;
+    padding: 0 10px 20px;
   }
 `;
 

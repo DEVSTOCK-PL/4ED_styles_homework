@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
 
-const StyledDiv = styled.div`
-  /* display: flex; */
-`;
-const StyledImg = styled.img`
-  width: 540px;
+const StyledDiv = styled.div``;
 
-  @media (max-width: 1024px) {
-    width: 440px;
+const StyledImg = styled.img`
+  width: 100%;
+
+  /* @media (max-width: 1024px) {
+    max-width: 440px;
   }
   @media (max-width: 768px) {
-    width: 340px;
-  }
+    max-width: 340px;
+  } */
   @media (max-width: 640px) {
     display: none;
   }

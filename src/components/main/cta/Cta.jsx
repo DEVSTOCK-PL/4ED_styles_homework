@@ -1,10 +1,9 @@
-import styled from 'styled-components';
 import { Container } from '../../Container';
 import { Row } from './Row';
 import mockup_1 from './mockup_1.svg';
 import mockup_2 from './mockup_2.svg';
 import mockup_3 from './mockup_3.svg';
-import arrow_right from './arrow_right.svg';
+import arrow_right from '../../../assets/arrow_right.svg';
 
 const arrayWithDataForCta = [
   {
@@ -27,12 +26,12 @@ const arrayWithDataForCta = [
     id: Math.random(),
     flexDirection: 'row-reverse',
     img: mockup_2,
-    h2: 'Flowbite Green is a climate change non-profit organization.',
+    h2: 'Protect our earth against climate change and pollution.',
     p: 'Flowbite helps you connect with friends, family and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.',
     buttonsArr: [
       {
         id: Math.random(),
-        text: 'Get involved',
+        text: 'View all activities',
         imgSrc: arrow_right,
         imgAlt: 'icon_arrow',
       },
@@ -42,12 +41,12 @@ const arrayWithDataForCta = [
     id: Math.random(),
     flexDirection: 'row',
     img: mockup_3,
-    h2: 'Flowbite Green is a climate change non-profit organization.',
+    h2: 'Together we can restore our earth against climate change',
     p: 'Flowbite helps you connect with friends, family and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.',
     buttonsArr: [
       {
         id: Math.random(),
-        text: 'Get involved',
+        text: 'Read more',
         imgSrc: arrow_right,
         imgAlt: 'icon_arrow',
       },
