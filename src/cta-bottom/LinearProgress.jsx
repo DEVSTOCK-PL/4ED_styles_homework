@@ -1,11 +1,12 @@
-import * as React from 'react'
+// import * as React from 'react'
+import { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
 
 export default function LinearDeterminate() {
-  const [progress, setProgress] = React.useState(0)
+  const [progress, setProgress] = useState(0)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress === 70) {

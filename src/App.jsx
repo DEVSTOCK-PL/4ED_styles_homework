@@ -1,21 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-// import styled from 'styled-components'
+import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Layout from './Layout'
-// import Navbar from './Navbar'
 import CustomerLogos from './CustomerLogos'
 import CTAbottom from './CTAbottom'
-// import Blog from './Blog'
-// import Contact from './ContactUs'
 import Home from './Home'
-// import Hero from './Hero'
-// import SocialProof from './social-proof/SocialProof'
-// import CTAtop from './CTAtop'
-// import CustomerLogos from './CustomerLogos'
-// import CTAbottom from './CTAbottom'
 import Blog from './Blog'
 import Contact from './ContactUs'
-// import Footer from './Footer'
 import Page404 from './PageNotFound'
+
+// import Footer from './Footer'
 // const Main = styled.div`
 //   display: flex;
 //   flex-direction: column;
@@ -31,10 +24,7 @@ import Page404 from './PageNotFound'
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Home />
-      </Layout>
+    <BrowserRouter>
       <Routes>
         <Route
           path='/home'
@@ -85,7 +75,7 @@ function App() {
           }
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
