@@ -1,5 +1,5 @@
-import RouterApp from './RouterApp'
-import styles from './App.module.css'
+import RouterApp from "./RouterApp";
+import styles from "./App.module.css";
 
 function App() {
   return (
