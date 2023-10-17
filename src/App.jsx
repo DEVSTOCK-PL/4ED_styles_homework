@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Navigation from "./components/Nav";
+import Home from "./components/subpages/Home";
+import About from "./components/subpages/About";
+import Contact from "./components/subpages/Contact";
+import NotFound from "./components/subpages/NotFound";
+import Articles from "./components/subpages/Articles";
+import List from "./components/subpages/List";
+import FormikForm from "./components/subpages/FormikForm";
+import ReactHookForm from "./components/subpages/ReactHookForm";
+import Styles from "./components/subpages/Styles";
 
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/styles" element={<Styles />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/articles/:id" element={<Articles />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/list/characters" element={<List />} />
+        <Route path="/list/locations" element={<List />} />
+        <Route path="/list/episodes" element={<List />} />
+        <Route path="/formOne" element={<FormikForm />} />
+        <Route path="/formTwo" element={<ReactHookForm />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;

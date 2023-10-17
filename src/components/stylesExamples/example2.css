@@ -1,0 +1,35 @@
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    background-color: #95ab6e;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    width: 280px;
+    height: 160px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #935c5c;
+    border-radius: 20px;
+}
+
+.cardData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fav {
+    color: #fff;
+    width: 70px;
+    height: 40px;
+    padding: 5px;
+    background-color: #473253;
+    margin: 10px;
+}
