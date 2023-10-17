@@ -1,13 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-// import Home from '../Home'
-// import CustomerLogos from '../CustomerLogos'
-// import CTAbottom from '../CTAbottom'
-// import Blog from '../Blog'
-// import Contact from '../ContactUs'
-// import Page404 from '../PageNotFound'
-
 const NavLinksWrapper = styled.div`
   display: flex;
   flex-direction: row;
