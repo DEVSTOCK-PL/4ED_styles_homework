@@ -12,7 +12,6 @@ import SupportingText from "../generalComponents/SupportingText";
 const HeroComponent = styled.div`
 width: 1440px;
 height: 626px;
-padding: 96px, 0px, 96px, 0px;
 background: #111928;
 display: flex;
 flex-direction: column;
@@ -54,14 +53,15 @@ gap: 12px;
 border-top: 1px solid #374151;
 display: flex;
 flex-direction: column;
+justify-content: space-around;
 `
 const SupportingTextSponsors = styled.div`
 width: 576px;
 height: 24px;
-fontFamily: Inter;
-fontWeight: 500;
-fontSize: 16px;
-lineHeight:24px;
+font-family: Inter;
+font-weight: 500;
+font-size: 16px;
+line-height:24px;
 color: #6B7280;
 display:flex;
 `
@@ -89,20 +89,19 @@ heigh: 48px;
 `
 const RightContent = styled.div`
 width:576px;
-heigh: 626px;
+height: 434px;
 display: flex;
 justify-content: center;
+align-items: center;
 `
 const CarouselRight= styled.svg`
 width:576px;
-heigh:360px;
-radius:8px;
+height: 360px;
+border-radius:8px;
 display: flex;
-justifyContent: center;
-alignItems: center;
+justify-content: center;
+align-items: center;
 `
-
-
 const Hero = () => {
     return (
         <HeroComponent>

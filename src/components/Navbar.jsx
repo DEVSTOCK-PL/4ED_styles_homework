@@ -5,7 +5,6 @@ import LogoNavbarFooter from "../image/LogoNavbarFooter.svg"
 const NavbarComponents = styled.div`
 width: 1440px;
 height: 65px;
-padding: 24px, 0px,0px,0px;
 background: #111928;
 display: flex;
 justify-content: center;
@@ -47,7 +46,7 @@ gap: 32px;
 display: flex;
 `
 const Link = styled.button`
-height: ${(props)=>props.heigh||"24px"};
+height: ${(props)=>props.height||"24px"};
 font-family: Inter;
 font-weight: 500;
 font-size: ${(props)=>props.fontSize||'16px'};
@@ -87,7 +86,7 @@ const Navbar = () => {
                     <Link width="62px">Contact</Link>
                 </NavLinks>
                 <NavCTA>
-                    <Link width="56px" lineHeight="21px" fontSize="14px" heigh="21px">Log In</Link>
+                    <Link width="56px" lineHeight="21px" fontSize="14px" height="21px">Log In</Link>
                     <BlueButton description="Get started" lineHeight="21px"></BlueButton>
                 </NavCTA>
             </NavbarContainer>

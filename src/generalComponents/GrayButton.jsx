@@ -14,8 +14,8 @@ weight-family: ${(props) => props.weightFamily || "500"};
 font-size:${(props) => props.fontSize || "16pz"};
 color: #9CA3AF;
 display: "flex";
-justifyContent: center;
-alignItems: center;
+justify-content: center;
+align-items: center;
 `
 const CameraIcon = styled.image`
 width:"20px";
