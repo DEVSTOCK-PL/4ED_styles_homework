@@ -20,3 +20,8 @@ body {
 button:hover {
   scale: 0.9;
 }
+
+::selection {
+  background-color: #44699c;
+  color: #11123e;
+}

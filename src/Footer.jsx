@@ -11,10 +11,11 @@ const WrapperFooter = styled.div`
   justify-content: center;
   border-top: 1px solid var(--gray-700, #374151);
   background: var(--gray-800, #1f2a37);
+  align-items: flex-start;
 `
 const WrapperFooterContent = styled.div`
   display: flex;
-  width: 100%;
+  width: 100vw;
   flex-direction: column;
   align-items: center;
   gap: 64px;

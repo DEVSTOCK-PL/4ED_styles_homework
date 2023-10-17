@@ -3,7 +3,7 @@ import ArrowRight from '../styles/ArrowRight'
 
 const ViewAll = () => {
   return (
-    <a className={styles.linkWithArrow} href='viewALl'>
+    <a className={`${styles.linkWithArrow} mb-6`} href='viewALl'>
       View all fundraising events {ArrowRight}
     </a>
   )

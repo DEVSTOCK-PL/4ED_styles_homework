@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../public/logo.svg'
 
@@ -17,14 +16,12 @@ const LogoText = styled.h1`
 `
 const Logo = () => {
   return (
-    <BrowserRouter>
-      <Link to='/'>
-        <LogoDiv>
-          <img src={logo} alt='Logo' />
-          <LogoText>Flowbite</LogoText>
-        </LogoDiv>
-      </Link>
-    </BrowserRouter>
+    <Link to='/'>
+      <LogoDiv>
+        <img src={logo} alt='Logo' />
+        <LogoText>Flowbite</LogoText>
+      </LogoDiv>
+    </Link>
   )
 }
 

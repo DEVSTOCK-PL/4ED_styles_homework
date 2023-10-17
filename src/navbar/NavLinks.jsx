@@ -26,7 +26,7 @@ const NavLink = styled.a`
   color: #fff;
   cursor: pointer;
   &.active {
-    color: blue;
+    color: #1a56db;
     text-decoration: underline;
   }
 `
