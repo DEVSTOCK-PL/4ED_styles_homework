@@ -5,10 +5,9 @@ import Logo from './navbar/Logo'
 import NavLinks from './navbar/NavLinks'
 import SignOptions from './navbar/SignOptions'
 import Toggle from './navbar/Toggle'
+import ToggleMenu from './navbar/ToggleMenu'
 
-const NavWrapper = styled.div.attrs((props) => ({
-  isOpen: props.isOpen ? 'true' : 'false',
-}))`
+const NavWrapper = styled.div`
   gap: 64px;
   display: flex;
   flex-direction: row;
@@ -32,35 +31,27 @@ const NavWrapper = styled.div.attrs((props) => ({
     flex-shrink: 1;
     .nav-links,
     .sign-options {
-      display: ${(props) => (props.isOpen ? 'none' : 'flex')};
-      flex-direction: column;
-      gap: 16px;
+      display: none;
     }
   }
 `
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [menu, setMenu] = useState(false)
 
-  const handleToggleClick = () => {
-    setIsOpen(!isOpen)
-    console.log('click')
+  const handleToggle = () => {
+    setMenu(!menu)
   }
 
   return (
-    <NavWrapper isOpen={isOpen.toString()}>
+    <NavWrapper>
       <Logo />
-
-      <NavLinks isOpen={isOpen.toString()} />
-
-      <SignOptions isOpen={isOpen.toString()} />
-
-      <Toggle src={Toggle} alt='Toggle' onClick={handleToggleClick} />
+      <NavLinks className='nav-links' />
+      <SignOptions />
+      <Toggle src={Toggle} alt='Toggle' onClick={handleToggle} />
+      {menu && <ToggleMenu setMenu={setMenu} />}
     </NavWrapper>
   )
 }
 
 export default Navbar
-
-// to the navlinks? isopen={isOpen ? <NavLinks /> : undefined}
-// <SignOptions isopen={isOpen ? <SignOptions /> : undefined} />

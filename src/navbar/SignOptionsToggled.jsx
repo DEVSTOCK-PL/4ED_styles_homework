@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 const Options = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 16px;
   align-items: center;
   justify-self: right;
+  gap: 2rem;
 `
 
 const LogIn = styled.a`
@@ -25,12 +26,12 @@ const GetStarted = styled.button`
   background: var(--primary-700, #1a56db);
   color: #fff;
 `
-const SignOptions = () => {
+const SignOptionsToggled = () => {
   return (
-    <Options className='sign-options'>
+    <Options>
       <LogIn>Log In</LogIn>
       <GetStarted>Get Started</GetStarted>
     </Options>
   )
 }
-export default SignOptions
+export default SignOptionsToggled

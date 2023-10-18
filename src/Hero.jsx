@@ -8,6 +8,8 @@ const HeroWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   gap: 50px;
+  padding: 96px 0px;
+
   @media (max-width: 767px) {
     display: flex;
     flex-direction: column;
