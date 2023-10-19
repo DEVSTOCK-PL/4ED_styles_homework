@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import Button from "../components/Button";
-import Logotyp from "../assets/Logo.png";
-import github from "../assets/github.png";
-import twitter from "../assets/twitter.png";
-import dribbble from "../assets/dribbble.png";
-import facebook from "../assets/facebook.png";
+
+import {
+  Dribbble,
+  GitHub,
+  Facebook,
+  Twitter,
+  Flowbite,
+} from "../assets/svg_components";
 
 const Container = styled.div`
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: 569px;
   background-color: #1f2a37;
   border-top: 1px solid #374151;
@@ -17,82 +20,65 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: auto;
-    padding-top: 10px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: auto;
-    padding-top: 10px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    max-width: 1280px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: auto;
+    max-width: 1024px;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
     height: auto;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding-top: 10px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
+    height: auto;
+    padding-top: 10px;
   }
 `;
+
 const Content = styled.div`
-  width: 1280px;
+  width: 89%;
+  max-width: 1280;
   height: 409px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 64px;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    padding-top: 10px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 343px;
+    max-width: 768px;
     height: auto;
     padding-top: 10px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
+  @media (max-width: 640px) {
+    max-width: 640px;
     height: auto;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
-    height: auto;
+    padding-top: 10px;
   }
 `;
+
 const NavLinks = styled.div`
-  width: 1280px;
-  height: 221px;
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    flex-direction: column;
-    padding-top: 96px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
     height: auto;
     flex-direction: column;
     padding-top: 96px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    justify-content: center;
-    width: 900px;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
+  @media (max-width: 640px) {
+    width: 343px;
     height: auto;
-    justify-content: space-around;
+    flex-direction: column;
+    padding-top: 96px;
   }
 `;
+
 const LogoAndSocialLinks = styled.div`
   width: 384px;
   height: 124px;
@@ -102,19 +88,20 @@ const LogoAndSocialLinks = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    align-items: start;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
     height: auto;
     align-items: center;
   }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: auto;
+    align-items: start;
+  }
 `;
+
 const Column = styled.div`
-  width: 176px;
+  width: 14%;
   height: 221px;
   display: flex;
   flex-direction: column;
@@ -133,9 +120,10 @@ const Column = styled.div`
     padding-top: 36px;
   }
 `;
+
 const HeadingLinks = styled.div`
-  width: 176px;
-  height: 21px;
+  width: 100%;
+  height: auto;
   color: #ffffff;
   line-height: 21px;
   font-size: 14px;
@@ -146,9 +134,10 @@ const HeadingLinks = styled.div`
     text-align: center;
   }
 `;
+
 const Link = styled.a`
-  width: 176px;
-  height: 24px;
+  width: 100%;
+  height: auto;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -159,6 +148,7 @@ const Link = styled.a`
     text-align: center;
   }
 `;
+
 const LogoFlowbite = styled.div`
   width: 144px;
   height: 36px;
@@ -168,10 +158,7 @@ const LogoFlowbite = styled.div`
   font-weight: 600;
   line-height: 36px;
 `;
-const Svg = styled.svg`
-  width: 32px;
-  height: 32px;
-`;
+
 const CopyRight = styled.div`
   width: 384px;
   height: 24px;
@@ -181,22 +168,23 @@ const CopyRight = styled.div`
   color: #9ca3af;
   text-align: center;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    text-align: left;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
     height: auto;
     text-align: center;
   }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: auto;
+    text-align: left;
+  }
 `;
+
 const SocialLinks = styled.div`
-  width: 156px;
-  height: 24px;
+  width: 160px;
+  height: 28px;
   display: flex;
-  gap: 20px;
+  gap: 15px;
 
   @media (max-width: 640px) {
     width: 156px;
@@ -209,6 +197,18 @@ const SocialLinks = styled.div`
     align-items: center;
   }
 `;
+
+const SocialButton = styled.button`
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+
+  &:active {
+    border: 1px solid #1a56db;
+  }
+`;
+
 const Footer = () => {
   return (
     <Container>
@@ -253,41 +253,23 @@ const Footer = () => {
         </NavLinks>
         <LogoAndSocialLinks>
           <LogoFlowbite>
-            <Svg>
-              <image xlinkHref={Logotyp} />
-            </Svg>
+            <Flowbite />
             Flowbite
           </LogoFlowbite>
           <CopyRight>© 2022 Flowbite, Inc. All rights reserved.</CopyRight>
           <SocialLinks>
-            <Button
-              width="24px"
-              height="24px"
-              backgroundColor="transparent"
-              iconLeft={github}
-              marginRight="0px"
-            />
-            <Button
-              width="24px"
-              height="24px"
-              backgroundColor="transparent"
-              iconLeft={twitter}
-              marginRight="0px"
-            />
-            <Button
-              width="24px"
-              height="24px"
-              backgroundColor="transparent"
-              iconLeft={dribbble}
-              marginRight="0px"
-            />
-            <Button
-              width="24px"
-              height="24px"
-              backgroundColor="transparent"
-              iconLeft={facebook}
-              marginRight="0px"
-            />
+            <SocialButton>
+              <GitHub />
+            </SocialButton>
+            <SocialButton>
+              <Twitter />
+            </SocialButton>
+            <SocialButton>
+              <Dribbble />
+            </SocialButton>
+            <SocialButton>
+              <Facebook />
+            </SocialButton>
           </SocialLinks>
         </LogoAndSocialLinks>
       </Content>

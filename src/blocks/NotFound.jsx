@@ -1,37 +1,31 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: 600px;
   background-color: #111928;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: auto;
-    align-items: center;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: auto;
-    align-items: center;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    max-width: 1280px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: auto;
+    max-width: 1024px;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
-    height: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
   }
 `;
+
 const InfoError = styled.div`
   width: 400px;
-  height: 200px;
+  height: auto;
   text-align: center;
 `;
 

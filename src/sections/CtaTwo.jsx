@@ -1,63 +1,62 @@
 import styled from "styled-components";
 
 import ProgressBar from "../components/ProgressBar";
-import Button from "../components/Button";
-import Title from "../components/Title";
-import TextSupporting from "../components/TextSupporting";
 
-import arrowRightBlue from "../assets/arrowRightBlue.png";
 import image1 from "../assets/foto/mockup2.png";
 import image2 from "../assets/foto/mockup5.png";
 import image3 from "../assets/foto/mockup6.png";
-import share from "../assets/share.png";
+
+import { ArrowRightBlue } from "../assets/svg_components";
+
+const textTitle1 = "Fundraising events";
+const textSupporting1 =
+  "Flowbite helps you connect with friends, family and communities of people who share your interests. ";
+const textTitle2 = "Thank you for supporting in planting trees work.";
+const textSupporting2 =
+  "Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.";
 
 const Container = styled.div`
   background-color: #111928;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: 997px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: auto;
-    padding-top: 10px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: auto;
-    padding-top: 10px;
-  }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: auto;
-    padding-top: 42px;
-    padding-bottom: 42px;
-  }
   @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
+    max-width: 1280px;
     height: auto;
     padding-bottom: 30px;
     padding-top: 30px;
   }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    max-width: 1024px;
+    height: auto;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
+    height: auto;
+    padding-top: 10px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
+    height: auto;
+    padding-top: 10px;
+  }
 `;
+
 const Content = styled.div`
-  width: 1280px;
-  height: 805px;
+  width: 89%;
+  height: auto;
   gap: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    gap: 16px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 643px;
     height: auto;
@@ -65,65 +64,56 @@ const Content = styled.div`
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
+  @media (max-width: 640px) {
+    width: 343px;
     height: auto;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
-    height: auto;
+    gap: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 `;
+
 const Heading = styled.div`
-  width: 676px;
-  height: 121px;
+  width: 53%;
+  height: auto;
   gap: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 643px;
-    height: auto;
-  }
 `;
+
 const Cards = styled.div`
-  width: 1280px;
+  width: 100%;
   height: 593px;
   gap: 48px;
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    flex-direction: column;
-    gap: 16px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 643px;
-    height: auto;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    gap: 20px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
     height: auto;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
+  @media (min-width: 641px) and (max-width: 768px) {
+    width: 643px;
     height: auto;
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: auto;
+    flex-direction: column;
+    gap: 30px;
   }
 `;
+
 const Card = styled.div`
-  width: 616px;
+  width: 48%;
   height: 593px;
   border-radius: 8px;
   border: 1px solid #374151;
@@ -136,11 +126,8 @@ const Card = styled.div`
   box-sizing: border-box;
   gap: 16px;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 616px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 443px;
@@ -148,13 +135,23 @@ const Card = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 `;
+
 const ImgBox = styled.div`
-  width: 552px;
+  width: 90%;
   height: 288px;
   border-radius: 8px;
   overflow: hidden;
 
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+  }
   @media (max-width: 640px) {
     width: 303px;
     height: 288px;
@@ -164,233 +161,173 @@ const ImgBox = styled.div`
     height: 288px;
   }
 `;
+
 const Img = styled.img`
   width: 110%;
   height: 110%;
   border-radius: 8px;
   transform: translateX(-5%);
 `;
+
 const ProgressBarContainer = styled.div`
-  width: 552px;
+  max-width: 552px;
+  width: 90%;
   height: 41px;
 
-  @media (max-width: 640px) {
-    width: 303px;
-    height: 41px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 403px;
     height: 41px;
     margin-bottom: 10px;
   }
-`;
-const Buttons = styled.div`
-  width: 552px;
-  height: 41px;
-  gap: 16px;
-  display: flex;
-
   @media (max-width: 640px) {
-    width: 314px;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 314px;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
+    width: 303px;
+    height: 41px;
   }
 `;
-const titleProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "30px",
-        lineHeight: "37.5px",
-        width: "343px",
-        height: "auto",
-      }
-    : {
-        width: "640px",
-        height: "45px",
-        fontSize: "36px",
-        lineHeight: "45px",
-      };
-
-const textSupportingProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "16px",
-        lineHeight: "24px",
-        width: "343px",
-        height: "auto",
-      }
-    : {
-        width: "640px",
-        height: "60px",
-      };
-
-const title2Props =
-  window.innerWidth <= 640
-    ? {
-        width: "303px",
-        height: "auto",
-      }
-    : window.innerWidth >= 641 && window.innerWidth <= 768
-    ? {
-        width: "403px",
-        height: "auto",
-      }
-    : {
-        width: "552px",
-        height: "23px",
-      };
-
-const textSupporting2Props =
-  window.innerWidth <= 640
-    ? {
-        width: "303px",
-        height: "auto",
-      }
-    : window.innerWidth >= 641 && window.innerWidth <= 768
-    ? {
-        width: "403px",
-        height: "auto",
-      }
-    : {
-        width: "552px",
-        height: "72px",
-      };
-
-const buttonProps =
-  window.innerWidth <= 768
-    ? {
-        width: "303px",
-      }
-    : {
-        width: "121px",
-      };
-
-const button2Props =
-  window.innerWidth <= 768
-    ? {
-        width: "303px",
-      }
-    : {
-        width: "210px",
-      };
 
 const image88 = window.innerWidth <= 768 ? image3 : image2;
+
+const Button = styled.button`
+  background-color: #111928;
+  width: 280px;
+  height: 27px;
+  color: #3f83f8;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  display: flex;
+  gap: 6px;
+`;
+
+const Title = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 800;
+  margin: 0;
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  @media (max-width: 640px) {
+    font-size: 30px;
+    line-height: 37px;
+    min-width: 350px;
+  }
+`;
+
+const Title2 = styled.p`
+  width: 90%;
+  height: auto;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+  padding-top: 8px;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 90%;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+    width: 403px;
+  }
+  @media (max-width: 640px) {
+    font-size: 18px;
+    line-height: 22px;
+    width: 303px;
+  }
+`;
+
+const TextSupporting = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin: 0;
+  color: #9ca3af;
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
+
+const TextSupporting2 = styled.p`
+  width: 90%;
+  height: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+  color: #9ca3af;
+  text-align: left;
+  padding-top: 8px;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 90%;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    width: 403px;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 24px;
+    width: 303px;
+  }
+`;
 
 const CtaTwo = () => {
   return (
     <Container>
       <Content>
         <Heading>
-          <Title
-            text="Fundraising events"
-            textAlign="center"
-            fontSize={titleProps.fontSize}
-            lineHeight={titleProps.lineHeight}
-            width={titleProps.width}
-            height={titleProps.height}
-          />
-          <TextSupporting
-            text="Flowbite helps you connect with friends, family and communities of people who share your interests. "
-            textAlign="center"
-            fontSize={textSupportingProps.fontSize}
-            lineHeight={textSupportingProps.lineHeight}
-            width={textSupportingProps.width}
-            height={textSupportingProps.height}
-          />
+          <Title>{textTitle1}</Title>
+          <TextSupporting>{textSupporting1}</TextSupporting>
         </Heading>
         <Cards>
           <Card>
             <ImgBox>
-              <Img src={image1} />
+              <Img src={image1} alt="Trees plantd" />
             </ImgBox>
             <ProgressBarContainer>
               <ProgressBar donors="3473" colected="276856" goal="400000" />
             </ProgressBarContainer>
-            <Title
-              text="Thank you for supporting in planting trees work. "
-              fontWeight="700"
-              fontSize="18px"
-              lineHeight="22.5px"
-              width={title2Props.width}
-              height={title2Props.height}
-            />
-            <TextSupporting
-              text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
-              fontSize="16px"
-              lineHeight="24px"
-              width={textSupporting2Props.width}
-              height={textSupporting2Props.height}
-            />
-            {/* <Buttons>
-							<Button 
-							description="Donate now"
-							width={buttonProps.width}
-							lineHeight="21px"/>
-							<Button 
-							description="Share this Fundraiser"
-							width={button2Props.width}
-							lineHeight="21px"
-							border="1px solid #4B5563"
-							backgroundColor="#1F2A37" 
-							color="#9CA3AF"
-							iconLeft={share}/>
-						</Buttons> */}
+            <Title2>{textTitle2}</Title2>
+            <TextSupporting2>{textSupporting2}</TextSupporting2>
           </Card>
           <Card>
             <ImgBox>
-              <Img src={image88} />
+              <Img src={image88} alt="Volunteers" />
             </ImgBox>
             <ProgressBarContainer>
               <ProgressBar donors="473" colected="36856" goal="150000" />
             </ProgressBarContainer>
-            <Title
-              text="Thank you for supporting our lifesaving work."
-              fontWeight="700"
-              fontSize="18px"
-              lineHeight="22.5px"
-              width={title2Props.width}
-              height={title2Props.height}
-            />
-            <TextSupporting
-              text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
-              fontSize="16px"
-              lineHeight="24px"
-              width={textSupporting2Props.width}
-              height={textSupporting2Props.height}
-            />
-            {/* <Buttons>
-							<Button 
-							description="Donate now"
-							width={buttonProps.width}
-							lineHeight="21px"/>
-							<Button 
-							description="Share this Fundraiser"
-							width={button2Props.width}
-							lineHeight="21px"
-							border="1px solid #4B5563"
-							backgroundColor="#1F2A37" 
-							color="#9CA3AF"
-							iconLeft={share}/>
-						</Buttons> */}
+            <Title2>{textTitle2}</Title2>
+            <TextSupporting2>{textSupporting2}</TextSupporting2>
           </Card>
         </Cards>
-        <Button
-          description="View all fundraising events"
-          backgroundColor="#111928"
-          width="280px"
-          height="27px"
-          color="#3F83F8"
-          iconRight={arrowRightBlue}
-          fontSize="18px"
-          fontWeight="400"
-        />
+        <Button>
+          View all fundraising events
+          <ArrowRightBlue />
+        </Button>
       </Content>
     </Container>
   );

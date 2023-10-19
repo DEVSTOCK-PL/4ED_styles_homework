@@ -1,5 +1,8 @@
 body {
   background-color: #333;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .app {
@@ -7,7 +10,7 @@ body {
   margin: 0 auto;
   font-family: Inter;
   text-align: center;
-  color:#FFF;
+  color: #fff;
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -1,34 +1,34 @@
 import styled from "styled-components";
-import Title from "../components/Title";
-import TextSupporting from "../components/TextSupporting";
 
 const Container = styled.div`
-  width: 1440px;
-  height: 213px;
+  max-width: 1440px;
+  width: 100%;
+  height: 190px;
   background-color: #111928;
   display: flex;
   justify-content: center;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: 360px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: 360px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    max-width: 1280px;
+    height: 190px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: 180px;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
+    max-width: 1024px;
     height: auto;
-    padding-bottom: 30px;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
+    height: 360px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
+    height: 360px;
   }
 `;
+
 const Row = styled.div`
-  width: 1024px;
+  max-width: 1024px;
+  width: 78%;
   height: 117px;
   background-color: #1f2a37;
   border: 1px solid #374151;
@@ -37,9 +37,12 @@ const Row = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 328px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 85%;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 65%;
+    height: auto;
     flex-direction: column;
     justify-content: space-around;
     margin-top: 10px;
@@ -51,9 +54,12 @@ const Row = styled.div`
     justify-content: space-around;
     margin-top: 10px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
-    height: 117px;
+  @media (max-width: 640px) {
+    width: 343px;
+    height: 328px;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 10px;
   }
 `;
 const Stat = styled.div`
@@ -65,11 +71,9 @@ const Stat = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 311px;
-    height: 62px;
-    flex-direction: column;
+  @media (min-width: 769px) and (max-width: 1024px) {
     border-right: none;
+    padding-top: 20px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 311px;
@@ -77,124 +81,77 @@ const Stat = styled.div`
     flex-direction: column;
     border-right: none;
   }
-`;
-const StatEnd = styled.div`
-  width: 248px;
-  height: 69px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
   @media (max-width: 640px) {
     width: 311px;
     height: 62px;
     flex-direction: column;
     border-right: none;
   }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 311px;
-    height: 62px;
-    flex-direction: column;
-    border-right: none;
+`;
+const StatEnd = styled(Stat)`
+  border-right: none;
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    padding-bottom: 20px;
   }
 `;
 
-const titleProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "30px",
-        lineHeight: "37.5px",
-        width: "311px",
-        height: "38px",
-        textAlign: "center",
-      }
-    : {
-        fontSize: "36px",
-        lineHeight: "45px",
-        width: "248",
-        height: "45px",
-      };
+const Title = styled.p`
+  width: 100%;
+  color: #fff;
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  @media (max-width: 640px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+`;
+
+const TextSupporting = styled.p`
+  width: 100%;
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+`;
 
 const SocialProof = () => {
   return (
     <Container>
       <Row>
         <Stat>
-          <Title
-            text="104M"
-            fontSize={titleProps.fontSize}
-            lineHeight={titleProps.lineHeight}
-            width={titleProps.width}
-            height={titleProps.height}
-            textAlign={titleProps.textAlign}
-          />
-          <TextSupporting
-            text="Trees planted"
-            lineHeight="24px"
-            fontSize="16px"
-            color="#9CA3AF"
-            height="24px"
-            width="248"
-            textAlign="center"
-          />
+          <Title>104M</Title>
+          <TextSupporting>Trees planted</TextSupporting>
         </Stat>
         <Stat>
-          <Title
-            text="20k+"
-            fontSize={titleProps.fontSize}
-            lineHeight={titleProps.lineHeight}
-            width={titleProps.width}
-            height={titleProps.height}
-            textAlign={titleProps.textAlign}
-          />
-          <TextSupporting
-            text="Partners & Donors"
-            lineHeight="24px"
-            fontSize="16px"
-            color="#9CA3AF"
-            height="24px"
-            width="248"
-            textAlign="center"
-          />
+          <Title>20k+</Title>
+          <TextSupporting>Partners & Donors</TextSupporting>
         </Stat>
         <Stat>
-          <Title
-            text="90M"
-            fontSize={titleProps.fontSize}
-            lineHeight={titleProps.lineHeight}
-            width={titleProps.width}
-            height={titleProps.height}
-            textAlign={titleProps.textAlign}
-          />
-          <TextSupporting
-            text="Tonnes of Carbon Stored"
-            lineHeight="24px"
-            fontSize="16px"
-            color="#9CA3AF"
-            height="24px"
-            width="248"
-            textAlign="center"
-          />
+          <Title>90M</Title>
+          <TextSupporting>Tonnes of Carbon Stored</TextSupporting>
         </Stat>
         <StatEnd>
-          <Title
-            text="50+"
-            fontSize={titleProps.fontSize}
-            lineHeight={titleProps.lineHeight}
-            width={titleProps.width}
-            height={titleProps.height}
-            textAlign={titleProps.textAlign}
-          />
-          <TextSupporting
-            text="People-Powered Projects"
-            lineHeight="24px"
-            fontSize="16px"
-            color="#9CA3AF"
-            height="24px"
-            width="248"
-            textAlign="center"
-          />
+          <Title>50+</Title>
+          <TextSupporting>People-Pawered Project</TextSupporting>
         </StatEnd>
       </Row>
     </Container>

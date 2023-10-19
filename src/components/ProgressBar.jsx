@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 552px;
+  width: 100%;
   height: 41px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   @media (max-width: 640px) {
-    width: 303px;
+    width: 100%;
   }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 303px;
+    width: 100%;
   }
 `;
 const Label = styled.div`
-  width: 552px;
+  width: 100%;
   height: 27px;
   display: flex;
   justify-content: space-between;
@@ -64,7 +64,7 @@ const RightItem = styled.div`
   text-align: right;
 `;
 const BarComplite = styled.div`
-  width: 552px;
+  width: 100%;
   height: 10px;
   border-radius: 2px;
   background-color: #374151;

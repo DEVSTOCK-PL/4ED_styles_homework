@@ -2,29 +2,13 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const SliderContainer = styled.div`
-  width: ${(props) => props.width || "576px"};
-  height: ${(props) => props.height || "360px"};
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
-
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 176px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 343px;
-    height: 176px;
-  }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 400px;
-    height: 250px;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 450px;
-    height: 300px;
-  }
 `;
+
 const Image = styled.img`
   position: absolute;
   transform: translateX(-50%);
@@ -34,6 +18,7 @@ const Image = styled.img`
   transition: opacity 2s;
   ${({ active }) => active && `opacity: 1;`}
 `;
+
 const CircleContainer = styled.div`
   position: absolute;
   left: 50%;
@@ -42,6 +27,7 @@ const CircleContainer = styled.div`
   display: flex;
   gap: 16px;
 `;
+
 const Circle = styled.div`
   background-color: ${({ active }) => (active ? "#FFFFFF" : "#D1D5DB")};
   width: 12px;
@@ -49,7 +35,7 @@ const Circle = styled.div`
   border-radius: 12px;
 `;
 
-function Slider({ images, width, height }) {
+function Slider({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -60,7 +46,7 @@ function Slider({ images, width, height }) {
   }, [images]);
 
   return (
-    <SliderContainer width={width} height={height}>
+    <SliderContainer>
       {images.map((image, index) => (
         <Image key={index} src={image} active={index === currentIndex} />
       ))}

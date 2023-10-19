@@ -1,80 +1,59 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import Button from "../components/Button";
-import Logotyp from "../assets/Logo.png";
-import menu from "../assets/menu.png";
+import { Menu, Flowbite } from "../assets/svg_components";
 
 const NavbarContainer = styled.div`
   background-color: #111928;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: 65px;
   display: flex;
   justify-content: center;
   align-items: end;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: 60px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: 60px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    max-width: 1280px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: 60px;
+    max-width: 1024px;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
-    height: 65px;
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
   }
 `;
 const NavbarContent = styled.div`
   display: flex;
   align-items: end;
-  width: 1280px;
+  width: 89%;
+  max-width: 1280px;
   height: 41px;
-  gap: 64px;
-
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 36px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 643px;
-    height: 60px;
-    justify-content: space-between;
-  }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
-    height: 60px;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
-    height: 65px;
-    justify-content: space-between;
-  }
+  justify-content: space-between;
 `;
+
 const Logo = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 102px;
   height: 36px;
-  gap: 12px;
   font-family: Inter;
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0em;
   text-align: left;
+  padding-bottom: 4px;
 `;
 const Svg = styled.svg`
   width: 32px;
   height: 32px;
 `;
 const LogIn = styled.div`
+  width: 180px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
@@ -87,47 +66,52 @@ const LogIn = styled.div`
     display: none;
   }
 `;
-const Menu = styled.div`
-  width: 177px;
-  height: 33px;
+
+const MenuBox = styled.div`
+  width: 41px;
+  height: 41px;
   display: none;
 
-  @media (max-width: 640px) {
-    display: block;
-    display: flex;
-    justify-content: end;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     display: block;
     display: flex;
     justify-content: end;
   }
+  @media (max-width: 640px) {
+    display: block;
+    display: flex;
+    justify-content: end;
+  }
 `;
+
 const Links = styled.div`
   display: flex;
   align-items: end;
   justify-content: start;
-  width: 876px;
+  width: 60%;
+  max-width: 876px;
   height: 24px;
   gap: 32px;
   padding-bottom: 8px;
+  font-size: 18px;
 
-  @media (max-width: 640px) {
-    display: none;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    gap: 20px;
+    font-size: 18px;
   }
-
+  @media (min-width: 769px) and (max-width: 1024px) {
+    gap: 10px;
+    font-size: 12px;
+    margin-left: 10px;
+  }
   @media (min-width: 641px) and (max-width: 768px) {
     display: none;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    gap: 20px;
-    width: 500px;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    gap: 20px;
-    width: 500px;
+  @media (max-width: 640px) {
+    display: none;
   }
 `;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: #fff;
@@ -144,6 +128,22 @@ const LinkItem = styled.div`
     border-radius: 5px;
   }
 `;
+const Button = styled.button`
+  width: 117px;
+  height: 41px;
+  background: #1a56db;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+`;
+const MenuButton = styled.button`
+  height: 41px;
+  width: 41px;
+  background-color: transparent;
+  border: 1px solid #111928;
+`;
 
 function Navbar() {
   const { pathname } = useLocation();
@@ -152,9 +152,7 @@ function Navbar() {
     <NavbarContainer>
       <NavbarContent>
         <Logo>
-          <Svg>
-            <image xlinkHref={Logotyp} alt="Logo Firmy" />
-          </Svg>
+          <Flowbite />
           Logo
         </Logo>
         <Links>
@@ -176,18 +174,13 @@ function Navbar() {
         </Links>
         <LogIn>
           Log In
-          <Button description="Get Started" />
+          <Button>Get Started</Button>
         </LogIn>
-        <Menu>
-          <Button
-            iconLeft={menu}
-            backgroundColor="transparent"
-            width="32px"
-            height="32px"
-            marginRight="0px"
-            marginLeft="0px"
-          />
-        </Menu>
+        <MenuBox>
+          <MenuButton>
+            <Menu />
+          </MenuButton>
+        </MenuBox>
       </NavbarContent>
     </NavbarContainer>
   );

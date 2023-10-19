@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
-import Button from "../components/Button";
-import Title from "../components/Title";
-import TextSupporting from "../components/TextSupporting";
 import Slider from "../components/Slider";
 
-import videoCamera from "../assets/videoCamera.png";
 import image1 from "../assets/foto/mockup4.png";
 import image2 from "../assets/foto/mockup3.png";
 import image3 from "../assets/foto/mockup1.png";
-import intel from "../assets/intel.png";
-import FedEx from "../assets/FedEx.png";
-import visa from "../assets/visa.png";
-import Disney from "../assets/Disney.png";
+
+import {
+  VideoCamera,
+  Intel,
+  FedEx,
+  Visa,
+  Disney,
+} from "../assets/svg_components";
 
 const images = [image1, image2, image3];
 const textTitle = "Making earth cooler for people, nature, climate";
@@ -20,147 +20,181 @@ const supportingText =
   "Protecting the planet and its natural resources for future generations, by reducing pollution, promoting sustainability, and coserving energy and resources.";
 
 const HeroContainer = styled.div`
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: 626px;
   background-color: #111928;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: 638px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: 638px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    max-width: 1280px;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: 484px;
+    max-width: 1024px;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
     height: auto;
     padding-top: 40px;
     padding-bottom: 40px;
   }
 `;
 const HeroContent = styled.div`
-  width: 1280px;
+  width: 89%;
+  max-width: 1280px;
   height: 434px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 638px;
-    flex-direction: column;
-    justify-content: space-around;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    height: auto;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: auto;
   }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 643px;
-    height: 638px;
+    height: auto;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
-    height: 434px;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
+  @media (max-width: 640px) {
     height: auto;
+    flex-direction: column;
+    justify-content: space-around;
   }
 `;
 const LeftItem = styled.div`
-  width: 576px;
-  height: 434px;
+  width: 45%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 382px;
-    flex-direction: column;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 343px;
-    height: 382px;
-    flex-direction: column;
+    width: 100%;
     align-items: center;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 450px;
-    height: 384px;
+  @media (max-width: 640px) {
+    width: 100%;
+    align-items: center;
   }
 `;
-const TitleDesc = styled.div`
-  margin: 0;
-  padding: 0;
-  width: 576px;
-  height: 206px;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 206px;
+const Title = styled.p`
+  width: 100%;
+  color: #fff;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 800;
+  text-align: left;
+  margin: 0;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 40px;
+    line-height: 42px;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: 34px;
+    line-height: 36px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 343px;
-    height: 206px;
+    font-size: 30px;
+    line-height: 30px;
+    max-width: 343px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 450px;
-    gap: 10px;
+  @media (max-width: 640px) {
+    font-size: 30px;
+    line-height: 30px;
+    max-width: 343px;
   }
 `;
+
+const TextSupporting = styled.p`
+  width: 100%;
+  color: #9ca3af;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: left;
+  margin: 0;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 343px;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 343px;
+  }
+`;
+
 const Buttons = styled.div`
-  width: 380px;
+  width: 100%;
   height: 48px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 16px;
   margin-top: 15px;
   margin-bottom: 15px;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 112px;
-    gap: 16px;
-    flex-direction: column;
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 343px;
-    height: 112px;
-    gap: 16px;
-    flex-direction: column;
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
   @media (min-width: 769px) and (max-width: 1024px) {
     margin-top: 15px;
     margin-bottom: 10px;
   }
+  @media (min-width: 641px) and (max-width: 768px) {
+    width: 343px;
+    height: 112px;
+    gap: 16px;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: 112px;
+    gap: 16px;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
 `;
+
 const SponsorsContainer = styled.div`
-  width: 576px;
+  width: 100%;
   height: 116px;
   padding-top: 32px;
   border-top: 1px solid #374151;
 
-  @media (max-width: 640px) {
-    width: 340px;
-    height: 32px;
-    padding-top: 0;
-    border-top: none;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: auto;
+    padding-top: 16px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 340px;
@@ -168,10 +202,11 @@ const SponsorsContainer = styled.div`
     padding-top: 0;
     border-top: none;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 450px;
-    height: auto;
-    padding-top: 16px;
+  @media (max-width: 640px) {
+    width: 340px;
+    height: 32px;
+    padding-top: 0;
+    border-top: none;
   }
 `;
 const Sponsors = styled.p`
@@ -181,62 +216,75 @@ const Sponsors = styled.p`
   font-weight: 500;
   text-align: left;
   margin: 0;
-
-  @media (max-width: 640px) {
+  @media (min-width: 641px) and (max-width: 768px) {
     display: none;
   }
-  @media (min-width: 641px) and (max-width: 768px) {
+  @media (max-width: 640px) {
     display: none;
   }
 `;
 const RightItem = styled.div`
-  width: 576px;
-  height: 360px;
+  max-width: 576px;
+  width: 45%;
+  height: 83%;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: 176px;
+  @media (min-width: 1101px) and (max-width: 1280px) {
+    max-width: 513px;
+    height: 320px;
+  }
+  @media (min-width: 1025px) and (max-width: 1100px) {
+    max-width: 440px;
+    height: 275px;
+  }
+  @media (min-width: 911px) and (max-width: 1024px) {
+    max-width: 410px;
+    height: 256px;
+  }
+  @media (min-width: 769px) and (max-width: 910px) {
+    max-width: 364px;
+    height: 228px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
-    height: 176px;
+    height: 214px;
+    margin-top: 30px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 400px;
-    display: flex;
-    align-items: center;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 450px;
-    height: auto;
+  @media (max-width: 640px) {
+    width: 343px;
+    height: 214px;
+    margin-top: 30px;
   }
 `;
 const SvgContainer = styled.div`
-  width: 576px;
+  width: 100%;
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
   gap: 45px;
   position: relative;
 
-  @media (max-width: 640px) {
-    width: 340px;
-    height: 32px;
-    margin-top: 0;
-    gap: 10px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 340px;
-    height: 32px;
-    margin-top: 0;
-    gap: 10px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    gap: 38px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 450px;
     margin-top: 0px;
+    gap: 20px;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    height: 32px;
+    margin-top: 0;
+    gap: 10px;
+  }
+  @media (max-width: 640px) {
+    height: 32px;
+    margin-top: 0;
+    gap: 10px;
   }
 `;
+
 const Svg = styled.svg`
   padding-top: 10px;
   height: 48px;
@@ -244,9 +292,7 @@ const Svg = styled.svg`
   align-items: center;
   position: relative;
 
-  @media (max-width: 640px) {
-    padding-top: 0px;
-    width: 80px;
+  @media (min-width: 769px) and (max-width: 1024px) {
     height: 32px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
@@ -254,10 +300,13 @@ const Svg = styled.svg`
     width: 80px;
     height: 32px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
+  @media (max-width: 640px) {
+    padding-top: 0px;
+    width: 80px;
     height: 32px;
   }
 `;
+
 const Image = styled.image`
   width: 100%;
   position: absolute;
@@ -265,106 +314,59 @@ const Image = styled.image`
   vertical-align: bottom;
 `;
 
-const titleProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "30px",
-        lineHeight: "30px",
-        width: "343px",
-        height: "90px",
-      }
-    : window.innerWidth >= 769 && window.innerWidth <= 1024
-    ? {
-        width: "450px",
-        height: "auto",
-        fontSize: "40px",
-      }
-    : {
-        fontSize: "48px",
-        lineHeight: "48px",
-      };
+const BlueButton = styled.button`
+  width: 182px;
+  height: 48px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #1a56db;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-const textSupportingProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "16px",
-        lineHeight: "24px",
-        width: "343px",
-        height: "96px",
-      }
-    : window.innerWidth >= 769 && window.innerWidth <= 1024
-    ? {
-        width: "450px",
-        height: "auto",
-        fontSize: "18px",
-      }
-    : {};
+  &:active {
+    border: 1px solid #1a56db;
+  }
 
-const buttonProps =
-  window.innerWidth <= 768
-    ? {
-        width: "343px",
-      }
-    : {
-        width: "182px",
-      };
+  @media (min-width: 641px) and (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+`;
+
+const GreyButton = styled(BlueButton)`
+  background-color: #1f2a37;
+  color: #9ca3af;
+  border: 1px solid #4b5563;
+  display: flex;
+  gap: 6px;
+`;
 
 const Hero = () => {
   return (
     <HeroContainer>
       <HeroContent>
         <LeftItem>
-          <TitleDesc>
-            <Title
-              text={textTitle}
-              fontSize={titleProps.fontSize}
-              lineHeight={titleProps.lineHeight}
-              width={titleProps.width}
-              height={titleProps.height}
-            />
-            <TextSupporting
-              text={supportingText}
-              fontSize={textSupportingProps.fontSize}
-              lineHeight={textSupportingProps.lineHeight}
-              width={textSupportingProps.width}
-              height={textSupportingProps.height}
-            />
-          </TitleDesc>
+          <Title>{textTitle}</Title>
+          <TextSupporting>{supportingText}</TextSupporting>
           <Buttons>
-            <Button
-              description="Donate now"
-              height="48px"
-              width={buttonProps.width}></Button>
-            <Button
-              description="Learn more"
-              backgroundColor="#1F2A37"
-              height="48px"
-              width={buttonProps.width}
-              color="#9CA3AF"
-              border="1px solid #4B5563"
-              iconLeft={videoCamera}></Button>
+            <BlueButton>Donate now</BlueButton>
+            <GreyButton>
+              <VideoCamera />
+              Learn more
+            </GreyButton>
           </Buttons>
           <SponsorsContainer>
             <Sponsors>Sponsors:</Sponsors>
             <SvgContainer>
-              <Svg>
-                <Image xlinkHref={intel} alt="Logo" />
-              </Svg>
-              <Svg>
-                <g transform="translate(0, +10)">
-                  <Image xlinkHref={FedEx} alt="Logo" />
-                </g>
-              </Svg>
-              <Svg>
-                <g transform="translate(+3, +6)">
-                  <Image xlinkHref={visa} alt="Logo" />
-                </g>
-              </Svg>
-              <Svg>
-                <g transform="translate(0, +3)">
-                  <Image xlinkHref={Disney} alt="Logo" />
-                </g>
-              </Svg>
+              <Intel />
+              <FedEx />
+              <Visa />
+              <Disney />
             </SvgContainer>
           </SponsorsContainer>
         </LeftItem>
