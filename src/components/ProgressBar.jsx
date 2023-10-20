@@ -14,6 +14,7 @@ const Container = styled.div`
     width: 100%;
   }
 `;
+
 const Label = styled.div`
   width: 100%;
   height: 27px;
@@ -29,6 +30,7 @@ const Label = styled.div`
     width: 403px;
   }
 `;
+
 const LeftItem = styled.div`
   width: 178px;
   height: 27px;
@@ -36,6 +38,7 @@ const LeftItem = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
 const Sum = styled.div`
   width: 86px;
   height: 27px;
@@ -45,6 +48,7 @@ const Sum = styled.div`
   line-height: 27px;
   text-align: left;
 `;
+
 const Goal = styled.div`
   width: 84px;
   height: 21px;
@@ -54,6 +58,7 @@ const Goal = styled.div`
   color: #9ca3af;
   text-align: left;
 `;
+
 const RightItem = styled.div`
   width: 116px;
   height: 18px;
@@ -63,6 +68,7 @@ const RightItem = styled.div`
   font-size: 12px;
   text-align: right;
 `;
+
 const BarComplite = styled.div`
   width: 100%;
   height: 10px;
@@ -77,6 +83,7 @@ const BarComplite = styled.div`
     width: 403px;
   }
 `;
+
 const BarProgress = styled.div`
   width: ${(props) => props.progress}%;
   height: 10px;

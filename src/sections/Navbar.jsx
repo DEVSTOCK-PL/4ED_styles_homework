@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
 import { Menu, Flowbite } from "../assets/svg_components";
+import styled from "styled-components";
 
 const NavbarContainer = styled.div`
   background-color: #111928;
@@ -24,6 +24,7 @@ const NavbarContainer = styled.div`
     max-width: 640px;
   }
 `;
+
 const NavbarContent = styled.div`
   display: flex;
   align-items: end;
@@ -46,10 +47,7 @@ const Logo = styled.div`
   text-align: left;
   padding-bottom: 4px;
 `;
-const Svg = styled.svg`
-  width: 32px;
-  height: 32px;
-`;
+
 const LogIn = styled.div`
   width: 180px;
   display: flex;
@@ -88,7 +86,7 @@ const Links = styled.div`
   display: flex;
   align-items: end;
   justify-content: start;
-  width: 60%;
+  width: 57%;
   max-width: 876px;
   height: 24px;
   gap: 32px;
@@ -96,11 +94,11 @@ const Links = styled.div`
   font-size: 18px;
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    gap: 20px;
-    font-size: 18px;
+    gap: 15px;
+    font-size: 16px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    gap: 10px;
+    gap: 8px;
     font-size: 12px;
     margin-left: 10px;
   }
@@ -120,6 +118,7 @@ const StyledLink = styled(Link)`
     color: #1a56db;
   }
 `;
+
 const LinkItem = styled.div`
   padding: 4px;
 
@@ -128,6 +127,7 @@ const LinkItem = styled.div`
     border-radius: 5px;
   }
 `;
+
 const Button = styled.button`
   width: 117px;
   height: 41px;
@@ -138,6 +138,7 @@ const Button = styled.button`
   line-height: 21px;
   font-weight: 500;
 `;
+
 const MenuButton = styled.button`
   height: 41px;
   width: 41px;

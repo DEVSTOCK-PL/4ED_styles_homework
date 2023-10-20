@@ -1,29 +1,31 @@
 import styled from "styled-components";
 
-import Title from "../components/Title";
-import TextSupporting from "../components/TextSupporting";
-import Button from "../components/Button";
+import {
+  ArrowRightBlue,
+  ExternalLink,
+  Stripe,
+  Intel,
+  FedEx,
+  CocaCola,
+  Disney,
+  Spotify,
+  Tesla,
+  Twitch,
+  Shell,
+  Netflix,
+  Nestle,
+  Bmw,
+} from "../assets/svg_components";
 
-import arrowRightBlue from "../assets/arrowRightBlue.png";
-import externalLink from "../assets/externalLink.png";
-
-import Stripe from "../assets/Stripe.png";
-import intel from "../assets/intel.png";
-import FedEx from "../assets/FedEx.png";
-import cocacola from "../assets/cocacola.png";
-import Disney from "../assets/Disney.png";
-import Spotify from "../assets/Spotify.png";
-import Tesla from "../assets/Tesla.png";
-import twitch from "../assets/twitch.png";
-import Shell from "../assets/Shell.png";
-import netflix from "../assets/netflix.png";
-import Nestle from "../assets/Nestle.png";
-import bmw from "../assets/bmw.png";
+const text1 = "Donors, Partners & Sponsors";
+const text2 =
+  "Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value.";
 
 const Container = styled.div`
   background-color: #1f2a37;
-  width: 1440px;
-  height: 877px;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -32,27 +34,21 @@ const Container = styled.div`
   border-top: 1px solid #374151;
   border-bottom: 1px solid #374151;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: auto;
-    padding-top: 36px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: auto;
-    padding-top: 36px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    max-width: 1280px;
+    padding-top: 66px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: auto;
-    padding-bottom: 46px;
+    max-width: 1024px;
     padding-top: 46px;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
-    height: auto;
-    padding-bottom: 40px;
-    padding-top: 66px;
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
+    padding-top: 36px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
+    padding-top: 36px;
   }
 `;
 const Haeding = styled.div`
@@ -64,30 +60,25 @@ const Haeding = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
     height: auto;
   }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: auto;
+  }
 `;
+
 const Logos = styled.div`
-  width: 1280px;
-  height: 460px;
+  width: 89%;
+  height: auto;
   gap: 32px;
   display: flex;
   align-items: space-between;
   flex-direction: column;
+  padding-bottom: 50px;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 543px;
     height: auto;
@@ -95,66 +86,61 @@ const Logos = styled.div`
     justify-content: center;
     gap: 5px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
+  @media (max-width: 640px) {
+    width: 443px;
     height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
   }
 `;
+
 const Row = styled.div`
-  width: 1280px;
+  width: 100%;
   height: 132px;
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 640px) {
-    width: 343px;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 100%;
     height: auto;
-    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: space-between;
   }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 543px;
+    width: 443px;
     height: auto;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: space-between;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
+  @media (max-width: 640px) {
+    width: 443px;
     height: auto;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-items: space-between;
   }
 `;
+
 const Card = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
   flex-direction: column;
-  width: 320px;
+  width: 180px;
   height: 132px;
   gap: 20px;
 
-  @media (max-width: 640px) {
-    width: 142px;
-    height: 132px;
-    margin-bottom: 30px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 242px;
-    height: 132px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    gap: 25px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 120px;
-    height: auto;
-    gap: 7px;
+  @media (max-width: 640px) {
+    padding-bottom: 40px;
+    gap: 25px;
   }
 `;
-const Svg = styled.svg`
-  text-align: center;
-  height: 54px;
-`;
+
 const P = styled.p`
   line-height: 20px;
   color: #6b7280;
@@ -164,303 +150,200 @@ const P = styled.p`
   padding: 0;
   margin: 0;
 `;
-const Image = styled.image`
-  height: 44px;
-  transform: translateX(+25%);
-`;
-const titleProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "30px",
-        lineHeight: "37.5px",
-        width: "343px",
-        height: "auto",
-      }
-    : {
-        fontSize: "36px",
-        lineHeight: "45px",
-        width: "auto",
-        height: "45px",
-      };
 
-const textSupportingProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "16px",
-        lineHeight: "24px",
-        width: "343px",
-        height: "auto",
-      }
-    : {
-        fontSize: "20px",
-        lineHeight: "30px",
-        width: "650px",
-        height: "60px",
-      };
+const Title1 = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 800;
+  margin: 0;
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  @media (max-width: 640px) {
+    font-size: 30px;
+    line-height: 37px;
+    min-width: 350px;
+  }
+`;
+
+const TextSupporting1 = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin: 0;
+  color: #9ca3af;
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
+
+const TransparentButton = styled.button`
+  width: 188px;
+  height: 24px;
+  border-radius: 8px;
+  color: #1c64f2;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border: none;
+  gap: 8px;
+  margin-left: 0;
+  padding-left: 0;
+
+  &:active {
+    color: #fff;
+  }
+`;
+
+const GrayButton = styled.button`
+  width: 122px;
+  height: 34px;
+  border-radius: 8px;
+  color: #9ca3af;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4b5563;
+  gap: 8px;
+  margin-left: 0;
+  padding-left: 0;
+
+  &:active {
+    color: #fff;
+  }
+`;
 
 const CustomerLogos = () => {
   return (
     <Container>
       <Haeding>
-        <Title
-          text="Donors, Partners & Sponsors"
-          textAlign="center"
-          fontSize={titleProps.fontSize}
-          lineHeight={titleProps.lineHeight}
-          width={titleProps.width}
-          height={titleProps.height}
-        />
-        <TextSupporting
-          text="Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value."
-          textAlign="center"
-          fontSize={textSupportingProps.fontSize}
-          lineHeight={textSupportingProps.lineHeight}
-          width={textSupportingProps.width}
-          height={textSupportingProps.height}
-        />
-        <Button
-          description="Become a sponsor"
-          backgroundColor="#1F2A37"
-          width="188px"
-          height="24px"
-          color="#3F83F8"
-          iconRight={arrowRightBlue}
-          fontSize="16px"
-        />
+        <Title1>{text1}</Title1>
+        <TextSupporting1>{text2}</TextSupporting1>
+        <TransparentButton>
+          Become a sponsor
+          <ArrowRightBlue />
+        </TransparentButton>
       </Haeding>
       <Logos>
         <Row>
           <Card>
-            <Svg>
-              <g transform="translate(+38)">
-                <Image xlinkHref={Stripe} alt="Logo" />
-              </g>
-            </Svg>
+            <Stripe />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(+13)">
-                <Image xlinkHref={Spotify} alt="Logo" />
-              </g>
-            </Svg>
+            <Spotify />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(+5)">
-                <Image xlinkHref={Tesla} alt="Logo" />
-              </g>
-            </Svg>
+            <Tesla />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(+11)">
-                <Image xlinkHref={twitch} alt="Logo" />
-              </g>
-            </Svg>
+            <Twitch />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
         </Row>
         <Row>
           <Card>
-            <Svg>
-              <g transform="translate(+25)">
-                <Image xlinkHref={intel} alt="Logo" />
-              </g>
-            </Svg>
+            <Intel />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(-2)">
-                <Image xlinkHref={Shell} alt="Logo" />
-              </g>
-            </Svg>
+            <Shell />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(-2)">
-                <Image xlinkHref={netflix} alt="Logo" />
-              </g>
-            </Svg>
+            <Netflix />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(-2)">
-                <Image xlinkHref={Nestle} alt="Logo" />
-              </g>
-            </Svg>
+            <Nestle />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
         </Row>
         <Row>
           <Card>
-            <Svg>
-              <g transform="translate(+2)">
-                <Image xlinkHref={FedEx} alt="Logo" />
-              </g>
-            </Svg>
+            <FedEx />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(+18)">
-                <Image xlinkHref={Disney} alt="Logo" />
-              </g>
-            </Svg>
+            <Disney />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(+52)">
-                <Image xlinkHref={bmw} alt="Logo" />
-              </g>
-            </Svg>
+            <Bmw />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
           <Card>
-            <Svg>
-              <g transform="translate(+12)">
-                <Image xlinkHref={cocacola} alt="Logo" />
-              </g>
-            </Svg>
+            <CocaCola />
             <P>Partner since 2015</P>
-            <Button
-              iconLeft={externalLink}
-              description="Visit website"
-              lineHeight="18px"
-              fontSize="12px"
-              color="#9CA3AF"
-              width="122px"
-              height="34px"
-              border="1px solid #4B5563"
-              backgroundColor="#1F2A37"
-            />
+            <GrayButton>
+              <ExternalLink />
+              Visit website
+            </GrayButton>
           </Card>
         </Row>
       </Logos>

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Button from "./Button";
 
 const Form = styled.div`
-  width: 640px;
+  width: 100%;
+  max-width: 640px;
   height: 478px;
   display: flex;
   flex-direction: column;
@@ -10,30 +10,32 @@ const Form = styled.div`
   background-color: #111928;
   justify-content: space-between;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    padding-bottom: 30px;
-    padding-top: 10px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
     padding-bottom: 30px;
     padding-top: 10px;
   }
+  @media (max-width: 640px) {
+    width: 343px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  }
 `;
+
 const InputBox = styled.div`
-  width: 640px;
+  width: 99%;
   height: auto;
 
-  @media (max-width: 640px) {
-    width: 343px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
   }
+  @media (max-width: 640px) {
+    width: 343px;
+  }
 `;
+
 const Label = styled.div`
-  width: 640px;
+  width: 100%;
   height: 21px;
   font-weight: 500;
   font-size: 14px;
@@ -41,17 +43,17 @@ const Label = styled.div`
   text-align: left;
   margin-bottom: 8px;
 
-  @media (max-width: 640px) {
+  @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
   }
-  @media (min-width: 641px) and (max-width: 768px) {
+  @media (max-width: 640px) {
     width: 343px;
   }
 `;
 
 const Input = styled.input`
   height: 52px;
-  width: 635px;
+  width: 100%;
   background-color: #374151;
   border: 1px solid #4b5563;
   border-radius: 8px;
@@ -68,16 +70,16 @@ const Input = styled.input`
     color: #9ca3af;
   }
 
-  @media (max-width: 640px) {
+  @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;
   }
-  @media (min-width: 641px) and (max-width: 768px) {
+  @media (max-width: 640px) {
     width: 343px;
   }
 `;
 const Textarea = styled.textarea`
   height: 162px;
-  width: 635px;
+  width: 100%;
   background-color: #374151;
   border: 1px solid #4b5563;
   border-radius: 8px;
@@ -95,6 +97,25 @@ const Textarea = styled.textarea`
     width: 343px;
   }
 `;
+
+const BlueButton = styled.button`
+  width: 139px;
+  height: 41px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: ${(props) => (props.isDisabled ? "red" : "#1A56DB")};
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    border: ${(props) =>
+      props.isDisabled ? "1px solid red" : "1px solid #1a56db"};
+  }
+`;
+
 const ContactForm = () => {
   return (
     <Form>
@@ -110,12 +131,7 @@ const ContactForm = () => {
         <Label>Your message</Label>
         <Textarea rows="6" cols="20"></Textarea>
       </InputBox>
-      <Button
-        description="Send message"
-        width="139px"
-        backgroundColor="#1C63F2"
-        lineHeight="21px"
-      />
+      <BlueButton>Send message</BlueButton>
     </Form>
   );
 };

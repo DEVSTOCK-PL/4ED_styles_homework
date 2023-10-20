@@ -8,6 +8,8 @@ import image3 from "../assets/foto/mockup6.png";
 
 import { ArrowRightBlue } from "../assets/svg_components";
 
+const image88 = window.innerWidth <= 768 ? image3 : image2;
+
 const textTitle1 = "Fundraising events";
 const textSupporting1 =
   "Flowbite helps you connect with friends, family and communities of people who share your interests. ";
@@ -184,8 +186,6 @@ const ProgressBarContainer = styled.div`
     height: 41px;
   }
 `;
-
-const image88 = window.innerWidth <= 768 ? image3 : image2;
 
 const Button = styled.button`
   background-color: #111928;

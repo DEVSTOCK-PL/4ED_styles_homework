@@ -62,6 +62,7 @@ const Row = styled.div`
     margin-top: 10px;
   }
 `;
+
 const Stat = styled.div`
   width: 248px;
   height: 69px;
@@ -88,6 +89,7 @@ const Stat = styled.div`
     border-right: none;
   }
 `;
+
 const StatEnd = styled(Stat)`
   border-right: none;
 

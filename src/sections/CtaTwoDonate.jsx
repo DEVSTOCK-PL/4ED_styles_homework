@@ -3,18 +3,26 @@ import useDonationLogic from "../hooks/useDonationLogic";
 import styled from "styled-components";
 
 import ProgressBar from "../components/ProgressBar";
-import Button from "../components/Button";
-import Title from "../components/Title";
-import TextSupporting from "../components/TextSupporting";
 
 import image1 from "../assets/foto/mockup2.png";
 import image2 from "../assets/foto/mockup5.png";
 import image3 from "../assets/foto/mockup6.png";
-import share from "../assets/share.png";
+
+import { Share } from "../assets/svg_components";
+
+const image88 = window.innerWidth <= 768 ? image3 : image2;
+
+const textTitle1 = "Fundraising events";
+const textSupporting1 =
+  "Flowbite helps you connect with friends, family and communities of people who share your interests. ";
+const textTitle2 = "Thank you for supporting our lifesaving work.";
+const textSupporting2 =
+  "Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.";
 
 const Container = styled.div`
   background-color: #111928;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: auto;
   display: flex;
   justify-content: center;
@@ -22,44 +30,45 @@ const Container = styled.div`
   padding-top: 40px;
   padding-bottom: 90px;
 
-  @media (max-width: 640px) {
-    width: 375px;
-    height: auto;
-    padding-top: 10px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 675px;
-    height: auto;
-    padding-top: 10px;
-  }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 980px;
-    height: auto;
-    padding-top: 42px;
-    padding-bottom: 42px;
-  }
   @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1220px;
+    max-width: 1280px;
     height: auto;
     padding-bottom: 30px;
     padding-top: 30px;
   }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    max-width: 1024px;
+    height: auto;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    max-width: 768px;
+    height: auto;
+    padding-top: 10px;
+  }
+  @media (max-width: 640px) {
+    max-width: 640px;
+    height: auto;
+    padding-top: 10px;
+  }
 `;
 const Content = styled.div`
-  width: 1280px;
+  width: 89%;
   height: auto;
-  gap: 32px;
+  gap: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: 640px) {
-    width: 343px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
     height: auto;
-    gap: 16px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    padding-bottom: 40px;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: auto;
+    padding-bottom: 40px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 643px;
@@ -68,65 +77,55 @@ const Content = styled.div`
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    width: 900px;
+  @media (max-width: 640px) {
+    width: 343px;
     height: auto;
-  }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
-    height: auto;
+    gap: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 `;
 const Heading = styled.div`
-  width: 676px;
+  width: 53%;
   height: 121px;
   gap: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 643px;
-    height: auto;
-  }
 `;
 const Cards = styled.div`
-  width: 1280px;
+  width: 100%;
   height: auto;
   gap: 48px;
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 640px) {
-    width: 343px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
     height: auto;
-    flex-direction: column;
-    gap: 16px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 643px;
-    height: auto;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
+    gap: 20px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
     height: auto;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 1160px;
+  @media (min-width: 641px) and (max-width: 768px) {
+    width: 643px;
     height: auto;
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: auto;
+    flex-direction: column;
+    gap: 16px;
   }
 `;
+
 const Card = styled.div`
-  width: 616px;
+  width: 48%;
   height: 593px;
   border-radius: 8px;
   border: 1px solid #374151;
@@ -136,12 +135,15 @@ const Card = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 
-  @media (max-width: 640px) {
-    width: 343px;
-    height: auto;
-    padding-top: 20px;
+  @media (min-width: 1025px) and (max-width: 1280px) {
     padding-bottom: 20px;
+    padding-top: 30px;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 616px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 443px;
@@ -149,13 +151,22 @@ const Card = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  @media (max-width: 640px) {
+    width: 343px;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 `;
 const ImgBox = styled.div`
-  width: 552px;
+  width: 90%;
   height: 288px;
   border-radius: 8px;
   overflow: hidden;
 
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+  }
   @media (max-width: 640px) {
     width: 303px;
     height: 288px;
@@ -172,117 +183,174 @@ const Img = styled.img`
   transform: translateX(-5%);
 `;
 const ProgressBarContainer = styled.div`
-  width: 552px;
+  max-width: 552px;
+  width: 90%;
   height: 41px;
 
-  @media (max-width: 640px) {
-    width: 303px;
-    height: 41px;
-  }
   @media (min-width: 641px) and (max-width: 768px) {
     width: 403px;
     height: 41px;
     margin-bottom: 10px;
   }
+  @media (max-width: 640px) {
+    width: 303px;
+    height: 41px;
+  }
 `;
 const Buttons = styled.div`
-  width: 552px;
+  max-width: 552px;
+  width: 90%;
   height: 41px;
   gap: 16px;
   display: flex;
 
   @media (max-width: 640px) {
-    width: 314px;
     height: auto;
     flex-direction: column;
     align-items: center;
   }
   @media (min-width: 641px) and (max-width: 768px) {
-    width: 314px;
     height: auto;
     flex-direction: column;
     align-items: center;
   }
 `;
-const titleProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "30px",
-        lineHeight: "37.5px",
-        width: "343px",
-        height: "auto",
-      }
-    : {
-        width: "640px",
-        height: "45px",
-        fontSize: "36px",
-        lineHeight: "45px",
-      };
 
-const textSupportingProps =
-  window.innerWidth <= 768
-    ? {
-        fontSize: "16px",
-        lineHeight: "24px",
-        width: "343px",
-        height: "auto",
-      }
-    : {
-        width: "640px",
-        height: "60px",
-      };
+const BlueButton = styled.button`
+  width: 121px;
+  height: 41px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: ${(props) => (props.isDisabled ? "red" : "#1A56DB")};
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-const title2Props =
-  window.innerWidth <= 640
-    ? {
-        width: "303px",
-        height: "auto",
-      }
-    : window.innerWidth >= 641 && window.innerWidth <= 768
-    ? {
-        width: "403px",
-        height: "auto",
-      }
-    : {
-        width: "552px",
-        height: "23px",
-      };
+  &:active {
+    border: ${(props) =>
+      props.isDisabled ? "1px solid red" : "1px solid #1a56db"};
+  }
 
-const textSupporting2Props =
-  window.innerWidth <= 640
-    ? {
-        width: "303px",
-        height: "auto",
-      }
-    : window.innerWidth >= 641 && window.innerWidth <= 768
-    ? {
-        width: "403px",
-        height: "auto",
-      }
-    : {
-        width: "552px",
-        height: "72px",
-      };
+  @media (min-width: 641px) and (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+`;
 
-const buttonProps =
-  window.innerWidth <= 768
-    ? {
-        width: "303px",
-      }
-    : {
-        width: "121px",
-      };
+const GreyButton = styled(BlueButton)`
+  width: 210px;
+  background-color: #1f2a37;
+  color: #9ca3af;
+  border: 1px solid #4b5563;
+  display: flex;
+  gap: 6px;
 
-const button2Props =
-  window.innerWidth <= 768
-    ? {
-        width: "303px",
-      }
-    : {
-        width: "210px",
-      };
+  @media (min-width: 641px) and (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+`;
 
-const image88 = window.innerWidth <= 768 ? image3 : image2;
+const Title1 = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 800;
+  margin: 0;
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  @media (max-width: 640px) {
+    font-size: 30px;
+    line-height: 37px;
+    min-width: 350px;
+  }
+`;
+
+const TextSupporting1 = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin: 0;
+  color: #9ca3af;
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
+
+const Title2 = styled.p`
+  width: 90%;
+  height: auto;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+  padding-top: 8px;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 90%;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+    width: 403px;
+  }
+  @media (max-width: 640px) {
+    font-size: 18px;
+    line-height: 22px;
+    width: 303px;
+  }
+`;
+
+const TextSupporting2 = styled.p`
+  width: 90%;
+  height: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+  color: #9ca3af;
+  text-align: left;
+  padding-top: 8px;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 90%;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    width: 403px;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 24px;
+    width: 303px;
+  }
+`;
 
 const CtaTwoDonate = () => {
   const {
@@ -312,64 +380,29 @@ const CtaTwoDonate = () => {
     <Container>
       <Content>
         <Heading>
-          <Title
-            text="Fundraising events"
-            textAlign="center"
-            fontSize={titleProps.fontSize}
-            lineHeight={titleProps.lineHeight}
-            width={titleProps.width}
-            height={titleProps.height}
-          />
-          <TextSupporting
-            text="Flowbite helps you connect with friends, family and communities of people who share your interests. "
-            textAlign="center"
-            fontSize={textSupportingProps.fontSize}
-            lineHeight={textSupportingProps.lineHeight}
-            width={textSupportingProps.width}
-            height={textSupportingProps.height}
-          />
+          <Title1>{textTitle1}</Title1>
+          <TextSupporting1>{textSupporting1}</TextSupporting1>
         </Heading>
         <Cards>
           <Card>
             <ImgBox>
-              <Img src={image1} />
+              <Img src={image1} alt="Trees plantd" />
             </ImgBox>
             <ProgressBarContainer>
               <ProgressBar donors="3473" colected={donate1} goal="400000" />
             </ProgressBarContainer>
-            <Title
-              text="Thank you for supporting in planting trees work. "
-              fontWeight="700"
-              fontSize="18px"
-              lineHeight="22.5px"
-              width={title2Props.width}
-              height={title2Props.height}
-            />
-            <TextSupporting
-              text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
-              fontSize="16px"
-              lineHeight="24px"
-              width={textSupporting2Props.width}
-              height={textSupporting2Props.height}
-            />
+            <Title2>{textTitle2}</Title2>
+            <TextSupporting2>{textSupporting2}</TextSupporting2>
             <Buttons>
-              <Button
+              <BlueButton
                 onClick={isDonate1Exceeded ? null : donateUp1}
-                isDisabled={isDonate1Exceeded}
-                description={isDonate1Exceeded ? "STOP" : "Donate now"}
-                backgroundColor={isDonate1Exceeded ? "red" : "#1A56DB"}
-                width={buttonProps.width}
-                lineHeight="21px"
-              />
-              <Button
-                description="Share this Fundraiser"
-                width={button2Props.width}
-                lineHeight="21px"
-                border="1px solid #4B5563"
-                backgroundColor="#1F2A37"
-                color="#9CA3AF"
-                iconLeft={share}
-              />
+                isDisabled={isDonate1Exceeded}>
+                {isDonate1Exceeded ? "STOP" : "Donate now"}
+              </BlueButton>
+              <GreyButton>
+                <Share />
+                Share this Fundraiser
+              </GreyButton>
             </Buttons>
           </Card>
           <Card>
@@ -379,39 +412,18 @@ const CtaTwoDonate = () => {
             <ProgressBarContainer>
               <ProgressBar donors="473" colected={donate2} goal="150000" />
             </ProgressBarContainer>
-            <Title
-              text="Thank you for supporting our lifesaving work."
-              fontWeight="700"
-              fontSize="18px"
-              lineHeight="22.5px"
-              width={title2Props.width}
-              height={title2Props.height}
-            />
-            <TextSupporting
-              text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
-              fontSize="16px"
-              lineHeight="24px"
-              width={textSupporting2Props.width}
-              height={textSupporting2Props.height}
-            />
+            <Title2>{textTitle2}</Title2>
+            <TextSupporting2>{textSupporting2}</TextSupporting2>
             <Buttons>
-              <Button
+              <BlueButton
                 onClick={isDonate2Exceeded ? null : donateUp2}
-                isDisabled={isDonate2Exceeded}
-                description={isDonate2Exceeded ? "STOP" : "Donate now"}
-                backgroundColor={isDonate2Exceeded ? "red" : "#1A56DB"}
-                width={buttonProps.width}
-                lineHeight="21px"
-              />
-              <Button
-                description="Share this Fundraiser"
-                width={button2Props.width}
-                lineHeight="21px"
-                border="1px solid #4B5563"
-                backgroundColor="#1F2A37"
-                color="#9CA3AF"
-                iconLeft={share}
-              />
+                isDisabled={isDonate2Exceeded}>
+                {isDonate2Exceeded ? "STOP" : "Donate now"}
+              </BlueButton>
+              <GreyButton>
+                <Share />
+                Share this Fundraiser
+              </GreyButton>
             </Buttons>
           </Card>
         </Cards>
@@ -423,39 +435,18 @@ const CtaTwoDonate = () => {
             <ProgressBarContainer>
               <ProgressBar donors="3473" colected={donate3} goal="400000" />
             </ProgressBarContainer>
-            <Title
-              text="Thank you for supporting in planting trees work. "
-              fontWeight="700"
-              fontSize="18px"
-              lineHeight="22.5px"
-              width={title2Props.width}
-              height={title2Props.height}
-            />
-            <TextSupporting
-              text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
-              fontSize="16px"
-              lineHeight="24px"
-              width={textSupporting2Props.width}
-              height={textSupporting2Props.height}
-            />
+            <Title2>{textTitle2}</Title2>
+            <TextSupporting2>{textSupporting2}</TextSupporting2>
             <Buttons>
-              <Button
+              <BlueButton
                 onClick={isDonate3Exceeded ? null : donateUp3}
-                isDisabled={isDonate3Exceeded}
-                description={isDonate3Exceeded ? "STOP" : "Donate now"}
-                backgroundColor={isDonate3Exceeded ? "red" : "#1A56DB"}
-                width={buttonProps.width}
-                lineHeight="21px"
-              />
-              <Button
-                description="Share this Fundraiser"
-                width={button2Props.width}
-                lineHeight="21px"
-                border="1px solid #4B5563"
-                backgroundColor="#1F2A37"
-                color="#9CA3AF"
-                iconLeft={share}
-              />
+                isDisabled={isDonate3Exceeded}>
+                {isDonate3Exceeded ? "STOP" : "Donate now"}
+              </BlueButton>
+              <GreyButton>
+                <Share />
+                Share this Fundraiser
+              </GreyButton>
             </Buttons>
           </Card>
           <Card>
@@ -465,39 +456,18 @@ const CtaTwoDonate = () => {
             <ProgressBarContainer>
               <ProgressBar donors="473" colected={donate4} goal="150000" />
             </ProgressBarContainer>
-            <Title
-              text="Thank you for supporting our lifesaving work."
-              fontWeight="700"
-              fontSize="18px"
-              lineHeight="22.5px"
-              width={title2Props.width}
-              height={title2Props.height}
-            />
-            <TextSupporting
-              text="Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone."
-              fontSize="16px"
-              lineHeight="24px"
-              width={textSupporting2Props.width}
-              height={textSupporting2Props.height}
-            />
+            <Title2>{textTitle2}</Title2>
+            <TextSupporting2>{textSupporting2}</TextSupporting2>
             <Buttons>
-              <Button
+              <BlueButton
                 onClick={isDonate4Exceeded ? null : donateUp4}
-                isDisabled={isDonate4Exceeded}
-                description={isDonate4Exceeded ? "STOP" : "Donate now"}
-                backgroundColor={isDonate4Exceeded ? "red" : "#1A56DB"}
-                width={buttonProps.width}
-                lineHeight="21px"
-              />
-              <Button
-                description="Share this Fundraiser"
-                width={button2Props.width}
-                lineHeight="21px"
-                border="1px solid #4B5563"
-                backgroundColor="#1F2A37"
-                color="#9CA3AF"
-                iconLeft={share}
-              />
+                isDisabled={isDonate4Exceeded}>
+                {isDonate4Exceeded ? "STOP" : "Donate now"}
+              </BlueButton>
+              <GreyButton>
+                <Share />
+                Share this Fundraiser
+              </GreyButton>
             </Buttons>
           </Card>
         </Cards>

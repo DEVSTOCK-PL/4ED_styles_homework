@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import Slider from "../components/Slider";
-
 import image1 from "../assets/foto/mockup4.png";
 import image2 from "../assets/foto/mockup3.png";
 import image3 from "../assets/foto/mockup1.png";
@@ -53,6 +52,7 @@ const HeroContainer = styled.div`
     padding-bottom: 40px;
   }
 `;
+
 const HeroContent = styled.div`
   width: 89%;
   max-width: 1280px;
@@ -79,6 +79,7 @@ const HeroContent = styled.div`
     justify-content: space-around;
   }
 `;
+
 const LeftItem = styled.div`
   width: 45%;
   height: auto;
@@ -209,6 +210,7 @@ const SponsorsContainer = styled.div`
     border-top: none;
   }
 `;
+
 const Sponsors = styled.p`
   font-size: 16px;
   line-height: 24px;
@@ -223,6 +225,7 @@ const Sponsors = styled.p`
     display: none;
   }
 `;
+
 const RightItem = styled.div`
   max-width: 576px;
   width: 45%;
@@ -258,6 +261,7 @@ const RightItem = styled.div`
     margin-top: 30px;
   }
 `;
+
 const SvgContainer = styled.div`
   width: 100%;
   margin-top: 10px;
@@ -283,35 +287,6 @@ const SvgContainer = styled.div`
     margin-top: 0;
     gap: 10px;
   }
-`;
-
-const Svg = styled.svg`
-  padding-top: 10px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  @media (min-width: 769px) and (max-width: 1024px) {
-    height: 32px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    padding-top: 0px;
-    width: 80px;
-    height: 32px;
-  }
-  @media (max-width: 640px) {
-    padding-top: 0px;
-    width: 80px;
-    height: 32px;
-  }
-`;
-
-const Image = styled.image`
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  vertical-align: bottom;
 `;
 
 const BlueButton = styled.button`
