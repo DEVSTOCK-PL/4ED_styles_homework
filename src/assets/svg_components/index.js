@@ -23,6 +23,8 @@ import Shell from "../svg_components/Shell";
 import Twitter from "../svg_components/Twitter";
 import VideoCamera from "../svg_components/VideoCamera";
 import Visa from "../svg_components/Visa";
+import ArrowRightYellow from "../svg_components/ArrowRightYellow";
+import ArrowLeftYellow from "../svg_components/ArrowLeftYellow";
 
 export {
   HeartIcon,
@@ -50,4 +52,6 @@ export {
   Twitter,
   VideoCamera,
   Visa,
+  ArrowRightYellow,
+  ArrowLeftYellow,
 };

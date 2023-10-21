@@ -146,6 +146,23 @@ const MenuButton = styled.button`
   border: 1px solid #111928;
 `;
 
+const MenuOpen = styled.div`
+  background-color: #111928;
+  width: auto;
+  height: auto;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  position: relative;
+  top: 86px;
+  right: 50px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: end;
+  padding: 20px;
+  display: none;
+  z-index: 2;
+`;
 function Navbar() {
   const { pathname } = useLocation();
 
@@ -169,8 +186,8 @@ function Navbar() {
           <LinkItem className={pathname === "/contact" && "active"}>
             <StyledLink to="/contact">CONTACT</StyledLink>
           </LinkItem>
-          <LinkItem className={pathname === "/home" && "active"}>
-            <StyledLink to="/home">RICK & MORTY</StyledLink>
+          <LinkItem className={pathname === "/rickandmorty" && "active"}>
+            <StyledLink to="/rickandmorty">RICK & MORTY</StyledLink>
           </LinkItem>
         </Links>
         <LogIn>
@@ -182,6 +199,13 @@ function Navbar() {
             <Menu />
           </MenuButton>
         </MenuBox>
+        <MenuOpen>
+          <StyledLink to="/home">HOME</StyledLink>
+          <StyledLink to="/news">NEWS</StyledLink>
+          <StyledLink to="/events">EVENTS</StyledLink>
+          <StyledLink to="/contact">CONTACT</StyledLink>
+          <StyledLink to="/rickandmorty">RICK & MORTY</StyledLink>
+        </MenuOpen>
       </NavbarContent>
     </NavbarContainer>
   );
