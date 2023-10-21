@@ -7,6 +7,12 @@ const useFetchLogic = (page = 1) => {
   const [pagess, setPagess] = useState();
   const [loading, setLoading] = useState(true);
 
+  // I know this protection isn't perfect, but I've lost the battle with pre-fetching ;)
+
+  if (page > 42) {
+    page = 42;
+  }
+
   useEffect(() => {
     async function fetchData() {
       try {

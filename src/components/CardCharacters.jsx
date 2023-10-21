@@ -15,6 +15,7 @@ const Name = styled.p`
 
 const Img = styled.img`
   max-width: 180px;
+  border-radius: 3px;
 `;
 
 const CardCharacters = ({ item }) => {

@@ -1,3 +1,5 @@
+// import { useState } from "react";
+import useOpenMenuLogic from "../hooks/useOpenMenuLogic";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, Flowbite } from "../assets/svg_components";
 import styled from "styled-components";
@@ -32,6 +34,7 @@ const NavbarContent = styled.div`
   max-width: 1280px;
   height: 41px;
   justify-content: space-between;
+  position: relative;
 `;
 
 const Logo = styled.div`
@@ -152,19 +155,20 @@ const MenuOpen = styled.div`
   height: auto;
   border: 1px solid #fff;
   border-radius: 8px;
-  position: relative;
-  top: 86px;
-  right: 50px;
+  position: absolute;
+  top: 56px;
+  right: 5px;
   display: flex;
   justify-content: start;
   flex-direction: column;
   align-items: end;
   padding: 20px;
-  display: none;
-  z-index: 2;
+  z-index: 6;
 `;
+
 function Navbar() {
   const { pathname } = useLocation();
+  const { open, handleOpen, closeMenu } = useOpenMenuLogic();
 
   return (
     <NavbarContainer>
@@ -175,19 +179,29 @@ function Navbar() {
         </Logo>
         <Links>
           <LinkItem className={pathname === "/home" && "active"}>
-            <StyledLink to="/home">HOME</StyledLink>
+            <StyledLink to="/home" onClick={closeMenu}>
+              HOME
+            </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/news" && "active"}>
-            <StyledLink to="/news">NEWS</StyledLink>
+            <StyledLink to="/news" onClick={closeMenu}>
+              NEWS
+            </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/events" && "active"}>
-            <StyledLink to="/events">EVENTS</StyledLink>
+            <StyledLink to="/events" onClick={closeMenu}>
+              EVENTS
+            </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/contact" && "active"}>
-            <StyledLink to="/contact">CONTACT</StyledLink>
+            <StyledLink to="/contact" onClick={closeMenu}>
+              CONTACT
+            </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/rickandmorty" && "active"}>
-            <StyledLink to="/rickandmorty">RICK & MORTY</StyledLink>
+            <StyledLink to="/rickandmorty" onClick={closeMenu}>
+              RICK & MORTY
+            </StyledLink>
           </LinkItem>
         </Links>
         <LogIn>
@@ -195,17 +209,29 @@ function Navbar() {
           <Button>Get Started</Button>
         </LogIn>
         <MenuBox>
-          <MenuButton>
+          <MenuButton onClick={handleOpen}>
             <Menu />
           </MenuButton>
         </MenuBox>
-        <MenuOpen>
-          <StyledLink to="/home">HOME</StyledLink>
-          <StyledLink to="/news">NEWS</StyledLink>
-          <StyledLink to="/events">EVENTS</StyledLink>
-          <StyledLink to="/contact">CONTACT</StyledLink>
-          <StyledLink to="/rickandmorty">RICK & MORTY</StyledLink>
-        </MenuOpen>
+        {open && (
+          <MenuOpen>
+            <StyledLink to="/home" onClick={closeMenu}>
+              HOME
+            </StyledLink>
+            <StyledLink to="/news" onClick={closeMenu}>
+              NEWS
+            </StyledLink>
+            <StyledLink to="/events" onClick={closeMenu}>
+              EVENTS
+            </StyledLink>
+            <StyledLink to="/contact" onClick={closeMenu}>
+              CONTACT
+            </StyledLink>
+            <StyledLink to="/rickandmorty" onClick={closeMenu}>
+              RICK & MORTY
+            </StyledLink>
+          </MenuOpen>
+        )}
       </NavbarContent>
     </NavbarContainer>
   );
