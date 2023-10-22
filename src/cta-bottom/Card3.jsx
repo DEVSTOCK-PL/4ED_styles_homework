@@ -22,7 +22,7 @@ const Image = styled.img`
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `
 const Card1 = () => {
-  const [goal, setGoal] = useState(10000)
+  const [goal, setGoal] = useState(2000)
   const [donation, donors, donate] = useDonationLogic(0)
   const donationNumber = parseFloat(donation)
 

@@ -2,9 +2,12 @@ import styled from 'styled-components'
 
 import Card1 from './Card1'
 import Card2 from './Card2'
+import Card3 from './Card3'
+import Card4 from './Card4'
 
 const CardsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
   width: 100%;
@@ -24,6 +27,8 @@ const Cards = () => {
     <CardsWrapper>
       <Card1 />
       <Card2 />
+      <Card3 />
+      <Card4 />
     </CardsWrapper>
   )
 }

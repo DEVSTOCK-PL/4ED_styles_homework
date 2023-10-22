@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import styled from 'styled-components'
-
 import styles from '../styles/styles.module.css'
 
 import { useDonationLogic } from '../hooks/useDonationLogic'
 
 import LinearDeterminate from './LinearDeterminate'
+
+import image from './img/card2img.png'
 import Label from './CardLabel'
 import Buttons from './Buttons'
 import DonateButton from './DonateButton'
 import ButtonShare from './ButtonShare'
-import image from './img/card1img.png'
 
 const Image = styled.img`
   height: 288px;
@@ -21,9 +21,9 @@ const Image = styled.img`
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `
-const Card1 = () => {
-  const [goal, setGoal] = useState(10000)
-  const [donation, donors, donate] = useDonationLogic(0)
+const Card2 = () => {
+  const [goal, setGoal] = useState(30000)
+  const [donation, donors, donate] = useDonationLogic(30000)
   const donationNumber = parseFloat(donation)
 
   const goalAchieved = donation === goal
@@ -41,17 +41,17 @@ const Card1 = () => {
         <Label>
           <div className={styles.totals}>
             <h3 className={styles.fundraiserSum}>${donation}</h3>
-            <p className={styles.fundraiserGoal}>of ${goal}</p>
+            <p className={styles.fundraiserGoal}>of {goal}</p>
           </div>
           <p className={styles.fundraiserDonors}>{donors} donors</p>
         </Label>
         <LinearDeterminate donation={donationNumber} goal={goal} />
         <h3 className={styles.fundraiserSum}>
-          Thank you for supporting in planting trees work.
+          Thank you for supporting our lifesaving work.
         </h3>
         {goalAchieved && (
           <h3 className={styles.fundraiserSum}>
-            We did it! Goal achieved! 🏆🎯💯🤩
+            🏆 Together, we achieved the goal of ${goal}! 🎯💯🤩
           </h3>
         )}
         {goalSurpassed && (
@@ -59,7 +59,7 @@ const Card1 = () => {
             className={
               styles.fundraiserSum && 'text-yellow-400 text-2xl text-center'
             }>
-            🚀 We fundraised ${donation - goal} more than expected, wow! 🤩
+            🚀 We fundraised ${donation - goal} more than expected, good job! 🤩
           </h3>
         )}
         <div className={styles.supportingText}>
@@ -77,4 +77,4 @@ const Card1 = () => {
     </div>
   )
 }
-export default Card1
+export default Card2

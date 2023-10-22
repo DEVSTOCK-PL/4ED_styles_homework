@@ -8,11 +8,11 @@ Pamiętaj o tym, aby stworzyć komponent layout, który będzie obejmować nawig
 
 dla chętnych. Stwórz też oddzielny komponent przechowujący router
 
-Logika przechowywana w custom hooku - napisz reużywalny custom hook useDonationLogic, który obsłuży działanie przycisku DONATE NOW na komponentach renderowanych na podstronie EVENTS. Niech kliknięcie Donate now dodaje do puli uzyskanych środków np. 1000$ oraz powoduje proporcjonalne poszerzanie paska postępu.
+Logika przechowywana w custom hooku - napisz reużywalny custom hook useDonationLogic, który obsłuży działanie przycisku DONATE NOW na komponentach renderowanych na podstronie EVENTS. Niech kliknięcie Donate now dodaje do puli uzyskanych środków np. 1000$ oraz powoduje proporcjonalne poszerzanie paska postępu. -OK
 
-pamiętaj aby odpowiednio przechowywać stan komponentu. Dodanie donacji nie powinno wpływać na sąsiednie komponenty
+pamiętaj aby odpowiednio przechowywać stan komponentu. Dodanie donacji nie powinno wpływać na sąsiednie komponenty -OK
 
-spróbuj wyłączyć przycisk donacji gdy cel zostanie osiągnięty, lub dodaj samodzielnie wymyślony widok prezentujący nadwyżkę zebranej kwoty.
+spróbuj wyłączyć przycisk donacji gdy cel zostanie osiągnięty, lub dodaj samodzielnie wymyślony widok prezentujący nadwyżkę zebranej kwoty. -OK
 
 Dla chętnych osób, które po ukończeniu zadania będą się nudzić - dodaj podstronę z listą postaci z Rick&Morty API https://rickandmortyapi.com/api, dodając paginację opartą na przyciskach oraz ścieżce url, czyli wejście na path /list/5 sprawi że wyświetli się piąta strona listy (pamiętamy o hooku useParams)
 WIDOKI DO PRACY DOMOWEJ: https://www.figma.com/file/v6ia15KchK6JX0vZb6lTni/styles_homework?type=design&node-id=522-1427&mode=design&t=RR1Kq5gCpeSMtPUI-0

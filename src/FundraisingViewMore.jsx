@@ -16,16 +16,14 @@ const CTAwrapper = styled.div`
     padding-top: 32px;
   }
 `
-const CTAbottom = () => {
+const FundraisingViewMore = () => {
   return (
-    <>
-      <CTAwrapper>
-        <Header />
-        <Cards />
-      </CTAwrapper>
-      <Blog />
-    </>
+    <CTAwrapper>
+      <Header />
+      <Cards />
+      <ViewAll />
+    </CTAwrapper>
   )
 }
 
-export default CTAbottom
+export default FundraisingViewMore

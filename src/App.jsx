@@ -2,12 +2,11 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 
 import Layout from './Layout'
-import CustomerLogos from './CustomerLogos'
 import CTAbottom from './CTAbottom'
 import Home from './Home'
-import Blog from './Blog'
 import Contact from './ContactUs'
 import Page404 from './PageNotFound'
+import CTAtop from './CTAtop'
 
 function App() {
   return (
@@ -22,26 +21,18 @@ function App() {
           }
         />
         <Route
-          path='/marketplace'
+          path='/news'
           element={
             <Layout>
-              <CustomerLogos />
+              <CTAtop />
             </Layout>
           }
         />
         <Route
-          path='/features'
+          path='/events'
           element={
             <Layout>
               <CTAbottom />
-            </Layout>
-          }
-        />
-        <Route
-          path='/team'
-          element={
-            <Layout>
-              <Blog />
             </Layout>
           }
         />

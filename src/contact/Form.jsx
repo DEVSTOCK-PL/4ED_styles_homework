@@ -1,6 +1,8 @@
-import styled from 'styled-components'
 import { Box } from '@mui/material'
 import TextField from '@mui/material/TextField'
+
+import styled from 'styled-components'
+
 import Submit from './SubmitButton'
 
 const FormWrapper = styled.form`
