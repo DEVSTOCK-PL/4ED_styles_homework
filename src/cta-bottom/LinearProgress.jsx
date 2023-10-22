@@ -1,7 +1,6 @@
 // import * as React from 'react'
 import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
 
@@ -9,6 +8,9 @@ export default function LinearDeterminate({ donation, goal }) {
   const [donationProgress, setDonationProgress] = useState(0)
 
   useEffect(() => {
+    console.log('Received donation:', donation)
+    console.log('SET goal:', goal)
+
     if (
       typeof donation === 'number' &&
       typeof goal === 'number' &&

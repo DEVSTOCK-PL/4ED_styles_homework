@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styles from '../styles/styles.module.css'
 
 import styled from 'styled-components'
@@ -22,15 +22,18 @@ const Image = styled.img`
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `
 
-let goal = 400000
+// let goal = 400000
 
 const Card1 = () => {
+  const [goal, setGoal] = useState(400000)
   const [donation, donors, donate] = useDonationLogic(0)
   const donationNumber = parseFloat(donation)
+
   useEffect(() => {
     console.log('donated', donation)
     console.log(donors, 'donors')
   }, [donation, donors])
+
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardFundraiser}>
@@ -38,7 +41,7 @@ const Card1 = () => {
         <Label>
           <div className={styles.totals}>
             <h3 className={styles.fundraiserSum}>${donation}</h3>
-            <p className={styles.fundraiserGoal}>of {goal}</p>
+            <p className={styles.fundraiserGoal}>of ${goal}</p>
           </div>
           <p className={styles.fundraiserDonors}>{donors} donors</p>
         </Label>
