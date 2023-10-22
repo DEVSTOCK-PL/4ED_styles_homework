@@ -3,9 +3,9 @@ import styled from "styled-components";
 const SocialProofContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 0;
   align-items: center;
   justify-content: center;
-  /* gap: 64px; */
   background: #111928;
 `;
 
@@ -17,7 +17,6 @@ const SocialProofWrapper = styled.div`
   border-radius: 8px;
   border: 1px solid #374151;
   background: #1f2a37;
-
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `;
@@ -64,16 +63,14 @@ function SocialProofComponent({ socialProof }) {
 
   return (
     <SocialProofContainer>
-      {/* <SocialProofContainer2> */}
       <SocialProofWrapper>
-        {socialsArray.map((social, index) => (
+        {socialsArray.map(({ heading, supportingText }, index) => (
           <SocialProofCard key={index}>
-            <h2>{social.heading}</h2>
-            <p>{social.supportingText}</p>
+            <h2>{heading}</h2>
+            <p>{supportingText}</p>
           </SocialProofCard>
         ))}
       </SocialProofWrapper>
-      {/* </SocialProofContainer2> */}
     </SocialProofContainer>
   );
 }

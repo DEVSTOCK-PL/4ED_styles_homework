@@ -1,4 +1,4 @@
-import BMW from "./bmw.svg";
+import BMW from "./BMW.svg";
 import Cocacola from "./cocacola.svg";
 import Disney from "./disney.svg";
 import Fedex from "./fedex.svg";

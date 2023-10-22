@@ -72,18 +72,17 @@ const ButtonsWrapper = styled.div`
 function CTA1Component({ cta1 }) {
   return (
     <CTA1Container>
-      {cta1.map((row, index) => (
+      {cta1.map(({ image, rightContent }, index) => (
         <CTA1Row key={index}>
           {index % 2 === 0 ? (
             <>
-              <Image src={row.image} alt="Mockup" />
+              <Image src={image} alt="Mockup" />
               <RightContent>
-                <h2>{row.rightContent.heading}</h2>
-                <p>{row.rightContent.supportingText}</p>
+                <h2>{rightContent.heading}</h2>
+                <p>{rightContent.supportingText}</p>
                 <ButtonsWrapper>
-                  {/* {console.log(row.rightContent.buttonText)} */}
-                  {row.rightContent.buttonText &&
-                    row.rightContent.buttonText.map((button, i) => (
+                  {rightContent.buttonText &&
+                    rightContent.buttonText.map((button, i) => (
                       <Button
                         key={i}
                         version={button.version}
@@ -98,11 +97,11 @@ function CTA1Component({ cta1 }) {
           ) : (
             <>
               <RightContent>
-                <h2>{row.rightContent.heading}</h2>
-                <p>{row.rightContent.supportingText}</p>
+                <h2>{rightContent.heading}</h2>
+                <p>{rightContent.supportingText}</p>
                 <ButtonsWrapper>
-                  {row.rightContent.buttonText &&
-                    row.rightContent.buttonText.map((button, i) => (
+                  {rightContent.buttonText &&
+                    rightContent.buttonText.map((button, i) => (
                       <Button
                         key={i}
                         version={button.version}
@@ -113,7 +112,7 @@ function CTA1Component({ cta1 }) {
                     ))}
                 </ButtonsWrapper>
               </RightContent>
-              <Image src={row.image} alt="Mockup" />
+              <Image src={image} alt="Mockup" />
             </>
           )}
         </CTA1Row>

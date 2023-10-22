@@ -1,14 +1,12 @@
 import styled from "styled-components";
+import * as SocialLogos from "../../../../public/social/index";
 
 const FooterContainer = styled.div`
   display: flex;
   width: 100%;
-  padding-top: 96px;
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  margin-bottom: 64px;
-
   border-top: 1px solid #374151;
   background: #1f2a37;
 `;
@@ -24,7 +22,6 @@ const Column = styled.div`
 const Heading = styled.h1`
   align-self: stretch;
   color: #fff;
-  /* uppercase/text-sm/font-semibold */
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -43,7 +40,7 @@ const LogoAndSocialLinks = styled.div`
 
 const SocialLinks = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 20px;
 `;
 
@@ -86,7 +83,6 @@ const NavLink = styled.a`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
-
   color: #9ca3af;
   font-family: Inter;
   font-size: 16px;
@@ -103,13 +99,15 @@ const NavLinks = styled.div`
 `;
 
 function Footer({ footerData }) {
+  const { ImgDribble, ImgFacebook, ImgGithub, ImgTwitter } = SocialLogos;
+
   return (
     <FooterContainer>
       <NavLinks>
-        {footerData.map((column, index) => (
+        {footerData.map(({ heading, links }, index) => (
           <Column key={index}>
-            <Heading>{column.heading}</Heading>
-            {column.links.map((link, i) => (
+            <Heading>{heading}</Heading>
+            {links.map((link, i) => (
               <NavLink key={i} to={`/${link}`}>
                 {link}
               </NavLink>
@@ -124,10 +122,10 @@ function Footer({ footerData }) {
         </LogoWrapper>
         <Copyright>© 2022 Flowbite, Inc. All rights reserved.</Copyright>
         <SocialLinks>
-          <img src="../social/img_dribble.svg" alt={"Dribble logo"} />
-          <img src="../social/img_facebook.svg" alt={"Facebook logo"} />
-          <img src="../social/img_github.svg" alt={"Github logo"} />
-          <img src="../social/img_twitter.svg" alt={"Twitter logo"} />
+          <ImgGithub width={24} height={24} />
+          <ImgTwitter width={24} height={24} />
+          <ImgDribble width={24} height={24} />
+          <ImgFacebook width={24} height={24} />
         </SocialLinks>
       </LogoAndSocialLinks>
     </FooterContainer>

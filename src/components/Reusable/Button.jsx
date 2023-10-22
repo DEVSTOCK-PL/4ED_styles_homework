@@ -21,14 +21,14 @@ const ButtonStyled = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 8px; */
   border-radius: 8px;
-
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
+  pointer-events: auto;
+  cursor: pointer;
 
   ${({ version }) => buttonVersions[version] || buttonVersions.primary};
 `;

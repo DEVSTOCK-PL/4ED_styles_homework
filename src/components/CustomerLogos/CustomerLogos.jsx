@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Button from "../Reusable/Button";
-import * as brandLogos from "../../assets/brandLogos/brandLogos";
 
 const Container = styled.div`
   display: flex;
-  width: 1440px;
-  /* padding: 96px 0px; */
+  width: 100%;
   flex-direction: column;
   align-items: center;
   gap: 64px;
+  background: #1f2a37;
+  margin-bottom: 0;
 `;
 
 const Head_Descr_Wrapper = styled.div`
@@ -101,31 +101,38 @@ const Icon = styled.img`
 `;
 
 function CustomerLogosComponent({ customerLogos }) {
-  // const logos = Object.values(brandLogos);
+  const {
+    heading,
+    supportText,
+    sponsorLinkText,
+    partnerSince,
+    buttonText,
+    sponsors,
+  } = customerLogos;
 
   return (
     <Container>
       <Head_Descr_Wrapper>
-        <Heading>{customerLogos.heading}</Heading>
-        <SupportText>{customerLogos.supportText}</SupportText>
+        <Heading>{heading}</Heading>
+        <SupportText>{supportText}</SupportText>
         <SponsorLink href="#">
-          {customerLogos.sponsorLinkText}
+          {sponsorLinkText}
           <img src="./icons/icon_arrownarrowright_blue_a200.svg" />
         </SponsorLink>
       </Head_Descr_Wrapper>
       <LogosContainer>
-        {customerLogos.sponsors.map((logo, index) => (
+        {sponsors.map((logo, index) => (
           <LogoCard key={index}>
             <LogoItem>
               <LogoImage src={logo} alt="Brand logo" />
-              <p>{customerLogos.partnerSince}</p>
+              <p>{partnerSince}</p>
             </LogoItem>
             <Button version="transparent">
               <Icon
                 src="/icons/icon_externallink.svg"
                 alt="Extermal Link Icon"
               />
-              {customerLogos.buttonText}
+              {buttonText}
             </Button>
           </LogoCard>
         ))}

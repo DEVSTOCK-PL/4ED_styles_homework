@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
 const ProgressBarContainer = styled.div`
-  /* width: 100%;
-  height: 20px; */
-  /* background-color: #ddd;
-  position: relative; */
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -22,13 +17,11 @@ const ProgressBarWrapper = styled.div`
 `;
 
 const ProgressBarFill = styled.div`
-  /* height: 100%; */
   position: absolute;
-  /* bottom: 0px; */
   height: 10px;
   border-radius: 2px;
   background-color: #1c64f2;
-  /* z-index: 99; */
+  width: ${(props) => props.$percentage}%;
 `;
 
 const LabelWrapper = styled.div`
@@ -39,9 +32,6 @@ const LabelWrapper = styled.div`
 `;
 
 const LabelLeft = styled.span`
-  /* position: absolute;
-  left: 0; */
-  /* top: -20px; */
   display: flex;
   align-items: end;
   gap: 8px;
@@ -65,11 +55,8 @@ const LabelLeft = styled.span`
 `;
 
 const LabelRight = styled.span`
-  /* position: absolute;
-  right: 0; */
   color: #9ca3af;
   width: 116.667px;
-
   text-align: right;
   font-family: Inter;
   font-size: 12px;
@@ -88,7 +75,6 @@ function formatNumber(num) {
 
 function ProgressBar({ current, total, goals }) {
   const percentage = (current / total) * 100;
-
   return (
     <ProgressBarContainer>
       <LabelWrapper>
@@ -99,7 +85,7 @@ function ProgressBar({ current, total, goals }) {
         <LabelRight>{goals.toLocaleString("en-US")} donors</LabelRight>
       </LabelWrapper>
       <ProgressBarWrapper>
-        <ProgressBarFill style={{ width: `${percentage}%` }} />
+        <ProgressBarFill $percentage={percentage} />
       </ProgressBarWrapper>
     </ProgressBarContainer>
   );

@@ -5,13 +5,10 @@ import CTAButtonComponent from "./CTAButton";
 
 const NavbarContainer = styled.div`
   display: flex;
-  padding-top: 24px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-self: stretch;
-
-  /* background-color: #111928; */
   color: white;
 `;
 

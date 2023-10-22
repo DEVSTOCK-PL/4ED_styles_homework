@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "../Reusable/Button";
+import Button from "../../Reusable/Button";
 
 const CTAButton = styled.div`
   display: flex;

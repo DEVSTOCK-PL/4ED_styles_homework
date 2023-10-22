@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import UseDonationLogic from "../hooks/useDonationLogic";
 import styled from "styled-components";
 import Button from "../Reusable/Button";
 import ProgressBar from "../Reusable/ProgressBar";
@@ -5,7 +7,6 @@ import ProgressBar from "../Reusable/ProgressBar";
 const CTA2Wrapper = styled.div`
   display: flex;
   width: 1440px;
-  /* padding: 96px 0px; */
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -53,6 +54,7 @@ const SupportText = styled.p`
 
 const Cards = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 48px;
   align-self: stretch;
@@ -65,10 +67,10 @@ const Card = styled.div`
   align-items: flex-start;
   gap: 16px;
   flex: 1 0 0;
+  max-width: calc(44% - 24px);
   border-radius: 8px;
   border: 1px solid #374151;
   background: #1f2a37;
-
   box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
     0px 4px 6px -1px rgba(0, 0, 0, 0.1);
 `;
@@ -77,7 +79,6 @@ const Image = styled.img`
   height: 288px;
   align-self: stretch;
   border-radius: 8px;
-
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `;
@@ -103,14 +104,11 @@ const SupportText2 = styled.p`
   font-weight: 400;
   line-height: 150%;
   margin: 0;
-  /* margin-top: 0 !important; 
-  margin-bottom: 0 !important;  */
 `;
 
 const ButtonsWrapper = styled.div`
   display: flex;
   gap: 16px;
-
   & img {
     margin-right: 8px;
   }
@@ -139,7 +137,54 @@ const AllEventLink = styled.a`
   }
 `;
 
-function CTA2Component({ cta2 }) {
+function CardComponent({
+  image,
+  goal,
+  heading,
+  supportText,
+  buttons,
+  displayButtons,
+}) {
+  const { current, total, goals } = goal;
+  // const donationLogic = useDonationLogic(current, total);
+  const { donationCurrent, donate, isTotalAchieved } = UseDonationLogic(
+    current,
+    total
+  );
+
+  // console.log(donate);
+
+  return (
+    <Card>
+      <Image src={image} alt="Mockup" />
+      <ProgressBar
+        current={donationCurrent}
+        total={total}
+        goals={goals}
+        // percentage={percentage}
+      />
+      <Heading2>{heading}</Heading2>
+      <SupportText2>{supportText}</SupportText2>
+      {displayButtons && (
+        <ButtonsWrapper>
+          <Button
+            version="primary"
+            onClick={() => console.log("Donate")}
+            // disabled={isTotalAchieved}
+          >
+            {buttons[0].text}
+          </Button>
+          <Button version="transparent">
+            <img src="/icons/icon_share.svg" alt="Share Icon" />
+            {buttons[1].text}
+          </Button>
+        </ButtonsWrapper>
+      )}
+    </Card>
+  );
+}
+
+function CTA2Component({ cta2, displayCards, displayButtons }) {
   return (
     <CTA2Wrapper>
       <Container>
@@ -148,30 +193,20 @@ function CTA2Component({ cta2 }) {
           <SupportText>{cta2.supportText}</SupportText>
         </Header>
         <Cards>
-          {cta2.cards.map((card, index) => (
-            <Card key={index}>
-              <Image src={card.image} alt="Mockup" />
-              <ProgressBar
-                current={card.goal.current}
-                total={card.goal.total}
-                goals={card.goal.goals}
-              />
-              <Heading2>{card.heading}</Heading2>
-              <SupportText2>{card.supportText}</SupportText2>
-              <ButtonsWrapper>
-                <Button version="primary">{card.buttons[0].text}</Button>
-                <Button version="transparent">
-                  <img src="/icons/icon_share.svg" alt="Share Icon" />
-                  {card.buttons[1].text}
-                </Button>
-              </ButtonsWrapper>
-            </Card>
+          {cta2.cards.slice(0, displayCards).map((cardProps, index) => (
+            <CardComponent
+              key={index}
+              {...cardProps}
+              displayButtons={displayButtons}
+            />
           ))}
         </Cards>
-        <AllEventLink href="#">
-          <span>View all fundraising events</span>
-          <img src="./icons/icon_arrowright_blue.svg" />
-        </AllEventLink>
+        {!displayButtons && (
+          <AllEventLink as={Link} to="/EVENTS">
+            <span>View all fundraising events</span>
+            <img src="./icons/icon_arrowright_blue.svg" />
+          </AllEventLink>
+        )}
       </Container>
     </CTA2Wrapper>
   );

@@ -54,9 +54,6 @@ const SupportText = styled.p`
 `;
 
 const RowWrapper = styled.div`
-  /* display: flex;
-  justify-content: space-between;
-  width: 100%; */
   display: flex;
   align-items: flex-start;
   gap: 32px;
@@ -78,9 +75,6 @@ const ColumnWrapper = styled.div`
 `;
 
 const BlogCard = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  gap: 16px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,15 +144,16 @@ const ReadMoreLink = styled.a`
 `;
 
 function Blog({ blogData }) {
+  const { heading, supportText, columns } = blogData;
   return (
     <BlogWrapper>
       <Container>
         <Header>
-          <Heading>{blogData.heading}</Heading>
-          <SupportText>{blogData.supportText}</SupportText>
+          <Heading>{heading}</Heading>
+          <SupportText>{supportText}</SupportText>
         </Header>
         <RowWrapper>
-          {blogData.columns.map((column, index) => (
+          {columns.map((column, index) => (
             <ColumnWrapper key={index}>
               {column.map((card, i) => (
                 <BlogCard key={i}>
