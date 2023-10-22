@@ -11,7 +11,7 @@ const Linear = ({ donationProgress }) => {
   return (
     <LinearDiv>
       <StyledEngineProvider injectFirst>
-        <LinearProgressBar variant='determinate' value={donationProgress} />
+        <LinearProgressBar determinate value={donationProgress} />
       </StyledEngineProvider>
     </LinearDiv>
   )

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-export const useDonationLogic = () => {
-  const [donation, setDonation] = useState(0)
+export const useDonationLogic = (initialDonation = 0, goal = 0) => {
+  const [donation, setDonation] = useState(initialDonation)
   const [donors, setDonors] = useState(0)
 
   const donate = () => {
