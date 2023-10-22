@@ -5,7 +5,7 @@ import styles from '../styles/styles.module.css'
 
 import { useDonationLogic } from '../hooks/useDonationLogic'
 
-import Linear from './LinearProgressBar'
+import LinearDeterminate from './LinearDeterminate'
 
 import image from './img/card2img.png'
 import Label from './CardLabel'
@@ -21,10 +21,6 @@ const Image = styled.img`
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `
-// let sum = 75856
-// let goal = 150
-// let donors = 568
-
 const Card2 = () => {
   const [goal, setGoal] = useState(30000)
   const [donation, donors, donate] = useDonationLogic(0)
@@ -45,11 +41,11 @@ const Card2 = () => {
         <Label>
           <div className={styles.totals}>
             <h3 className={styles.fundraiserSum}>${donation}</h3>
-            <p className={styles.fundraiserGoal}>of {goal}k</p>
+            <p className={styles.fundraiserGoal}>of {goal}</p>
           </div>
           <p className={styles.fundraiserDonors}>{donors} donors</p>
         </Label>
-        <Linear donation={donationNumber} goal={goal} />
+        <LinearDeterminate donation={donationNumber} goal={goal} />
         <h3 className={styles.fundraiserSum}>
           Thank you for supporting our lifesaving work.
         </h3>
@@ -59,7 +55,10 @@ const Card2 = () => {
           </h3>
         )}
         {goalSurpassed && (
-          <h3 className={styles.fundraiserSum}>
+          <h3
+            className={
+              styles.fundraiserSum && 'text-yellow-400 text-2xl text-center'
+            }>
             🚀 We fundraised ${donation - goal} more than expected, good job! 🤩
           </h3>
         )}

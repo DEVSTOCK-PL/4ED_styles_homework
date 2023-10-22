@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import styles from '../styles/styles.module.css'
 import styled from 'styled-components'
 
 import { useDonationLogic } from '../hooks/useDonationLogic'
 
-import Linear from './LinearProgressBar'
+import LinearDeterminate from './LinearDeterminate'
 
 import Label from './CardLabel'
 import Buttons from './Buttons'
@@ -21,9 +21,6 @@ const Image = styled.img`
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `
-
-// let goal = 400000
-
 const Card1 = () => {
   const [goal, setGoal] = useState(10000)
   const [donation, donors, donate] = useDonationLogic(0)
@@ -48,7 +45,7 @@ const Card1 = () => {
           </div>
           <p className={styles.fundraiserDonors}>{donors} donors</p>
         </Label>
-        <Linear donation={donationNumber} goal={goal} />
+        <LinearDeterminate donation={donationNumber} goal={goal} />
         <h3 className={styles.fundraiserSum}>
           Thank you for supporting in planting trees work.
         </h3>
@@ -58,7 +55,10 @@ const Card1 = () => {
           </h3>
         )}
         {goalSurpassed && (
-          <h3 className={styles.fundraiserSum}>
+          <h3
+            className={
+              styles.fundraiserSum && 'text-yellow-400 text-2xl text-center'
+            }>
             🚀 We fundraised ${donation - goal} more than expected, wow! 🤩
           </h3>
         )}

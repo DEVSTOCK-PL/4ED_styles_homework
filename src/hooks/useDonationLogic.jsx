@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useDonationLogic = (initialDonation = 0, goal = 0) => {
+export const useDonationLogic = (initialDonation = 0) => {
   const [donation, setDonation] = useState(initialDonation)
   const [donors, setDonors] = useState(0)
 
