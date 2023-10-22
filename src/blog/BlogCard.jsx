@@ -9,13 +9,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  /* align-self: stretch; */
 `
 const Image = styled.img`
   display: flex;
   height: 192px;
   align-items: flex-start;
-  /* align-self: stretch; */
   border-radius: 8px;
 `
 const BlogCard = () => {

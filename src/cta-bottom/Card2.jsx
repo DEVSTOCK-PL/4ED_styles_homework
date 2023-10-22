@@ -4,6 +4,8 @@ import image from './img/card2img.png'
 import Linear from './LinearProgressBar'
 import Label from './CardLabel'
 import Buttons from './Buttons'
+import DonateButton from './DonateButton'
+import ButtonShare from './ButtonShare'
 
 const Image = styled.img`
   height: 288px;
@@ -40,7 +42,10 @@ const Card2 = () => {
             streaming marathons. There is something for everyone.
           </p>
         </div>
-        <Buttons />
+        <Buttons>
+          <DonateButton />
+          <ButtonShare />
+        </Buttons>
       </div>
     </div>
   )

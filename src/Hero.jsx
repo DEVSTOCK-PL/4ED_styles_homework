@@ -21,6 +21,7 @@ const HeroWrapper = styled.div`
     margin: 32px 16px;
     align-self: stretch;
     max-width: 100%;
+    padding-top: 32px;
   }
 `
 const Hero = () => {

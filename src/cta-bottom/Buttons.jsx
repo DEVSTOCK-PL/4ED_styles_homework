@@ -1,8 +1,5 @@
 import styled from 'styled-components'
 
-import DonateButton from '../hero/DonateButton'
-import ButtonShare from './ButtonShare'
-
 const ButtonsDiv = styled.div`
   display: flex;
   gap: 16px;
@@ -16,12 +13,8 @@ const ButtonsDiv = styled.div`
     align-self: stretch;
   }
 `
-const Buttons = () => {
-  return (
-    <ButtonsDiv>
-      <DonateButton /> <ButtonShare />
-    </ButtonsDiv>
-  )
+const Buttons = ({ children }) => {
+  return <ButtonsDiv>{children}</ButtonsDiv>
 }
 
 export default Buttons

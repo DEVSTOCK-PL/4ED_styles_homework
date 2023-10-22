@@ -6,7 +6,7 @@ const NavLinksWrapper = styled.div``
 
 const NavLink = styled.a`
   color: #fff;
-  cursor: pointer;
+  font-size: larger;
   &.active {
     color: #1a56db;
     text-decoration: underline;

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
-import Header from './contact/Header'
+
 import TextFields from './contact/Form'
+
+import Header from './contact/Header'
 
 const ContactWrapper = styled.div`
   display: flex;

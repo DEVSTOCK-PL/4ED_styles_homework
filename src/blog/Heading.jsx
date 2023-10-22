@@ -1,5 +1,6 @@
-import styles from '../styles/styles.module.css'
 import styled from 'styled-components'
+
+import styles from '../styles/styles.module.css'
 
 const HeaderWrapper = styled.div`
   display: flex;

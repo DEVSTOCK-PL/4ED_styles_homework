@@ -12,6 +12,7 @@ const CTAwrapper = styled.div`
 
   @media (max-width: 767px) {
     gap: 16px;
+    padding-top: 32px;
   }
 `
 const CTAbottom = () => {
