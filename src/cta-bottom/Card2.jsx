@@ -26,9 +26,12 @@ const Image = styled.img`
 // let donors = 568
 
 const Card2 = () => {
-  const [goal, setGoal] = useState(400000)
+  const [goal, setGoal] = useState(30000)
   const [donation, donors, donate] = useDonationLogic(0)
   const donationNumber = parseFloat(donation)
+
+  const goalAchieved = donation === goal
+  const goalSurpassed = donation > goal
 
   useEffect(() => {
     console.log('donated', donation)
@@ -50,6 +53,16 @@ const Card2 = () => {
         <h3 className={styles.fundraiserSum}>
           Thank you for supporting our lifesaving work.
         </h3>
+        {goalAchieved && (
+          <h3 className={styles.fundraiserSum}>
+            🏆 Together, we achieved the goal of ${goal}! 🎯💯🤩
+          </h3>
+        )}
+        {goalSurpassed && (
+          <h3 className={styles.fundraiserSum}>
+            🚀 We fundraised ${donation - goal} more than expected, good job! 🤩
+          </h3>
+        )}
         <div className={styles.supportingText}>
           <p className='text-left text-gray-400 self-stretch'>
             Our fundraisers are a creative bunch when it comes to taking on

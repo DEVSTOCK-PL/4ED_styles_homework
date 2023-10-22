@@ -25,9 +25,12 @@ const Image = styled.img`
 // let goal = 400000
 
 const Card1 = () => {
-  const [goal, setGoal] = useState(400000)
+  const [goal, setGoal] = useState(10000)
   const [donation, donors, donate] = useDonationLogic(0)
   const donationNumber = parseFloat(donation)
+
+  const goalAchieved = donation === goal
+  const goalSurpassed = donation > goal
 
   useEffect(() => {
     console.log('donated', donation)
@@ -49,6 +52,16 @@ const Card1 = () => {
         <h3 className={styles.fundraiserSum}>
           Thank you for supporting in planting trees work.
         </h3>
+        {goalAchieved && (
+          <h3 className={styles.fundraiserSum}>
+            We did it! Goal achieved! 🏆🎯💯🤩
+          </h3>
+        )}
+        {goalSurpassed && (
+          <h3 className={styles.fundraiserSum}>
+            🚀 We fundraised ${donation - goal} more than expected, wow! 🤩
+          </h3>
+        )}
         <div className={styles.supportingText}>
           <p className='text-left text-gray-400 self-stretch'>
             Our fundraisers are a creative bunch when it comes to taking on
