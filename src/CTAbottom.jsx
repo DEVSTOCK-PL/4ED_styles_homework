@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Header from './cta-bottom/Header'
 import Cards from './cta-bottom/Cards'
-import ViewAll from './cta-bottom/LinkViewAllEvents'
 import Blog from './Blog'
 
 const CTAwrapper = styled.div`

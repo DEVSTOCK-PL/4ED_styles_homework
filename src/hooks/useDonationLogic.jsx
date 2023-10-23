@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-export const useDonationLogic = (initialDonation = 0) => {
+export const useDonationLogic = (initialDonation = 0, initialDonors) => {
   const [donation, setDonation] = useState(initialDonation)
-  const [donors, setDonors] = useState(0)
+  const [donors, setDonors] = useState(initialDonors)
 
   const donate = () => {
-    setDonation((prev) => prev + 1000)
-    setDonors((prev) => prev + 1)
+    setDonation((prevDonation) => prevDonation + 1000)
+    setDonors((prevDonors) => prevDonors + 1)
   }
-  return [donation, donors, donate]
+  return { donation, donors, donate }
 }

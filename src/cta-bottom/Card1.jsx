@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import styled from 'styled-components'
 
@@ -23,16 +23,11 @@ const Image = styled.img`
 `
 const Card1 = () => {
   const [goal, setGoal] = useState(10000)
-  const [donation, donors, donate] = useDonationLogic(0)
+  const { donation, donors, donate } = useDonationLogic(100, 3)
   const donationNumber = parseFloat(donation)
 
   const goalAchieved = donation === goal
   const goalSurpassed = donation > goal
-
-  useEffect(() => {
-    console.log('donated', donation)
-    console.log(donors, 'donors')
-  }, [donation, donors])
 
   return (
     <div className={styles.cardWrapper}>

@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom'
+
 import styled from 'styled-components'
 
 import Card1 from './Card1'
@@ -23,12 +25,16 @@ const CardsWrapper = styled.div`
   }
 `
 const Cards = () => {
+  const { pathname } = useLocation()
+
   return (
     <CardsWrapper>
       <Card1 />
       <Card2 />
-      <Card3 />
-      <Card4 />
+      {pathname === '/events' && <Card3 />}
+      {pathname === '/events' && <Card4 />}
+      {/* <Card3 />
+      <Card4 /> */}
     </CardsWrapper>
   )
 }

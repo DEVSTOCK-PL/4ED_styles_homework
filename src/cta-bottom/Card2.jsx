@@ -23,7 +23,7 @@ const Image = styled.img`
 `
 const Card2 = () => {
   const [goal, setGoal] = useState(30000)
-  const [donation, donors, donate] = useDonationLogic(0)
+  const { donation, donors, donate } = useDonationLogic(30, 2)
   const donationNumber = parseFloat(donation)
 
   const goalAchieved = donation === goal
