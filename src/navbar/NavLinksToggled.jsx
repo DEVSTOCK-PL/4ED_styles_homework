@@ -18,19 +18,16 @@ const NavLinksToggled = () => {
   return (
     <NavLinksWrapper className={styles.navLinksToggled}>
       <NavLink className={pathname === '/' && 'active'}>
-        <Link to='/'>Company</Link>
+        <Link to='/'>HOME</Link>
       </NavLink>
-      <NavLink className={pathname === '/marketplace' && 'active'}>
-        <Link to='/marketplace'>Marketplace</Link>
+      <NavLink className={pathname === '/news' && 'active'}>
+        <Link to='/news'>NEWS</Link>
       </NavLink>
-      <NavLink className={pathname === '/features' && 'active'}>
-        <Link to='/features'>Features</Link>
-      </NavLink>
-      <NavLink className={pathname === '/team' && 'active'}>
-        <Link to='/team'>Team</Link>
+      <NavLink className={pathname === '/events' && 'active'}>
+        <Link to='/events'>EVENTS</Link>
       </NavLink>
       <NavLink className={pathname === '/contact' && 'active'}>
-        <Link to='/contact'>Contact</Link>
+        <Link to='/contact'>CONTACT</Link>
       </NavLink>
     </NavLinksWrapper>
   )
