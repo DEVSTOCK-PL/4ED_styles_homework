@@ -17,12 +17,13 @@ font-family: ${ (props) => props.fontFamily || "Inter" };
 display: flex;
 justify-content: ${(props)=>props.justifyContent|| "center"};
 align-items: ${(props) => props.alignItems || "center" };
+onClick: ${(props) =>props.onClick};
 `
 // const IconRight = styled.img`
 // margin-left:${(props)=>props.marginLeft||"8px"},
 // `
 
-const BlueButton = ({description,backgroundColor,width,height,border,borderRadius,padding,gap,color,fontSize,fontWeight,lineHeight,fontFamily,justifyContent,alignItems}) => {
+const BlueButton = ({description,backgroundColor,width,height,border,borderRadius,padding,gap,color,fontSize,fontWeight,lineHeight,fontFamily,justifyContent,onClick,alignItems}) => {
     return (
         <StyledBlueButtons 
             backgroundColor={backgroundColor}
@@ -38,7 +39,8 @@ const BlueButton = ({description,backgroundColor,width,height,border,borderRadiu
             lineHeight={lineHeight}
             fontFamily={fontFamily}
             justifyContent={justifyContent}
-            alignItems={alignItems}>
+            alignItems={alignItems}
+            onClick={onClick}>
             {description}   
             
                 {/* <IconRight marginLeft={marginLeft} src={iconRight}/> */}

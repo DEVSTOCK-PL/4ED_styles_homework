@@ -7,6 +7,7 @@ import BlueButton from "../generalComponents/BlueButtons";
 import TransparentShareButton from "../generalComponents/TransparentShareButton";
 import RightMockup from "../image/RightMockup.svg"
 import LinkButton from "../generalComponents/LinkButton";
+// import useDonationState from "./LogikaHook";
 
 const StyledCtaTwo = styled.div`
 width: 1440px;
@@ -101,7 +102,7 @@ justify-content: center;
 align-items: center;
 `
 const FinishStateDonate = styled.div`
-width: 84px;
+width: 92px;
 height: 21px; 
 font-family: Inter;
 font-weight: 400;
@@ -173,6 +174,8 @@ display: flex;
 `
 
 const CtaTwo = () => {
+    const targetDonations = 400000;
+    const {donations, meterDonate, handleDonation } = useDonationState(targetDonations)
     return (
         <StyledCtaTwo>
             <ContainerCtaTwo>
@@ -189,18 +192,19 @@ const CtaTwo = () => {
                             <ProgressBarContainer>
                                 <StripeDonate>
                                     <LeftStripe>
-                                        <StateOfDonate>$376,856</StateOfDonate>
-                                        <FinishStateDonate>of 400k goal</FinishStateDonate>
+                                        <StateOfDonate>${donations}</StateOfDonate>
+                                        <FinishStateDonate>of ${targetDonations} goal</FinishStateDonate>
                                     </LeftStripe>
                                     <NumberOfDonors>2,756 donors</NumberOfDonors>
                                 </StripeDonate>
-                                <GrayStripe><BlueStripe><image xlinkHref={Shape}/></BlueStripe></GrayStripe>
+                                {/* <GrayStripe><BlueStripe><image xlinkHref={Shape}/></BlueStripe></GrayStripe> */}
+                                <GrayStripe><BlueStripe><meterDonate value={meterDonate} max={100}></meterDonate></BlueStripe></GrayStripe>
                             </ProgressBarContainer>
                             <TitleDescription>Thank you for supporting in planting trees work. </TitleDescription>
                             <SupportingDescription>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingDescription>
                             <SectionButtonContainer>
                                 <SectionButton>
-                                    <BlueButton width="121px" backgroundColor="#1C64F2" description="Donate now" lineHeight="21px" ></BlueButton>
+                                    <BlueButton width="121px" backgroundColor="#1C64F2" description="Donate now" lineHeight="21px" onClick={()=>handleDonation(1000)}></BlueButton>
                                     <TransparentShareButton description="Share this Fundraiser" />
                                 </SectionButton>
                             </SectionButtonContainer>    

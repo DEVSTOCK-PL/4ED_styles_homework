@@ -15,6 +15,8 @@ import Disney from "../image/Disney.svg"
 import BMW from "../image/BMW.svg"
 import CocaCola from "../image/CocaCola.svg"
 import TransparentButton from "../generalComponents/TransparentButton";
+import { Link } from 'react-router-dom';
+import NewSponsor from "../subpages/NewSponsor";
 
 const StyledCustomerLogos = styled.div`
 width: 1440px;
@@ -93,14 +95,13 @@ justify-content: center;
 align-items: center;
 `
 
-
 const CustomerLogos = () => {
     return (
         <StyledCustomerLogos>
             <HeadingCustomerLogos>
                 <HeadingText width="672px" height="45px" description="Donors, Partners & Sponsors" display="flex" justifyContent="center" alignItems="center"></HeadingText>
                 <SupportingText width="672px" height="60px" description="Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value." display="flex" justifyContent="center" alignItems="center"></SupportingText>
-                <LinkButton description="Become a sponsor" width="168px" height="24px"></LinkButton>
+                <LinkButton description="Become a sponsor" width="168px" height="24px"><NewSponsor/></LinkButton>
             </HeadingCustomerLogos>
             <ContainerCustomerLogos>
                 <RowCustomerLogos>
@@ -109,66 +110,66 @@ const CustomerLogos = () => {
                             <LogoCustomerLogos width="80px"><image xlinkHref={Stripe} /></LogoCustomerLogos>
                             <TextCustomerLogos>Partner since 2015</TextCustomerLogos>                           
                         </LogoTextContainer>
-                        <TransparentButton description="Visit website"/>   
+                        <a href="https://stripe.com/en-pl" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a> 
                     </CardCustomerLogos>
                     <CardCustomerLogos >
                         <LogoCustomerLogos width="140px"><image xlinkHref={Spotify} /></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>
                     </CardCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="153px"><image xlinkHref={Tesla}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.tesla.com/pl_pl" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                     <CardCustomerLogos >
                         <LogoCustomerLogos width="103px"><image xlinkHref={ Twitch}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.twitch.tv/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                 </RowCustomerLogos>
                 <RowCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="87px"><image xlinkHref={Intel}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.intel.com/content/www/us/en/homepage.html" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="115px"><image xlinkHref={Shell}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.shell.pl/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="107px"><image xlinkHref={Netflix}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.netflix.com/pl/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="114.24px"><image xlinkHref={Nestle}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.nestle.pl/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                 </RowCustomerLogos>
                 <RowCustomerLogos>    
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="112px"><image xlinkHref={Fedex}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.fedex.com/pl-pl/home.html" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="106px"><image xlinkHref={Disney}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.disney.pl/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="38px"><image xlinkHref={BMW}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.bmw.pl/pl/index.html" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a> 
                     </CardCustomerLogos>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="96px"><image xlinkHref={CocaCola}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
-                        <TransparentButton description="Visit website"/>  
+                        <a href="https://www.coca-colacompany.com/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
                 </RowCustomerLogos>
             </ContainerCustomerLogos>
@@ -177,3 +178,4 @@ const CustomerLogos = () => {
     )
 }
 export default CustomerLogos
+ 
