@@ -146,33 +146,23 @@ function CardComponent({
   displayButtons,
 }) {
   const { current, total, goals } = goal;
-  // const donationLogic = useDonationLogic(current, total);
-  const { donationCurrent, donate, isTotalAchieved } = UseDonationLogic(
-    current,
-    total
-  );
-
-  // console.log(donate);
+  const { donationCurrent, donate, isTotalAchieved, newGoals } =
+    UseDonationLogic(current, total, goals);
 
   return (
     <Card>
       <Image src={image} alt="Mockup" />
-      <ProgressBar
-        current={donationCurrent}
-        total={total}
-        goals={goals}
-        // percentage={percentage}
-      />
+      <ProgressBar current={donationCurrent} total={total} goals={newGoals} />
       <Heading2>{heading}</Heading2>
       <SupportText2>{supportText}</SupportText2>
       {displayButtons && (
         <ButtonsWrapper>
           <Button
             version="primary"
-            onClick={() => console.log("Donate")}
-            // disabled={isTotalAchieved}
+            onClick={() => donate()}
+            disabled={isTotalAchieved}
           >
-            {buttons[0].text}
+            {isTotalAchieved ? "Reached!" : buttons[0].text}
           </Button>
           <Button version="transparent">
             <img src="/icons/icon_share.svg" alt="Share Icon" />

@@ -31,11 +31,32 @@ const ButtonStyled = styled.button`
   cursor: pointer;
 
   ${({ version }) => buttonVersions[version] || buttonVersions.primary};
+
+  &:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    animation: pulse 2s infinite;
+    @keyframes pulse {
+      0% {
+        background-color: #1a56db;
+        color: #ffffff;
+      }
+      50% {
+        background-color: #aaaaaa;
+        color: #1a56db;
+      }
+      100% {
+        background-color: #1a56db;
+        color: #ffffff;
+      }
+    }
+  }
 `;
 
-function Button({ children, version, leftIcon, rightIcon }) {
+function Button({ children, version, leftIcon, rightIcon, onClick, disabled }) {
   return (
-    <ButtonStyled version={version}>
+    <ButtonStyled version={version} onClick={onClick} disabled={disabled}>
       {leftIcon && <LeftIcon src={leftIcon} />}
       {children}
       {rightIcon && <RightIcon src={rightIcon} />}
