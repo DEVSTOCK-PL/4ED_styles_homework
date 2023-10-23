@@ -1,17 +1,16 @@
-import React from 'react';
 import styled from "styled-components";
 
-const GoalProgressBar = ({goal, donors}) => {
-  const GoalProgressBarWrapper = styled.div`
+
+const GoalProgressBarWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 4px;
   `
-  const LabelContainer = styled.div`
+const LabelContainer = styled.div`
     display: flex;
     justify-content: space-between;
   `
-  const LeftLabel = styled.div`
+const LeftLabel = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
@@ -30,13 +29,13 @@ const GoalProgressBar = ({goal, donors}) => {
       line-height: 150%;
     }
   `
-  const RightLabel = styled.div`
+const RightLabel = styled.div`
     color: #9CA3AF;
     font-size: 12px;
     font-weight: 400;
     line-height: 150%;
   `
-  const ProgressBar = styled.div`
+const ProgressBar = styled.div`
     background-color: #374151;
     height: 10px;
     position: relative;
@@ -48,11 +47,13 @@ const GoalProgressBar = ({goal, donors}) => {
       background-color: #1C64F2;
       border-radius: 2px;
       height: 100%;
-      width: ${Math.floor((goal.raised / goal.target) * 100)}%;
+      width: ${({raised, target})=> Math.min(Math.floor((raised / target) * 100), 100)}%;
       top: 0;
       left: 0;
     }
   `
+
+const GoalProgressBar = ({target, raised, donors}) => {
 
   const NumberFormatter = number => {
     if (number >= 1000) {
@@ -61,15 +62,14 @@ const GoalProgressBar = ({goal, donors}) => {
     return number
   }
 
-
   return (
     <GoalProgressBarWrapper>
       <LabelContainer>
-        <LeftLabel><span>${goal.raised.toLocaleString('en-US')}</span>
-          <span>of {NumberFormatter(goal.target)} goal</span></LeftLabel>
+        <LeftLabel><span>${raised.toLocaleString('en-US')}</span>
+          <span>of {NumberFormatter(target)} goal</span></LeftLabel>
         <RightLabel>{donors.toLocaleString()} donors</RightLabel>
       </LabelContainer>
-      <ProgressBar></ProgressBar>
+      <ProgressBar raised={raised} target={target}></ProgressBar>
     </GoalProgressBarWrapper>
   );
 };

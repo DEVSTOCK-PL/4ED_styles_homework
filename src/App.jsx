@@ -1,39 +1,45 @@
-import styled from "styled-components";
-import NavBar from "./components/NavBar/NavBar.jsx";
-import Hero from "./components/Hero/Hero.jsx";
-import SocialProof from "./components/SocialProof/SocialProof.jsx";
-import CTAPosts from "./components/CTAPosts/CTAPosts.jsx";
-import CostumersLogos from "./components/CostumersLogos/CostumersLogos.jsx";
-import FundraisingEvents from "./components/FundraisingEvents/FundraisingEvents.jsx";
-import Blog from "./components/Blog/Blog.jsx";
-import Contact from "./components/Contact/Contact.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
+import RickAndMortyLoader from "./Loaders/RickAndMortyLoader.jsx";
 
+import HomeLayout from "./layouts/HomeLayout.jsx";
 
-function App() {
-  const Container = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+//Pages
+import Home from "./pages/Home.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
+import EventsPage from "./pages/EventsPage.jsx";
+import NewsPage from "./pages/NewsPage.jsx";
+import RickAndMortyPage from "./pages/RickAndMortyPage.jsx";
 
+//Components
+import FetchError from "./components/Errors/FetchError.jsx";
+import NotFund from "./components/Errors/NotFund.jsx";
 
-  `
-
-  return (
-    <Container>
-      <NavBar/>
-      <Hero/>
-      <SocialProof/>
-      <CTAPosts/>
-      <CostumersLogos/>
-      <FundraisingEvents/>
-      <Blog/>
-      <Contact/>
-      <Footer/>
-    </Container>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<HomeLayout/>}>
+      <Route index element={<Home/>}/>
+      <Route path='contact' element={<ContactPage/>}/>
+      <Route path='events' element={<EventsPage/>}/>
+      <Route path='news' element={<NewsPage/>}/>
+      <Route path='rickandmorty' >
+        <Route
+          index
+          element={<RickAndMortyPage/>}
+          loader={RickAndMortyLoader}
+        />
+        <Route
+          path=':page'
+          element={<RickAndMortyPage/>}
+          loader={RickAndMortyLoader}
+          errorElement={<FetchError/>}
+        />
+      </Route>
+      <Route path='*' element={<NotFund/>}/>
+    </Route>
   )
+)
+function App() {
+  return <RouterProvider router={router}/>
 }
 
 export default App

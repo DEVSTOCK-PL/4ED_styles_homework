@@ -1,8 +1,6 @@
-import React from 'react';
 import styled from "styled-components";
 
 const SocialProof = () => {
-
   const SocialProof = styled.section`
     display: flex;
     justify-content: center;
@@ -32,27 +30,21 @@ const SocialProof = () => {
       justify-content: center;
       align-items: center;
       width: 100%;
-
     }
 
     div:not(:last-of-type) {
       border-right: 1px solid #374151;
     }
 
-
     @media (max-width: 1024px) {
       width: 768px;
-
       align-items: start;
     }
 
     @media (max-width: 640px) {
-
       width: 100%;
       flex-direction: column;
       gap: 16px;
-
-
 
       div:not(:last-of-type) {
         border-right: none
@@ -69,7 +61,6 @@ const SocialProof = () => {
   `
 
   const Paragraph = styled.p`
-
     font-size: 16px;
     font-weight: 400;
     color: #9CA3AF;

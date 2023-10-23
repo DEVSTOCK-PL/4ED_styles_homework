@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from "styled-components";
 import LinkColumn from "./LinkColumn.jsx";
-import logo from "../NavBar/assets/logo.svg";
+
+import {Logo, socialIcons} from "../../assets/index.js";
 
 const data = [
   {
@@ -58,13 +58,10 @@ const FooterWrapper = styled.section`
 
   @media (max-width: 1024px) {
     justify-content: start;
-
   }
-
 
   @media (max-width: 640px) {
     padding: 32px 16px 64px 16px;
-
   }
 `
 const Container = styled.div`
@@ -74,13 +71,10 @@ const Container = styled.div`
   align-items: center;
   width: 1280px;
 
-
   @media (max-width: 640px) {
     align-items: start;
     width: 100%;
-
   }
-
 `
 const NavLinks = styled.div`
   width: 100%;
@@ -94,10 +88,10 @@ const NavLinks = styled.div`
     row-gap: 32px;
     align-self: start;
   }
+  
   @media (max-width: 640px) {
     flex-direction: column;
     gap: 32px;
-
   }
 `
 const LogoSocialLinks = styled.div`
@@ -116,29 +110,27 @@ const LogoSocialLinks = styled.div`
 
   @media (max-width: 640px) {
     align-items: start;
-
   }
 `
 
-
-const Logo = styled.div`
+const LogoWrapper = styled.div`
   color: #FFF;
   display: flex;
   align-items: center;
-  width: 102px;
+  justify-content: center;
+  width: 100%;
   gap: 12px;
   font-size: 24px;
   font-weight: 600;
+
+  @media (max-width: 640px) {
+    justify-content: start;
+  }
 `
 
 const SocialLinks = styled.div`
   display: flex;
-  gap: 20px;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
+  gap: 20px;  
 `
 
 
@@ -147,20 +139,15 @@ const Footer = () => {
     <FooterWrapper>
       <Container>
         <NavLinks>
-          {data.map(({title, links}) => (<LinkColumn title={title} links={links}/>))}
-
+          {data.map(({title, links}) => (<LinkColumn key={Math.random()} title={title} links={links}/>))}
         </NavLinks>
         <LogoSocialLinks>
-          <Logo><img src={logo} alt='Logo'/>Flowbite</Logo>
+          <LogoWrapper><Logo />Flowbite</LogoWrapper>
           <p>© 2022 Flowbite, Inc. All rights reserved.</p>
           <SocialLinks>
-            <img alt='github' src='/socialLinks/github.svg'/>
-            <img alt='twitter' src='/socialLinks/twitter.svg'/>
-            <img alt='dribbble' src='/socialLinks/dribbble.svg'/>
-            <img alt='facebook' src='/socialLinks/facebook-f.svg'/>
+            {socialIcons.map((Icon, index) => <Icon key={index}/>)}
           </SocialLinks>
         </LogoSocialLinks>
-
       </Container>
     </FooterWrapper>
   );

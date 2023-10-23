@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from "styled-components";
 
+import {ArrowNarrowRight} from '../../assets/index.js'
 
 const BlogCardWrapper = styled.div`
   display: flex;
@@ -8,13 +8,11 @@ const BlogCardWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-
 `
 const CardHeader = styled.div`
   display: ${({img}) => !img && 'none'};
   width: 100%;
   height: 192px;
-
   background: ${({img}) => img ? `url(${img}) lightgray no-repeat center center / cover;` : 'none'}
   border-radius: 8px;
 `
@@ -30,7 +28,7 @@ const Content = styled.div`
     line-height: 125%;
     color: #FFF;
   }
-
+  
   p {
     font-size: 16px;
     font-weight: 400;
@@ -57,7 +55,7 @@ const BlogCard = ({data: {title, text, img}}) => {
       <Content>
         <h1>{title}</h1>
         <p>{text}</p>
-        <span>Read more <img src='/arrow-narrow-right-blue.svg'/></span>
+        <span>Read more <ArrowNarrowRight fill='#3F83F8'/></span>
       </Content>
 
 

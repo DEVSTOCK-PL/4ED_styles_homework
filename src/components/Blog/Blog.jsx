@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components'
 import BlogCard from "./BlogCard.jsx";
 
@@ -90,16 +89,14 @@ const Heading = styled.div`
   @media (max-width: 1024px) {
     max-width: 100%;
   }
-
 `
 
 const BlogPostsContainer = styled.div`
   display: flex;
-  //justify-content: center;
-  //align-items: center;
   max-width: 1280px;
   height: 100%;
   flex: 1;
+  
   @media (max-width: 1024px) {
     flex-direction: column;
     width: 100%;
@@ -111,22 +108,19 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-
 `
 const Divider = styled.div`
-
   height: auto;
   width: 1px;
   background-color: #374151;
   margin: 0 32px;
+  
   @media (max-width: 640px) {
     display: none;
   }
 `
 
 const Blog = () => {
-
-
   const withImage = data.filter(item => item.img !== null)
   const withOutImage = data.filter(item => item.img == null)
 
@@ -137,7 +131,6 @@ const Blog = () => {
         <p>We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
       </Heading>
       <BlogPostsContainer>
-
 
         <Column>
           {withImage.map(item => (<BlogCard key={item.id} data={item}/>))}

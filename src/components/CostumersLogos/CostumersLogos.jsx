@@ -1,22 +1,7 @@
-import React from 'react';
 import styled from "styled-components";
+import {brandLogos, ArrowNarrowRight} from "../../assets/index.js";
+
 import Card from "./Card.jsx";
-
-const data = [
-  {id: 1, logo: '/brandLogos/Stripe.svg'},
-  {id: 2, logo: '/brandLogos/Spotify.svg'},
-  {id: 3, logo: '/brandLogos/Tesla.svg'},
-  {id: 4, logo: '/brandLogos/Twitch.svg'},
-  {id: 5, logo: '/brandLogos/Intel.svg'},
-  {id: 6, logo: '/brandLogos/Shell.svg'},
-  {id: 7, logo: '/brandLogos/Netflix.svg'},
-  {id: 8, logo: '/brandLogos/Nestle.svg'},
-  {id: 9, logo: '/brandLogos/Fedex.svg'},
-  {id: 10, logo: '/brandLogos/Disney.svg'},
-  {id: 11, logo: '/brandLogos/BMW.svg'},
-  {id: 11, logo: '/brandLogos/Coca-Cola.svg'},
-]
-
 
 const CostumersLogosWrapper = styled.section`
   width: 100%;
@@ -26,10 +11,6 @@ const CostumersLogosWrapper = styled.section`
   background-color: #1F2A37;
   border-top: 1px solid #374151;
   border-bottom: 1px solid #374151;
-  //@media (max-width: 640px) {
-  //  padding: 32px 16px;
-  //
-  //}
 `
 
 const Container = styled.div`
@@ -71,7 +52,6 @@ const HeadingWrapper = styled.div`
 
   p {
     width: 100%;
-
     font-size: 20px;
     font-weight: 300;
     line-height: 150%;
@@ -108,7 +88,6 @@ const LogosContainer = styled.div`
 
 const CostumersLogos = () => {
 
-
   return (
     <CostumersLogosWrapper>
       <Container>
@@ -116,11 +95,10 @@ const CostumersLogos = () => {
           <h1>Donors, Partners & Sponsors</h1>
           <p>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term
             value.</p>
-          <span>Become a sponsor <img src='/arrow-narrow-right-blue.svg'/></span>
+          <span>Become a sponsor <ArrowNarrowRight fill='#3F83F8'/></span>
         </HeadingWrapper>
         <LogosContainer>
-          {data.map(item => <Card logo={item.logo}/>)}
-
+          {brandLogos.map((Logo, index) => <Card key={index}  logo={Logo}/>)}
         </LogosContainer>
       </Container>
     </CostumersLogosWrapper>

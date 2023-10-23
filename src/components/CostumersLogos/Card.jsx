@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from "styled-components";
 import {Button} from "../UI/index.js";
+import {ExternalLink} from "../../assets/index.js";
 
 
 const CardWrapper = styled.div`
@@ -18,7 +18,6 @@ const CardWrapper = styled.div`
     width: 50%;
   }
 
-
   p {
     color: #6B7280;
     font-size: 16px;
@@ -27,13 +26,12 @@ const CardWrapper = styled.div`
     margin: 10px 0 20px 0;
   }
 `
-const Card = ({logo}) => {
-
+const Card = ({logo: Logo}) => {
   return (
     <CardWrapper>
-      <img src={logo}/>
+    <Logo/>
       <p>Partner since 2015</p>
-      <Button variant='alternative'><img src='/external-link.svg'/>Visit website</Button>
+      <Button variant='alternative'><ExternalLink/> website</Button>
     </CardWrapper>
   );
 };

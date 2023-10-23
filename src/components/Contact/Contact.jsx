@@ -1,20 +1,16 @@
-import React from 'react';
 import styled from "styled-components";
 import {Button} from "../UI/index.js";
-
 
 const ContactWrapper = styled.section`
   max-width: 1280px;
   display: flex;
   flex-direction: column;
   padding: 96px 16px;
-
   align-items: center;
   gap: 64px;
   @media (max-width: 640px) {
     padding: 32px 16px;
   }
-
 `
 const Heading = styled.section`
   display: flex;
@@ -53,7 +49,6 @@ const ContactForm = styled.section`
   flex-direction: column;
   gap: 24px;
   width: 640px;
-
 
   div {
     display: flex;

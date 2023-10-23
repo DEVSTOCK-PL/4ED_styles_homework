@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from "styled-components";
 import CTAPost from "./CTAPost.jsx";
+import {ArrowNarrowRight} from "../../assets/index.js";
 
 
 const data = [
@@ -10,7 +10,7 @@ const data = [
     text: 'Flowbite helps you connect with friends, family and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.',
     img: '/img/6322b3afb350485f9f1c6379df6e9e6b.jpeg',
     buttons: [
-      {id: 1, label: 'Get involved', variant: 'primary', icon: '/arrow-narrow-right.svg',},
+      {id: 1, label: 'Get involved', variant: 'primary', icon: true,},
       {id: 2, label: 'Learn more', variant: 'alternative', icon: false}
     ],
     flicked: false
@@ -25,7 +25,7 @@ const data = [
         id: 1,
         label: 'View all activities',
         variant: 'primary',
-        icon: '/arrow-narrow-right.svg',
+        icon: true,
       },
 
     ],
@@ -37,7 +37,7 @@ const data = [
     text: 'Flowbite helps you connect with friends, family and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.',
     img: '/img/3a2e9079ae58601dbd2d4ef5ffdd8d0e.jpeg',
     buttons: [
-      {id: 1, label: 'Read more', variant: 'primary', icon: '/arrow-narrow-right.svg',},
+      {id: 1, label: 'Read more', variant: 'primary', icon: true,},
 
     ],
     flicked: false
@@ -62,7 +62,7 @@ const CTAPosts = () => {
 
   return (
     <CTAPostsWrapper>
-      {data.map(item => <CTAPost data={item}/>)}
+      {data.map(item => <CTAPost key={item.id} data={item}/>)}
 
     </CTAPostsWrapper>
   );

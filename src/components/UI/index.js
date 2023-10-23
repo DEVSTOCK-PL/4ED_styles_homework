@@ -1,2 +1,4 @@
 import Button from "./Button.jsx";
-export {Button}
+import Pagination from "./Pagination.jsx";
+
+export {Button, Pagination}

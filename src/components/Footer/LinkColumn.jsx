@@ -1,18 +1,11 @@
-import React from 'react';
 import styled from "styled-components";
-
 
 const LinkColumnWrapper = styled.div`
   width: 176px;
   display: flex;
   flex-direction: column;
   gap: 16px;
- 
-  @media (max-width: 1024px) {
-
-
-  }
-
+  
   h2 {
     font-size: 14px;
     color: #FFF;
@@ -30,7 +23,6 @@ const LinkColumnWrapper = styled.div`
     line-height: 150%;
     list-style: none;
     padding: 0;
-
   }
 `
 const LinkColumn = ({title, links}) => {
@@ -38,7 +30,7 @@ const LinkColumn = ({title, links}) => {
     <LinkColumnWrapper>
       <h2>{title}</h2>
       <ul>
-        {links.map(link => (<li>{link.title}</li>))}
+        {links.map(link => (<li key={Math.random()}>{link.title}</li>))}
       </ul>
     </LinkColumnWrapper>
   );
