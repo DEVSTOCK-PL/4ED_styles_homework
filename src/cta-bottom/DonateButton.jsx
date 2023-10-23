@@ -1,4 +1,3 @@
-// import { useDonationLogic } from '../hooks/useDonationLogic'
 import styled from 'styled-components'
 
 const DonateNow = styled.button`

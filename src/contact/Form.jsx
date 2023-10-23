@@ -58,7 +58,7 @@ const CustomMessageField = styled(TextField)`
     height: 100%;
   }
   & .MuiInputLabel-filled {
-    color: #9ca3af; /* Color for the label */
+    color: #9ca3af;
   }
 `
 
