@@ -8,6 +8,7 @@ import HomePage from "./pages/Home";
 import NewsPage from "./pages/News";
 import EventsPage from "./pages/Events";
 import ContactPage from "./pages/Contact";
+import NotFoundPage from "./pages/NotFound";
 
 const Container = styled.div`
   width: 100%;
@@ -285,6 +286,7 @@ function App() {
             path="/contact"
             element={<ContactPage customerLogos={customerLogos} />}
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Container>
     </BrowserRouter>

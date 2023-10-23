@@ -32,7 +32,6 @@ const LeftContent = styled.div`
   width: 576px;
   flex-direction: column;
   align-items: flex-start;
-  /* gap: 32px; */
   font-family: Inter;
 `;
 
