@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import styled from 'styled-components'
-import toggle from '../public/toggle.svg'
 
+import toggle from '../public/toggle.svg'
 import ToggleMenu from './ToggleMenu'
 
 const ToggleButton = styled.img`
@@ -19,6 +19,7 @@ const Toggle = () => {
   const handleToggle = () => {
     setMenu(!menu)
   }
+
   return (
     <>
       <ToggleButton src={toggle} alt='Toggle' onClick={handleToggle} />
