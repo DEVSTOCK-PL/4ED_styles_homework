@@ -33,8 +33,6 @@ const Cards = () => {
       <Card2 />
       {pathname === '/events' && <Card3 />}
       {pathname === '/events' && <Card4 />}
-      {/* <Card3 />
-      <Card4 /> */}
     </CardsWrapper>
   )
 }
