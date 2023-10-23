@@ -4,7 +4,6 @@ import Button from "../Reusable/Button";
 const ContactContainer = styled.div`
   display: flex;
   width: 100%;
-  /* padding: 96px 0px; */
   flex-direction: column;
   align-items: center;
   gap: 10px;

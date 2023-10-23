@@ -3,7 +3,6 @@ import Button from "../Reusable/Button";
 
 const HeroContainer = styled.div`
   display: flex;
-  /* padding: 96px 0px; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
