@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from 'styled-components';
 import { Cards } from './Cards';
 import { Heading } from './Heading';
@@ -22,12 +23,13 @@ const FundraisingContainer = styled.div`
   }
 `;
 
-export const Fundraising = () => {
+export const Fundraising = ({ forEvents, disabledButton }) => {
   return (
     <FundraisingContainer>
       <Heading />
-      <Cards />
-      <Cta />
+      <Cards disabledButton={disabledButton} />
+      {forEvents && <Cards rowReverse disabledButton={disabledButton} />}
+      {forEvents || <Cta />}
     </FundraisingContainer>
   );
 };

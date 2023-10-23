@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { Container } from '../Container';
 import vector from '../../assets/vector.svg';
 
@@ -7,6 +8,19 @@ const NavContainer = styled(Container)`
 
   &.mobileNav {
     display: none;
+  }
+
+  .link {
+    color: #fff;
+    text-decoration: none;
+
+    &:active {
+      color: #000;
+    }
+  }
+
+  .active {
+    color: #00f;
   }
 
   @media (max-width: 1536px) {
@@ -46,11 +60,6 @@ const NavContainer = styled(Container)`
   }
 `;
 
-const Link = styled.a`
-  color: white;
-  text-decoration: none;
-`;
-
 const StyledImg = styled.img`
   width: 23px;
   height: 20px;
@@ -62,29 +71,29 @@ export const Nav = () => {
       <NavContainer as="nav" className="desktopNav">
         <Container as="ul" className="ul" columnGap="50px">
           <Container as="li">
-            <Link className="link" href="#">
-              Company
-            </Link>
+            <NavLink className="link" to="/">
+              HOME
+            </NavLink>
           </Container>
           <Container as="li">
-            <Link className="link" href="#">
-              Marketplace
-            </Link>
+            <NavLink className="link" to="/news">
+              NEWS
+            </NavLink>
           </Container>
           <Container as="li">
-            <Link className="link" href="#">
-              Features
-            </Link>
+            <NavLink className="link" to="/events">
+              EVENTS
+            </NavLink>
           </Container>
           <Container as="li">
-            <Link className="link" href="#">
-              Team
-            </Link>
+            <NavLink className="link" to="/contact">
+              CONTACT
+            </NavLink>
           </Container>
           <Container as="li">
-            <Link className="link" href="#">
-              Contact
-            </Link>
+            <NavLink className="link" to="/list">
+              RICKANDMORTY
+            </NavLink>
           </Container>
         </Container>
       </NavContainer>

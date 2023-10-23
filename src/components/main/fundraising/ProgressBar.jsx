@@ -43,6 +43,7 @@ const ShapeIn = styled.div`
   height: 10px;
   border-radius: 2px;
   background: #1c64f2;
+  max-width: 100%;
 
   width: ${(props) => props.width}%;
 `;

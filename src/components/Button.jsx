@@ -26,6 +26,8 @@ const StyledButton = styled.button`
 `;
 
 export const Button = ({
+  disabled,
+  onClick,
   className,
   width,
   minWidth,
@@ -44,6 +46,8 @@ export const Button = ({
 }) => {
   return (
     <StyledButton
+      disabled={disabled}
+      onClick={onClick}
       className={className}
       width={width}
       minWidth={minWidth}
