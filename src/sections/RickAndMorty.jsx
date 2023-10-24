@@ -56,6 +56,7 @@ const Button = styled.button`
 const RickAndMorty = () => {
   const { page } = useParams();
   const initialPage = parseInt(page || 1);
+
   const [currentPage, setCurrentPage] = useState(initialPage);
   const { datas, loading, pagess } = useFetchLogic(currentPage);
 

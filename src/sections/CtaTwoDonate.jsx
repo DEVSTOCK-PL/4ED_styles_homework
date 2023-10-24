@@ -92,6 +92,13 @@ const Heading = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    height: auto;
+  }
+  @media (max-width: 640px) {
+    height: auto;
+  }
 `;
 const Cards = styled.div`
   width: 100%;
