@@ -7,6 +7,7 @@ import Home from './Home'
 import Contact from './ContactUs'
 import Page404 from './PageNotFound'
 import CTAtop from './CTAtop'
+import RickAndMorty from './API/RickAndMorty'
 
 function App() {
   return (
@@ -41,6 +42,14 @@ function App() {
           element={
             <Layout>
               <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path='/rickmorty'
+          element={
+            <Layout>
+              <RickAndMorty />
             </Layout>
           }
         />

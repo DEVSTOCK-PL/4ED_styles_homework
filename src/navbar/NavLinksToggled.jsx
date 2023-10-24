@@ -29,6 +29,10 @@ const NavLinksToggled = () => {
       <NavLink className={pathname === '/contact' && 'active'}>
         <Link to='/contact'>CONTACT</Link>
       </NavLink>
+      <NavLink
+        className={pathname === '/rickmorty' && 'active' && 'text-pink-500'}>
+        <Link to='/rickmorty'>Rick&Morty</Link>
+      </NavLink>
     </NavLinksWrapper>
   )
 }

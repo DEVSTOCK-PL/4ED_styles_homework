@@ -17,12 +17,16 @@ const Toggle = () => {
   const [menu, setMenu] = useState(false)
 
   const handleToggle = () => {
-    setMenu(!menu)
+    setMenu((prevMenu) => !prevMenu)
   }
 
   return (
     <>
-      <ToggleButton src={toggle} alt='Toggle' onClick={handleToggle} />
+      <ToggleButton
+        src={toggle}
+        alt='Toggle'
+        onClick={(e) => handleToggle(e)}
+      />
       {menu && <ToggleMenu />}
     </>
   )

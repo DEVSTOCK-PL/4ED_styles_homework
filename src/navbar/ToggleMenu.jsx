@@ -1,7 +1,9 @@
-import { useEffect } from 'react'
 import styled from 'styled-components'
+
 import NavLinksToggled from './NavLinksToggled'
 import SignOptionsToggled from './SignOptionsToggled'
+
+import { useToggleMenu } from '../hooks/useToggleMenu'
 
 const ToggleMenuWrapper = styled.div`
   width: 300px;
@@ -30,25 +32,20 @@ const LinksWrapper = styled.div`
   align-items: center;
   gap: 3rem;
 `
-const ToggleMenu = ({ setMenu }) => {
-  console.log('setMenu prop:', setMenu)
-  //tried to achieve hiding the ToggleMenu when clicked outside of the ToggleMenu component when rendered
-  useEffect(() => {
-    const handleClick = () => {
-      console.log('clicked')
-      setMenu(false)
-    }
-
-    window.addEventListener('click', handleClick)
-
-    return () => {
-      window.removeEventListener('click', handleClick)
-    }
-  }, [setMenu])
+const ToggleMenu = () => {
+  const [isClosed, handleCloseMenu] = useToggleMenu(false)
+  console.log('isClosed:', isClosed)
 
   return (
-    <ToggleMenuWrapper>
+    <ToggleMenuWrapper
+      className='ToggleMenuWrapper'
+      style={{ display: isClosed ? 'none' : 'flex' }}>
       <LinksWrapper>
+        <div
+          className='text-white text-2xl bg-gray-900 rounded-lg p-4 w-full flex items-center justify-center'
+          onClick={handleCloseMenu}>
+          X
+        </div>
         <SignOptionsToggled />
         <NavLinksToggled />
       </LinksWrapper>
