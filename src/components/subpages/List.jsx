@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import useLogic from "../hooks/useLogic";
+import useLogic from "../../hooks/useLogic";
 
 import Card from "../Card";
 
@@ -38,7 +38,7 @@ const List = () => {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch("http://localhost:3000/users");
+        const response = await fetch("http://localhost:3000/people");
         if (!response.ok) {
           throw new Error("Błąd podczas pobierania danych");
         }

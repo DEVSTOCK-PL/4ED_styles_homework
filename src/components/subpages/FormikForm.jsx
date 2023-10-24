@@ -58,7 +58,7 @@ const FormikForm = () => {
     }),
     onSubmit: async (values) => {
       try {
-        const response = await fetch("http://localhost:3000/users", {
+        const response = await fetch("http://localhost:3000/people", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -1,3 +1,48 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "example@gmail.com",
+      "password": "password",
+      "url": "http://localhost:3000/users",
+      "id": "Xz5m6sq"
+    }
+  ],
+  "people": [],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Pierwszy post",
+      "description": "Opis pierwszego posta w naszym zestawie.",
+      "author": "Jan Kowalski",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "title": "Drugi post",
+      "description": "Opis drugiego posta. Kolejny interesujący wpis!",
+      "author": "Anna Nowak",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "title": "Trzeci post",
+      "description": "Opis trzeciego posta w naszym zestawie.",
+      "author": "Piotr Zięba",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "title": "Czwarty post",
+      "description": "Kolejny fascynujący opis dotyczący czwartego posta.",
+      "author": "Magda Lis",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 5,
+      "title": "Piąty post",
+      "description": "Opis piątego posta. Czytaj dalej!",
+      "author": "Marek Dąb",
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
 }
