@@ -1,34 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+
+import Layout from './Layout'
+import CTAbottom from './CTAbottom'
+import Home from './Home'
+import Contact from './ContactUs'
+import Page404 from './PageNotFound'
+import CTAtop from './CTAtop'
+import RickAndMorty from './API/RickAndMorty'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path='/news'
+          element={
+            <Layout>
+              <CTAtop />
+            </Layout>
+          }
+        />
+        <Route
+          path='/events'
+          element={
+            <Layout>
+              <CTAbottom />
+            </Layout>
+          }
+        />
+        <Route
+          path='/contact'
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path='/rickmorty'
+          element={
+            <Layout>
+              <RickAndMorty />
+            </Layout>
+          }
+        />
+        <Route
+          path='*'
+          element={
+            <Layout>
+              <Page404 />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Router>
   )
 }
 
