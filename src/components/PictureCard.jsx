@@ -3,17 +3,7 @@ import mockup1News from "../images/mockup1News.png";
 import mockupLeft from "../images/mockupLeft.png";
 import eventButtonVector from "../images/eventButtonVector.svg";
 import Button from "./styleElements/Button";
-
-const breakpoints = {
-  mobile: "320px",
-  tablet: "768px",
-  smallDesktop: "1024px",
-  desktop: "1160px",
-  Largedesktop: "1280px",
-};
-// @media (max-width: ${breakpoints.desktop}) {
-//   font-size: 18px;
-// }
+import BreakPoints from "./BreakPoints";
 
 const Container = styled.div`
   padding: 20px 0px 60px 0px;
@@ -21,6 +11,11 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   justify-content: space-between;
+  @media (max-width: ${BreakPoints.tablet}) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+  }
 `;
 
 const Card = styled.div`
@@ -30,8 +25,14 @@ const Card = styled.div`
   border-radius: 8px;
   margin-bottom: 40px;
   padding: 30px;
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${BreakPoints.desktop}) {
     padding: 20px;
+  }
+  @media (max-width: ${BreakPoints.tablet}) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
   }
 `;
 const MockupImage = styled.img`
@@ -39,8 +40,11 @@ const MockupImage = styled.img`
   border-radius: 8px;
   width: 100%;
   border-radius: 8px;
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${BreakPoints.desktop}) {
     height: 250px;
+  }
+  @media (max-width: ${BreakPoints.tablet}) {
+    height: 400px;
   }
 `;
 

@@ -10,33 +10,34 @@ import fedex from "../images/fedex.png";
 import visa from "../images/visa.png";
 import disnay from "../images/disnay.png";
 import carousel from "../images/carousel.png";
-
-const breakpoints = {
-  mobile: "320px",
-  tablet: "768px",
-  smallDesktop: "900px",
-  desktop: "1160px",
-  Largedesktop: "1280px",
-};
-// @media (max-width: ${breakpoints.tablet}) {
-//   font-size: 18px;
-// }
+import BreakPoints from "./BreakPoints";
 
 const Hero = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: ${breakpoints.smallDesktop}) {
+  @media (max-width: ${BreakPoints.tablet}) {
     display: flex;
     flex-direction: column;
   }
 `;
 
 const LeftContent = styled.div`
-  width: 50%;
   padding-right: 30px;
-  @media (max-width: ${breakpoints.smallDesktop}) {
+  @media (max-width: ${BreakPoints.smallDesktop}) {
     width: 100%;
     padding-right: 0px;
+  }
+`;
+const ResponsiveHeading = styled(Heading)`
+  @media (max-width: ${BreakPoints.smallDesktop}) {
+    font-size: 31px;
+    font-weight: 600;
+  }
+`;
+const ResponsiveSupportingText = styled(SupportingText)`
+  @media (max-width: ${BreakPoints.smallDesktop}) {
+    font-size: 15px;
+    font-weight: 400;
   }
 `;
 
@@ -51,7 +52,7 @@ const VideoCameraButton = styled(Button)`
   display: flex;
 `;
 const RightPhoto = styled.div`
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${BreakPoints.desktop}) {
     display: flex;
     align-items: center;
   }
@@ -59,16 +60,18 @@ const RightPhoto = styled.div`
   img {
     width: 576px;
     height: 360px;
-    @media (max-width: ${breakpoints.desktop}) {
+    @media (max-width: ${BreakPoints.desktop}) {
       width: 476px;
       height: 270px;
     }
-    @media (max-width: ${breakpoints.smallDesktop}) {
-    width: 100%;
-    height: 370px;
-    margin: 40px;
+    @media (max-width: ${BreakPoints.smallDesktop}) {
+      width: 470px;
+      height: 270px;
+      margin: 30px 20px;
+    }
+    @media (max-width: ${BreakPoints.tablet}) {
+      width: 100%;
   }
-    
   }
 `;
 const Divider = styled.div`
@@ -93,6 +96,11 @@ const SponsoredLogo = styled.div`
     width: 86px;
     height: 33.36px;
     margin-right: 20px;
+    @media (max-width: ${BreakPoints.smallDesktop}) {
+      width: 56px;
+      height: 23.36px;
+      margin-right: 10px;
+    }
   }
 `;
 const SocialProof = styled.div`
@@ -103,11 +111,15 @@ const SocialProof = styled.div`
   margin: 70px 100px;
   border: 2px solid #374151;
   border-radius: 8px;
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${BreakPoints.desktop}) {
     margin: 70px 100px;
   }
-  @media (max-width: ${breakpoints.smallDesktop}) {
+  @media (max-width: ${BreakPoints.smallDesktop}) {
     margin: 0px;
+  }
+  @media (max-width: ${BreakPoints.tablet}) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 const Stat = styled.div`
@@ -140,12 +152,14 @@ function Home() {
       <Container>
         <Hero>
           <LeftContent>
-            <Heading>Making earth cooler for people, nature, climate</Heading>
-            <SupportingText>
+            <ResponsiveHeading>
+              Making earth cooler for people, nature, climate
+            </ResponsiveHeading>
+            <ResponsiveSupportingText>
               Protecting the planet and its natural resources for future
               generations, by reducing pollution, promoting sustainability, and
               conserving energy and resources.
-            </SupportingText>
+            </ResponsiveSupportingText>
             <Buttons>
               <Button>Donate now</Button>
               <VideoCameraButton>

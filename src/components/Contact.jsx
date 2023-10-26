@@ -3,19 +3,15 @@ import Container from "./styleElements/Container";
 import Button from "./styleElements/Button";
 import Heading from "./styleElements/Heading";
 import SupportingText from "./styleElements/SupportingText";
+import BreakPoints from "./BreakPoints";
 
-const breakpoints = {
-  mobile: "768px",
-  tablet: "1024px",
-  desktop: "1200px",
-};
 
 const NewContainer = styled(Container)`
   padding-bottom: 0px;
   padding: 0px 0px;
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${BreakPoints.tablet}) {
     width: 100%;
-    background-color: #fff;
+    padding: 0px 20px;
   }
 `;
 
@@ -27,8 +23,11 @@ const Row = styled.div`
   flex-direction: column;
   padding-top: 50px;
   padding-bottom: 50px;
-  width: 700px;
+  width: 60%;
   margin: 0 auto;
+  @media (max-width: ${BreakPoints.tablet}) {
+    width: 100%;
+  }
   Button {
     width: 160px;
   }
@@ -84,7 +83,7 @@ const CenterSupportingText = styled(SupportingText)`
 
 function Events() {
   return (
-    <NewContainer>
+    <Container>
       <Row>
         <CenterHeading>Contact us</CenterHeading>
         <CenterSupportingText>
@@ -112,7 +111,7 @@ function Events() {
         </FormContainer>
         <Button>Send message</Button>
       </Row>
-    </NewContainer>
+    </Container>
   );
 }
 

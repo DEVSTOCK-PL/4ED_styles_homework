@@ -2,13 +2,7 @@ import styled from "styled-components";
 import Container from "./styleElements/Container";
 import logo from "../images/logo.png";
 import socialLinks from "../images/socialLinks.png";
-
-const breakpoints = {
-  smallMobile: "565px",
-  mobile: "768px",
-  tablet: "1024px",
-  desktop: "1200px",
-};
+import BreakPoints from "./BreakPoints";
 
 const FooterContainer = styled(Container)`
   background-color:#1f2a37;
@@ -19,7 +13,7 @@ const FooterContainer = styled(Container)`
 const ColumnsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${BreakPoints.tablet}) {
     flex-wrap: wrap;
   }
 `;

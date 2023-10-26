@@ -16,19 +16,15 @@ import twitch from "../images/twitch.svg";
 import nestle from "../images/nestle.svg";
 import cocacola from "../images/cocacola.svg";
 import SupportingText from "./styleElements/SupportingText";
-
+import BreakPoints from "./BreakPoints";
+// @media (max-width: ${breakpoints.tablet}) {
+//   font-size: 18px;
+// }
 const CentredHeading = styled(Heading)`
   text-align: center;
 `;
-
-const SponsorsCardWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-`;
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
+const CenterSupportingText = styled(SupportingText)`
+  text-align: center;
 `;
 
 const CostumersLogosContainer = styled.div`
@@ -40,8 +36,18 @@ const CostumersLogosContainer = styled.div`
   padding-top: 70px;
   padding-bottom: 70px;
 `;
-const CenterSupportingText = styled(SupportingText)`
-  text-align: center;
+const SponsorsCardWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  @media (max-width: ${BreakPoints.tablet}) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
 `;
 
 function CostomersLogos() {

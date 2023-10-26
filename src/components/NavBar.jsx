@@ -3,22 +3,16 @@ import styled from "styled-components";
 import Container from "./styleElements/Container";
 import logo from "../images/logo.png";
 import Button from "./styleElements/Button";
-
-const breakpoints = {
-  mobile: '320px',
-  tablet: '768px',
-  smallDesktop: '1024px',
-  desktop: '1280px',
-}
-
-// @media (min-width: ${breakpoints.tablet}) {
-//   font-size: 18px;
-// }
+import BreakPoints from "./BreakPoints";
 
 const NavContainer = styled(Container)`
   display: flex;
   align-items: center;
   max-width: none;
+   @media (max-width: ${BreakPoints.tablet}) {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+ }
 `;
 
 const Logo = styled.div`

@@ -3,10 +3,12 @@ import styled from "styled-components";
 import Container from "./styleElements/Container";
 import Heading from "./styleElements/Heading";
 import SupportingText from "./styleElements/SupportingText";
-import CardStyles from "./CardStyles";
+import CardStyles from "./PictureCard";
 import CenteredLink from "./styleElements/CenteredLink";
 import littleArow from "../images/littleArow.png";
 import carousel from "../images/carousel.png";
+import BreakPoints from "./BreakPoints";
+
 
 const EventsContainer = styled(Container)`
   padding-bottom: 0px;
@@ -32,6 +34,9 @@ const Blog = styled.div`
 const Row = styled.div`
   background-color: #1f2a37;
   display: flex;
+  @media (max-width: ${BreakPoints.smallDesktop}) {
+    display: block;
+  }
 `;
 const ImageWrapper = styled.div`
   width: 100%;
@@ -43,6 +48,9 @@ const ImageWrapper = styled.div`
 
 const ColumnContainer = styled.div`
   padding: 40px 30px;
+  @media (max-width: ${BreakPoints.smallDesktop}) {
+    padding: 0px 30px;
+  }
 `;
 
 const ColumnLink = styled(CenteredLink)`

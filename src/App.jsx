@@ -1,4 +1,5 @@
 import "./App.css";
+import styled from "styled-components";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -7,10 +8,14 @@ import News from "./components/News";
 import Events from "./components/Events";
 import Contact from "./components/Contact";
 
+const MainContainer = styled.div`
+/* background-color: #fff; */
+  padding: 20px;
+`
 
 function App() {
   return (
-    <div>
+    <MainContainer>
       <NavBar/>
       <Home/>
       <News/>
@@ -18,7 +23,7 @@ function App() {
       <Events/>
       <Contact/>
       <Footer />
-    </div>
+    </MainContainer>
   );
 }
 
