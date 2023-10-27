@@ -16,6 +16,10 @@ const ColumnsWrapper = styled.div`
   @media (max-width: ${BreakPoints.tablet}) {
     flex-wrap: wrap;
   }
+  @media (max-width: ${BreakPoints.mobile}) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Column = styled.div`

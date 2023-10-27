@@ -1,31 +1,17 @@
 // eslint-disable-next-line no-unused-vars
+import React, { useState } from "react";
 import styled from "styled-components";
 import Container from "./styleElements/Container";
-import logo from "../images/logo.png";
 import Button from "./styleElements/Button";
+import WebLogo from "./WebLogo";
 import BreakPoints from "./BreakPoints";
 
 const NavContainer = styled(Container)`
   display: flex;
   align-items: center;
   max-width: none;
-   @media (max-width: ${BreakPoints.tablet}) {
-    /* flex-direction: column; */
-    flex-wrap: wrap;
- }
-`;
-
-const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 36px;
-  padding-right: 20px;
-  img {
-    padding-right: 10px;
-    width: 25.92px;
-    height: 26.67px;
+  @media (max-width: ${BreakPoints.tablet}) {
+    display: none;
   }
 `;
 
@@ -57,12 +43,7 @@ const ActionButton = styled.div`
 function Navbar() {
   return (
     <NavContainer>
-      <Logo>
-        <div>
-          <img src={logo} alt="Logo" />
-        </div>
-        <div>Logo</div>
-      </Logo>
+      <WebLogo />
       <Nav>
         <NavButtons>
           <a href="/login">HOME</a>

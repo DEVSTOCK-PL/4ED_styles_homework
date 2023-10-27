@@ -6,14 +6,14 @@ import SupportingText from "./styleElements/SupportingText";
 import BreakPoints from "./BreakPoints";
 
 
-const NewContainer = styled(Container)`
-  padding-bottom: 0px;
-  padding: 0px 0px;
-  @media (max-width: ${BreakPoints.tablet}) {
-    width: 100%;
-    padding: 0px 20px;
-  }
-`;
+// const NewContainer = styled(Container)`
+//   padding-bottom: 0px;
+//   padding: 0px 0px;
+//   @media (max-width: ${BreakPoints.tablet}) {
+//     width: 100%;
+//     padding: 0px 20px;
+//   }
+// `;
 
 const CenterHeading = styled(Heading)`
   text-align: center;

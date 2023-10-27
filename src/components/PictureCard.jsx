@@ -46,6 +46,9 @@ const MockupImage = styled.img`
   @media (max-width: ${BreakPoints.tablet}) {
     height: 400px;
   }
+  @media (max-width: ${BreakPoints.tablet}) {
+    height: 320px;
+  }
 `;
 
 const CardContent = styled.div`

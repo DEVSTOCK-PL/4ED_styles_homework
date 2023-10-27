@@ -28,18 +28,6 @@ const LeftContent = styled.div`
     padding-right: 0px;
   }
 `;
-const ResponsiveHeading = styled(Heading)`
-  @media (max-width: ${BreakPoints.smallDesktop}) {
-    font-size: 31px;
-    font-weight: 600;
-  }
-`;
-const ResponsiveSupportingText = styled(SupportingText)`
-  @media (max-width: ${BreakPoints.smallDesktop}) {
-    font-size: 15px;
-    font-weight: 400;
-  }
-`;
 
 const Buttons = styled.div`
   display: flex;
@@ -71,7 +59,8 @@ const RightPhoto = styled.div`
     }
     @media (max-width: ${BreakPoints.tablet}) {
       width: 100%;
-  }
+      /* height: 100%; */
+    }
   }
 `;
 const Divider = styled.div`
@@ -115,7 +104,8 @@ const SocialProof = styled.div`
     margin: 70px 100px;
   }
   @media (max-width: ${BreakPoints.smallDesktop}) {
-    margin: 0px;
+    margin: 40px 100px;
+    /* margin: 0px; */
   }
   @media (max-width: ${BreakPoints.tablet}) {
     display: flex;
@@ -123,15 +113,12 @@ const SocialProof = styled.div`
   }
 `;
 const Stat = styled.div`
-  margin: 0 auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `;
-const RowHeading = styled.div`
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 45px;
-  letter-spacing: -0.01em;
-  text-align: center;
-`;
+
 const HorizontalRule = styled.hr`
   width: 2px;
   border: none;
@@ -144,6 +131,10 @@ const RowSupportingText = styled.div`
   line-height: 24px;
   letter-spacing: 0em;
   text-align: center;
+  @media (max-width: ${BreakPoints.smallDesktop}) {
+    font-size: 15px;
+    font-weight: 400;
+  }
 `;
 
 function Home() {
@@ -152,14 +143,14 @@ function Home() {
       <Container>
         <Hero>
           <LeftContent>
-            <ResponsiveHeading>
+            <Heading>
               Making earth cooler for people, nature, climate
-            </ResponsiveHeading>
-            <ResponsiveSupportingText>
+            </Heading>
+            <SupportingText>
               Protecting the planet and its natural resources for future
               generations, by reducing pollution, promoting sustainability, and
               conserving energy and resources.
-            </ResponsiveSupportingText>
+            </SupportingText>
             <Buttons>
               <Button>Donate now</Button>
               <VideoCameraButton>
@@ -183,22 +174,22 @@ function Home() {
         </Hero>
         <SocialProof>
           <Stat>
-            <RowHeading>104M</RowHeading>
+            <Heading>104M</Heading>
             <RowSupportingText>Trees planted</RowSupportingText>
           </Stat>
           <HorizontalRule />
           <Stat>
-            <RowHeading>20k+</RowHeading>
+            <Heading>20k+</Heading>
             <RowSupportingText>Partners & Donors</RowSupportingText>
           </Stat>
           <HorizontalRule />
           <Stat>
-            <RowHeading>90M</RowHeading>
+            <Heading>90M</Heading>
             <RowSupportingText>Tonnes of Carbon Stored</RowSupportingText>
           </Stat>
           <HorizontalRule />
           <Stat>
-            <RowHeading>50+</RowHeading>
+            <Heading>50+</Heading>
             <RowSupportingText>People-Powered Projects</RowSupportingText>
           </Stat>
         </SocialProof>

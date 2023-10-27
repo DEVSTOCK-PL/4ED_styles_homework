@@ -34,18 +34,6 @@ const RowReverse = styled(Row)`
     flex-direction: column;
   }
 `;
-const ResponsiveHeading = styled(Heading)`
-  @media (max-width: ${BreakPoints.smallDesktop}) {
-    font-size: 31px;
-    font-weight: 600;
-  }
-`;
-const ResponsiveSupportingText = styled(SupportingText)`
-  @media (max-width: ${BreakPoints.smallDesktop}) {
-    font-size: 15px;
-    font-weight: 400;
-  }
-`;
 
 const ArrowButton = styled(Button)`
   img {
@@ -69,7 +57,7 @@ const MocupImage = styled.img`
   }
   @media (max-width: ${BreakPoints.tablet}) {
     width: 100%;
-    height: 506.78px;
+    height: 100%;
   }
 `;
 const MiddleMocupImage = styled(MocupImage)`
@@ -80,6 +68,8 @@ const MiddleMocupImage = styled(MocupImage)`
   }
   @media (max-width: ${BreakPoints.tablet}) {
     padding: 0px;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -92,15 +82,15 @@ function News() {
             <MocupImage src={mockup1News} alt="mockup.left" />
           </div>
           <div>
-            <ResponsiveHeading>
+            <Heading>
               Flowbite Green is a climate change non-profit organization.
-            </ResponsiveHeading>
-            <ResponsiveSupportingText>
+            </Heading>
+            <SupportingText>
               Flowbite helps you connect with friends, family and communities of
               people who share your interests. Connecting with your friends and
               family as well as discovering new ones is easy with features like
               Groups.
-            </ResponsiveSupportingText>
+            </SupportingText>
             <ArrowButton>
               Get involved
               <img src={littleWhiteArow} alt="littleArow" />
@@ -112,16 +102,16 @@ function News() {
           <div>
             <MiddleMocupImage src={mockup2News} alt="mockup.left" />
           </div>
-          <div className="contemt">
-            <ResponsiveHeading>
+          <div>
+            <Heading>
               Protect our earth against climate change and pollution.
-            </ResponsiveHeading>
-            <ResponsiveSupportingText>
+            </Heading>
+            <SupportingText>
               Flowbite helps you connect with friends, family and communities of
               people who share your interests. Connecting with your friends and
               family as well as discovering new ones is easy with features like
               Groups.
-            </ResponsiveSupportingText>
+            </SupportingText>
             <ArrowButton>
               View all activities
               <img src={littleWhiteArow} alt="littleArow" />
@@ -133,15 +123,15 @@ function News() {
             <MocupImage src={mockup3News} alt="mockup.left" />
           </div>
           <div className="contemt">
-            <ResponsiveHeading>
+            <Heading>
               Together we can restore our earth against climate changen.
-            </ResponsiveHeading>
-            <ResponsiveSupportingText>
+            </Heading>
+            <SupportingText>
               Flowbite helps you connect with friends, family and communities of
               people who share your interests. Connecting with your friends and
               family as well as discovering new ones is easy with features like
               Groups.
-            </ResponsiveSupportingText>
+            </SupportingText>
             <ArrowButton>
               Read more
               <img src={littleWhiteArow} alt="littleArow" />

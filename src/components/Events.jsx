@@ -3,12 +3,11 @@ import styled from "styled-components";
 import Container from "./styleElements/Container";
 import Heading from "./styleElements/Heading";
 import SupportingText from "./styleElements/SupportingText";
-import CardStyles from "./PictureCard";
+import PictureCard from "./PictureCard";
 import CenteredLink from "./styleElements/CenteredLink";
 import littleArow from "../images/littleArow.png";
 import carousel from "../images/carousel.png";
 import BreakPoints from "./BreakPoints";
-
 
 const EventsContainer = styled(Container)`
   padding-bottom: 0px;
@@ -63,13 +62,13 @@ const ColumnLink = styled(CenteredLink)`
 function Events() {
   return (
     <EventsContainer>
-      <div className="h1">
+      <div>
         <CenterHeading>Fundraising events</CenterHeading>
         <CenterSupportingText>
           Flowbite helps you connect with friends, family and communities of
           people who share your interests.{" "}
         </CenterSupportingText>
-        <CardStyles />
+        <PictureCard />
         <CenteredLink>
           <a href="url">View all fundraising events</a>
           <img src={littleArow} alt="littleArow-img" />
@@ -83,7 +82,7 @@ function Events() {
         </CenterSupportingText>
         <Row>
           <ColumnContainer>
-            <div className="column 1">
+            <div>
               <ImageWrapper>
                 <img src={carousel} alt="carusel-img" />
               </ImageWrapper>
@@ -103,7 +102,7 @@ function Events() {
           <HorizontalRule />
 
           <ColumnContainer>
-            <div className="2 kolumna">
+            <div>
               <Heading>How to quickly deploy a static website</Heading>
               <SupportingText>
                 Static websites are now used to bootstrap lots of websites and
@@ -115,7 +114,7 @@ function Events() {
                 <img src={littleArow} alt="littleArow-img" />
               </ColumnLink>
             </div>
-            <div className="2 kolumna">
+            <div>
               <Heading>
                 What is SEO? Search Engine Optimization Explained
               </Heading>
@@ -146,7 +145,7 @@ function Events() {
           <HorizontalRule />
 
           <ColumnContainer>
-            <div className="3 kolumna">
+            <div>
               <Heading>How to Rank Higher on Google (6 Easy Steps)</Heading>
               <SupportingText>
                 Static websites are now used to bootstrap lots of websites and

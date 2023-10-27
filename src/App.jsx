@@ -7,21 +7,23 @@ import CostomersLogos from "./components/CustomerLogos";
 import News from "./components/News";
 import Events from "./components/Events";
 import Contact from "./components/Contact";
+import NavBarBurger from "./components/NavBarBurger";
 
 const MainContainer = styled.div`
-/* background-color: #fff; */
-  padding: 20px;
-`
+  max-width: 1440px;
+  min-width: 400px;
+`;
 
 function App() {
   return (
     <MainContainer>
-      <NavBar/>
-      <Home/>
-      <News/>
-      <CostomersLogos/>
-      <Events/>
-      <Contact/>
+      <NavBarBurger />
+      <NavBar />
+      <Home />
+      <News />
+      <CostomersLogos />
+      <Events />
+      <Contact />
       <Footer />
     </MainContainer>
   );
