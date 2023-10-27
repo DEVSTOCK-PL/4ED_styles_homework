@@ -35,7 +35,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1f2a37;
+  /* background-color: #1f2a37; */
   border-top: 1px solid #374151;
   border-bottom: 1px solid #374151;
   padding-bottom: 90px;
@@ -67,7 +67,7 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #1f2a37;
+  /* background-color: #1f2a37; */
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     max-width: 1280px;

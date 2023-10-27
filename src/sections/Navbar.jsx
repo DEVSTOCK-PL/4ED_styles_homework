@@ -1,17 +1,19 @@
-// import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../hooks/ThemeContext";
 import useOpenMenuLogic from "../hooks/useOpenMenuLogic";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Flowbite } from "../assets/svg_components";
+import { Menu, Flowbite, Sun, Moon } from "../assets/svg_components";
 import styled from "styled-components";
 
 const NavbarContainer = styled.div`
-  background-color: #111928;
+  /* background-color: #111928; */
   width: 100%;
   max-width: 1440px;
   height: 65px;
   display: flex;
   justify-content: center;
   align-items: end;
+  position: relative;
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     max-width: 1280px;
@@ -52,13 +54,13 @@ const Logo = styled.div`
 `;
 
 const LogIn = styled.div`
-  width: 180px;
+  /* width: 180px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
-  gap: 16px;
+  gap: 10px;
 
   @media (max-width: 640px) {
     display: none;
@@ -69,7 +71,7 @@ const LogIn = styled.div`
 `;
 
 const MenuBox = styled.div`
-  width: 41px;
+  /* width: 41px; */
   height: 41px;
   display: none;
 
@@ -101,9 +103,9 @@ const Links = styled.div`
     font-size: 16px;
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    gap: 8px;
-    font-size: 12px;
-    margin-left: 10px;
+    gap: 4px;
+    font-size: 10px;
+    margin-left: 6px;
   }
   @media (min-width: 641px) and (max-width: 768px) {
     display: none;
@@ -142,11 +144,21 @@ const Button = styled.button`
   font-weight: 500;
 `;
 
+const ButtonLogIn = styled(Button)`
+  width: 80px;
+  background-color: transparent;
+
+  &:active {
+    border: 1px solid #fff;
+  }
+`;
+
 const MenuButton = styled.button`
   height: 41px;
   width: 41px;
   background-color: transparent;
-  border: 1px solid #111928;
+  border: none;
+  margin-left: 10px;
 `;
 
 const MenuOpen = styled.div`
@@ -166,9 +178,16 @@ const MenuOpen = styled.div`
   z-index: 6;
 `;
 
+const ToggleButton = styled(ButtonLogIn)`
+  width: 60px;
+  border: none;
+`;
+
 function Navbar() {
   const { pathname } = useLocation();
   const { open, handleOpen, closeMenu } = useOpenMenuLogic();
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  console.log("isDarkTheme:", isDarkTheme);
 
   return (
     <NavbarContainer>
@@ -205,10 +224,16 @@ function Navbar() {
           </LinkItem>
         </Links>
         <LogIn>
-          Log In
+          <ToggleButton onClick={toggleTheme}>
+            {isDarkTheme ? <Sun /> : <Moon />}
+          </ToggleButton>
+          <ButtonLogIn>Log in</ButtonLogIn>
           <Button>Get Started</Button>
         </LogIn>
         <MenuBox>
+          <ToggleButton onClick={toggleTheme}>
+            {isDarkTheme ? <Sun /> : <Moon />}
+          </ToggleButton>
           <MenuButton onClick={handleOpen}>
             <Menu />
           </MenuButton>

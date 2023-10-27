@@ -1,11 +1,15 @@
+import { ThemeContextProvider } from "./hooks/ThemeContext";
 import RouterApp from "./RouterApp";
-import styles from "./App.module.css";
+import GlobalStyles from "./hooks/GlobalStyles";
 
 function App() {
   return (
-    <div className={styles.app}>
-      <RouterApp />
-    </div>
+    <ThemeContextProvider>
+      <div>
+        <GlobalStyles />
+        <RouterApp />
+      </div>
+    </ThemeContextProvider>
   );
 }
 export default App;

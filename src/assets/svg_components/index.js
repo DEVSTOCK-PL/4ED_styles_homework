@@ -25,6 +25,8 @@ import VideoCamera from "../svg_components/VideoCamera";
 import Visa from "../svg_components/Visa";
 import ArrowRightYellow from "../svg_components/ArrowRightYellow";
 import ArrowLeftYellow from "../svg_components/ArrowLeftYellow";
+import Moon from "../svg_components/Moon";
+import Sun from "../svg_components/Sun";
 
 export {
   HeartIcon,
@@ -54,4 +56,6 @@ export {
   Visa,
   ArrowRightYellow,
   ArrowLeftYellow,
+  Moon,
+  Sun,
 };

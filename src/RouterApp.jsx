@@ -4,7 +4,7 @@ import Layout from "./blocks/Layout";
 import Home from "./blocks/Home";
 import News from "./blocks/News";
 import Events from "./blocks/Events";
-import ContactSection from "./blocks/ContactBlock";
+import ContactBlock from "./blocks/ContactBlock";
 import NotFound from "./sections/NotFound";
 import RickAndMorty from "./sections/RickAndMorty";
 
@@ -48,7 +48,7 @@ function RouterApp() {
           path="/contact"
           element={
             <Layout>
-              <ContactSection />
+              <ContactBlock />
             </Layout>
           }
         />

@@ -10,7 +10,7 @@ const Container = styled.div`
   width: 100%;
   height: auto;
   min-height: 800px;
-  background-color: #111928;
+  /* background-color: #111928; */
   display: flex;
   flex-direction: column;
   align-items: center;

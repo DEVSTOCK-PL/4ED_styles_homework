@@ -12,7 +12,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 1440px;
   height: 569px;
-  background-color: #1f2a37;
+  /* background-color: #1f2a37; */
   border-top: 1px solid #374151;
   padding-top: 96px;
   padding-bottom: 64px;

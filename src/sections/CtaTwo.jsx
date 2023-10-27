@@ -18,7 +18,7 @@ const textSupporting2 =
   "Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.";
 
 const Container = styled.div`
-  background-color: #111928;
+  /* background-color: #111928; */
   width: 100%;
   max-width: 1440px;
   height: 997px;
@@ -119,7 +119,7 @@ const Card = styled.div`
   height: 593px;
   border-radius: 8px;
   border: 1px solid #374151;
-  background-color: #1f2a37;
+  /* background-color: #1f2a37; */
   display: flex;
   flex-direction: column;
   align-items: center;

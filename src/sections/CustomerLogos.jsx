@@ -22,7 +22,7 @@ const text2 =
   "Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value.";
 
 const Container = styled.div`
-  background-color: #1f2a37;
+  /* background-color: #1f2a37; */
   width: 100%;
   max-width: 1440px;
   height: auto;

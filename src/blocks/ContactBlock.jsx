@@ -1,7 +1,7 @@
 import Contact from "../sections/Contact";
 import CustomerLogos from "../sections/CustomerLogos";
 
-const ContactSection = () => {
+const ContactBlock = () => {
   return (
     <>
       <Contact />
@@ -9,4 +9,4 @@ const ContactSection = () => {
     </>
   );
 };
-export default ContactSection;
+export default ContactBlock;

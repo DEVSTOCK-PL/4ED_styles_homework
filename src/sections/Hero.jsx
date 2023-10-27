@@ -22,7 +22,7 @@ const HeroContainer = styled.div`
   width: 100%;
   max-width: 1440px;
   height: 626px;
-  background-color: #111928;
+  /* background-color: #111928; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +100,7 @@ const LeftItem = styled.div`
 
 const Title = styled.p`
   width: 100%;
-  color: #fff;
+  /* color: #fff; */
   font-size: 48px;
   line-height: 48px;
   font-weight: 800;
