@@ -7,7 +7,7 @@ import { useToggleMenu } from '../hooks/useToggleMenu'
 
 const ToggleMenuWrapper = styled.div`
   width: 300px;
-  height: 70%;
+
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -34,7 +34,6 @@ const LinksWrapper = styled.div`
 `
 const ToggleMenu = () => {
   const [isClosed, handleCloseMenu] = useToggleMenu(false)
-  console.log('isClosed:', isClosed)
 
   return (
     <ToggleMenuWrapper
@@ -46,8 +45,8 @@ const ToggleMenu = () => {
           onClick={handleCloseMenu}>
           X
         </div>
-        <SignOptionsToggled />
-        <NavLinksToggled />
+        <SignOptionsToggled handleCloseMenu={handleCloseMenu} />
+        <NavLinksToggled handleCloseMenu={handleCloseMenu} />
       </LinksWrapper>
     </ToggleMenuWrapper>
   )

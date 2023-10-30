@@ -51,9 +51,10 @@ const CarouselContent = ({ deviceType }) => {
         deviceType={deviceType}
         itemClass='image-item'
         responsive={responsive}>
-        {images.slice(0, 5).map((image) => {
+        {images.slice(0, 5).map((image, index) => {
           return (
             <Image
+              key={index}
               className='rounded'
               draggable={false}
               style={{ width: '100%', height: '100%' }}

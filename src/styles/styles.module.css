@@ -1,6 +1,4 @@
 .supportingText {
-  color: #6b7280;
-  background-color: #1f2a37;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -10,8 +8,13 @@
     font-size: 14px;
   }
 }
-.supportingTextSponsors {
+.dark .supportingText {
   color: #6b7280;
+  background-color: #1f2a37;
+}
+
+.supportingTextSponsors {
+  /* color: #6b7280; */
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -21,7 +24,6 @@
   }
 }
 .countText {
-  color: #fff;
   background-color: #1f2a37;
   font-size: 36px;
   font-style: normal;
@@ -33,14 +35,24 @@
     font-size: 30px;
   }
 }
+.light .countText {
+  color: #000;
+}
+.dark .countText {
+  color: #fff;
+}
+
+.light .counterWrapper {
+  background: #b5c5d7;
+}
 .counterWrapper {
   display: flex;
   width: 1024px;
   padding: 24px 16px;
   align-items: flex-start;
   border-radius: 8px;
-  background: #1f2a37;
   justify-content: space-evenly;
+  background: #1f2a37;
   @media (max-width: 767px) {
     display: flex;
     padding: 16px;
@@ -123,18 +135,7 @@
     margin-right: 16px;
   }
 }
-.supportingText {
-  color: #6b7280;
-  background-color: #1f2a37;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
-  text-align: center;
-  @media (768px <= width <= 1024px) {
-    font-size: 14px;
-  }
-}
+
 .supportingTextCta {
   color: #6b7280;
   font-size: 18px;
@@ -204,11 +205,12 @@
 }
 
 .cardWrapper {
+  max-width: 500px;
   display: flex;
   padding: 32px;
   flex-direction: column;
   gap: 16px;
-  flex: 1 0 0;
+  /* flex: 1 0 0; */
 }
 
 .cardFundraiser {

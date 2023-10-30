@@ -10,6 +10,7 @@ const PostWrapper = styled.div`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
+  padding: 0px 64px;
   @media (max-width: 767px) {
     flex-wrap: wrap;
     min-width: 343px;

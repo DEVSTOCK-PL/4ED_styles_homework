@@ -3,8 +3,8 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  --font-family: 'Inter', sans-serif;
-  background-color: #111928;
+  /* --font-family: 'Inter', sans-serif; */
+  /* background-color: #111928; */
   display: flex;
   flex-direction: column;
 }
@@ -13,9 +13,9 @@ body * {
   font-family: 'Inter', sans-serif;
 }
 
-body {
+/* body {
   background-color: #111928;
-}
+} */
 
 button:hover {
   scale: 0.9;
@@ -24,4 +24,9 @@ button:hover {
 ::selection {
   background-color: #44699c;
   color: #11123e;
+}
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

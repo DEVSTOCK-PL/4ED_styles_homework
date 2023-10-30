@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
+
 import styles from '../styles/styles.module.css'
 
 const NavLinksWrapper = styled.div``
@@ -12,25 +13,34 @@ const NavLink = styled.a`
     text-decoration: underline;
   }
 `
-const NavLinksToggled = () => {
+const NavLinksToggled = ({ handleCloseMenu }) => {
   const { pathname } = useLocation()
 
   return (
     <NavLinksWrapper className={styles.navLinksToggled}>
       <NavLink className={pathname === '/' && 'active'}>
-        <Link to='/'>HOME</Link>
+        <Link to='/' onClick={() => handleCloseMenu()}>
+          HOME
+        </Link>
       </NavLink>
-      <NavLink className={pathname === '/news' && 'active'}>
+      <NavLink
+        className={pathname === '/news' && 'active'}
+        onClick={() => handleCloseMenu()}>
         <Link to='/news'>NEWS</Link>
       </NavLink>
-      <NavLink className={pathname === '/events' && 'active'}>
+      <NavLink
+        className={pathname === '/events' && 'active'}
+        onClick={() => handleCloseMenu()}>
         <Link to='/events'>EVENTS</Link>
       </NavLink>
-      <NavLink className={pathname === '/contact' && 'active'}>
+      <NavLink
+        className={pathname === '/contact' && 'active'}
+        onClick={() => handleCloseMenu()}>
         <Link to='/contact'>CONTACT</Link>
       </NavLink>
       <NavLink
-        className={pathname === '/rickmorty' && 'active' && 'text-pink-500'}>
+        className={pathname === '/rickmorty' && 'active' && 'text-pink-500'}
+        onClick={() => handleCloseMenu()}>
         <Link to='/rickmorty'>Rick&Morty</Link>
       </NavLink>
     </NavLinksWrapper>

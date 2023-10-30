@@ -5,7 +5,6 @@ const MainWrapper = styled.div`
   flex-direction: column;
   gap: 96px;
   margin: 24px 80px;
-  /* background-color: #111928; */
   justify-content: center;
   @media (max-width: 767px) {
     margin: 24px 16px;

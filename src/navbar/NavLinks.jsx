@@ -15,14 +15,15 @@ const NavLinksWrapper = styled.div`
     flex: 1 0 0;
   }
 `
-const NavLink = styled.a`
-  color: #fff;
+const NavLink = styled.p`
+  color: ${(props) => (props.theme ? '#fff' : '#000')};
   cursor: pointer;
   &.active {
     color: #1a56db;
     text-decoration: underline;
   }
 `
+
 const NavLinks = () => {
   const { pathname } = useLocation()
 

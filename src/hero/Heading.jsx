@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 const HeadingText = styled.h1`
-  /* align-self: stretch; */
-  color: #fff;
+  color: ${(props) => (props.theme ? '#fff' : '#000')};
   font-size: 48px;
   font-style: normal;
   font-weight: 800;
@@ -22,7 +21,7 @@ const HeadingText = styled.h1`
 `
 const SupportingText = styled.p`
   align-self: stretch;
-  color: #9ca3af;
+  color: ${(props) => (props.theme ? '#9ca3af' : '#000')};
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

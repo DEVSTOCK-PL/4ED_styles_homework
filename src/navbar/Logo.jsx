@@ -12,8 +12,9 @@ const LogoText = styled.h1`
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
-  color: #fff;
+  color: ${(props) => (props.theme ? '#fff' : '#000')};
 `
+
 const Logo = () => {
   return (
     <Link to='/'>

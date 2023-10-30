@@ -8,6 +8,7 @@ const CtaWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 64px;
+  padding: 96px 64px;
   @media (max-width: 767px) {
     gap: 16px;
     padding: 32px 16px;

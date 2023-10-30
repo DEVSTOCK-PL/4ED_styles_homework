@@ -5,7 +5,6 @@ import styles from '../styles/styles.module.css'
 const ProofCounter = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #374151;
   align-items: center;
 `
 const PeoplePowered = () => {
