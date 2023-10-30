@@ -59,6 +59,7 @@ const Haeding = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
   @media (min-width: 641px) and (max-width: 768px) {
     width: 343px;

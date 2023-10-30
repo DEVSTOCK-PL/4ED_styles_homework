@@ -1,5 +1,18 @@
 {
-  "contact": [],
+  "contact": [
+    {
+      "email": "3846205@gmail.com",
+      "subject": "Pomoc w formularzach",
+      "message": "Poproszę o pomoc w formularzach",
+      "id": 1
+    },
+    {
+      "email": "aaa@aaa.pl",
+      "subject": "temat2",
+      "message": "temat 2",
+      "id": 2
+    }
+  ],
   "users": [],
   "books": [
     {

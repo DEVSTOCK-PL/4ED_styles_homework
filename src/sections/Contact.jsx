@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import axios from "axios";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { useSnackbar } from "notistack";
 
 const text1 = "Contact us";
 const text2 =
@@ -11,7 +17,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #111928; */
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     max-width: 1280px;
@@ -75,7 +80,7 @@ const Heading = styled.div`
   }
 `;
 
-const Form = styled.div`
+const Form = styled.form`
   width: 50%;
   height: 478px;
   display: flex;
@@ -219,12 +224,66 @@ const BlueButton = styled.button`
   justify-content: center;
 
   &:active {
-    border: ${(props) =>
-      props.isDisabled ? "1px solid red" : "1px solid #1a56db"};
+    border: 1px solid #1a56db;
   }
 `;
 
+const validationSchema = Yup.object({
+  email: Yup.string()
+    .email("Nieprawidłowy email")
+    .required("Adres email jest wymagany"),
+  subject: Yup.string().required("Podaj temat wiadomości"),
+  message: Yup.string()
+    .min(5, "Minimum pięć znaków")
+    .required("Treść wiadomości jest wymagana"),
+});
+
+const sendFormData = async (formData, enqueueSnackbar) => {
+  try {
+    const response = await axios.post(
+      "http://localhost:3000/contact",
+      formData
+    );
+    const data = response.data;
+    console.log("response.data", response.data);
+    if (response.status === 201) {
+      enqueueSnackbar("Twoja wiadomość została wysłana", {
+        variant: "success",
+      });
+    } else {
+      enqueueSnackbar("Wysłanie Twojej wiadomości nie powiodło się", {
+        variant: "error",
+      });
+    }
+    return data;
+  } catch (error) {
+    enqueueSnackbar("Wysłanie Twojej wiadomości nie powiodło się", {
+      variant: "error",
+    });
+    throw error;
+  }
+};
+
 const Contact = () => {
+  const { enqueueSnackbar } = useSnackbar();
+
+  const mutation = useMutation({
+    mutationFn: (formData) => sendFormData(formData, enqueueSnackbar),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      subject: "",
+      message: "",
+    },
+    validationSchema,
+    onSubmit: async (values) => {
+      console.log("wartości:", values);
+      mutation.mutate(values);
+    },
+  });
+
   return (
     <Container>
       <Content>
@@ -232,22 +291,49 @@ const Contact = () => {
           <Title1>{text1}</Title1>
           <TextSupporting1>{text2}</TextSupporting1>
         </Heading>
-        <Form>
+        <Form onSubmit={formik.handleSubmit}>
           <InputBox>
             <Label>Your email</Label>
-            <Input type="text" placeholder="name@flowbite.com"></Input>
+            <Input
+              type="email"
+              placeholder="name@flowbite.com"
+              name="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div>{formik.errors.email}</div>
+            ) : null}
           </InputBox>
           <InputBox>
             <Label>Subject</Label>
             <Input
               type="text"
-              placeholder="Let as know we can help you"></Input>
+              placeholder="Let as know we can help you"
+              name="subject"
+              onChange={formik.handleChange}
+              value={formik.values.subject}
+            />
+            {formik.touched.subject && formik.errors.subject ? (
+              <div>{formik.errors.subject}</div>
+            ) : null}
           </InputBox>
           <InputBox>
             <Label>Your message</Label>
-            <Textarea rows="6" cols="20"></Textarea>
+            <Textarea
+              rows="6"
+              cols="20"
+              name="message"
+              onChange={formik.handleChange}
+              value={formik.values.message}
+            />
+            {formik.touched.message && formik.errors.message ? (
+              <div>{formik.errors.message}</div>
+            ) : null}
           </InputBox>
-          <BlueButton>Send message</BlueButton>
+          <BlueButton type="submit" disabled={mutation.isLoading}>
+            Send message
+          </BlueButton>
         </Form>
       </Content>
     </Container>

@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     font-family: Inter;
     text-align: center;
+    margin: 0;
   }
 `;
 
