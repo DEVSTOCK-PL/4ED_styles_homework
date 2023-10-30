@@ -44,6 +44,24 @@ const Buttons = styled.div`
   }
 `;
 
+const DonateNowButton = styled(Button)`
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+`;
+
+const ShareButton = styled(Button)`
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  background-color: #1f2a37;
+  color: #9ca3af;
+  gap: 8px;
+`;
+
 export const Card = ({
   src,
   actualSum,
@@ -76,31 +94,18 @@ export const Card = ({
         streaming marathons. There is something for everyone.
       </StyledP>
       <Buttons>
-        <Button
+        <DonateNowButton
           disabled={isDisabled}
           onClick={() => {
             handleClick();
           }}
-          fontSize="14px"
-          fontWeight="500"
-          padding="10px 20px"
-          borderRadius="8px"
         >
           Donate now
-        </Button>
+        </DonateNowButton>
 
-        <Button
-          fontSize="14px"
-          fontWeight="500"
-          padding="10px 20px"
-          borderRadius="8px"
-          border="1px solid #4B5563"
-          backgroundColor="#1F2A37"
-          color="#9CA3AF"
-          gap="8px"
-        >
+        <ShareButton>
           <img src={share_logo} alt="logo_share" /> Share this Fundraiser
-        </Button>
+        </ShareButton>
       </Buttons>
     </StyledDiv>
   );

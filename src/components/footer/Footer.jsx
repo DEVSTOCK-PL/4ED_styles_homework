@@ -1,10 +1,14 @@
 import styled from 'styled-components';
+
 import { Column } from './Column';
+
+import {
+  logo_github,
+  logo_twitter,
+  logo_dribble,
+  logo_facebook,
+} from './index';
 import logo_flowbite from '../../assets/logo.svg';
-import logo_github from './github.svg';
-import logo_twitter from './twitter.svg';
-import logo_dribble from './dribble.svg';
-import logo_facebook from './facebook.svg';
 
 const arrColumn1 = [
   { id: crypto.randomUUID(), name: 'About', href: '#' },

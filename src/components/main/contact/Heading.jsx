@@ -1,5 +1,13 @@
 import styled from 'styled-components';
+
 import { Container } from '../../Container';
+
+const HeadingContainer = styled(Container)`
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+  background: #111928;
+`;
 
 const StyledH2 = styled.h2`
   font-size: 36px;
@@ -22,17 +30,12 @@ const StyledP = styled.p`
 
 export const Heading = () => {
   return (
-    <Container
-      flexDirection="column"
-      alignItems="center"
-      rowGap="16px"
-      background="#111928"
-    >
+    <HeadingContainer>
       <StyledH2>Contact us</StyledH2>
       <StyledP>
         Got a technical issue? Want to send feedback about a beta feature? Need
         details about our Business plan? Let us know.
       </StyledP>
-    </Container>
+    </HeadingContainer>
   );
 };

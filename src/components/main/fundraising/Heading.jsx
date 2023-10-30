@@ -1,5 +1,12 @@
 import styled from 'styled-components';
+
 import { Container } from '../../Container';
+
+const HeadingContainer = styled(Container)`
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+`;
 
 const StyledH2 = styled.h2`
   font-size: 36px;
@@ -18,12 +25,12 @@ const StyledP = styled.p`
 
 export const Heading = () => {
   return (
-    <Container flexDirection="column" alignItems="center" rowGap="16px">
+    <HeadingContainer>
       <StyledH2>Fundraising events</StyledH2>
       <StyledP>
         Flowbite helps you connect with friends, family and communities of
         people who share your interests.
       </StyledP>
-    </Container>
+    </HeadingContainer>
   );
 };

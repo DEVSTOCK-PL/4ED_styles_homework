@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
+
 import external_link from './external_link.svg';
 
 const StyledDiv = styled.div`

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
+
 import { Mockup } from './Mockup';
 import { RightContent } from './RightContent';
 
@@ -9,7 +10,6 @@ const StyledDiv = styled.div`
   align-items: center;
   padding: 16px 40px;
   gap: 80px;
-  /* width: 100%; */
 
   ${(props) => ({ flexDirection: props.flexDirection })}
 

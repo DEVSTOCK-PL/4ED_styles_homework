@@ -1,6 +1,13 @@
 import styled from 'styled-components';
+
 import { Container } from '../Container';
+
 import logo from '../../assets/logo.svg';
+
+const LogoContainer = styled(Container)`
+  font-size: 24px;
+  column-gap: 2px;
+`;
 
 const StyledImg = styled.img`
   height: 32px;
@@ -8,9 +15,9 @@ const StyledImg = styled.img`
 
 export const Logo = () => {
   return (
-    <Container fontSize="24px" columnGap="12px">
+    <LogoContainer>
       <StyledImg src={logo} alt="logo_Flowbite" />
       Logo
-    </Container>
+    </LogoContainer>
   );
 };

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import { Button } from '../../Button';
+
 import video_camera from '../../../assets/video_camera.svg';
 import intel_logo from '../../../assets/intel_logo.svg';
 import fedex_logo from '../../../assets/fedex_logo.svg';
@@ -47,6 +49,27 @@ const Buttons = styled.div`
   margin-bottom: 26px;
 `;
 
+const DonateNowButton = styled(Button)`
+  width: 182px;
+  height: 48px;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+`;
+
+const LearnMoreButton = styled(Button)`
+  width: 182px;
+  height: 48px;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #4b5563;
+  background-color: #1f2a37;
+  font-size: 16px;
+  font-weight: 500;
+`;
+
 const Sponsors = styled.div`
   color: #374151;
   padding-top: 32px;
@@ -80,29 +103,8 @@ export const LeftContent = () => {
         and resources.
       </StyledP>
       <Buttons className="buttons">
-        <Button
-          className="button"
-          width="182px"
-          height="48px"
-          borderRadius="8px"
-          padding="12px 20px"
-          fontSize="16px"
-          fontWeight="500"
-        >
-          Donate now
-        </Button>
-        <Button
-          className="button"
-          width="182px"
-          height="48px"
-          border="1px solid #4B5563"
-          borderRadius="8px"
-          padding="12px 20px"
-          color="#4B5563"
-          backgroundColor="#1F2A37"
-          fontSize="16px"
-          fontWeight="500"
-        >
+        <DonateNowButton className="button">Donate now</DonateNowButton>
+        <LearnMoreButton className="button">
           <StyledImg
             width="16px"
             height="12px"
@@ -110,7 +112,7 @@ export const LeftContent = () => {
             alt="logo_camera"
           />
           Learn more
-        </Button>
+        </LearnMoreButton>
       </Buttons>
       <Sponsors className="sponsors">
         <p>Sponsors:</p>

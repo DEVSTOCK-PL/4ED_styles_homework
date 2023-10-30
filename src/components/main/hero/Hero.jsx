@@ -1,9 +1,14 @@
 import styled from 'styled-components';
+
 import { Container } from '../../Container';
 import { LeftContent } from './LeftContent';
 import { Carousel } from './Carousel';
 
 const HeroContainer = styled(Container)`
+  justify-content: space-between;
+  column-gap: 20px;
+  padding: 96px 40px;
+
   @media (max-width: 768px) {
     padding: 72px 20px;
   }
@@ -16,11 +21,7 @@ const HeroContainer = styled(Container)`
 
 export const Hero = () => {
   return (
-    <HeroContainer
-      justifyContent="space-between"
-      columnGap="20px"
-      padding="96px 40px"
-    >
+    <HeroContainer>
       <LeftContent />
       <Carousel />
     </HeroContainer>

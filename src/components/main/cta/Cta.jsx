@@ -1,9 +1,15 @@
 import { Container } from '../../Container';
 import { Row } from './Row';
+
 import mockup_1 from './mockup_1.svg';
 import mockup_2 from './mockup_2.svg';
 import mockup_3 from './mockup_3.svg';
 import arrow_right from '../../../assets/arrow_right.svg';
+import styled from 'styled-components';
+
+const CtaContainer = styled(Container)`
+  flex-direction: column;
+`;
 
 const arrayWithDataForCta = [
   {
@@ -56,7 +62,7 @@ const arrayWithDataForCta = [
 
 export const Cta = () => {
   return (
-    <Container flexDirection="column">
+    <CtaContainer>
       {arrayWithDataForCta.map((el) => (
         <Row
           key={el.id}
@@ -67,6 +73,6 @@ export const Cta = () => {
           buttonsArr={el.buttonsArr}
         />
       ))}
-    </Container>
+    </CtaContainer>
   );
 };

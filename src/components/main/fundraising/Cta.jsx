@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import arrow_right_blue from '../../../assets/arrow_right_blue.svg';
 
-const StyledDiv = styled.div``;
+import arrow_right_blue from '../../../assets/arrow_right_blue.svg';
 
 const StyledA = styled.a`
   display: flex;
@@ -15,11 +14,11 @@ const StyledA = styled.a`
 
 export const Cta = () => {
   return (
-    <StyledDiv>
+    <div>
       <StyledA href="#">
         View all fundraising events
         <img src={arrow_right_blue} alt="logo_arrow" />
       </StyledA>
-    </StyledDiv>
+    </div>
   );
 };

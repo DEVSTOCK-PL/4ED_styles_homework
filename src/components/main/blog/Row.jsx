@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
+
 import { BlogCard } from './BlogCard';
 
 const RowContainer = styled.div`
@@ -13,7 +14,6 @@ const RowContainer = styled.div`
 `;
 
 const Column = styled.div`
-  /* max-width: 500px; */
   display: flex;
   flex-direction: column;
   gap: 32px;

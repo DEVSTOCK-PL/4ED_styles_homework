@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
+
 import { Button } from '../../Button';
 
 const RightContentContainer = styled.div`
@@ -30,6 +31,14 @@ const ButtonsContainer = styled.div`
   gap: 16px;
 `;
 
+const RightContentButton = styled(Button)`
+  min-width: 152px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  gap: 8px;
+`;
+
 const StyledImg = styled.img``;
 
 export const RightContent = ({ h2, p, buttonsArr }) => {
@@ -39,17 +48,10 @@ export const RightContent = ({ h2, p, buttonsArr }) => {
       <StyledP>{p}</StyledP>
       <ButtonsContainer>
         {buttonsArr.map((el) => (
-          <Button
-            key={el.id}
-            minWidth="152px"
-            borderRadius="8px"
-            padding="10px 20px"
-            fontSize="14px"
-            gap="8px"
-          >
+          <RightContentButton key={el.id}>
             {el.text}
             {el.imgSrc && <StyledImg src={el.imgSrc} alt={el.imgAlt} />}
-          </Button>
+          </RightContentButton>
         ))}
       </ButtonsContainer>
     </RightContentContainer>

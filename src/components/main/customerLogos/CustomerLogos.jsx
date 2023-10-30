@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import useArrDataLogosCustomers from '../../../hooks/useArrDataLogosCustomers';
+
 import { Container } from '../../Container';
 import { HeadingDesc } from './HeadingDesc';
 import { Row } from './Row';
@@ -22,16 +24,18 @@ const StyledDiv = styled.div`
   }
 `;
 
+const CustomerLogosContainer = styled(Container)`
+  width: 80%;
+  flex-direction: column;
+  row-gap: 32px;
+  background: #1f2a37;
+`;
+
 export const CustomerLogos = () => {
   return (
     <StyledDiv>
       <HeadingDesc />
-      <Container
-        width="80%"
-        flexDirection="column"
-        rowGap="32px"
-        background="#1f2a37"
-      >
+      <CustomerLogosContainer>
         {useArrDataLogosCustomers().map((arr) => (
           <Row key={arr[0].id}>
             {arr.map((el) => (
@@ -39,7 +43,7 @@ export const CustomerLogos = () => {
             ))}
           </Row>
         ))}
-      </Container>
+      </CustomerLogosContainer>
     </StyledDiv>
   );
 };

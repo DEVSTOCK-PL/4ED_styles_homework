@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
+
 import { Card } from './Card';
+
 import Mockup_1 from './Mockup_1.svg';
 import Mockup_2 from './Mockup_2.svg';
 

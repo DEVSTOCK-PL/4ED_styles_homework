@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+
 import { Container } from '../Container';
+
 import vector from '../../assets/vector.svg';
 
 const NavContainer = styled(Container)`
@@ -60,6 +62,10 @@ const NavContainer = styled(Container)`
   }
 `;
 
+const UlContainer = styled(Container)`
+  column-gap: 50px;
+`;
+
 const StyledImg = styled.img`
   width: 23px;
   height: 20px;
@@ -69,7 +75,7 @@ export const Nav = () => {
   return (
     <>
       <NavContainer as="nav" className="desktopNav">
-        <Container as="ul" className="ul" columnGap="50px">
+        <UlContainer as="ul" className="ul">
           <Container as="li">
             <NavLink className="link" to="/">
               HOME
@@ -95,7 +101,7 @@ export const Nav = () => {
               RICKANDMORTY
             </NavLink>
           </Container>
-        </Container>
+        </UlContainer>
       </NavContainer>
       <NavContainer className="mobileNav">
         <StyledImg src={vector} alt="logo_menu" />
