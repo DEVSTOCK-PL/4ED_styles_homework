@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+
+import useDonationLogic from '../../../hooks/useDonationLogic';
+
 import { ProgressBar } from './ProgressBar';
 import { Button } from '../../Button';
+
 import share_logo from './share_logo.svg';
 
 const StyledDiv = styled.div`
@@ -48,36 +51,14 @@ export const Card = ({
   numsOfDonors,
   disabledButton,
 }) => {
-  const [currentAmount, setCurrentAmount] = useState(actualSum);
-  const [countOfDonors, setCountOfDonors] = useState(numsOfDonors);
-  const [isDisabled, setIsDisabled] = useState(disabledButton);
-
-  const totalSumToDisplay = totalSum / 1000;
-
-  const currentAmountToDisplayArr = currentAmount.toString().split('');
-  if (currentAmountToDisplayArr.length > 3)
-    currentAmountToDisplayArr.splice(-3, 0, ',');
-  const currentAmountToDisplay = currentAmountToDisplayArr.join('');
-
-  const currentPercentages = (currentAmount / totalSum) * 100;
-
-  useEffect(() => {
-    if (currentPercentages >= 100) setIsDisabled(true);
-  }, [currentPercentages]);
-
-  const handleClick = () => {
-    const amountToAddPrompt = prompt('What amount to add?');
-    if (amountToAddPrompt === null) {
-      console.log(amountToAddPrompt);
-      return;
-    } else {
-      const amountToAdd = Number(amountToAddPrompt);
-      if (amountToAdd > 0) {
-        setCurrentAmount((prev) => prev + amountToAdd);
-        setCountOfDonors((prev) => prev + 1);
-      }
-    }
-  };
+  const {
+    currentAmountToDisplay,
+    totalSumToDisplay,
+    countOfDonors,
+    currentPercentages,
+    isDisabled,
+    handleClick,
+  } = useDonationLogic(actualSum, totalSum, numsOfDonors, disabledButton);
 
   return (
     <StyledDiv>

@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+
 import Home from './Home';
 import News from './News';
 import Events from './Events';
@@ -14,6 +15,7 @@ export const Router = () => {
       <Route path="/events" element={<Events />} />
       <Route path="/contact" element={<Contacts />} />
       <Route path="/list" element={<RickAndMorty />} />
+      <Route path="/list/:id" element={<RickAndMorty />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
