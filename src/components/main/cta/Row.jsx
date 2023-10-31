@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
   padding: 16px 40px;
   gap: 80px;
 
-  ${(props) => ({ flexDirection: props.flexDirection })}
+  ${(props) => ({ flexDirection: props.flexdirection })}
 
   @media (max-width: 1024px) {
     gap: 40px;
@@ -29,7 +29,7 @@ const StyledDiv = styled.div`
 
 export const Row = ({ flexDirection, img, h2, p, buttonsArr }) => {
   return (
-    <StyledDiv flexDirection={flexDirection}>
+    <StyledDiv flexdirection={flexDirection}>
       <Mockup img={img} />
       <RightContent h2={h2} p={p} buttonsArr={buttonsArr} />
     </StyledDiv>

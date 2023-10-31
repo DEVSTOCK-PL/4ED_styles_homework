@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Navbar } from '../components/header/Navbar';
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,30 +75,33 @@ function RickAndMorty() {
   }, [actualId]);
 
   return (
-    <Wrapper>
-      <h1>Rick&Morty</h1>
-      <Div>
-        <button disabled={isDisabledPrevButton} onClick={prevPage}>
-          prev
-        </button>
-        <button disabled={isDisabledNextButton} onClick={nextPage}>
-          next
-        </button>
-      </Div>
-      <Div>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          data?.results.map(({ id, image, name }) => (
-            <div key={id}>
-              <img src={image} alt="image" />
-              <p>{name}</p>
-            </div>
-          ))
-        )}
-      </Div>
-      <Link to="/">Wróć do strony głównej</Link>
-    </Wrapper>
+    <>
+      <Navbar />
+      <Wrapper>
+        <h1>Rick&Morty</h1>
+        <Div>
+          <button disabled={isDisabledPrevButton} onClick={prevPage}>
+            prev
+          </button>
+          <button disabled={isDisabledNextButton} onClick={nextPage}>
+            next
+          </button>
+        </Div>
+        <Div>
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            data?.results.map(({ id, image, name }) => (
+              <div key={id}>
+                <img src={image} alt="image" />
+                <p>{name}</p>
+              </div>
+            ))
+          )}
+        </Div>
+        <Link to="/">Wróć do strony głównej</Link>
+      </Wrapper>
+    </>
   );
 }
 

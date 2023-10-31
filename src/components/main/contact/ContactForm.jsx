@@ -21,6 +21,14 @@ const Row = styled.div`
   gap: 32px;
 `;
 
+const SendMessageButton = styled(Button)`
+  background-color: #1c64f2;
+  padding: 10px 20px;
+  border-radius: 8px;
+  gap: 8px;
+  align-self: start;
+`;
+
 export const ContactForm = () => {
   return (
     <Container>
@@ -36,15 +44,7 @@ export const ContactForm = () => {
           type="text"
         />
         <Textarea />
-        <Button
-          backgroundColor="#1C64F2"
-          padding="10px 20px"
-          borderRadius="8px"
-          gap="8px"
-          alignSelf="start"
-        >
-          Send message
-        </Button>
+        <SendMessageButton>Send message</SendMessageButton>
       </Row>
     </Container>
   );
