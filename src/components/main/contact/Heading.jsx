@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-import { Container } from '../../Container';
-
-const HeadingContainer = styled(Container)`
-  flex-direction: column;
-  align-items: center;
-  row-gap: 16px;
-  background: #111928;
-`;
+import { Heading as HeadingContainer } from '../../Heading';
 
 const StyledH2 = styled.h2`
   font-size: 36px;

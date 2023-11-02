@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
 
-const ProgressBarContainer = styled.div``;
-
 const Label = styled.div`
   display: flex;
   justify-content: space-between;
@@ -50,7 +48,7 @@ const ShapeIn = styled.div`
 
 export const ProgressBar = ({ actualSum, totalSum, numsOfDonors, value }) => {
   return (
-    <ProgressBarContainer>
+    <div>
       <Label>
         <LeftDiv>
           <Sum>${actualSum}</Sum>
@@ -61,6 +59,6 @@ export const ProgressBar = ({ actualSum, totalSum, numsOfDonors, value }) => {
       <ShapeOut>
         <ShapeIn width={value} />
       </ShapeOut>
-    </ProgressBarContainer>
+    </div>
   );
 };

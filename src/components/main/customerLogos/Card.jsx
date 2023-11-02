@@ -18,10 +18,10 @@ const StyledDiv = styled.div`
   }
 `;
 
-const StyledImg = styled.img``;
 const StyledP = styled.p`
   font-size: 16px;
 `;
+
 const StyledButton = styled.button`
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@ const StyledButton = styled.button`
 export const Card = ({ src }) => {
   return (
     <StyledDiv>
-      <StyledImg src={src} alt="logo" />
+      <img src={src} alt="logo" />
       <StyledP>Partner since 2015</StyledP>
       <StyledButton>
         <img src={external_link} alt="logo_link" />

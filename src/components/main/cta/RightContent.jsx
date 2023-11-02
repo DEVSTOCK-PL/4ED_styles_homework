@@ -39,18 +39,16 @@ const RightContentButton = styled(Button)`
   gap: 8px;
 `;
 
-const StyledImg = styled.img``;
-
 export const RightContent = ({ h2, p, buttonsArr }) => {
   return (
     <RightContentContainer>
       <StyledH2>{h2}</StyledH2>
       <StyledP>{p}</StyledP>
       <ButtonsContainer>
-        {buttonsArr.map((el) => (
-          <RightContentButton key={el.id}>
-            {el.text}
-            {el.imgSrc && <StyledImg src={el.imgSrc} alt={el.imgAlt} />}
+        {buttonsArr.map(({ id, text, imgSrc, imgAlt }) => (
+          <RightContentButton key={id}>
+            {text}
+            {imgSrc && <img src={imgSrc} alt={imgAlt} />}
           </RightContentButton>
         ))}
       </ButtonsContainer>

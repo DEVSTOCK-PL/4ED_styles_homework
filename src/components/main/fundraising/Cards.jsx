@@ -28,7 +28,7 @@ const CardsContainer = styled.div`
   gap: 48px;
   color: #fff;
 
-  flex-direction: ${(props) => (props.rowreverse ? 'row-reverse' : 'row')};
+  flex-direction: ${(props) => (props.$rowReverse ? 'row-reverse' : 'row')};
 
   @media (max-width: 640px) {
     flex-direction: column;
@@ -38,17 +38,19 @@ const CardsContainer = styled.div`
 
 export const Cards = ({ rowReverse, disabledButton }) => {
   return (
-    <CardsContainer rowreverse={rowReverse}>
-      {arrWithDataForCards.map((el) => (
-        <Card
-          key={el.id}
-          src={el.img}
-          actualSum={el.actualSum}
-          totalSum={el.totalSum}
-          numsOfDonors={el.numsOfDonors}
-          disabledButton={disabledButton}
-        />
-      ))}
+    <CardsContainer $rowReverse={rowReverse}>
+      {arrWithDataForCards.map(
+        ({ id, img, actualSum, totalSum, numsOfDonors }) => (
+          <Card
+            key={id}
+            src={img}
+            actualSum={actualSum}
+            totalSum={totalSum}
+            numsOfDonors={numsOfDonors}
+            disabledButton={disabledButton}
+          />
+        ),
+      )}
     </CardsContainer>
   );
 };

@@ -5,6 +5,14 @@ import { Container } from '../Container';
 
 import vector from '../../assets/vector.svg';
 
+const data = [
+  { id: crypto.randomUUID(), to: '/', text: 'HOME' },
+  { id: crypto.randomUUID(), to: '/news', text: 'NEWS' },
+  { id: crypto.randomUUID(), to: '/events', text: 'EVENTS' },
+  { id: crypto.randomUUID(), to: '/contact', text: 'CONTACT' },
+  { id: crypto.randomUUID(), to: '/list', text: 'RICKANDMORTY' },
+];
+
 const NavContainer = styled(Container)`
   margin-left: 100px;
 
@@ -76,31 +84,13 @@ export const Nav = () => {
     <>
       <NavContainer as="nav" className="desktopNav">
         <UlContainer as="ul" className="ul">
-          <Container as="li">
-            <NavLink className="link" to="/">
-              HOME
-            </NavLink>
-          </Container>
-          <Container as="li">
-            <NavLink className="link" to="/news">
-              NEWS
-            </NavLink>
-          </Container>
-          <Container as="li">
-            <NavLink className="link" to="/events">
-              EVENTS
-            </NavLink>
-          </Container>
-          <Container as="li">
-            <NavLink className="link" to="/contact">
-              CONTACT
-            </NavLink>
-          </Container>
-          <Container as="li">
-            <NavLink className="link" to="/list">
-              RICKANDMORTY
-            </NavLink>
-          </Container>
+          {data.map(({ id, to, text }) => (
+            <Container key={id} as="li">
+              <NavLink className="link" to={to}>
+                {text}
+              </NavLink>
+            </Container>
+          ))}
         </UlContainer>
       </NavContainer>
       <NavContainer className="mobileNav">

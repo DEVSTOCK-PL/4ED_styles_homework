@@ -29,7 +29,6 @@ export const Navbar = () => {
         <Logo />
         <Nav />
       </Container>
-
       <Login />
     </NavbarContainer>
   );

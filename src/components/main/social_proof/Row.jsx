@@ -25,7 +25,7 @@ const Stat = styled.div`
   text-align: center;
   border: 1px solid #374151;
 
-  ${(props) => ({ borderWidth: props.borderwidth })};
+  border-width: ${(props) => (props.$withBorder ? '0 1px 0 0' : '0 0 0 0')};
 
   @media (max-width: 640px) {
     padding: 12px 0;
@@ -45,19 +45,19 @@ const StyledP = styled.p`
 export const Row = () => {
   return (
     <RowContainer>
-      <Stat borderwidth="0 1px 0 0">
+      <Stat $withBorder>
         <StyledH2>104M</StyledH2>
         <StyledP>Trees planted</StyledP>
       </Stat>
-      <Stat borderwidth="0 1px 0 0">
+      <Stat $withBorder>
         <StyledH2>20k+</StyledH2>
         <StyledP>Partners & Donors</StyledP>
       </Stat>
-      <Stat borderwidth="0 1px 0 0">
+      <Stat $withBorder>
         <StyledH2>90M</StyledH2>
         <StyledP>Tonnes of Carbon Stored</StyledP>
       </Stat>
-      <Stat borderwidth="0 0 0 0">
+      <Stat>
         <StyledH2>50+</StyledH2>
         <StyledP>People-Powered Projects</StyledP>
       </Stat>

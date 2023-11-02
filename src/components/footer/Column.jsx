@@ -24,9 +24,9 @@ export const Column = ({ heading, array }) => {
   return (
     <ColumnContainer>
       <StyledH4>{heading}</StyledH4>
-      {array.map((el) => (
-        <Link key={el.id} href={el.href}>
-          {el.name}
+      {array.map(({ id, href, name }) => (
+        <Link key={id} href={href}>
+          {name}
         </Link>
       ))}
     </ColumnContainer>

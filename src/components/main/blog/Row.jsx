@@ -32,37 +32,37 @@ export const Row = ({ arr1, arr2, arr3 }) => {
   return (
     <RowContainer>
       <Column>
-        {arr1.map((el) => (
+        {arr1.map(({ id, image, header, description, link }) => (
           <BlogCard
-            key={el.id}
-            image={el.image}
-            header={el.header}
-            description={el.description}
-            link={el.link}
+            key={id}
+            image={image}
+            header={header}
+            description={description}
+            link={link}
           />
         ))}
       </Column>
       <Separator />
       <Column>
-        {arr2.map((el) => (
+        {arr2.map(({ id, image, header, description, link }) => (
           <BlogCard
-            key={el.id}
-            image={el.image}
-            header={el.header}
-            description={el.description}
-            link={el.link}
+            key={id}
+            image={image}
+            header={header}
+            description={description}
+            link={link}
           />
         ))}
       </Column>
       <Separator />
       <Column>
-        {arr3.map((el) => (
+        {arr3.map(({ id, image, header, description, link }) => (
           <BlogCard
-            key={el.id}
-            image={el.image}
-            header={el.header}
-            description={el.description}
-            link={el.link}
+            key={id}
+            image={image}
+            header={header}
+            description={description}
+            link={link}
           />
         ))}
       </Column>

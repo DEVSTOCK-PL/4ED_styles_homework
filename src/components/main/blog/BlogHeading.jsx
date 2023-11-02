@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-import { Container } from '../../Container';
-
-const HeadingContainer = styled(Container)`
-  flex-direction: column;
-  align-items: center;
-  row-gap: 16px;
-  background: #1f2a37;
-`;
+import { Heading } from '../../Heading';
 
 const StyledH2 = styled.h2`
   font-size: 36px;
@@ -24,14 +17,14 @@ const StyledP = styled.p`
   text-align: center;
 `;
 
-export const Heading = () => {
+export const BlogHeading = () => {
   return (
-    <HeadingContainer>
+    <Heading bcg>
       <StyledH2>Latest news & events</StyledH2>
       <StyledP>
         We use an agile approach to test assumptions and connect with the needs
         of your audience early and often.
       </StyledP>
-    </HeadingContainer>
+    </Heading>
   );
 };

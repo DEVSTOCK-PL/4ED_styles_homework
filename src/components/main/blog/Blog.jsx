@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
-import { Heading } from './Heading';
+import { BlogHeading } from './BlogHeading';
 import { Row } from './Row';
 
 const BlogContainer = styled.div`
@@ -25,7 +25,7 @@ const BlogContainer = styled.div`
 export const Blog = ({ arr1, arr2, arr3 }) => {
   return (
     <BlogContainer>
-      <Heading />
+      <BlogHeading />
       <Row arr1={arr1} arr2={arr2} arr3={arr3} />
     </BlogContainer>
   );

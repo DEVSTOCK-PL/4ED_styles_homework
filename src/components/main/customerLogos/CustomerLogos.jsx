@@ -38,8 +38,8 @@ export const CustomerLogos = () => {
       <CustomerLogosContainer>
         {useArrDataLogosCustomers().map((arr) => (
           <Row key={arr[0].id}>
-            {arr.map((el) => (
-              <Card key={el.id} src={el.logo} />
+            {arr.map(({ id, logo }) => (
+              <Card key={id} src={logo} />
             ))}
           </Row>
         ))}

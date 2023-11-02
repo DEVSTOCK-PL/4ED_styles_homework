@@ -10,39 +10,75 @@ import {
 } from './index';
 import logo_flowbite from '../../assets/logo.svg';
 
-const arrColumn1 = [
-  { id: crypto.randomUUID(), name: 'About', href: '#' },
-  { id: crypto.randomUUID(), name: 'Premium', href: '#' },
-  { id: crypto.randomUUID(), name: 'Blog', href: '#' },
-  { id: crypto.randomUUID(), name: 'Affiliate Program', href: '#' },
-  { id: crypto.randomUUID(), name: 'Get Coupon', href: '#' },
+const data = [
+  {
+    heading: 'company',
+    array: [
+      { id: crypto.randomUUID(), name: 'About', href: '#' },
+      { id: crypto.randomUUID(), name: 'Premium', href: '#' },
+      { id: crypto.randomUUID(), name: 'Blog', href: '#' },
+      { id: crypto.randomUUID(), name: 'Affiliate Program', href: '#' },
+      { id: crypto.randomUUID(), name: 'Get Coupon', href: '#' },
+    ],
+  },
+  {
+    heading: 'help and support',
+    array: [
+      { id: crypto.randomUUID(), name: 'Contact Us', href: '#' },
+      { id: crypto.randomUUID(), name: 'Knowledge Center', href: '#' },
+      { id: crypto.randomUUID(), name: 'Premium Support', href: '#' },
+      { id: crypto.randomUUID(), name: 'Sponsorships', href: '#' },
+    ],
+  },
+  {
+    heading: 'learning',
+    array: [
+      { id: crypto.randomUUID(), name: 'Learn Hub', href: '#' },
+      { id: crypto.randomUUID(), name: 'Manuals', href: '#' },
+      { id: crypto.randomUUID(), name: 'Tutorials', href: '#' },
+      { id: crypto.randomUUID(), name: 'Communities', href: '#' },
+    ],
+  },
+  {
+    heading: 'resources',
+    array: [
+      { id: crypto.randomUUID(), name: 'Third-Party Tools', href: '#' },
+      { id: crypto.randomUUID(), name: 'Illustrations', href: '#' },
+      { id: crypto.randomUUID(), name: 'Themesberg', href: '#' },
+      { id: crypto.randomUUID(), name: 'Bluehost', href: '#' },
+      { id: crypto.randomUUID(), name: 'Stock Photos', href: '#' },
+    ],
+  },
+  {
+    heading: 'legal',
+    array: [
+      { id: crypto.randomUUID(), name: 'Privacy Policy', href: '#' },
+      { id: crypto.randomUUID(), name: 'Terms & Conditions', href: '#' },
+      { id: crypto.randomUUID(), name: 'EULA', href: '#' },
+    ],
+  },
 ];
 
-const arrColumn2 = [
-  { id: crypto.randomUUID(), name: 'Contact Us', href: '#' },
-  { id: crypto.randomUUID(), name: 'Knowledge Center', href: '#' },
-  { id: crypto.randomUUID(), name: 'Premium Support', href: '#' },
-  { id: crypto.randomUUID(), name: 'Sponsorships', href: '#' },
-];
-const arrColumn3 = [
-  { id: crypto.randomUUID(), name: 'Learn Hub', href: '#' },
-  { id: crypto.randomUUID(), name: 'Manuals', href: '#' },
-  { id: crypto.randomUUID(), name: 'Tutorials', href: '#' },
-  { id: crypto.randomUUID(), name: 'Communities', href: '#' },
-];
-
-const arrColumn4 = [
-  { id: crypto.randomUUID(), name: 'Third-Party Tools', href: '#' },
-  { id: crypto.randomUUID(), name: 'Illustrations', href: '#' },
-  { id: crypto.randomUUID(), name: 'Themesberg', href: '#' },
-  { id: crypto.randomUUID(), name: 'Bluehost', href: '#' },
-  { id: crypto.randomUUID(), name: 'Stock Photos', href: '#' },
-];
-
-const arrColumn5 = [
-  { id: crypto.randomUUID(), name: 'Privacy Policy', href: '#' },
-  { id: crypto.randomUUID(), name: 'Terms & Conditions', href: '#' },
-  { id: crypto.randomUUID(), name: 'EULA', href: '#' },
+const dataLinksArr = [
+  { id: crypto.randomUUID(), href: '#', src: logo_github, alt: 'logo_github' },
+  {
+    id: crypto.randomUUID(),
+    href: '#',
+    src: logo_twitter,
+    alt: 'logo_twitter',
+  },
+  {
+    id: crypto.randomUUID(),
+    href: '#',
+    src: logo_dribble,
+    alt: 'logo_dribble',
+  },
+  {
+    id: crypto.randomUUID(),
+    href: '#',
+    src: logo_facebook,
+    alt: 'logo_facebook',
+  },
 ];
 
 const FooterContainer = styled.div`
@@ -110,11 +146,9 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <NavLinks>
-        <Column heading="company" array={arrColumn1} />
-        <Column heading="help and support" array={arrColumn2} />
-        <Column heading="learning" array={arrColumn3} />
-        <Column heading="resources" array={arrColumn4} />
-        <Column heading="legal" array={arrColumn5} />
+        {data.map(({ heading, array }) => (
+          <Column key={heading} heading={heading} array={array} />
+        ))}
       </NavLinks>
       <LogoAndSocialLinks>
         <Logo>
@@ -123,18 +157,11 @@ export const Footer = () => {
         </Logo>
         <Text>© 2022 Flowbite, Inc. All rights reserved.</Text>
         <SocialLinks>
-          <a href="#">
-            <img src={logo_github} alt="logo_github" />
-          </a>
-          <a href="#">
-            <img src={logo_twitter} alt="logo_twitter" />
-          </a>
-          <a href="#">
-            <img src={logo_dribble} alt="logo_dribble" />
-          </a>
-          <a href="#">
-            <img src={logo_facebook} alt="logo_facebook" />
-          </a>
+          {dataLinksArr.map(({ id, href, src, alt }) => (
+            <a key={id} href={href}>
+              <img src={src} alt={alt} />
+            </a>
+          ))}
         </SocialLinks>
       </LogoAndSocialLinks>
     </FooterContainer>

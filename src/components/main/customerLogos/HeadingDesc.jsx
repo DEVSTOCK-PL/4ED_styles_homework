@@ -1,15 +1,8 @@
 import styled from 'styled-components';
 
-import { Container } from '../../Container';
+import { Heading } from '../../Heading';
 
 import arrow_right_blue from '../../../assets/arrow_right_blue.svg';
-
-const HeadingDescContainer = styled(Container)`
-  flex-direction: column;
-  align-items: center;
-  row-gap: 16px;
-  background: #1f2a37;
-`;
 
 const StyledH2 = styled.h2`
   font-size: 36px;
@@ -38,7 +31,7 @@ const StyledImg = styled.img``;
 
 export const HeadingDesc = () => {
   return (
-    <HeadingDescContainer>
+    <Heading bcg>
       <StyledH2>Donors, Partners & Sponsors</StyledH2>
       <StyledP>
         Here at flowbite we focus on markets where technology, innovation, and
@@ -48,6 +41,6 @@ export const HeadingDesc = () => {
         Become a sponsor
         <StyledImg src={arrow_right_blue} alt="arrow" />
       </StyledLink>
-    </HeadingDescContainer>
+    </Heading>
   );
 };
