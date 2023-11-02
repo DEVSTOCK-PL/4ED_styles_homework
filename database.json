@@ -7,13 +7,48 @@
       "id": 1
     },
     {
-      "email": "aaa@aaa.pl",
-      "subject": "temat2",
-      "message": "temat 2",
-      "id": 2
+      "email": "hook@hook.pl",
+      "subject": "custom hook",
+      "message": "Robimy custom hooka",
+      "id": 4
+    },
+    {
+      "email": "tralalala@tralalala.trala",
+      "subject": "Trala",
+      "message": "Morala Bambala",
+      "id": 5
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "name": "Przemek",
+      "secondName": "Woźniak",
+      "email": "3846205@gmail.com",
+      "password": "qqqqqq",
+      "id": 1
+    },
+    {
+      "name": "Arek",
+      "secondName": "Bambarek",
+      "email": "Arkanoid@gmail.com",
+      "password": "qqqqqq",
+      "id": 2
+    },
+    {
+      "name": "Amelka",
+      "secondName": "Bambelka",
+      "email": "bambelka@gmail.com",
+      "password": "qqqqqq",
+      "id": 3
+    },
+    {
+      "name": "Karolina",
+      "secondName": "Mandolina",
+      "email": "mandolina@mandolina.com",
+      "password": "qqqqqq",
+      "id": 4
+    }
+  ],
   "books": [
     {
       "id": 1,

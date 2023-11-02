@@ -1,13 +1,12 @@
+import styled from "styled-components";
 import { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { ThemeContext } from "../hooks/ThemeContext";
 import useOpenMenuLogic from "../hooks/useOpenMenuLogic";
-import { Link, useLocation } from "react-router-dom";
 import { Menu, Flowbite, Sun, Moon } from "../assets/svg_components";
-import styled from "styled-components";
 
 const NavbarContainer = styled.div`
-  /* background-color: #111928; */
-  width: 100%;
+  width: 1440px;
   max-width: 1440px;
   height: 65px;
   display: flex;
@@ -15,6 +14,9 @@ const NavbarContainer = styled.div`
   align-items: end;
   position: relative;
 
+  @media (min-width: 1280px) and (max-width: 1440px) {
+    max-width: 1440px;
+  }
   @media (min-width: 1025px) and (max-width: 1280px) {
     max-width: 1280px;
   }
@@ -54,7 +56,6 @@ const Logo = styled.div`
 `;
 
 const LogIn = styled.div`
-  /* width: 180px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +72,6 @@ const LogIn = styled.div`
 `;
 
 const MenuBox = styled.div`
-  /* width: 41px; */
   height: 41px;
   display: none;
 
@@ -121,6 +121,17 @@ const StyledLink = styled(Link)`
 
   &:hover {
     color: #1a56db;
+  }
+`;
+const StyledLinkRegister = styled(StyledLink)`
+  &:hover {
+    color: #111;
+    font-weight: 600;
+  }
+`;
+const StyledLinkLogin = styled(StyledLink)`
+  &:hover {
+    color: #3fae14;
   }
 `;
 
@@ -227,8 +238,12 @@ function Navbar() {
           <ToggleButton onClick={toggleTheme}>
             {isDarkTheme ? <Sun /> : <Moon />}
           </ToggleButton>
-          <ButtonLogIn>Log in</ButtonLogIn>
-          <Button>Get Started</Button>
+          <ButtonLogIn>
+            <StyledLinkLogin to="/login">Log In</StyledLinkLogin>
+          </ButtonLogIn>
+          <Button>
+            <StyledLinkRegister to="/register">Get Started</StyledLinkRegister>
+          </Button>
         </LogIn>
         <MenuBox>
           <ToggleButton onClick={toggleTheme}>

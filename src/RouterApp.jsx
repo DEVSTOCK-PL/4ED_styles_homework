@@ -5,8 +5,10 @@ import Home from "./blocks/Home";
 import News from "./blocks/News";
 import Events from "./blocks/Events";
 import ContactBlock from "./blocks/ContactBlock";
-import NotFound from "./sections/NotFound";
 import RickAndMorty from "./sections/RickAndMorty";
+import Register from "./sections/Register";
+import LogIn from "./sections/LogIn";
+import NotFound from "./sections/NotFound";
 
 function RouterApp() {
   return (
@@ -73,6 +75,22 @@ function RouterApp() {
           element={
             <Layout>
               <RickAndMorty />
+            </Layout>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Layout>
+              <Register />
+            </Layout>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Layout>
+              <LogIn />
             </Layout>
           }
         />

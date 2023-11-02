@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import { useSnackbar } from "notistack";
-import useContactForm from "../hooks/useContactForm";
+import useRegisterForm from "../hooks/useRegisterForm";
 
-const text1 = "Contact us";
-const text2 =
-  "Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.";
+const text1 = "Zarejestruj się";
 
 const Container = styled.div`
   width: 100%;
@@ -77,7 +75,7 @@ const Heading = styled.div`
 `;
 
 const Form = styled.form`
-  width: 50%;
+  width: 640px;
   height: 478px;
   display: flex;
   flex-direction: column;
@@ -109,25 +107,6 @@ const Title1 = styled.p`
     font-size: 30px;
     line-height: 45px;
     min-width: 350px;
-  }
-`;
-
-const TextSupporting1 = styled.p`
-  width: 100%;
-  height: auto;
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 400;
-  margin: 0;
-  color: #9ca3af;
-
-  @media (min-width: 641px) and (max-width: 768px) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  @media (max-width: 640px) {
-    font-size: 16px;
-    line-height: 24px;
   }
 `;
 
@@ -186,29 +165,9 @@ const Input = styled.input`
     width: 343px;
   }
 `;
-const Textarea = styled.textarea`
-  height: 162px;
-  width: 100%;
-  background-color: #374151;
-  border: 1px solid #4b5563;
-  border-radius: 8px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #9ca3af;
-  padding-left: 10px;
-  padding-top: 4px;
-  box-sizing: border-box;
-
-  @media (max-width: 640px) {
-    width: 343px;
-  }
-  @media (min-width: 641px) and (max-width: 768px) {
-    width: 343px;
-  }
-`;
 
 const BlueButton = styled.button`
-  width: 139px;
+  width: 145px;
   height: 41px;
   border-radius: 8px;
   color: #fff;
@@ -218,6 +177,7 @@ const BlueButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 
   &:active {
     border: 1px solid #1a56db;
@@ -227,16 +187,41 @@ const BlueButton = styled.button`
 const Contact = () => {
   const { enqueueSnackbar } = useSnackbar();
 
-  const { formik, isSubmitting } = useContactForm(enqueueSnackbar);
+  const { formik, isSubmitting } = useRegisterForm(enqueueSnackbar);
 
   return (
     <Container>
       <Content>
         <Heading>
           <Title1>{text1}</Title1>
-          <TextSupporting1>{text2}</TextSupporting1>
         </Heading>
         <Form onSubmit={formik.handleSubmit}>
+          <InputBox>
+            <Label>Name</Label>
+            <Input
+              type="text"
+              placeholder="Name"
+              name="name"
+              onChange={formik.handleChange}
+              value={formik.values.name}
+            />
+            {formik.touched.name && formik.errors.name ? (
+              <div>{formik.errors.name}</div>
+            ) : null}
+          </InputBox>
+          <InputBox>
+            <Label>Second Name</Label>
+            <Input
+              type="text"
+              placeholder="Second Name"
+              name="secondName"
+              onChange={formik.handleChange}
+              value={formik.values.secondName}
+            />
+            {formik.touched.secondName && formik.errors.secondName ? (
+              <div>{formik.errors.secondName}</div>
+            ) : null}
+          </InputBox>
           <InputBox>
             <Label>Your email</Label>
             <Input
@@ -251,33 +236,21 @@ const Contact = () => {
             ) : null}
           </InputBox>
           <InputBox>
-            <Label>Subject</Label>
+            <Label>Password</Label>
             <Input
-              type="text"
-              placeholder="Let as know we can help you"
-              name="subject"
+              type="password"
+              placeholder="password"
+              name="password"
               onChange={formik.handleChange}
-              value={formik.values.subject}
+              value={formik.values.password}
             />
-            {formik.touched.subject && formik.errors.subject ? (
-              <div>{formik.errors.subject}</div>
+            {formik.touched.password && formik.errors.password ? (
+              <div>{formik.errors.password}</div>
             ) : null}
           </InputBox>
-          <InputBox>
-            <Label>Your message</Label>
-            <Textarea
-              rows="6"
-              cols="20"
-              name="message"
-              onChange={formik.handleChange}
-              value={formik.values.message}
-            />
-            {formik.touched.message && formik.errors.message ? (
-              <div>{formik.errors.message}</div>
-            ) : null}
-          </InputBox>
+
           <BlueButton type="submit" disabled={isSubmitting}>
-            Send message
+            Create Account
           </BlueButton>
         </Form>
       </Content>
