@@ -25,14 +25,13 @@ const BlueButton = styled.button`
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  background: #1a56db;
   color: #fff;
   height: 48px;
 `
 
 const CtaBlueButton = ({ children }) => {
   return (
-    <BlueButton>
+    <BlueButton className='buttonBlueBg'>
       {children}
       {ArrowRight}
     </BlueButton>

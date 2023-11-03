@@ -3,6 +3,7 @@ import Header from './blog/Header'
 import BlogCard from './blog/BlogCard'
 
 import blogs from './blog/blogposts/posts'
+
 const SeparatorLeft = styled.div`
   content: '';
   position: absolute;
@@ -38,7 +39,6 @@ const BlogWrapper = styled.div`
   padding: 96px 0px;
   border-top: 1px solid var(--gray-700, #374151);
   border-bottom: 1px solid var(--gray-700, #374151);
-  background: var(--gray-800, #1f2a37);
 `
 const Container = styled.div`
   display: flex;
@@ -71,7 +71,7 @@ const BlogArea = styled.div`
 
 const Blog = () => {
   return (
-    <BlogWrapper>
+    <BlogWrapper id='blog'>
       <Container>
         <Header />
         <BlogArea>

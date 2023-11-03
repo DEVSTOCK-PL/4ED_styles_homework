@@ -1,7 +1,15 @@
 import styled from 'styled-components'
 
 const SectionLink = styled.a`
-  color: #9ca3af;
+  &:hover {
+    color: ${(props) => props.theme.navLinksActive};
+    text-decoration: underline;
+  }
+
+  &.active {
+    color: ${(props) => props.theme.navLinksActive};
+    text-decoration: underline;
+  }
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -9,7 +17,11 @@ const SectionLink = styled.a`
   cursor: pointer;
 `
 const Link = ({ href, children }) => {
-  return <SectionLink href={href}>{children}</SectionLink>
+  return (
+    <SectionLink className='footerLink' href={href}>
+      {children}
+    </SectionLink>
+  )
 }
 
 export default Link

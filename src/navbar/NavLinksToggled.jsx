@@ -5,8 +5,8 @@ import styles from '../styles/styles.module.css'
 
 const NavLinksWrapper = styled.div``
 
-const NavLink = styled.a`
-  color: #fff;
+const NavLink = styled(Link)`
+  color: ${(props) => props.theme.navLinks};
   font-size: larger;
   &.active {
     color: #1a56db;

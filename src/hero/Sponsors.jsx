@@ -19,7 +19,7 @@ const SponsorsWrapper = styled.div`
 const Sponsors = () => {
   return (
     <SponsorsWrapper>
-      <SupportingText />
+      <SupportingText className='supporting-text' />
       <SponsorsLogos />
     </SponsorsWrapper>
   )

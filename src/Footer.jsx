@@ -26,7 +26,7 @@ const WrapperFooterContent = styled.div`
 
 const Footer = () => {
   return (
-    <WrapperFooter>
+    <WrapperFooter id='footer'>
       <WrapperFooterContent>
         <Menu />
         <Logo />

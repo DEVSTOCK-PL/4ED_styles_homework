@@ -9,9 +9,8 @@ const DonateNow = styled.button`
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  background: #1a56db;
   color: #fff;
-  height: 48px;
+  height: 100%;
   @media (max-width: 767px) {
     width: 100%;
     font-size: 14px;
@@ -22,7 +21,11 @@ const DonateNow = styled.button`
 `
 
 const DonateButton = ({ onClick }) => {
-  return <DonateNow onClick={onClick}>Donate Now</DonateNow>
+  return (
+    <DonateNow onClick={onClick} className='buttonBlueBg'>
+      Donate Now
+    </DonateNow>
+  )
 }
 
 export default DonateButton

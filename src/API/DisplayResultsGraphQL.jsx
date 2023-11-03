@@ -2,10 +2,17 @@ import { useQuery, gql } from '@apollo/client'
 import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+const CardsPageWrapper = styled.div`
+  display: flex;
+`
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 16px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #244e767f;
 `
 const ButtonPage = styled.button`
   height: 20px;
@@ -32,6 +39,20 @@ const GET_results = gql`
     }
   }
 `
+
+//To add?
+// locations(page: $page) {
+//       results {
+//         name
+//         url
+//       }
+//     }
+//     episodes(page: $page) {
+//       results {
+//         url
+//       }
+// }
+
 export default function DisplayCharacters() {
   const { page, category } = useParams()
   const pageNumber = parseInt(page, 10) || 1
@@ -57,8 +78,8 @@ export default function DisplayCharacters() {
             <h2 className='text-yellow-400'>Status: {status}</h2>
 
             <img
-              width='300'
-              height='150'
+              width='250'
+              height='100'
               alt='location-reference'
               src={`${image}`}
               className='rounded'
@@ -72,22 +93,24 @@ export default function DisplayCharacters() {
     )
 
   return (
-    <>
-      {totalCharacters > 20 && (
-        <div className='flex justify-center gap-2'>
-          {pageNumber > 1 && (
-            <Link to={`/rickmorty/${category}/${pageNumber - 1}`}>
-              <ButtonPage>Previous</ButtonPage>
-            </Link>
-          )}
-          {pageNumber < Math.ceil(totalCharacters / 20) && (
-            <Link to={`/rickmorty/${category}/${pageNumber + 1}`}>
-              <ButtonPage>Next</ButtonPage>
-            </Link>
-          )}
-        </div>
-      )}
-      {characterList}
-    </>
+    <CardsPageWrapper>
+      <div>
+        {totalCharacters > 20 && (
+          <div className='flex justify-center gap-2'>
+            {pageNumber > 1 && (
+              <Link to={`/rickmorty/${category}/${pageNumber - 1}`}>
+                <ButtonPage>Previous</ButtonPage>
+              </Link>
+            )}
+            {pageNumber < Math.ceil(totalCharacters / 20) && (
+              <Link to={`/rickmorty/${category}/${pageNumber + 1}`}>
+                <ButtonPage>Next</ButtonPage>
+              </Link>
+            )}
+          </div>
+        )}
+      </div>
+      <div>{characterList}</div>
+    </CardsPageWrapper>
   )
 }

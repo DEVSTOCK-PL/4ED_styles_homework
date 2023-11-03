@@ -13,6 +13,27 @@ import DonateButton from './DonateButton'
 import ButtonShare from './ButtonShare'
 import image from './img/card1img.png'
 
+export const CardWrapper = styled.div`
+  max-width: 500px;
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  gap: 16px;
+`
+export const CardContentWrapper = styled.div`
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700, #374151);
+  background: var(--gray-800, #1f2a37);
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+    0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+`
+
 const Image = styled.img`
   height: 288px;
   align-self: stretch;
@@ -30,15 +51,19 @@ const Card1 = () => {
   const goalSurpassed = donation > goal
 
   return (
-    <div className={styles.cardWrapper}>
-      <div className={styles.cardFundraiser}>
+    <CardWrapper>
+      <CardContentWrapper className='buttonGreyBg'>
         <Image src={image} alt='Planting trees' />
         <Label>
           <div className={styles.totals}>
-            <h3 className={styles.fundraiserSum}>${donation}</h3>
-            <p className={styles.fundraiserGoal}>of ${goal}</p>
+            <h2 className={styles.fundraiserSum}>${donation}</h2>
+            <p className={`${styles.fundraiserGoal} supporting-text`}>
+              of ${goal}
+            </p>
           </div>
-          <p className={styles.fundraiserDonors}>{donors} donors</p>
+          <p className={`${styles.fundraiserDonors}  supporting-text`}>
+            {donors} donors
+          </p>
         </Label>
         <LinearDeterminate donation={donationNumber} goal={goal} />
         <h3 className={styles.fundraiserSum}>
@@ -58,7 +83,7 @@ const Card1 = () => {
           </h3>
         )}
         <div className={styles.supportingText}>
-          <p className='text-left text-gray-400 self-stretch'>
+          <p className='supportTextDarker text-left self-stretch'>
             Our fundraisers are a creative bunch when it comes to taking on
             challenges, from beard shaves and bake sales to stand-up comedy and
             streaming marathons. There is something for everyone.
@@ -68,8 +93,8 @@ const Card1 = () => {
           <DonateButton onClick={donate} />
           <ButtonShare />
         </Buttons>
-      </div>
-    </div>
+      </CardContentWrapper>
+    </CardWrapper>
   )
 }
 export default Card1

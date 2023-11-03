@@ -11,7 +11,7 @@ const NavWrapper = styled.div`
   gap: 64px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   @media (768px <= width <= 1024px) {
@@ -29,7 +29,7 @@ const NavWrapper = styled.div`
     max-height: fit-content;
     align-self: stretch;
     flex-shrink: 1;
-    .nav-links,
+    .navLinks,
     .sign-options {
       display: none;
     }

@@ -6,7 +6,6 @@ import CtaBlueButton from './buttons/CTA-button-blue'
 
 const CtaWrapper = styled.div`
   width: 100%;
-  background-color: #111928;
   display: flex;
   flex-direction: row;
   gap: 80px;
@@ -28,7 +27,7 @@ const CtaLeft3 = () => {
   return (
     <CtaWrapper>
       <CtaImg3 />
-      <CtaTextWrapper>
+      <CtaTextWrapper className='ctaSection'>
         <CtaHeading>
           Together we can restore our earth against climate change{' '}
         </CtaHeading>

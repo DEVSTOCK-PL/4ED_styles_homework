@@ -3,30 +3,27 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  /* --font-family: 'Inter', sans-serif; */
-  /* background-color: #111928; */
   display: flex;
   flex-direction: column;
 }
 
 body * {
   font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
 }
-
-/* body {
-  background-color: #111928;
-} */
 
 button:hover {
   scale: 0.9;
 }
 
 ::selection {
-  background-color: #44699c;
-  color: #11123e;
+  background-color: #43061e;
+  color: #eae0bf;
 }
+
 .switch {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 }

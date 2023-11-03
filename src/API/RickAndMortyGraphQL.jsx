@@ -21,7 +21,7 @@ const Button = styled.button`
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  background: #1a56db;
+
   color: #fff;
   height: 48px;
   @media (max-width: 767px) {
@@ -68,13 +68,19 @@ const RickAndMortyGQL = () => {
       <ApiWrapper>
         <h1 className='text-pink-300 text-2xl'>Rick & Morty</h1>
         <div className='flex flex-row justify-center align-center gap-5'>
-          <Button onClick={() => handleButtonClick('characters')}>
+          <Button
+            className='buttonBlueBg'
+            onClick={() => handleButtonClick('characters')}>
             List of Characters
           </Button>
-          <Button onClick={() => handleButtonClick('locations')}>
+          <Button
+            className='buttonBlueBg'
+            onClick={() => handleButtonClick('locations')}>
             List of Locations
           </Button>
-          <Button onClick={() => handleButtonClick('episodes')}>
+          <Button
+            className='buttonBlueBg'
+            onClick={() => handleButtonClick('episodes')}>
             List of Episodes
           </Button>
         </div>

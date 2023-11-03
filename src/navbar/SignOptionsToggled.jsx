@@ -23,14 +23,13 @@ const GetStarted = styled.button`
   padding: 10px 20px;
   align-items: center;
   border-radius: 8px;
-  background: var(--primary-700, #1a56db);
   color: #fff;
 `
 const SignOptionsToggled = () => {
   return (
     <Options>
       <LogIn>Log In</LogIn>
-      <GetStarted>Get Started</GetStarted>
+      <GetStarted className='buttonBlueBg'>Get Started</GetStarted>
     </Options>
   )
 }

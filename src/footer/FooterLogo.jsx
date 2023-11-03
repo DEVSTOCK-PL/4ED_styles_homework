@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import logo from '../public/logo.svg'
+import LogoDark from '../public/LogoDarkTheme.jsx'
 import SocialLinks from './SocialLinks'
 
 const LogoArea = styled.div`
@@ -31,7 +31,7 @@ const LogoWrapper = styled.div`
     align-self: stretch;
   }
 `
-const LogoImg = styled.img`
+const LogoImg = styled.div`
   width: 32px;
   height: 32px;
 `
@@ -61,7 +61,9 @@ const Logo = () => {
   return (
     <LogoArea>
       <LogoWrapper>
-        <LogoImg src={logo} />
+        <LogoImg>
+          <LogoDark />
+        </LogoImg>
         <Flowbite>Flowbite</Flowbite>
       </LogoWrapper>
       <RightsReserved>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import styled from 'styled-components'
+
 import styles from '../styles/styles.module.css'
 
 import { useDonationLogic } from '../hooks/useDonationLogic'
@@ -12,6 +13,7 @@ import Label from './CardLabel'
 import Buttons from './Buttons'
 import DonateButton from './DonateButton'
 import ButtonShare from './ButtonShare'
+import { CardWrapper, CardContentWrapper } from './Card1'
 
 const Image = styled.img`
   height: 288px;
@@ -28,22 +30,20 @@ const Card2 = () => {
 
   const goalAchieved = donation === goal
   const goalSurpassed = donation > goal
-
-  useEffect(() => {
-    console.log('donated', donation)
-    console.log(donors, 'donors')
-  }, [donation, donors])
-
   return (
-    <div className={styles.cardWrapper}>
-      <div className={styles.cardFundraiser}>
+    <CardWrapper>
+      <CardContentWrapper className='buttonGreyBg'>
         <Image src={image} alt='Planting trees' />
         <Label>
           <div className={styles.totals}>
-            <h3 className={styles.fundraiserSum}>${donation}</h3>
-            <p className={styles.fundraiserGoal}>of {goal}</p>
+            <h2 className={styles.fundraiserSum}>${donation}</h2>
+            <p className={`${styles.fundraiserGoal} supporting-text`}>
+              of ${goal}
+            </p>
           </div>
-          <p className={styles.fundraiserDonors}>{donors} donors</p>
+          <p className={`${styles.fundraiserDonors}  supporting-text`}>
+            {donors} donors
+          </p>
         </Label>
         <LinearDeterminate donation={donationNumber} goal={goal} />
         <h3 className={styles.fundraiserSum}>
@@ -63,7 +63,7 @@ const Card2 = () => {
           </h3>
         )}
         <div className={styles.supportingText}>
-          <p className='text-left text-gray-400 self-stretch'>
+          <p className='supportTextDarker text-left self-stretch'>
             Our fundraisers are a creative bunch when it comes to taking on
             challenges, from beard shaves and bake sales to stand-up comedy and
             streaming marathons. There is something for everyone.
@@ -73,8 +73,8 @@ const Card2 = () => {
           <DonateButton onClick={donate} />
           <ButtonShare />
         </Buttons>
-      </div>
-    </div>
+      </CardContentWrapper>
+    </CardWrapper>
   )
 }
 export default Card2

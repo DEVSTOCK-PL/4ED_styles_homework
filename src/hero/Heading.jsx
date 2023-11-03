@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const HeadingText = styled.h1`
-  color: ${(props) => (props.theme ? '#fff' : '#000')};
   font-size: 48px;
   font-style: normal;
   font-weight: 800;
@@ -21,7 +20,6 @@ const HeadingText = styled.h1`
 `
 const SupportingText = styled.p`
   align-self: stretch;
-  color: ${(props) => (props.theme ? '#9ca3af' : '#000')};
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -33,8 +31,10 @@ const SupportingText = styled.p`
 const Heading = () => {
   return (
     <>
-      <HeadingText>Making earth cooler for people, nature, climate</HeadingText>
-      <SupportingText>
+      <HeadingText className='heading-text'>
+        Making earth cooler for people, nature, climate
+      </HeadingText>
+      <SupportingText className='supporting-text'>
         Protecting the planet and its natural resources for future generations,
         by reducing pollution, promoting sustainability, and conserving energy
         and resources.

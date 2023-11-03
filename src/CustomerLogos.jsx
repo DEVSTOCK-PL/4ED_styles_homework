@@ -12,12 +12,11 @@ const CustomerLogosWrapper = styled.div`
   padding: 96px 0px;
   border-top: 1px solid var(--gray-700, #374151);
   border-bottom: 1px solid var(--gray-700, #374151);
-  background: var(--gray-800, #1f2a37);
 `
 
 const CustomerLogos = () => {
   return (
-    <CustomerLogosWrapper>
+    <CustomerLogosWrapper id='sponsors'>
       <Header />
       <CustomerLogosGrid />
     </CustomerLogosWrapper>

@@ -1,5 +1,9 @@
+import { Link } from 'react-router-dom'
+
 import styled from 'styled-components'
+
 import styles from '../styles/styles.module.css'
+
 import ArrowRight from '../styles/ArrowRight'
 
 import Heading from '../customer-logos/Heading'
@@ -18,14 +22,16 @@ const HeaderWrapper = styled.div`
 const Header = () => {
   return (
     <HeaderWrapper>
-      <Heading>Donors, Partners & Sponsors</Heading>
+      <Heading className='invertedH1'>Donors, Partners & Sponsors</Heading>
       <HeadingSupportingText>
         Here at flowbite we focus on markets where technology, innovation, and
         capital can unlock long-term value.
       </HeadingSupportingText>
-      <a className={styles.linkWithArrow} href='http://becomesponsor'>
-        Become Sponsor {ArrowRight}
-      </a>
+      <Link
+        className={`${styles.linkWithArrow} linkWithArrow`}
+        to='/becomesponsor'>
+        Become a sponsor <ArrowRight />
+      </Link>
     </HeaderWrapper>
   )
 }

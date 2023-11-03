@@ -1,13 +1,13 @@
 import { Link, useLocation } from 'react-router-dom'
+
 import styled from 'styled-components'
 
 const NavLinksWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 32px;
-  max-width: 876px;
-  font-size: 16px;
+  width: 50%;
+  justify-content: space-evenly;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
@@ -15,11 +15,19 @@ const NavLinksWrapper = styled.div`
     flex: 1 0 0;
   }
 `
-const NavLink = styled.p`
-  color: ${(props) => (props.theme ? '#fff' : '#000')};
+const NavLink = styled(Link)`
   cursor: pointer;
+  color: ${(props) => props.theme.navLinks};
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: ${(props) => props.theme.navLinksHover};
+    text-decoration: underline;
+  }
+
   &.active {
-    color: #1a56db;
+    color: ${(props) => props.theme.navLinksActive};
     text-decoration: underline;
   }
 `
@@ -28,7 +36,7 @@ const NavLinks = () => {
   const { pathname } = useLocation()
 
   return (
-    <NavLinksWrapper className='nav-links'>
+    <NavLinksWrapper className='navLinks'>
       <NavLink className={pathname === '/' && 'active'}>
         <Link to='/'>HOME</Link>
       </NavLink>
@@ -42,7 +50,7 @@ const NavLinks = () => {
         <Link to='/contact'>CONTACT</Link>
       </NavLink>
       <NavLink className={pathname === '/rickmorty' && 'active'}>
-        <Link to='/rickmorty' className='text-pink-500'>
+        <Link to='/rickmorty' className='text-pink-900'>
           Rick&Morty
         </Link>
       </NavLink>

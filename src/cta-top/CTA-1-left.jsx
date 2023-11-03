@@ -29,7 +29,7 @@ const CtaButtonsWrapper = styled.div`
 
 const CtaLeft1 = () => {
   return (
-    <CtaWrapper>
+    <CtaWrapper className='ctaSection'>
       <CtaImg1 />
       <CtaTextWrapper>
         <CtaHeading>

@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Heading>Contact us</Heading>
-      <HeadingSupportingText>
+      <HeadingSupportingText className='supporting-text'>
         Got a technical issue? Want to send feedback about a beta feature? Need
         details about our Business plan? Let us know.
       </HeadingSupportingText>

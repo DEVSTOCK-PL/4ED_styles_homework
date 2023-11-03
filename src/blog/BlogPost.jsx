@@ -19,8 +19,8 @@ const PostWrapper = styled.div`
 const BlogPost = ({ header, blurb }) => {
   return (
     <PostWrapper>
-      <BlogPostHeader>{header}</BlogPostHeader>
-      <BlogPostBlurb>{blurb}</BlogPostBlurb>
+      <BlogPostHeader className='invertedH1'>{header}</BlogPostHeader>
+      <BlogPostBlurb className='supporting-text'>{blurb}</BlogPostBlurb>
       <ReadMore href='www' />
     </PostWrapper>
   )

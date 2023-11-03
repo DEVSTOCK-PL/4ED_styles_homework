@@ -14,7 +14,6 @@
 }
 
 .supportingTextSponsors {
-  /* color: #6b7280; */
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -24,7 +23,6 @@
   }
 }
 .countText {
-  background-color: #1f2a37;
   font-size: 36px;
   font-style: normal;
   font-weight: 800;
@@ -44,54 +42,6 @@
 
 .light .counterWrapper {
   background: #b5c5d7;
-}
-.counterWrapper {
-  display: flex;
-  width: 1024px;
-  padding: 24px 16px;
-  align-items: flex-start;
-  border-radius: 8px;
-  justify-content: space-evenly;
-  background: #1f2a37;
-  @media (max-width: 767px) {
-    display: flex;
-    padding: 16px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    align-self: stretch;
-    width: 100%;
-  }
-  @media (768px <= width <= 1024px) {
-    width: 900px;
-  }
-}
-
-.proofWrapper {
-  max-width: 1280px;
-  max-height: 117px;
-  margin: 0 auto;
-  display: flex;
-  @media (max-width: 767px) {
-    display: flex;
-    padding: 16px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    max-height: fit-content;
-    gap: 16px;
-    margin: 16px;
-    align-self: stretch;
-    border-radius: 8px;
-    border: 1px solid var(--gray-700, #374151);
-    background: var(--gray-800, #1f2a37);
-    flex-shrink: 1;
-  }
-  @media screen and (max-width: 900px) and (min-width: 769px) {
-    width: 700px;
-  }
 }
 
 .counterDiv {
@@ -116,8 +66,6 @@
 }
 .ctaheading {
   font-size: 36px;
-  color: #fff;
-  background-color: #111928;
   font-style: normal;
   font-weight: 800;
   line-height: 125%;
@@ -137,7 +85,6 @@
 }
 
 .supportingTextCta {
-  color: #6b7280;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -145,7 +92,6 @@
 }
 .logoheading {
   font-size: 36px;
-  color: #fff;
   font-style: normal;
   font-weight: 800;
   line-height: 125%;
@@ -164,7 +110,6 @@
   }
 }
 .logoSupportingText {
-  color: var(--gray-500, #6b7280);
   text-align: center;
   font-size: 16px;
   font-style: normal;
@@ -180,8 +125,6 @@
   gap: 8px;
   border-radius: 8px;
   border: 1px solid var(--gray-600, #4b5563);
-  background: var(--gray-800, #1f2a37);
-  color: #9ca3af;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -189,7 +132,6 @@
 }
 
 .linkWithArrow {
-  color: #3f83f8;
   text-align: center;
   align-items: center;
   font-size: 16px;
@@ -202,30 +144,9 @@
 }
 .linkWithArrow:hover {
   color: #fff;
+  text-decoration: underline;
 }
 
-.cardWrapper {
-  max-width: 500px;
-  display: flex;
-  padding: 32px;
-  flex-direction: column;
-  gap: 16px;
-  /* flex: 1 0 0; */
-}
-
-.cardFundraiser {
-  display: flex;
-  padding: 32px;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  flex: 1 0 0;
-  border-radius: 8px;
-  border: 1px solid var(--gray-700, #374151);
-  background: var(--gray-800, #1f2a37);
-  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
-    0px 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
 .fundraiserLabel {
   display: flex;
   justify-content: space-between;
@@ -241,7 +162,6 @@
 .fundraiserSum {
   display: flex;
   align-items: flex-start;
-  color: #fff;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -272,20 +192,6 @@
   line-height: 150%;
 }
 
-.blogHeader {
-  color: #fff;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 125%;
-}
-.blogText {
-  color: #9ca3af;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-}
 .navLinksToggled {
   display: flex;
   flex-direction: column;
