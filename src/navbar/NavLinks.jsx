@@ -46,7 +46,7 @@ const NavLinks = () => {
       <NavLink className={pathname === '/events' && 'active'}>
         <Link to='/events'>EVENTS</Link>
       </NavLink>
-      <NavLink className={pathname === '/contact' && 'active'}>
+      <NavLink className={pathname === '/contact-form' && 'active'}>
         <Link to='/contact'>CONTACT</Link>
       </NavLink>
       <NavLink className={pathname === '/rickmorty' && 'active'}>

@@ -1,12 +1,15 @@
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
-import { createContext, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
 
-import { darkTheme, lightTheme, GlobalStyle } from './styles/globalStyles.js'
+import { createContext, useState } from 'react'
+
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+
+import { ThemeProvider } from 'styled-components'
 
 import Switch from 'react-switch'
 
+import { darkTheme, lightTheme, GlobalStyle } from './styles/globalStyles.js'
 import { moonIcon, sunIcon } from './styles/ThemeSwitch.jsx'
 
 import Layout from './Layout'
@@ -16,8 +19,11 @@ import Contact from './ContactUs'
 import Page404 from './PageNotFound'
 import CTAtop from './CTAtop'
 import RickAndMortyGQL from './API/RickAndMortyGraphQL'
+import ContactForm from './query/ContactForm.jsx'
 
 export const ThemeContext = createContext()
+
+const queryClient = new QueryClient()
 
 export default function App() {
   const [theme, setTheme] = useState(darkTheme)
@@ -26,7 +32,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <Router>
           <GlobalStyle />
@@ -69,18 +75,18 @@ export default function App() {
               }
             />
             <Route
-              path='/contact'
-              element={
-                <Layout>
-                  <Contact />
-                </Layout>
-              }
-            />
-            <Route
               path='/rickmorty/*'
               element={
                 <Layout>
                   <RickAndMortyGQL />
+                </Layout>
+              }
+            />
+            <Route
+              path='/contact-form'
+              element={
+                <Layout>
+                  <ContactForm />
                 </Layout>
               }
             />
@@ -95,6 +101,6 @@ export default function App() {
           </Routes>
         </Router>
       </ThemeProvider>
-    </>
+    </QueryClientProvider>
   )
 }

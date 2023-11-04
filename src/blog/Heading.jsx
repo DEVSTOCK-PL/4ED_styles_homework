@@ -11,7 +11,7 @@ const HeaderWrapper = styled.div`
 const Header = ({ children }) => {
   return (
     <HeaderWrapper>
-      <h1 className={`${styles.logoheading} `}>{children}</h1>
+      <h1 className={`${styles.logoheading} invertedH1`}>{children}</h1>
     </HeaderWrapper>
   )
 }

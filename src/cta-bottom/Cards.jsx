@@ -10,6 +10,7 @@ import Card4 from './Card4'
 const CardsWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-content: center;
   flex-direction: row;
   width: 100%;
   gap: 32px;

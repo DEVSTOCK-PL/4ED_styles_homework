@@ -22,8 +22,12 @@ const SendButton = styled.button`
   }
 `
 
-const Submit = () => {
-  return <SendButton>Send message</SendButton>
+const Submit = ({ onSubmit }) => {
+  return (
+    <SendButton type='submit' onClick={onSubmit}>
+      Send message
+    </SendButton>
+  )
 }
 
 export default Submit

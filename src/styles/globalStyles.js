@@ -24,7 +24,7 @@ export const lightTheme = {
   supportTextDarker: '#739072',
   h1: '#111928',
   h2: '#273959',
-  invertedH1: '#F2EE9D',
+  invertedH1: '#DADDB1',
   navLinks: '#3A4D39',
   navLinksActive: '#3A4D39',
   navLinksHover: '#000000',
