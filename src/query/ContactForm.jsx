@@ -1,17 +1,28 @@
 import { useEffect, useState } from 'react'
-import { useMutation } from '@tanstack/react-query'
 import { useForm, Controller } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-
-import axios from 'axios'
-
 import { Box, TextField } from '@mui/material'
 import { SnackbarProvider, useSnackbar, closeSnackbar } from 'notistack'
 
 import styled from 'styled-components'
 
+import useContactForm from '../hooks/useContactForm'
+
 import Submit from '../contact/SubmitButton'
+import Header from '../contact/Header'
+import CustomerLogos from '../CustomerLogos'
+
+const ContactWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  @media (max-width: 767px) {
+    gap: 16px;
+    padding: 32px 16px;
+  }
+`
 
 const FormWrapper = styled.div`
   display: flex;
@@ -29,9 +40,7 @@ const FormWrapper = styled.div`
 
 const CustomTextField = styled(TextField)`
   & .MuiFilledInput-root {
-    background-color: #374151;
     border: 1px solid var(--gray-600, #4b5563);
-    color: #9ca3af;
     font-size: 16px;
     line-height: 150%;
     display: flex;
@@ -48,8 +57,6 @@ const CustomTextField = styled(TextField)`
 `
 const CustomMessageField = styled(TextField)`
   & .MuiFilledInput-root {
-    background-color: #374151;
-    color: #9ca3af;
     border: 1px solid var(--gray-600, #4b5563);
     display: flex;
     flex-direction: column;
@@ -90,19 +97,15 @@ const Message = z.object({
 //     throw new Error(error.message)
 //   }
 // }
+//   const { data, error, isLoading } = useQuery({
+//     queryKey: ['books'],
+//     queryFn: getMessages,
+//   })
 
+//   if (isLoading) return <div>LOADING . . . </div>
+//   if (error) return <div>{error.message}</div>
+//   console.log(data)
 const ContactQuery = () => {
-  //   const { data, error, isLoading } = useQuery({
-  //     queryKey: ['books'],
-  //     queryFn: getMessages,
-  //   })
-
-  //   if (isLoading) return <div>LOADING . . . </div>
-  //   if (error) return <div>{error.message}</div>
-  //   console.log(data)
-
-  //form:
-
   const {
     control,
     handleSubmit,
@@ -112,20 +115,16 @@ const ContactQuery = () => {
     resolver: zodResolver(Message),
   })
 
-  const mutation = useMutation({
-    mutationFn: (messages) => {
-      return axios.post('http://localhost:3000/messages', messages)
-    },
-    onError: (error) => {
-      console.error(error, 'error')
-    },
-    onSuccess: () => {
-      reset()
-      console.log('Data POSTed')
-    },
-  })
+  const { mutation, sendMessage } = useContactForm()
 
-  const onSubmit = (data) => mutation.mutate(data)
+  const onSubmit = async (data) => {
+    try {
+      await sendMessage(data)
+      reset()
+    } catch (error) {
+      console.error('Error sending message:', error)
+    }
+  }
 
   const Snackbar = ({ message, variant, options }) => {
     const [snackbarDisplayed, setSnackbarDisplayed] = useState(false)
@@ -146,7 +145,8 @@ const ContactQuery = () => {
 
   return (
     <SnackbarProvider>
-      <div>
+      <ContactWrapper>
+        <Header />
         <FormWrapper>
           <Box
             component='form'
@@ -162,6 +162,7 @@ const ContactQuery = () => {
               render={({ field }) => (
                 <CustomTextField
                   fullWidth
+                  className='contactForm'
                   label='Your email'
                   id='emailInput'
                   variant='filled'
@@ -178,6 +179,7 @@ const ContactQuery = () => {
               render={({ field }) => (
                 <CustomTextField
                   fullWidth
+                  className='contactForm'
                   label='Subject'
                   id='subjectInput'
                   variant='filled'
@@ -194,6 +196,7 @@ const ContactQuery = () => {
               render={({ field }) => (
                 <CustomMessageField
                   fullWidth
+                  className='contactForm custom-textarea'
                   label='Your message'
                   id='messageInput'
                   variant='filled'
@@ -229,7 +232,8 @@ const ContactQuery = () => {
             )}
           </div>
         </FormWrapper>
-      </div>
+        <CustomerLogos />
+      </ContactWrapper>
     </SnackbarProvider>
   )
 }

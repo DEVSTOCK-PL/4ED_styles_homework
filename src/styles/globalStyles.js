@@ -16,6 +16,8 @@ export const darkTheme = {
   footerBg: '#1f2a37',
   footerLink: '#9ca3af',
   logosText: '#6b7280',
+  contactFormBg: '#374151',
+  contactFormText: '#9ca3af',
 }
 
 export const lightTheme = {
@@ -34,6 +36,8 @@ export const lightTheme = {
   footerBg: '#4F6F52',
   footerLink: '#FFFFFF',
   logosText: '#000000',
+  contactFormBg: '#86A789',
+  contactFormText: '#000000',
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -98,5 +102,9 @@ h2 {
 }
 .ctaSection {
      background-color: ${(props) => props.theme.bodyBg};
+}
+.contactForm {
+    background-color: ${(props) => props.theme.contactFormBg};
+    color: ${(props) => props.theme.contactFormText}
 }
 `

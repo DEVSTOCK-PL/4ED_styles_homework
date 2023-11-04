@@ -1,109 +1,30 @@
 {
-  "messages": [
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "Ostatni try",
-      "message": "Check if snackbars showing twice and if message added to db",
-      "id": 19
-    },
-    {
-      "email": "adam.koziej@gmail.com",
-      "subject": "Snackabr",
-      "message": "displayedddd",
-      "id": 20
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "why",
-      "message": "why??????????????/",
-      "id": 21
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "dvfbfb",
-      "message": "effefe8878888",
-      "id": 22
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "oooooo",
-      "message": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
-      "id": 23
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "Once",
-      "message": "Againnnnnnnnnnnnnnn",
-      "id": 24
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "jjjjjjjjjjjjjjj",
-      "message": "is Success please work now\n",
-      "id": 25
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "Sbject",
-      "message": "1234554321",
-      "id": 26
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "suxes",
-      "message": "123455432111",
-      "id": 27
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "isSuccess ",
-      "message": "Is it though?",
-      "id": 28
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "99999",
-      "message": "ahahahahahahahah",
-      "id": 29
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "We will?",
-      "message": "Get back to you",
-      "id": 30
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "test",
-      "message": "TEST TEST TETST",
-      "id": 31
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "doesnt work",
-      "message": "doesnt work????????",
-      "id": 32
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "ogolne",
-      "message": "ustawienia snackbara",
-      "id": 33
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "setTimeout?",
-      "message": "setTimeout?setTimeout?setTimeout?",
-      "id": 34
-    },
+  "contact": [
     {
       "email": "lidiabylicka@gmail.com",
       "subject": "key or options",
       "message": "key or optionskey or options",
-      "id": 35
+      "id": 1
+    },
+    {
+      "email": "lidiabylicka@gmail.com",
+      "subject": "kkk",
+      "message": "hhhhhhhhhhhhhhhhhhhhhhhh",
+      "id": 2
+    },
+    {
+      "email": "lidiabylicka@gmail.com",
+      "subject": "reset fn",
+      "message": "resettttttttttttt",
+      "id": 3
+    },
+    {
+      "email": "j@gmail.com",
+      "subject": "contact",
+      "message": "array of objects",
+      "id": 4
     }
   ],
-  "contact": [],
   "users": [],
   "books": [
     {

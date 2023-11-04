@@ -22,9 +22,7 @@ const FormWrapper = styled.form`
 
 const CustomTextField = styled(TextField)`
   & .MuiFilledInput-root {
-    background-color: #374151;
     border: 1px solid var(--gray-600, #4b5563);
-    color: #9ca3af;
     font-size: 16px;
     line-height: 150%;
     display: flex;
@@ -35,14 +33,12 @@ const CustomTextField = styled(TextField)`
     align-self: stretch;
     border-radius: 8px;
   }
-  & .MuiInputLabel-filled {
+  /* & .MuiInputLabel-filled {
     color: #9ca3af;
-  }
+  } */
 `
 const CustomMessageField = styled(TextField)`
   & .MuiFilledInput-root {
-    background-color: #374151;
-    color: #9ca3af;
     border: 1px solid var(--gray-600, #4b5563);
     display: flex;
     flex-direction: column;
@@ -58,9 +54,9 @@ const CustomMessageField = styled(TextField)`
   & .MuiFilledInput-inputMultiline {
     height: 100%;
   }
-  & .MuiInputLabel-filled {
+  /* & .MuiInputLabel-filled {
     color: #9ca3af;
-  }
+  } */
 `
 
 export default function TextFields() {
@@ -78,15 +74,17 @@ export default function TextFields() {
           label='Your email'
           id='emailInput'
           variant='filled'
+          className='contactForm'
         />
         <CustomTextField
           fullWidth
           label='Subject'
           id='subjectInput'
           variant='filled'
+          className='contactForm'
         />
         <CustomMessageField
-          className='custom-textarea'
+          className='custom-textarea contactForm'
           fullWidth
           label='Your message'
           id='messageInput'
