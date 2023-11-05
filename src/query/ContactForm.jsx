@@ -51,9 +51,6 @@ const CustomTextField = styled(TextField)`
     align-self: stretch;
     border-radius: 8px;
   }
-  & .MuiInputLabel-filled {
-    color: #9ca3af;
-  }
 `
 const CustomMessageField = styled(TextField)`
   & .MuiFilledInput-root {
@@ -72,9 +69,6 @@ const CustomMessageField = styled(TextField)`
   & .MuiFilledInput-inputMultiline {
     height: 100%;
   }
-  & .MuiInputLabel-filled {
-    color: #9ca3af;
-  }
 `
 const Message = z.object({
   email: z
@@ -88,23 +82,6 @@ const Message = z.object({
     .min(10, 'Message should be at least 10 characters long'),
 })
 
-// const getMessages = async () => {
-//   try {
-//     const { data } = await axios.get(' http://localhost:3000/messages')
-//     console.log(data)
-//     return data
-//   } catch (error) {
-//     throw new Error(error.message)
-//   }
-// }
-//   const { data, error, isLoading } = useQuery({
-//     queryKey: ['books'],
-//     queryFn: getMessages,
-//   })
-
-//   if (isLoading) return <div>LOADING . . . </div>
-//   if (error) return <div>{error.message}</div>
-//   console.log(data)
 const ContactQuery = () => {
   const {
     control,

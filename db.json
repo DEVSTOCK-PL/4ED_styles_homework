@@ -23,6 +23,18 @@
       "subject": "contact",
       "message": "array of objects",
       "id": 4
+    },
+    {
+      "email": "Contact@email.com",
+      "subject": "Is it working still?",
+      "message": "Yes, it is.",
+      "id": 5
+    },
+    {
+      "email": "lidiabylicka@gmail.com",
+      "subject": "Send msg",
+      "message": "Sent message.",
+      "id": 6
     }
   ],
   "users": [
@@ -34,30 +46,11 @@
       "id": 1
     },
     {
-      "email": "test@test.ok",
-      "name": "test",
-      "secondName": "test",
-      "password": "testtest",
-      "id": 2
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
+      "email": "lidiabylicka1@gmail.com",
       "name": "Lidia",
       "secondName": "Bylicka",
-      "password": "testtest",
-      "id": 3
-    },
-    {
-      "email": "ann@do.pl",
-      "name": "Ann",
-      "secondName": "Doe",
-      "password": "12345678",
-      "id": 4
-    },
-    {
-      "email": "ann@do.pl",
-      "password": "12345678",
-      "id": 5
+      "password": "Password",
+      "id": 2
     }
   ],
   "books": [

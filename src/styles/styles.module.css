@@ -49,8 +49,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  @media (768px <= width <= 3000px) {
+  width: 250px;
+  max-width: 300px;
+
+  @media (768px <= width <= 1080px) {
     min-width: 100px;
+    width: 150px;
     justify-content: space-evenly;
   }
 }

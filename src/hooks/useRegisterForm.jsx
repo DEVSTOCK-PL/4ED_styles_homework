@@ -16,11 +16,11 @@ const useRegisterForm = () => {
   const sendForm = async (data) => {
     try {
       await mutation.mutateAsync(data)
-      return 'Registration successful!'
     } catch (error) {
       throw new Error(`Error sending form: ${error.message}`)
     }
   }
+
   return {
     mutation,
     sendForm,

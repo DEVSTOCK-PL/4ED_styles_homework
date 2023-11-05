@@ -10,7 +10,6 @@ const SendButton = styled.button`
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  background: #1a56db;
   color: #fff;
   height: 48px;
   @media (max-width: 767px) {
@@ -24,7 +23,7 @@ const SendButton = styled.button`
 
 const Submit = ({ onSubmit }) => {
   return (
-    <SendButton type='submit' onClick={onSubmit}>
+    <SendButton type='submit' onClick={onSubmit} className='buttonBlueBg'>
       Send message
     </SendButton>
   )

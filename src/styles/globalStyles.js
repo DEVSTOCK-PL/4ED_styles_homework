@@ -107,4 +107,8 @@ h2 {
     background-color: ${(props) => props.theme.contactFormBg};
     color: ${(props) => props.theme.contactFormText}
 }
+.contactForm > label {
+    color: ${(props) => props.theme.contactFormText}
+
+}
 `

@@ -36,4 +36,5 @@ const Logo = () => {
   )
 }
 
+//wanted to add alternative, lightTheme logo but no luck. console.log(theme) undefined
 export default Logo

@@ -34,9 +34,9 @@ const NavLinksToggled = ({ handleCloseMenu }) => {
         <Link to='/events'>EVENTS</Link>
       </NavLink>
       <NavLink
-        className={pathname === '/contact' && 'active'}
+        className={pathname === '/contact-form' && 'active'}
         onClick={() => handleCloseMenu()}>
-        <Link to='/contact'>CONTACT</Link>
+        <Link to='/contact-form'>CONTACT</Link>
       </NavLink>
       <NavLink
         className={pathname === '/rickmorty' && 'active' && 'text-pink-500'}

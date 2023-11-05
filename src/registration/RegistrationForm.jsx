@@ -1,10 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
-import { Link } from 'react-router-dom'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Box, TextField } from '@mui/material'
 import { SnackbarProvider, useSnackbar, closeSnackbar } from 'notistack'
+import axios from 'axios'
+import { useQuery } from '@tanstack/react-query'
 
 import styled from 'styled-components'
 
@@ -25,25 +26,54 @@ const CustomTextField = styled(TextField)`
     align-self: stretch;
     border-radius: 8px;
   }
-  & .MuiInputLabel-filled {
-    color: #9ca3af;
-  }
 `
 
-const RegisterValid = z.object({
-  email: z
-    .string()
-    .nonempty('Email is required')
-    .email('Please provide a valid email address'),
-  name: z.string().nonempty('Name is required'),
-  secondName: z.string().nonempty('Second name is required'),
-  password: z
-    .string()
-    .nonempty('Password is required')
-    .min(8, 'Password should be at least 8 characters long'),
-})
-
 const RegistrationForm = () => {
+  const getUsers = async () => {
+    try {
+      const { data } = await axios.get('http://localhost:3000/users')
+      console.log(data)
+      return data
+    } catch (error) {
+      throw new Error(error.message)
+    }
+  }
+  const { data } = useQuery({ queryKey: ['users'], queryFn: getUsers })
+
+  const isEmailUnique = async (email) => {
+    try {
+      const users = await getUsers()
+      const existingUser = users.find((user) => user.email === email)
+      return !existingUser
+    } catch (error) {
+      throw new Error(error.message)
+    }
+  }
+
+  const RegisterValid = z.object({
+    email: z
+      .string()
+      .nonempty('Email is required')
+      .email('Please provide a valid email address')
+      .refine(
+        async (email) => {
+          const isUnique = await isEmailUnique(email)
+          return isUnique
+        },
+        {
+          message: 'Email already exists',
+        }
+      ),
+    name: z.string().nonempty('Name is required'),
+    secondName: z.string().nonempty('Second name is required'),
+    password: z
+      .string()
+      .nonempty('Password is required')
+      .min(8, 'Password should be at least 8 characters long'),
+  })
+
+  const [snackbarShown, setSnackbarShown] = useState(false)
+
   const {
     control,
     handleSubmit,
@@ -67,11 +97,13 @@ const RegistrationForm = () => {
     const { enqueueSnackbar } = useSnackbar()
 
     useEffect(() => {
-      if (message) {
+      if (message && mutation.isSuccess && !snackbarShown) {
         enqueueSnackbar(message, { variant })
+        setSnackbarShown(true)
         setTimeout(() => {
           closeSnackbar(options)
-        }, 7000)
+          window.location.href = '/login'
+        }, 5000)
       }
     }, [message, variant, options, enqueueSnackbar])
 
@@ -170,10 +202,7 @@ const RegistrationForm = () => {
         {mutation.isSuccess && (
           <Snackbar
             message={
-              <span>
-                Thank you! You can now click <Link to='/login'>here</Link> to
-                log in.
-              </span>
+              <span>Thank you! You will now be redirected to login page.</span>
             }
             variant='success'
           />

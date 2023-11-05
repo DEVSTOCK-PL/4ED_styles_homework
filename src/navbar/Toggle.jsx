@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 import styled from 'styled-components'
 
-import toggle from '../public/toggle.svg'
+import ToggleIcon from '../public/ToggleIcon.jsx'
 import ToggleMenu from './ToggleMenu'
 
-const ToggleButton = styled.img`
+const ToggleButton = styled.div`
   width: 33px;
   height: 33px;
   cursor: pointer;
@@ -22,11 +22,9 @@ const Toggle = () => {
 
   return (
     <>
-      <ToggleButton
-        src={toggle}
-        alt='Toggle'
-        onClick={(e) => handleToggle(e)}
-      />
+      <ToggleButton alt='Toggle' onClick={(e) => handleToggle(e)}>
+        <ToggleIcon />
+      </ToggleButton>
       {menu && <ToggleMenu />}
     </>
   )

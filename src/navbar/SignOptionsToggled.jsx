@@ -30,7 +30,7 @@ const SignOptionsToggled = ({ handleCloseMenu }) => {
   return (
     <Options>
       <Link to='/login'>
-        <LogIn>Log In</LogIn>
+        <LogIn onClick={() => handleCloseMenu()}>Log In</LogIn>
       </Link>
       <Link to='/register'>
         <GetStarted className='buttonBlueBg' onClick={() => handleCloseMenu()}>

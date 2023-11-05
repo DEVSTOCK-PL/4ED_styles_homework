@@ -24,9 +24,6 @@ const CustomTextField = styled(TextField)`
     align-self: stretch;
     border-radius: 8px;
   }
-  & .MuiInputLabel-filled {
-    color: #9ca3af;
-  }
 `
 
 const RegisterValid = z.object({
