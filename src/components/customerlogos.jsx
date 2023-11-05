@@ -20,7 +20,7 @@ import cola from '../assets/brandlogo/Coca-Cola.png'
 
 
 
-const CostumersLogosWrapper = styled.div`
+const LogosWrapper = styled.div`
   width: 1440px;
   height: 877px;
   display: flex;
@@ -111,7 +111,7 @@ const Card = styled.div`
 
 function CustomerLogos() {
     return(
-        <CostumersLogosWrapper>
+        <LogosWrapper>
       <Container>
         <HeadingWrapper>
           <h1>Donors, Partners & Sponsors</h1>
@@ -178,7 +178,7 @@ function CustomerLogos() {
 
         </LogosContainer>
       </Container>
-    </CostumersLogosWrapper>
+    </LogosWrapper>
     )
 }
 
