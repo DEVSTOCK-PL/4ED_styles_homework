@@ -19,6 +19,8 @@ import Page404 from './PageNotFound'
 import CTAtop from './CTAtop'
 import RickAndMortyGQL from './API/RickAndMortyGraphQL'
 import ContactForm from './query/ContactForm.jsx'
+import Registration from './Registration.jsx'
+import Login from './Login.jsx'
 
 export const ThemeContext = createContext()
 
@@ -86,6 +88,22 @@ export default function App() {
               element={
                 <Layout>
                   <ContactForm />
+                </Layout>
+              }
+            />
+            <Route
+              path='/register'
+              element={
+                <Layout>
+                  <Registration />
+                </Layout>
+              }
+            />
+            <Route
+              path='/login'
+              element={
+                <Layout>
+                  <Login />
                 </Layout>
               }
             />

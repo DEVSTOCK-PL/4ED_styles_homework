@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Options = styled.div`
@@ -25,11 +26,17 @@ const GetStarted = styled.button`
   border-radius: 8px;
   color: #fff;
 `
-const SignOptionsToggled = () => {
+const SignOptionsToggled = ({ handleCloseMenu }) => {
   return (
     <Options>
-      <LogIn>Log In</LogIn>
-      <GetStarted className='buttonBlueBg'>Get Started</GetStarted>
+      <Link to='/login'>
+        <LogIn>Log In</LogIn>
+      </Link>
+      <Link to='/register'>
+        <GetStarted className='buttonBlueBg' onClick={() => handleCloseMenu()}>
+          Get Started
+        </GetStarted>
+      </Link>
     </Options>
   )
 }

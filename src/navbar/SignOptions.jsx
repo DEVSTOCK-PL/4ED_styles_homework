@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import styled from 'styled-components'
 
 const Options = styled.div`
@@ -26,8 +28,12 @@ const GetStarted = styled.button`
 const SignOptions = () => {
   return (
     <Options className='sign-options'>
-      <LogIn className='navLinks'>Log In</LogIn>
-      <GetStarted className='buttonBlueBg'>Get Started</GetStarted>
+      <Link to='/login'>
+        <LogIn className='navLinks'>Log In</LogIn>
+      </Link>
+      <Link to='/register'>
+        <GetStarted className='buttonBlueBg'>Get Started</GetStarted>
+      </Link>
     </Options>
   )
 }
