@@ -11,7 +11,7 @@ const SendButton = styled.button`
   gap: 8px;
   border-radius: 8px;
   height: 48px;
-  color: #9ca3af;
+  color: #fff;
   @media (max-width: 767px) {
     width: 100%;
     font-size: 14px;

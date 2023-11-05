@@ -51,6 +51,20 @@
       "secondName": "Bylicka",
       "password": "Password",
       "id": 2
+    },
+    {
+      "email": "jdoe@joe.doe",
+      "name": "John",
+      "secondName": "Doe",
+      "password": "Password123",
+      "id": 3
+    },
+    {
+      "email": "jan@kowalski.eu",
+      "name": "Jan",
+      "secondName": "Kowalski",
+      "password": "jankowalski",
+      "id": 4
     }
   ],
   "books": [

@@ -13,6 +13,8 @@ import useRegisterForm from '../hooks/useRegisterForm'
 
 import Submit from './SubmitButton'
 
+import { OpenEye, ClosedEye } from './EyeIcons'
+
 const CustomTextField = styled(TextField)`
   & .MuiFilledInput-root {
     border: 1px solid var(--gray-600, #4b5563);
@@ -25,6 +27,33 @@ const CustomTextField = styled(TextField)`
     gap: 10px;
     align-self: stretch;
     border-radius: 8px;
+  }
+`
+
+const CustomTextFieldWrapper = styled.div`
+  position: relative;
+
+  & .MuiFilledInput-root {
+    border: 1px solid var(--gray-600, #4b5563);
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    flex-direction: column;
+    padding: 13px 20px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 8px;
+    z-index: 1;
+  }
+
+  .eye-icon {
+    position: relative;
+    right: -593px;
+    transform: translateY(-138%);
+    z-index: 2;
+    cursor: pointer;
+    width: 43px;
   }
 `
 
@@ -110,6 +139,13 @@ const RegistrationForm = () => {
     return null
   }
 
+  const [isPasswordVisible, setPasswordVisibility] = useState(false)
+
+  const togglePasswordVisibility = () => {
+    console.log('Toggling password visibility')
+    setPasswordVisibility(!isPasswordVisible)
+  }
+
   return (
     <SnackbarProvider>
       <Box
@@ -170,23 +206,36 @@ const RegistrationForm = () => {
             />
           )}
         />
-        <Controller
-          name='password'
-          control={control}
-          defaultValue=''
-          render={({ field }) => (
-            <CustomTextField
-              fullWidth
-              className='contactForm'
-              label='Password'
-              id='passwordInput'
-              variant='filled'
-              {...field}
-              error={!!errors.password}
-              helperText={errors.password ? errors.password.message : null}
-            />
-          )}
-        />
+        <CustomTextFieldWrapper>
+          <Controller
+            name='password'
+            control={control}
+            defaultValue=''
+            render={({ field }) => (
+              <div style={{ position: 'relative' }}>
+                <CustomTextField
+                  fullWidth
+                  type={isPasswordVisible ? 'text' : 'password'}
+                  className='contactForm'
+                  label='Password'
+                  id='passwordInput'
+                  variant='filled'
+                  {...field}
+                  error={!!errors.password}
+                  helperText={errors.password ? errors.password.message : null}
+                />
+                <div className='eye-icon'>
+                  {isPasswordVisible && (
+                    <ClosedEye onClick={togglePasswordVisibility} />
+                  )}
+                  {!isPasswordVisible && (
+                    <OpenEye onClick={togglePasswordVisibility} />
+                  )}
+                </div>
+              </div>
+            )}
+          />
+        </CustomTextFieldWrapper>
       </Box>
       <Submit onSubmit={handleSubmit(onSubmit)} />
       <div>
