@@ -67,12 +67,10 @@ const Login = () => {
           {user && (
             <div>
               {books.map((book) => (
-                <Wrapper key={book.id}>
-                  <Book key={book.id}>
-                    {book.title} {book.author} {book.description}
-                    <BookImg src={book.image} alt={book.title} />
-                  </Book>
-                </Wrapper>
+                <Book key={book.id}>
+                  {book.title} {book.author} {book.description}
+                  <BookImg src={book.image} alt={book.title} />
+                </Book>
               ))}
             </div>
           )}
