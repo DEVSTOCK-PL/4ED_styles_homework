@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import styled from 'styled-components'
+
+import { useUser } from '../login/UserContext'
 
 const Options = styled.div`
   display: flex;
@@ -18,6 +20,14 @@ const LogIn = styled.a`
   cursor: pointer;
 `
 
+const LogOut = styled.a`
+  font-size: 14px;
+  font-style: bold;
+  font-weight: 500;
+  line-height: 150%;
+  cursor: pointer;
+`
+
 const GetStarted = styled.button`
   display: flex;
   padding: 10px 20px;
@@ -26,11 +36,26 @@ const GetStarted = styled.button`
   color: #fff;
 `
 const SignOptions = () => {
+  const { user, logout } = useUser()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem('name')
+    logout()
+    navigate('/')
+  }
+
   return (
     <Options className='sign-options'>
-      <Link to='/login'>
-        <LogIn className='navLinks'>Log In</LogIn>
-      </Link>
+      {user ? (
+        <LogOut className='navLinks' onClick={handleLogout}>
+          Log Out
+        </LogOut>
+      ) : (
+        <Link to='/login'>
+          <LogIn className='navLinks'>Log In</LogIn>
+        </Link>
+      )}
       <Link to='/register'>
         <GetStarted className='buttonBlueBg'>Get Started</GetStarted>
       </Link>
