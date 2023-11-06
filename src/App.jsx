@@ -21,10 +21,13 @@ import RickAndMortyGQL from './API/RickAndMortyGraphQL'
 import ContactForm from './query/ContactForm.jsx'
 import Registration from './Registration.jsx'
 import Login from './Login.jsx'
+import ProfilePage from './ProfilePage.jsx'
 
 export const ThemeContext = createContext()
 
 const queryClient = new QueryClient()
+
+import { UserProvider } from './login/UserContext.jsx'
 
 export default function App() {
   const [theme, setTheme] = useState(darkTheme)
@@ -36,86 +39,96 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <Router>
-          <GlobalStyle />
-          <label id='switch'>
-            Switch theme to {theme == darkTheme ? 'light' : 'dark'}
-            <Switch
-              checked={theme == darkTheme}
-              onChange={toggleTheme}
-              offColor={'#fff'}
-              offHandleColor={'#3A4D39'}
-              onColor={'#000'}
-              onHandleColor={'#1a56db'}
-              uncheckedIcon={moonIcon}
-              checkedIcon={sunIcon}
-            />
-          </label>
-          <Routes>
-            <Route
-              path='/'
-              element={
-                <Layout>
-                  <Home />
-                </Layout>
-              }
-            />
-            <Route
-              path='/news'
-              element={
-                <Layout>
-                  <CTAtop />
-                </Layout>
-              }
-            />
-            <Route
-              path='/events'
-              element={
-                <Layout>
-                  <CTAbottom />
-                </Layout>
-              }
-            />
-            <Route
-              path='/rickmorty/*'
-              element={
-                <Layout>
-                  <RickAndMortyGQL />
-                </Layout>
-              }
-            />
-            <Route
-              path='/contact-form'
-              element={
-                <Layout>
-                  <ContactForm />
-                </Layout>
-              }
-            />
-            <Route
-              path='/register'
-              element={
-                <Layout>
-                  <Registration />
-                </Layout>
-              }
-            />
-            <Route
-              path='/login'
-              element={
-                <Layout>
-                  <Login />
-                </Layout>
-              }
-            />
-            <Route
-              path='*'
-              element={
-                <Layout>
-                  <Page404 />
-                </Layout>
-              }
-            />
-          </Routes>
+          <UserProvider>
+            <GlobalStyle />
+            <label id='switch'>
+              Switch theme to {theme == darkTheme ? 'light' : 'dark'}
+              <Switch
+                checked={theme == darkTheme}
+                onChange={toggleTheme}
+                offColor={'#fff'}
+                offHandleColor={'#3A4D39'}
+                onColor={'#000'}
+                onHandleColor={'#1a56db'}
+                uncheckedIcon={moonIcon}
+                checkedIcon={sunIcon}
+              />
+            </label>
+            <Routes>
+              <Route
+                path='/'
+                element={
+                  <Layout>
+                    <Home />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/news'
+                element={
+                  <Layout>
+                    <CTAtop />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/events'
+                element={
+                  <Layout>
+                    <CTAbottom />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/rickmorty/*'
+                element={
+                  <Layout>
+                    <RickAndMortyGQL />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/contact-form'
+                element={
+                  <Layout>
+                    <ContactForm />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/register'
+                element={
+                  <Layout>
+                    <Registration />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/login'
+                element={
+                  <Layout>
+                    <Login />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/profile/:userID'
+                element={
+                  <Layout>
+                    <ProfilePage />
+                  </Layout>
+                }
+              />
+              <Route
+                path='*'
+                element={
+                  <Layout>
+                    <Page404 />
+                  </Layout>
+                }
+              />
+            </Routes>
+          </UserProvider>
         </Router>
       </ThemeProvider>
     </QueryClientProvider>

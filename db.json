@@ -65,6 +65,13 @@
       "secondName": "Kowalski",
       "password": "jankowalski",
       "id": 4
+    },
+    {
+      "email": "c@d.eu",
+      "name": "A",
+      "secondName": "B",
+      "password": "12345678",
+      "id": 5
     }
   ],
   "books": [

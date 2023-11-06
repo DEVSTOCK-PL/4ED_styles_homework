@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+// import { useUser } from './login/UserContext'
+
 import Heading from './contact/Heading'
 
 const ProfileWrapper = styled.div`
@@ -35,10 +37,12 @@ const UserContent = styled.div`
 `
 
 const Login = () => {
+  const name = localStorage.getItem('name')
+
   return (
     <ProfileWrapper>
       <ContentWrapper>
-        <Heading>Witaj, USERNAME:</Heading>
+        <Heading>Witaj, {name}:</Heading>
         <UserContent>
           <Heading>Lista e-bookow w Twojej bibliotece:</Heading>
           <div>Ebooks here</div>

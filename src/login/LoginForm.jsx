@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Box, TextField } from '@mui/material'
-import { SnackbarProvider, useSnackbar, closeSnackbar } from 'notistack'
+import { useMutation } from '@tanstack/react-query'
+import axios from 'axios'
+import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 
 import styled from 'styled-components'
 
-import useLoginForm from '../hooks/useLoginForm'
-
+import { useUser } from './UserContext'
 import Submit from './SubmitButton'
 import { OpenEye, ClosedEye } from './EyeIcons'
 
@@ -70,40 +73,56 @@ const LoginForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     resolver: zodResolver(RegisterValid),
   })
 
-  const { mutation, sendLogin } = useLoginForm()
+  const { login } = useUser()
+  const navigate = useNavigate()
+
+  const mutation = useMutation({
+    async onMutate() {
+      return 'please wait...'
+    },
+    mutationFn: async (data) => {
+      const response = await axios.get('http://localhost:3000/users')
+      const users = response.data
+      const authenticatedUser = users.find(
+        (user) => user.email === data.email && user.password === data.password
+      )
+      if (authenticatedUser) {
+        return authenticatedUser
+      } else {
+        throw new Error('Invalid email or password')
+      }
+    },
+    onError: (error) => {
+      console.error('Authentication failed:', error.message)
+      enqueueSnackbar('Authentication failed: ' + error.message, {
+        variant: 'error',
+      })
+    },
+  })
 
   const onSubmit = async (data) => {
     try {
-      await sendLogin(data)
-      reset()
+      const user = await mutation.mutateAsync(data)
+      if (user && user.id) {
+        localStorage.setItem('name', user.name)
+
+        login(user)
+        navigate(`/profile/${user.id}`)
+      } else {
+        console.error('Invalid user data received')
+      }
     } catch (error) {
       console.error('Error sending form', error)
     }
-  }
-  const Snackbar = ({ message, variant, options }) => {
-    const { enqueueSnackbar } = useSnackbar()
-
-    useEffect(() => {
-      if (message) {
-        enqueueSnackbar(message, { variant })
-        setTimeout(() => {
-          closeSnackbar(options)
-        }, 7000)
-      }
-    }, [message, variant, options, enqueueSnackbar])
-
-    return null
   }
 
   const [isPasswordVisible, setPasswordVisibility] = useState(false)
 
   const togglePasswordVisibility = () => {
-    console.log('Toggling password visibility')
     setPasswordVisibility(!isPasswordVisible)
   }
 
@@ -164,24 +183,15 @@ const LoginForm = () => {
           />
         </CustomTextFieldWrapper>
       </Box>
+      <label>
+        Remember me
+        <input
+          type='checkbox'
+          // checked={rememberMe}
+          // onChange={handleRememberMeChange}
+        />
+      </label>
       <Submit onSubmit={handleSubmit(onSubmit)} />
-      <div>
-        {mutation.isLoading && (
-          <Snackbar message='You are being logged in...' variant='info' />
-        )}
-        {mutation.isError && (
-          <Snackbar
-            message={`An error occurred: ${mutation.error.message}`}
-            variant='error'
-          />
-        )}
-        {mutation.isSuccess && (
-          <Snackbar
-            message="Thank you! You'll be redirected now..."
-            variant='success'
-          />
-        )}
-      </div>
     </SnackbarProvider>
   )
 }
