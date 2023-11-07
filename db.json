@@ -1,0 +1,22 @@
+{
+  "contact": [
+    {
+      "email": "lordjimm3@wp.pl",
+      "subject": "test",
+      "message": "rest",
+      "id": 1
+    },
+    {
+      "email": "lordjimm3@wp.pl",
+      "subject": "Test",
+      "message": "bsree",
+      "id": 2
+    },
+    {
+      "email": "lordjimm3@wp.pl",
+      "subject": "test2",
+      "message": "adfe",
+      "id": 3
+    }
+  ]
+}
