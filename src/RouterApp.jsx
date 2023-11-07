@@ -8,6 +8,7 @@ import ContactBlock from "./blocks/ContactBlock";
 import RickAndMorty from "./sections/RickAndMorty";
 import Register from "./sections/Register";
 import LogIn from "./sections/LogIn";
+import Profile from "./sections/Profile";
 import NotFound from "./sections/NotFound";
 
 function RouterApp() {
@@ -91,6 +92,14 @@ function RouterApp() {
           element={
             <Layout>
               <LogIn />
+            </Layout>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <Layout>
+              <Profile />
             </Layout>
           }
         />

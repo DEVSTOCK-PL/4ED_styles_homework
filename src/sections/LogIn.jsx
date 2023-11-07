@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useSnackbar } from "notistack";
-import useContactForm from "../hooks/useContactForm";
+import useLoginForm from "../hooks/useLoginForm";
 
 const text1 = "Zaloguj się";
 
@@ -184,10 +184,10 @@ const BlueButton = styled.button`
   }
 `;
 
-const Contact = () => {
+const Login = () => {
   const { enqueueSnackbar } = useSnackbar();
 
-  const { formik, isSubmitting } = useContactForm(enqueueSnackbar);
+  const { formik } = useLoginForm(enqueueSnackbar);
 
   return (
     <Container>
@@ -223,12 +223,10 @@ const Contact = () => {
             ) : null}
           </InputBox>
 
-          <BlueButton type="submit" disabled={isSubmitting}>
-            Login
-          </BlueButton>
+          <BlueButton type="submit">Login</BlueButton>
         </Form>
       </Content>
     </Container>
   );
 };
-export default Contact;
+export default Login;

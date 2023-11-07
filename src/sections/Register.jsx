@@ -7,7 +7,8 @@ const text1 = "Zarejestruj się";
 const Container = styled.div`
   width: 100%;
   max-width: 1440px;
-  height: 855px;
+  min-height: 855px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +77,8 @@ const Heading = styled.div`
 
 const Form = styled.form`
   width: 640px;
-  height: 478px;
+  min-height: 478px;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -184,7 +186,7 @@ const BlueButton = styled.button`
   }
 `;
 
-const Contact = () => {
+const Register = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   const { formik, isSubmitting } = useRegisterForm(enqueueSnackbar);
@@ -257,4 +259,4 @@ const Contact = () => {
     </Container>
   );
 };
-export default Contact;
+export default Register;

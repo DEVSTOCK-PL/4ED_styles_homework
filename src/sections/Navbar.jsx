@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ThemeContext } from "../hooks/ThemeContext";
+import { AppContext } from "../hooks/AppContext";
 import useOpenMenuLogic from "../hooks/useOpenMenuLogic";
 import { Menu, Flowbite, Sun, Moon } from "../assets/svg_components";
 
@@ -194,12 +194,21 @@ const ToggleButton = styled(ButtonLogIn)`
   border: none;
 `;
 
+const GreenLed = styled.div`
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: ${(props) => (props.login ? "green" : "red")};
+`;
 function Navbar() {
   const { pathname } = useLocation();
   const { open, handleOpen, closeMenu } = useOpenMenuLogic();
-  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
-  console.log("isDarkTheme:", isDarkTheme);
+  const { isDarkTheme, toggleTheme, login, toggleLogin } =
+    useContext(AppContext);
+  const storedUser = localStorage.getItem("objectUsera");
+  console.log("storedUser:", storedUser);
 
+  console.log("login w Navbar", login);
   return (
     <NavbarContainer>
       <NavbarContent>
@@ -233,17 +242,41 @@ function Navbar() {
               RICK & MORTY
             </StyledLink>
           </LinkItem>
+          {login && (
+            <LinkItem className={pathname === "/profile" && "active"}>
+              <StyledLink to="/profile" onClick={closeMenu}>
+                PROFILE
+              </StyledLink>
+            </LinkItem>
+          )}
         </Links>
         <LogIn>
+          <GreenLed login={login} />
+          {login && <div>Jesteś zalogowany jako {storedUser.name}</div>}
+          {login && (
+            <ButtonLogIn
+              onClick={() => {
+                localStorage.removeItem("objectUsera");
+                toggleLogin(false);
+              }}>
+              Wyloguj
+            </ButtonLogIn>
+          )}
           <ToggleButton onClick={toggleTheme}>
             {isDarkTheme ? <Sun /> : <Moon />}
           </ToggleButton>
-          <ButtonLogIn>
-            <StyledLinkLogin to="/login">Log In</StyledLinkLogin>
-          </ButtonLogIn>
-          <Button>
-            <StyledLinkRegister to="/register">Get Started</StyledLinkRegister>
-          </Button>
+          {!login && (
+            <ButtonLogIn>
+              <StyledLinkLogin to="/login">Log In</StyledLinkLogin>
+            </ButtonLogIn>
+          )}
+          {!login && (
+            <Button>
+              <StyledLinkRegister to="/register">
+                Get Started
+              </StyledLinkRegister>
+            </Button>
+          )}
         </LogIn>
         <MenuBox>
           <ToggleButton onClick={toggleTheme}>
@@ -269,6 +302,9 @@ function Navbar() {
             </StyledLink>
             <StyledLink to="/rickandmorty" onClick={closeMenu}>
               RICK & MORTY
+            </StyledLink>
+            <StyledLink to="/profile" onClick={closeMenu}>
+              PROFILE
             </StyledLink>
           </MenuOpen>
         )}

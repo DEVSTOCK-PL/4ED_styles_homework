@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useQuery } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Imię jest wymagane").min(2, "Minimum 2 znaki"),
@@ -20,7 +21,7 @@ const getUsers = async () => {
   const { data } = await axios.get("http://localhost:3000/users");
   return data;
 };
-const postUser = async (user, enqueueSnackbar) => {
+const postUser = async (user, enqueueSnackbar, navigate) => {
   const users = await getUsers();
   const exists = users.some((exi) => exi.email === user.email);
   if (exists) {
@@ -32,6 +33,7 @@ const postUser = async (user, enqueueSnackbar) => {
       console.log("post response.data:", response.data);
       if (response.status === 201) {
         enqueueSnackbar("Twoje dane zostały wysłane", { variant: "success" });
+        navigate("/login");
       } else {
         enqueueSnackbar("Wysłanie danych nie powiodło się", {
           variant: "error",
@@ -48,11 +50,11 @@ const postUser = async (user, enqueueSnackbar) => {
 };
 
 const useRegisterForm = (enqueueSnackbar) => {
+  const navigate = useNavigate();
   const mutation = useMutation({
-    mutationFn: (user) => postUser(user, enqueueSnackbar),
+    mutationFn: (user) => postUser(user, enqueueSnackbar, navigate),
   });
-
-  const { data, error, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ["users"],
     queryFn: getUsers,
   });
@@ -65,9 +67,9 @@ const useRegisterForm = (enqueueSnackbar) => {
       password: "",
     },
     validationSchema,
-    onSubmit: async (user) => {
-      mutation.mutate(user);
-      console.log("user do mutation.mutate:", user);
+    onSubmit: async (formData) => {
+      mutation.mutate(formData);
+      console.log("user do mutation.mutate:", formData);
     },
   });
   return { formik, isSubmitting: mutation.isLoading };
