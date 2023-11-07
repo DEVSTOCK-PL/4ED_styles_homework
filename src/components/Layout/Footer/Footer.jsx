@@ -31,7 +31,7 @@ const Heading = styled.h1`
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
   text-transform: uppercase;
 `;
 
