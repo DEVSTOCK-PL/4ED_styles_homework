@@ -6,6 +6,9 @@ import { Login } from './Login';
 import { Container } from '../Container';
 
 const NavbarContainer = styled(Container)`
+  position: sticky;
+  top: 0px;
+  width: 100%;
   justify-content: space-between;
   padding: 24px 40px 0;
 
@@ -24,7 +27,7 @@ const NavbarContainer = styled(Container)`
 
 export const Navbar = () => {
   return (
-    <NavbarContainer>
+    <NavbarContainer className="navbar">
       <Container className="mobile">
         <Logo />
         <Nav />

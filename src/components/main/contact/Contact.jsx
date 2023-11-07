@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 import { Heading } from './Heading';
-import { ContactForm } from './ContactForm';
+import { ContactFormFormik } from './ContactFormFormik';
 
 const ContactContainer = styled.div`
   display: flex;
@@ -19,15 +19,14 @@ const ContactContainer = styled.div`
   }
   @media (max-width: 640px) {
     padding: 32px 10px;
-    /* gap: 24px; */
   }
 `;
 
 export const Contact = () => {
   return (
-    <ContactContainer>
+    <ContactContainer className="contactContainer">
       <Heading />
-      <ContactForm />
+      <ContactFormFormik />
     </ContactContainer>
   );
 };

@@ -7,9 +7,8 @@ const HeadingContainer = styled(Container)`
   flex-direction: column;
   align-items: center;
   row-gap: 16px;
-  ${(props) => props.$bcg && { background: '#1f2a37' }}
 `;
 
-export const Heading = ({ bcg, children }) => {
-  return <HeadingContainer $bcg={bcg}>{children}</HeadingContainer>;
+export const Heading = ({ children }) => {
+  return <HeadingContainer>{children}</HeadingContainer>;
 };

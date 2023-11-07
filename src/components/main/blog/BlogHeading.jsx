@@ -13,13 +13,12 @@ const StyledP = styled.p`
   width: 80%;
   font-size: 20px;
   font-weight: 400;
-  color: #9ca3af;
   text-align: center;
 `;
 
 export const BlogHeading = () => {
   return (
-    <Heading bcg>
+    <Heading>
       <StyledH2>Latest news & events</StyledH2>
       <StyledP>
         We use an agile approach to test assumptions and connect with the needs

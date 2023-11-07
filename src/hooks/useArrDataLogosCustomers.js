@@ -23,7 +23,7 @@ const useArrDataLogosCustomers = () => {
       return { ...item, id: crypto.randomUUID() };
     }),
   );
-  console.log(arrWithId);
+  // console.log(arrWithId);
   return arrWithId;
 };
 

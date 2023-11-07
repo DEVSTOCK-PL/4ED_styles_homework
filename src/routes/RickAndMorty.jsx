@@ -10,12 +10,22 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+  padding: 10px 0;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin: 5px 0 10px;
 `;
 
 const Div = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 15px;
 `;
 
 function RickAndMorty() {
@@ -77,16 +87,16 @@ function RickAndMorty() {
   return (
     <>
       <Navbar />
-      <Wrapper>
+      <Wrapper className="rickAndMortyWrapper">
         <h1>Rick&Morty</h1>
-        <Div>
+        <Buttons>
           <button disabled={isDisabledPrevButton} onClick={prevPage}>
-            prev
+            Prev
           </button>
           <button disabled={isDisabledNextButton} onClick={nextPage}>
-            next
+            Next
           </button>
-        </Div>
+        </Buttons>
         <Div>
           {isLoading ? (
             <p>Loading...</p>

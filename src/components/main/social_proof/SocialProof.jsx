@@ -6,7 +6,6 @@ const SocialProofContainer = styled.div`
   display: flex;
   justify-content: center;
   padding-bottom: 96px;
-  background-color: #111928;
 
   @media (max-width: 768px) {
     padding: 0 20px 96px;
@@ -18,7 +17,7 @@ const SocialProofContainer = styled.div`
 
 export const SocialProof = () => {
   return (
-    <SocialProofContainer>
+    <SocialProofContainer className="socialProofContainer">
       <Row />
     </SocialProofContainer>
   );

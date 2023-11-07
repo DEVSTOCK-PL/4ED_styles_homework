@@ -9,7 +9,6 @@ const BlogCardContainer = styled(Container)`
   flex-direction: column;
   align-items: start;
   row-gap: 16px;
-  background: #1f2a37;
 `;
 
 const StyledH3 = styled.h3`
@@ -33,7 +32,7 @@ const StyledA = styled.a`
 
 export const BlogCard = ({ image, header, description, link }) => {
   return (
-    <BlogCardContainer>
+    <BlogCardContainer className="blogCardContainer">
       {image && <img width="100%" src={image} alt="picture"></img>}
       <StyledH3>{header}</StyledH3>
       <StyledP>{description}</StyledP>

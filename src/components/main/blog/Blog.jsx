@@ -24,7 +24,7 @@ const BlogContainer = styled.div`
 
 export const Blog = ({ arr1, arr2, arr3 }) => {
   return (
-    <BlogContainer>
+    <BlogContainer className="blogContainer">
       <BlogHeading />
       <Row arr1={arr1} arr2={arr2} arr3={arr3} />
     </BlogContainer>

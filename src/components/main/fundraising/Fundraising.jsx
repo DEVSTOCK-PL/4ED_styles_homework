@@ -24,7 +24,7 @@ const FundraisingContainer = styled.div`
 
 export const Fundraising = ({ forEvents, disabledButton }) => {
   return (
-    <FundraisingContainer>
+    <FundraisingContainer className="fundraisingContainer">
       <Heading />
       <Cards disabledButton={disabledButton} />
       {forEvents && <Cards rowReverse disabledButton={disabledButton} />}

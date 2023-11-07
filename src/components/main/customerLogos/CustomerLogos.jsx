@@ -16,7 +16,6 @@ const StyledDiv = styled.div`
   border-width: 1px 0;
   border-style: solid;
   border-color: #374151;
-  background-color: #1f2a37;
 
   @media (max-width: 640px) {
     padding: 32px 10px;
@@ -28,12 +27,11 @@ const CustomerLogosContainer = styled(Container)`
   width: 80%;
   flex-direction: column;
   row-gap: 32px;
-  background: #1f2a37;
 `;
 
 export const CustomerLogos = () => {
   return (
-    <StyledDiv>
+    <StyledDiv className="customerLogos">
       <HeadingDesc />
       <CustomerLogosContainer>
         {useArrDataLogosCustomers().map((arr) => (

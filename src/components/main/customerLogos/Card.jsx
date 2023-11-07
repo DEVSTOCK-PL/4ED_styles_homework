@@ -26,13 +26,13 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  color: #9ca3af;
   background-color: transparent;
   border: 1px solid;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 500;
   gap: 8px;
+  cursor: pointer;
 `;
 
 export const Card = ({ src }) => {

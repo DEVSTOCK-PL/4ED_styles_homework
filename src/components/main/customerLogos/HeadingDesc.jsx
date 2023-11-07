@@ -15,7 +15,6 @@ const StyledP = styled.p`
   width: 80%;
   font-size: 20px;
   font-weight: 300;
-  color: #9ca3af;
   text-align: center;
 `;
 
@@ -31,7 +30,7 @@ const StyledImg = styled.img``;
 
 export const HeadingDesc = () => {
   return (
-    <Heading bcg>
+    <Heading>
       <StyledH2>Donors, Partners & Sponsors</StyledH2>
       <StyledP>
         Here at flowbite we focus on markets where technology, innovation, and

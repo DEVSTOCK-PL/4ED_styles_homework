@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+
+import { ThemeContext } from '../../hooks/useThemeContext';
 
 import { Container } from '../Container';
+import { Button } from '../Button';
+import DarkModeIcon from '../DarkModeIcon';
+import LightModeIcon from '../LightModeIcon';
 
 import vector from '../../assets/vector.svg';
 
@@ -21,11 +27,11 @@ const NavContainer = styled(Container)`
   }
 
   .link {
-    color: #fff;
+    /* color: #fff; */
     text-decoration: none;
 
     &:active {
-      color: #000;
+      /* color: #000; */
     }
   }
 
@@ -74,12 +80,20 @@ const UlContainer = styled(Container)`
   column-gap: 50px;
 `;
 
+const ToggleButton = styled(Button)`
+  background-color: transparent;
+`;
+
 const StyledImg = styled.img`
   width: 23px;
   height: 20px;
+  margin-left: 20px;
 `;
 
 export const Nav = () => {
+  const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+  console.log(isDarkMode);
+
   return (
     <>
       <NavContainer as="nav" className="desktopNav">
@@ -94,6 +108,9 @@ export const Nav = () => {
         </UlContainer>
       </NavContainer>
       <NavContainer className="mobileNav">
+        <ToggleButton onClick={() => setIsDarkMode((prev) => !prev)}>
+          {isDarkMode ? <LightModeIcon /> : <DarkModeIcon fill="#000" />}
+        </ToggleButton>
         <StyledImg src={vector} alt="logo_menu" />
       </NavContainer>
     </>

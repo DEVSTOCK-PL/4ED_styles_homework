@@ -85,7 +85,7 @@ const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 96px 40px 64px;
-  background-color: #1f2a37;
+  /* background-color: #1f2a37; */
   border: solid #374151;
   border-width: 1px 0;
   gap: 64px;
@@ -124,14 +124,12 @@ const LogoAndSocialLinks = styled.div`
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  color: #fff;
   gap: 12px;
   font-size: 24px;
   font-weight: 600;
 `;
 
 const Text = styled.p`
-  color: #9ca3af;
   font-size: 16px;
   font-weight: 400;
 `;
@@ -144,8 +142,8 @@ const SocialLinks = styled.div`
 
 export const Footer = () => {
   return (
-    <FooterContainer>
-      <NavLinks>
+    <FooterContainer className="footerContainer">
+      <NavLinks className="navLinks">
         {data.map(({ heading, array }) => (
           <Column key={heading} heading={heading} array={array} />
         ))}

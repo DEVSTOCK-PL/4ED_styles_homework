@@ -15,7 +15,6 @@ const StyledDiv = styled.div`
   gap: 16px;
   border: 1px solid #374151;
   border-radius: 8px;
-  background-color: #1f2a37;
 
   @media (max-width: 1024px) {
     padding: 10px;
@@ -30,10 +29,6 @@ const StyledDiv = styled.div`
 
 const StyledImg = styled.img`
   width: 100%;
-`;
-
-const StyledP = styled.p`
-  color: #9ca3af;
 `;
 
 const Buttons = styled.div`
@@ -76,7 +71,7 @@ export const Card = ({
   } = useDonationLogic(actualSum, totalSum, numsOfDonors, disabledButton);
 
   return (
-    <StyledDiv>
+    <StyledDiv className="card">
       <StyledImg src={src} />
       <ProgressBar
         actualSum={currentAmountToDisplay}
@@ -85,11 +80,11 @@ export const Card = ({
         value={currentPercentages}
       />
       <h3>Thank you for supporting in planting trees work. </h3>
-      <StyledP>
+      <p>
         Our fundraisers are a creative bunch when it comes to taking on
         challenges, from beard shaves and bake sales to stand-up comedy and
         streaming marathons. There is something for everyone.
-      </StyledP>
+      </p>
       <Buttons>
         <CardButton
           disabled={isDisabled}

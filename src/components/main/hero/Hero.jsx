@@ -21,7 +21,7 @@ const HeroContainer = styled(Container)`
 
 export const Hero = () => {
   return (
-    <HeroContainer>
+    <HeroContainer className="heroContainer">
       <LeftContent />
       <Carousel />
     </HeroContainer>

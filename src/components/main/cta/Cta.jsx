@@ -61,7 +61,7 @@ const arrayWithDataForCta = [
 
 export const Cta = () => {
   return (
-    <CtaContainer>
+    <CtaContainer className="ctaContainer">
       {arrayWithDataForCta.map((el) => (
         <Row
           key={el.id}
