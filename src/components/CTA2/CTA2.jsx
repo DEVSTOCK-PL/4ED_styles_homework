@@ -28,7 +28,7 @@ const Header = styled.div`
 `;
 
 const Heading = styled.h2`
-  color: #fff;
+  color: ${({ theme }) => theme.title};
   width: 640px;
   text-align: center;
   font-family: Inter;
@@ -41,7 +41,7 @@ const Heading = styled.h2`
 `;
 
 const SupportText = styled.p`
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   width: 640px;
   text-align: center;
   font-family: Inter;
@@ -69,8 +69,8 @@ const Card = styled.div`
   flex: 1 0 0;
   max-width: calc(44% - 24px);
   border-radius: 8px;
-  border: 1px solid #374151;
-  background: #1f2a37;
+  border: 1px solid ${({ theme }) => theme.toggleBorder};
+  background: ${({ theme }) => theme.footerBackground};
   box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
     0px 4px 6px -1px rgba(0, 0, 0, 0.1);
 `;
@@ -84,7 +84,7 @@ const Image = styled.img`
 `;
 
 const Heading2 = styled.h2`
-  color: #fff;
+  color: ${({ theme }) => theme.title};
   align-self: stretch;
   font-family: Inter;
   font-size: 18px;
@@ -96,7 +96,7 @@ const Heading2 = styled.h2`
 `;
 
 const SupportText2 = styled.p`
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   align-self: stretch;
   font-family: Inter;
   font-size: 16px;

@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyleCSS";
+import { ThemeContext } from "./components/hooks/ThemeContext";
+import { lightTheme, darkTheme } from "./components/themes";
+import { SnackbarProvider } from "notistack";
 
 import * as brandLogos from "./assets/brandLogos/brandLogos";
 
@@ -16,7 +21,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #111928;
+  background: ${({ theme }) => theme.body};
 
   & > * {
     padding-top: 96px;
@@ -260,35 +265,59 @@ const projectData = {
 function App() {
   const { hero, socialProof, cta1, customerLogos, cta2, blog } = projectData;
 
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
   return (
     <BrowserRouter>
-      <GlobalStyle />
-      <Container>
-        <Routes>
-          <Route
-            index
-            element={
-              <HomePage hero={hero} socialProof={socialProof} cta2={cta2} />
-            }
-          />
-          <Route
-            path="/home"
-            element={
-              <HomePage hero={hero} socialProof={socialProof} cta2={cta2} />
-            }
-          />
-          <Route path="/news" element={<NewsPage cta1={cta1} />} />
-          <Route
-            path="/events"
-            element={<EventsPage cta2={cta2} blog={blog} />}
-          />
-          <Route
-            path="/contact"
-            element={<ContactPage customerLogos={customerLogos} />}
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Container>
+      <SnackbarProvider>
+        <ThemeContext.Provider value={toggleTheme}>
+          <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+            <GlobalStyle />
+            <Container>
+              <Routes>
+                <Route
+                  index
+                  element={
+                    <HomePage
+                      hero={hero}
+                      socialProof={socialProof}
+                      cta2={cta2}
+                    />
+                  }
+                />
+                <Route
+                  path="/home"
+                  element={
+                    <HomePage
+                      hero={hero}
+                      socialProof={socialProof}
+                      cta2={cta2}
+                    />
+                  }
+                />
+                <Route path="/news" element={<NewsPage cta1={cta1} />} />
+                <Route
+                  path="/events"
+                  element={<EventsPage cta2={cta2} blog={blog} />}
+                />
+                <Route
+                  path="/contact"
+                  element={<ContactPage customerLogos={customerLogos} />}
+                />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Container>
+          </ThemeProvider>
+        </ThemeContext.Provider>
+      </SnackbarProvider>
     </BrowserRouter>
   );
 }

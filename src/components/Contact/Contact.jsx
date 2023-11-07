@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import styled from "styled-components";
+import useForm from "../hooks/useForm";
+import { useSnackbar } from "notistack";
 import Button from "../Reusable/Button";
 
 const ContactContainer = styled.div`
@@ -27,7 +30,7 @@ const Header = styled.div`
 
 const Heading = styled.h1`
   width: 672px;
-  color: #fff;
+  color: ${({ theme }) => theme.title};
   text-align: center;
   font-family: Inter;
   font-size: 36px;
@@ -40,7 +43,7 @@ const Heading = styled.h1`
 
 const SupportingText = styled.p`
   width: 672px;
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   text-align: center;
   margin: 0;
   font-family: Inter;
@@ -76,7 +79,7 @@ const InputField = styled.div`
 
 const Label = styled.label`
   align-self: stretch;
-  color: #fff;
+  color: ${({ theme }) => theme.title};
 
   font-family: Inter;
   font-size: 14px;
@@ -93,12 +96,12 @@ const Input = styled.input`
   align-self: stretch;
   border-radius: 8px;
   border: 1px solid #4b5563;
-  background: #374151;
+  background: ${({ theme }) => theme.toggleBorder};
 
   &::placeholder {
     font-size: 16px;
     font-weight: 400;
-    color: #9ca3af;
+    color: ${({ theme }) => theme.text};
     line-height: 150%;
   }
 `;
@@ -114,7 +117,7 @@ const TextareaField = styled.div`
 const Textarea = styled.textarea`
   height: 162px !important;
   width: 640px !important;
-  background: #374151;
+  background: ${({ theme }) => theme.toggleBorder};
   border: 1px solid #4b5563;
   border-radius: 8px;
   font-size: 16px;
@@ -127,6 +130,19 @@ const Textarea = styled.textarea`
 `;
 
 function Contact() {
+  const { formik, status } = useForm();
+  const { enqueueSnackbar } = useSnackbar();
+
+  useEffect(() => {
+    if (status === "success") {
+      enqueueSnackbar("The message was sent!", { variant: "success" });
+    } else if (status === "error") {
+      enqueueSnackbar("There was an error while sending the message.", {
+        variant: "error",
+      });
+    }
+  }, [status, enqueueSnackbar]);
+
   return (
     <ContactContainer>
       <ContactWrapper>
@@ -137,24 +153,37 @@ function Contact() {
             Need details about our Business plan? Let us know.
           </SupportingText>
         </Header>
-        <ContactForm>
+        <ContactForm onSubmit={formik.handleSubmit}>
           <Row>
             <InputField>
-              <Label>Your email</Label>
-              <Input type="email" placeholder="name@flowbite.com" />
+              <Label htmlFor="email">Your email</Label>
+              <Input
+                id="email"
+                type="email"
+                autoComplete="email"
+                placeholder="name@flowbite.com"
+                {...formik.getFieldProps("email")}
+              />
             </InputField>
             <InputField>
-              <Label>Subject</Label>
+              <Label htmlFor="subject">Subject</Label>
               <Input
+                id="subject"
                 type="text"
                 placeholder="Let us know how we can help you"
+                {...formik.getFieldProps("subject")}
               />
             </InputField>
           </Row>
           <Row>
             <TextareaField>
-              <Label>Your message</Label>
-              <Textarea rows="4" cols="50" />
+              <Label htmlFor="Textarea">Your message</Label>
+              <Textarea
+                id="Textarea"
+                rows="4"
+                cols="50"
+                {...formik.getFieldProps("message")}
+              />
             </TextareaField>
           </Row>
 

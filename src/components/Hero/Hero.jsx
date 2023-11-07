@@ -7,7 +7,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   align-self: stretch;
-  color: white;
+  color: ${({ theme }) => theme.title};
 `;
 
 const HeroWrapper = styled.div`
@@ -75,12 +75,12 @@ const SponsorsTitle = styled.div`
   align-items: flex-start;
   gap: 12px;
   align-self: stretch;
-  border-top: 1px solid #374151;
+  border-top: 1px solid ${({ theme }) => theme.toggleBorder};
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-  color: #6b7280;
+  color: ${({ theme }) => theme.logosText};
 `;
 
 const SponsorsLogos = styled.div`

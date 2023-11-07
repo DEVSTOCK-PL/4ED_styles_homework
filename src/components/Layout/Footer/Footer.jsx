@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../hooks/ThemeContext";
 import styled from "styled-components";
 import * as SocialLogos from "../../../../public/social/index";
 
@@ -7,8 +9,9 @@ const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  border-top: 1px solid #374151;
-  background: #1f2a37;
+  border-top: 1px solid ${({ theme }) => theme.toggleBorder};
+  /* background: #1f2a37; */
+  background: ${({ theme }) => theme.footerBackground};
 `;
 
 const Column = styled.div`
@@ -21,7 +24,7 @@ const Column = styled.div`
 
 const Heading = styled.h1`
   align-self: stretch;
-  color: #fff;
+  color: ${({ theme }) => theme.title};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -50,7 +53,7 @@ const LogoWrapper = styled.div`
   gap: 12px;
 
   & p {
-    color: #fff;
+    color: ${({ theme }) => theme.title};
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -66,7 +69,7 @@ const Logo = styled.img`
 `;
 
 const Copyright = styled.p`
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   text-align: center;
   align-self: stretch;
   font-family: Inter;
@@ -83,7 +86,7 @@ const NavLink = styled.a`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   font-family: Inter;
   font-size: 16px;
   font-style: normal;

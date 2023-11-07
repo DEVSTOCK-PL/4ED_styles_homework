@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import Button from "../Reusable/Button";
+import { ThemeContext } from "../hooks/ThemeContext";
 
 const CTA1Container = styled.div`
   display: flex;
@@ -36,7 +38,7 @@ const RightContent = styled.div`
 
   & h2 {
     align-self: stretch;
-    color: #fff;
+    color: ${({ theme }) => theme.title};
 
     font-family: Inter;
     font-size: 36px;
@@ -49,7 +51,7 @@ const RightContent = styled.div`
 
   & p {
     align-self: stretch;
-    color: #9ca3af;
+    color: ${({ theme }) => theme.text};
     font-family: Inter;
     font-size: 18px;
     font-style: normal;

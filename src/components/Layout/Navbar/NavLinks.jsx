@@ -6,7 +6,13 @@ const LinksWrapper = styled.ul`
   align-items: center;
   gap: 32px;
   flex: 1 0 0;
-  color: white;
+  color: ${({ theme }) => theme.title};
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
 `;
 
 const Anchor = styled.li`
@@ -15,13 +21,17 @@ const Anchor = styled.li`
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-  color: white;
+  /* color: white; */
   text-decoration: none;
   list-style: none;
 
   &.active {
     color: #1a56db;
     font-weight: 900;
+
+    @media (max-width: 1000px) {
+      color: #5680db;
+    }
   }
 `;
 

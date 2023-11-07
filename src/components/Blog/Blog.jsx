@@ -7,9 +7,10 @@ const BlogWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  border-top: 1px solid #374151;
-  border-bottom: 1px solid #374151;
-  background: #1f2a37;
+  border-top: 1px solid ${({ theme }) => theme.toggleBorder};
+  border-bottom: 1px solid ${({ theme }) => theme.toggleBorder};
+  /* background: #1f2a37; */
+  background: ${({ theme }) => theme.footerBackground};
 `;
 
 const Container = styled.div`
@@ -29,7 +30,7 @@ const Header = styled.div`
 `;
 
 const Heading = styled.h2`
-  color: #fff;
+  color: ${({ theme }) => theme.title};
   align-self: stretch;
   text-align: center;
   font-family: Inter;
@@ -42,7 +43,7 @@ const Heading = styled.h2`
 `;
 
 const SupportText = styled.p`
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   align-self: stretch;
   font-family: Inter;
   font-size: 20px;
@@ -68,8 +69,8 @@ const ColumnWrapper = styled.div`
   flex: 1 0 0;
 
   &:nth-child(2) {
-    border-right: 1px solid #374151;
-    border-left: 1px solid #374151;
+    border-right: 1px solid ${({ theme }) => theme.toggleBorder};
+    border-left: 1px solid ${({ theme }) => theme.toggleBorder};
     padding: 0 32px;
   }
 `;
@@ -100,7 +101,7 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled.h3`
-  color: #fff;
+  color: ${({ theme }) => theme.title};
   align-self: stretch;
   font-family: Inter;
   font-size: 24px;
@@ -111,7 +112,7 @@ const Title = styled.h3`
 `;
 
 const Preview = styled.p`
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   align-self: stretch;
   font-family: Inter;
   font-size: 16px;

@@ -7,7 +7,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  background: #1f2a37;
+  background: ${({ theme }) => theme.footerBackground};
   margin-bottom: 0;
 `;
 
@@ -21,7 +21,7 @@ const Head_Descr_Wrapper = styled.div`
 `;
 
 const Heading = styled.h2`
-  color: #fff;
+  color: ${({ theme }) => theme.title};
   text-align: center;
   align-self: stretch;
   font-family: Inter;
@@ -34,7 +34,7 @@ const Heading = styled.h2`
 `;
 
 const SupportText = styled.p`
-  color: #9ca3af;
+  color: ${({ theme }) => theme.text};
   margin: 0;
   align-self: stretch;
   text-align: center;
@@ -80,7 +80,7 @@ const LogoItem = styled.div`
   gap: 10px;
 
   & p {
-    color: #6b7280;
+    color: ${({ theme }) => theme.logosText};
     text-align: center;
     font-family: Inter;
     font-size: 16px;

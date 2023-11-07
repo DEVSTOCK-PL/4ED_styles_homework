@@ -6,7 +6,7 @@ const SocialProofContainer = styled.div`
   padding-top: 0;
   align-items: center;
   justify-content: center;
-  background: #111928;
+  background: ${({ theme }) => theme.body};
 `;
 
 const SocialProofWrapper = styled.div`
@@ -16,7 +16,7 @@ const SocialProofWrapper = styled.div`
   align-items: flex-start;
   border-radius: 8px;
   border: 1px solid #374151;
-  background: #1f2a37;
+  background: ${({ theme }) => theme.footerBackground};
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `;
@@ -26,7 +26,7 @@ const SocialProofCard = styled.div`
   flex-direction: column;
   align-items: center;
   flex: 1 0 0;
-  border-right: 1px solid #374151;
+  border-right: 1px solid ${({ theme }) => theme.toggleBorder};
 
   &:last-child {
     border-right: none;
@@ -34,7 +34,7 @@ const SocialProofCard = styled.div`
 
   & h2 {
     align-self: stretch;
-    color: #fff;
+    color: ${({ theme }) => theme.title};
     text-align: center;
     font-family: Inter;
     font-size: 36px;
@@ -46,7 +46,7 @@ const SocialProofCard = styled.div`
   }
 
   & p {
-    color: #9ca3af;
+    color: ${({ theme }) => theme.text};
     text-align: center;
     font-family: Inter;
     font-size: 16px;

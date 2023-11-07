@@ -54,9 +54,22 @@ const ButtonStyled = styled.button`
   }
 `;
 
-function Button({ children, version, leftIcon, rightIcon, onClick, disabled }) {
+function Button({
+  children,
+  version,
+  leftIcon,
+  rightIcon,
+  onClick,
+  disabled,
+  type,
+}) {
   return (
-    <ButtonStyled version={version} onClick={onClick} disabled={disabled}>
+    <ButtonStyled
+      version={version}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
+    >
       {leftIcon && <LeftIcon src={leftIcon} />}
       {children}
       {rightIcon && <RightIcon src={rightIcon} />}
