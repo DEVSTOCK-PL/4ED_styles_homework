@@ -22,6 +22,7 @@ import ContactForm from './query/ContactForm.jsx'
 import Registration from './Registration.jsx'
 import Login from './Login.jsx'
 import ProfilePage from './ProfilePage.jsx'
+import ChangePassword from './query/ChangePassword.jsx'
 
 export const ThemeContext = createContext()
 
@@ -116,6 +117,14 @@ export default function App() {
                 element={
                   <Layout>
                     <ProfilePage />
+                  </Layout>
+                }
+              />
+              <Route
+                path='/profile/settings'
+                element={
+                  <Layout>
+                    <ChangePassword />
                   </Layout>
                 }
               />

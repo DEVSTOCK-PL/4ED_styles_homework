@@ -5,7 +5,7 @@ import { darkTheme, lightTheme } from '../styles/globalStyles'
 const ToggleIcon = () => {
   let fillColor = ''
   const theme = useContext(ThemeContext)
-  console.log(theme)
+  console.log(theme) //cannot seem to be able to change toggle icon's colour and fill colour
   if (theme === darkTheme) {
     fillColor = '#ffffff'
   }
@@ -14,6 +14,7 @@ const ToggleIcon = () => {
   }
   return (
     <svg
+      className='buttonGreyText'
       xmlns='http://www.w3.org/2000/svg'
       width='33'
       height='34'

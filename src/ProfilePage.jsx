@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import Heading from './contact/Heading'
+import useUser from './hooks/useUser'
 
-import { useUser } from './login/UserContext'
+import Heading from './contact/Heading'
 
 import useBookList from './hooks/useBookList'
 
@@ -35,12 +35,13 @@ const ContentWrapper = styled.div`
 `
 const UserContent = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
 `
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`
+// const Wrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `
 
 const Book = styled.div`
   display: flex;
@@ -56,7 +57,15 @@ const BookImg = styled.img`
 const Login = () => {
   const name = localStorage.getItem('name')
   const { user } = useUser()
-  const books = useBookList()
+  const { books, isLoading, isError } = useBookList()
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (isError) {
+    return <div>Error loading books. Please try again later.</div>
+  }
 
   return (
     <ProfileWrapper>
@@ -64,7 +73,7 @@ const Login = () => {
         <Heading>Witaj, {name}!</Heading>
         <UserContent>
           <Heading>Lista e-bookow w Twojej bibliotece:</Heading>
-          {user && (
+          {user && books && books.length > 0 ? (
             <div>
               {books.map((book) => (
                 <Book key={book.id}>
@@ -73,6 +82,8 @@ const Login = () => {
                 </Book>
               ))}
             </div>
+          ) : (
+            <div>No books available.</div>
           )}
         </UserContent>
       </ContentWrapper>

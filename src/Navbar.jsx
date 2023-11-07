@@ -38,7 +38,6 @@ const NavWrapper = styled.div`
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false)
-
   const handleToggle = () => {
     setMenu(!menu)
   }

@@ -41,3 +41,51 @@ const SignOptionsToggled = ({ handleCloseMenu }) => {
   )
 }
 export default SignOptionsToggled
+
+// import useUser from '../hooks/useUser'
+// import { useNavigate } from 'react-router-dom'
+
+// const SignOptionsToggled = ({ handleCloseMenu }) => {
+//   const { user, logout } = useUser()
+//   const navigate = useNavigate()
+
+//   const handleLogout = () => {
+//     localStorage.removeItem('name')
+//     localStorage.removeItem('rememberMeToken')
+
+//     logout()
+//     navigate('/')
+//   }
+//for some reason the alternative navbar doesnt work for ToggledMenu... to be worked on
+
+//   return (
+//     <Options className='sign-options'>
+//       {user ? (
+//         <LogOut className='navLinks' onClick={handleLogout}>
+//           Log Out
+//         </LogOut>
+//       ) : (
+//         <Link to='/login'>
+//           <LogIn className='navLinks'>Log In</LogIn>
+//         </Link>
+//       )}
+
+//       {user ? (
+//         <Link to='/profile/settings'>
+//           <MyAccount className='buttonGreyBg' onClick={() => handleCloseMenu()}>
+//             My Account
+//           </MyAccount>
+//         </Link>
+//       ) : (
+//         <Link to='/register'>
+//           <GetStarted
+//             className='buttonBlueBg'
+//             onClick={() => handleCloseMenu()}>
+//             Get Started
+//           </GetStarted>
+//         </Link>
+//       )}
+//     </Options>
+//   )
+// }
+// export default SignOptionsToggled

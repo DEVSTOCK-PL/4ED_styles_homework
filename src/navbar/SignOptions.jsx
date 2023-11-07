@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import { useUser } from '../login/UserContext'
+import useUser from '../hooks/useUser'
 
 const Options = styled.div`
   display: flex;
@@ -35,12 +35,21 @@ const GetStarted = styled.button`
   border-radius: 8px;
   color: #fff;
 `
+const MyAccount = styled.button`
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  border-radius: 20px;
+  color: #fff;
+`
+
 const SignOptions = () => {
   const { user, logout } = useUser()
   const navigate = useNavigate()
-
   const handleLogout = () => {
     localStorage.removeItem('name')
+    localStorage.removeItem('rememberMeToken')
+
     logout()
     navigate('/')
   }
@@ -56,9 +65,16 @@ const SignOptions = () => {
           <LogIn className='navLinks'>Log In</LogIn>
         </Link>
       )}
-      <Link to='/register'>
-        <GetStarted className='buttonBlueBg'>Get Started</GetStarted>
-      </Link>
+
+      {user ? (
+        <Link to='/profile/settings'>
+          <MyAccount className='buttonGreyBg'>My Account</MyAccount>
+        </Link>
+      ) : (
+        <Link to='/register'>
+          <GetStarted className='buttonBlueBg'>Get Started</GetStarted>
+        </Link>
+      )}
     </Options>
   )
 }

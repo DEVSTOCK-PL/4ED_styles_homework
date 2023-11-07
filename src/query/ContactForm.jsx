@@ -3,7 +3,12 @@ import { useForm, Controller } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Box, TextField } from '@mui/material'
-import { SnackbarProvider, useSnackbar, closeSnackbar } from 'notistack'
+import {
+  SnackbarProvider,
+  useSnackbar,
+  closeSnackbar,
+  enqueueSnackbar,
+} from 'notistack'
 
 import styled from 'styled-components'
 
@@ -96,8 +101,16 @@ const ContactQuery = () => {
 
   const onSubmit = async (data) => {
     try {
+      const { email } = data
       await sendMessage(data)
       reset()
+
+      enqueueSnackbar(
+        `Thank you, your message has been sent! We will get back to you at ${email} within 24hrs.`,
+        {
+          variant: 'success',
+        }
+      )
     } catch (error) {
       console.error('Error sending message:', error)
     }
@@ -110,7 +123,7 @@ const ContactQuery = () => {
     useEffect(() => {
       if (message && !snackbarDisplayed) {
         enqueueSnackbar(message, { variant })
-        setSnackbarDisplayed(true) // tried to prevent from snackbar showing twice but nothing works
+        setSnackbarDisplayed(true)
         setTimeout(() => {
           closeSnackbar(options)
         }, 7000)
@@ -199,12 +212,6 @@ const ContactQuery = () => {
               <Snackbar
                 message={`An error occurred: ${mutation.error.message}`}
                 variant='error'
-              />
-            )}
-            {mutation.isSuccess && (
-              <Snackbar
-                message='Thank you, your message has been sent! We will get back to you at [HERE THE EMAIL] within 24hrs.'
-                variant='success'
               />
             )}
           </div>

@@ -1,7 +1,9 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 import styles from '../styles/styles.module.css'
+
+import useUser from '../hooks/useUser'
 
 const NavLinksWrapper = styled.div``
 
@@ -15,6 +17,7 @@ const NavLink = styled(Link)`
 `
 const NavLinksToggled = ({ handleCloseMenu }) => {
   const { pathname } = useLocation()
+  const { user } = useUser()
 
   return (
     <NavLinksWrapper className={styles.navLinksToggled}>
@@ -38,11 +41,24 @@ const NavLinksToggled = ({ handleCloseMenu }) => {
         onClick={() => handleCloseMenu()}>
         <Link to='/contact-form'>CONTACT</Link>
       </NavLink>
-      <NavLink
-        className={pathname === '/rickmorty' && 'active' && 'text-pink-500'}
-        onClick={() => handleCloseMenu()}>
-        <Link to='/rickmorty'>Rick&Morty</Link>
-      </NavLink>
+      {user ? (
+        <NavLink>
+          <Link
+            to={`/profile/${user.id}`}
+            className='text-green-500'
+            onClick={() => handleCloseMenu()}>
+            My books{' '}
+          </Link>
+        </NavLink>
+      ) : (
+        <NavLink
+          className={pathname === '/rickmorty' && 'active'}
+          onClick={() => handleCloseMenu()}>
+          <Link to='/rickmorty' className='text-pink-900'>
+            Rick&Morty
+          </Link>
+        </NavLink>
+      )}
     </NavLinksWrapper>
   )
 }

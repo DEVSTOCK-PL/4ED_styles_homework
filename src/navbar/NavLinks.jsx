@@ -2,6 +2,8 @@ import { Link, useLocation } from 'react-router-dom'
 
 import styled from 'styled-components'
 
+import useUser from '../hooks/useUser'
+
 const NavLinksWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -34,7 +36,7 @@ const NavLink = styled(Link)`
 
 const NavLinks = () => {
   const { pathname } = useLocation()
-
+  const { user } = useUser()
   return (
     <NavLinksWrapper className='navLinks'>
       <NavLink className={pathname === '/' && 'active'}>
@@ -49,11 +51,20 @@ const NavLinks = () => {
       <NavLink className={pathname === '/contact-form' && 'active'}>
         <Link to='/contact-form'>CONTACT</Link>
       </NavLink>
-      <NavLink className={pathname === '/rickmorty' && 'active'}>
-        <Link to='/rickmorty' className='text-pink-900'>
-          Rick&Morty
-        </Link>
-      </NavLink>
+
+      {user ? (
+        <NavLink>
+          <Link to={`/profile/${user.id}`} className='text-green-500'>
+            My books{' '}
+          </Link>
+        </NavLink>
+      ) : (
+        <NavLink className={pathname === '/rickmorty' && 'active'}>
+          <Link to='/rickmorty' className='text-pink-900'>
+            Rick&Morty
+          </Link>
+        </NavLink>
+      )}
     </NavLinksWrapper>
   )
 }

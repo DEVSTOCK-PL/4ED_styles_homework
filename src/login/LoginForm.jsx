@@ -11,7 +11,9 @@ import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 
 import styled from 'styled-components'
 
-import { useUser } from './UserContext'
+import useUser from '../hooks/useUser'
+import { generateRememberMeToken } from './rememberMeToken'
+
 import Submit from './SubmitButton'
 import { OpenEye, ClosedEye } from './EyeIcons'
 
@@ -109,7 +111,10 @@ const LoginForm = () => {
       const user = await mutation.mutateAsync(data)
       if (user && user.id) {
         localStorage.setItem('name', user.name)
-
+        if (isChecked) {
+          const rememberMeToken = generateRememberMeToken()
+          localStorage.setItem('rememberMeToken', rememberMeToken)
+        }
         login(user)
         navigate(`/profile/${user.id}`)
       } else {
@@ -122,8 +127,22 @@ const LoginForm = () => {
 
   const [isPasswordVisible, setPasswordVisibility] = useState(false)
 
+  const [isChecked, setIsChecked] = useState(true)
+
   const togglePasswordVisibility = () => {
     setPasswordVisibility(!isPasswordVisible)
+  }
+  const handleRememberMeChange = () => {
+    setIsChecked(!isChecked)
+    console.log(isChecked)
+
+    if (!isChecked) {
+      localStorage.removeItem('rememberMeToken')
+    } else {
+      const rememberMeToken = generateRememberMeToken()
+      console.log(rememberMeToken)
+      localStorage.setItem('rememberMeToken', rememberMeToken)
+    }
   }
 
   return (
@@ -185,11 +204,7 @@ const LoginForm = () => {
       </Box>
       <label>
         Remember me
-        <input
-          type='checkbox'
-          // checked={rememberMe}
-          // onChange={handleRememberMeChange}
-        />
+        <input type='checkbox' onChange={handleRememberMeChange} />
       </label>
       <Submit onSubmit={handleSubmit(onSubmit)} />
     </SnackbarProvider>

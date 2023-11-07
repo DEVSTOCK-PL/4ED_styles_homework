@@ -1,40 +1,16 @@
 {
   "contact": [
     {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "key or options",
-      "message": "key or optionskey or options",
+      "email": "test@email.ok",
+      "subject": "Test",
+      "message": "Test message",
       "id": 1
     },
     {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "kkk",
-      "message": "hhhhhhhhhhhhhhhhhhhhhhhh",
+      "email": "email@address.com",
+      "subject": "Test Snackbar",
+      "message": "Message snackbar",
       "id": 2
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "reset fn",
-      "message": "resettttttttttttt",
-      "id": 3
-    },
-    {
-      "email": "j@gmail.com",
-      "subject": "contact",
-      "message": "array of objects",
-      "id": 4
-    },
-    {
-      "email": "Contact@email.com",
-      "subject": "Is it working still?",
-      "message": "Yes, it is.",
-      "id": 5
-    },
-    {
-      "email": "lidiabylicka@gmail.com",
-      "subject": "Send msg",
-      "message": "Sent message.",
-      "id": 6
     }
   ],
   "users": [
