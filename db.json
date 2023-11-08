@@ -48,6 +48,13 @@
       "secondName": "B",
       "password": "12345678",
       "id": 5
+    },
+    {
+      "email": "email@test.email",
+      "name": "Test",
+      "secondName": "Name",
+      "password": "Password",
+      "id": 6
     }
   ],
   "books": [

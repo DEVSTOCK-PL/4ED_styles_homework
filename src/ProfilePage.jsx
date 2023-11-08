@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import styled from 'styled-components'
 
 import useUser from './hooks/useUser'
@@ -38,17 +40,25 @@ const UserContent = styled.div`
   flex-direction: column;
   align-items: center;
 `
-// const Wrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `
 
 const Book = styled.div`
+  text-justify: center;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
 `
-
+const Books = styled.div`
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+`
 const BookImg = styled.img`
   width: 150px;
   height: 150px;
@@ -59,31 +69,39 @@ const Login = () => {
   const { user } = useUser()
   const { books, isLoading, isError } = useBookList()
 
+  console.log('Books:', books)
+
   if (isLoading) {
-    return <div>Loading...</div>
+    return <div>Loading your e-books...</div>
   }
 
   if (isError) {
     return <div>Error loading books. Please try again later.</div>
   }
-
   return (
     <ProfileWrapper>
       <ContentWrapper>
         <Heading>Witaj, {name}!</Heading>
         <UserContent>
           <Heading>Lista e-bookow w Twojej bibliotece:</Heading>
-          {user && books && books.length > 0 ? (
-            <div>
+          {user && books ? (
+            <Books>
               {books.map((book) => (
                 <Book key={book.id}>
-                  {book.title} {book.author} {book.description}
                   <BookImg src={book.image} alt={book.title} />
+                  <div>{book.title}</div>
+                  <div>{book.author}</div>
+                  <div>{book.description}</div>
                 </Book>
               ))}
-            </div>
+            </Books>
           ) : (
-            <div>No books available.</div>
+            <div>
+              No books available.{' '}
+              <Link to='/login'>
+                Click here to log in and see your e-books.
+              </Link>
+            </div>
           )}
         </UserContent>
       </ContentWrapper>
