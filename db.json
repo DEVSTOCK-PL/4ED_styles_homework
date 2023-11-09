@@ -5,9 +5,32 @@
       "password": "password",
       "url": "http://localhost:3000/users",
       "id": "Xz5m6sq"
+    },
+    {
+      "email": "3846205@gmail.com",
+      "password": "qwerty",
+      "id": "TYen534"
+    },
+    {
+      "email": "filtrus@o2.pl",
+      "password": "wwwwwww",
+      "id": "D3lmo2a"
     }
   ],
-  "people": [],
+  "people": [
+    {
+      "name": "Przemysław Woźniak",
+      "email": "3846205@gmail.com",
+      "message": "halooo",
+      "id": 1
+    },
+    {
+      "name": "Stefan",
+      "email": "Jarzyna@aaa.pl",
+      "message": "sdsdsdsdsd",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,
