@@ -23,6 +23,12 @@
       "subject": "Co mam zadane?",
       "message": "Tylko w zeszycie",
       "id": 4
+    },
+    {
+      "email": "2222@222.pl",
+      "subject": "Testuje manualnie",
+      "message": "Czy przeszło test?",
+      "id": 5
     }
   ],
   "users": [
@@ -75,6 +81,13 @@
       "email": "arek@trzeciak.pl",
       "password": "aaaaaa",
       "id": 7
+    },
+    {
+      "name": "Przemek",
+      "secondName": "Testowy",
+      "email": "2222@222.pl",
+      "password": "222222",
+      "id": 8
     }
   ],
   "books": [

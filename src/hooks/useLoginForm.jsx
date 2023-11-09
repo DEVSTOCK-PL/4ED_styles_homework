@@ -19,7 +19,8 @@ const getUsers = async () => {
 
 const useLoginForm = (enqueueSnackbar) => {
   const navigate = useNavigate();
-  const { toggleLogin } = useContext(AppContext);
+  const { toggleLogin, updateUserDataContext, trueLogin } =
+    useContext(AppContext);
 
   const { data: users } = useQuery({
     queryKey: ["users"],
@@ -40,9 +41,11 @@ const useLoginForm = (enqueueSnackbar) => {
         });
 
         navigate("/profile");
-        console.log("objectUsera", userToLogin);
-        localStorage.setItem("objectUsera", userToLogin);
-        toggleLogin(true);
+        console.log("userToLogin", userToLogin);
+        trueLogin();
+        updateUserDataContext(userToLogin);
+        localStorage.setItem("userToLogin", JSON.stringify(userToLogin));
+        sessionStorage.setItem("login", "true");
       } else {
         enqueueSnackbar("Logowanie nieudane!", { variant: "error" });
       }

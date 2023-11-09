@@ -1,26 +1,69 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
+  //--------------------------------------------------------
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   const toggleTheme = () => {
     setIsDarkTheme((prev) => !prev);
   };
-
-  const [login, setLogin] = useState(false);
-
-  const toggleLogin = (newLogin) => {
-    setLogin(newLogin);
-  };
-  console.log("login:", login);
   localStorage.setItem("isDarkTheme:", isDarkTheme);
-  localStorage.setItem("login", login);
+  //--------------------------------------------------------
+  // buliean
+  const [login, setLogin] = useState(false);
+  useEffect(() => {
+    const storedLogin = sessionStorage.getItem("login");
+    if (storedLogin) {
+      trueLogin();
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("login", login.toString());
+  }, [login]);
+  const toggleLogin = () => {
+    setLogin((prevLogin) => !prevLogin);
+  };
+  const trueLogin = () => {
+    setLogin(true);
+  };
+  const falseLogin = () => {
+    setLogin(false);
+  };
+  console.log("login z kontekstu:", login);
 
+  //---------------------------------------------------------
+  // object
+  const [userDataContext, setUserDataContext] = useState(null);
+  const storedUserData = JSON.parse(localStorage.getItem("userToLogin"));
+
+  console.log("userDataContext w Context:", userDataContext);
+  const deleteUserDataContext = () => {
+    setUserDataContext(null);
+  };
+  const updateUserDataContext = (user) => {
+    setUserDataContext(user);
+  };
+  useEffect(() => {
+    if (storedUserData) {
+      updateUserDataContext(storedUserData);
+    }
+  }, [storedUserData]);
+  //---------------------------------------------------------
   return (
     <AppContext.Provider
-      value={{ isDarkTheme, toggleTheme, login, toggleLogin }}>
+      value={{
+        isDarkTheme,
+        toggleTheme,
+        login,
+        toggleLogin,
+        trueLogin,
+        falseLogin,
+        userDataContext,
+        updateUserDataContext,
+        deleteUserDataContext,
+      }}>
       {children}
     </AppContext.Provider>
   );
