@@ -203,6 +203,11 @@ const GreenLed = styled.div`
 function Navbar() {
   const { pathname } = useLocation();
   const { open, handleOpen, closeMenu } = useOpenMenuLogic();
+  const storedUserData = JSON.parse(localStorage.getItem("userToLogin"));
+  if (storedUserData) {
+    console.log("storedUserData.name:", storedUserData.name);
+  }
+
   const {
     isDarkTheme,
     toggleTheme,
@@ -213,7 +218,7 @@ function Navbar() {
     handleLogout,
     updateUserDataContext,
   } = useContext(AppContext);
-  console.log("userDataContext w Navbar:", userDataContext);
+
   return (
     <NavbarContainer>
       <NavbarContent>
@@ -257,7 +262,7 @@ function Navbar() {
         </Links>
         <LogIn>
           <GreenLed login={login} />
-          {login && <div>Jesteś zalogowany jako..</div>}
+          {login && <div>Jesteś zalogowany jako {storedUserData.name}</div>}
 
           {login && (
             <ButtonLogIn

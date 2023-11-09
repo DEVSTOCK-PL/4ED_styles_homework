@@ -31,14 +31,14 @@ export const AppContextProvider = ({ children }) => {
   const falseLogin = () => {
     setLogin(false);
   };
-  console.log("login z kontekstu:", login);
+  console.log("login:", login);
 
   //---------------------------------------------------------
   // object
   const [userDataContext, setUserDataContext] = useState(null);
   const storedUserData = JSON.parse(localStorage.getItem("userToLogin"));
-
-  console.log("userDataContext w Context:", userDataContext);
+  console.log("storedUserData:", storedUserData);
+  console.log("userDataContext:", userDataContext);
   const deleteUserDataContext = () => {
     setUserDataContext(null);
   };
@@ -49,7 +49,7 @@ export const AppContextProvider = ({ children }) => {
     if (storedUserData) {
       updateUserDataContext(storedUserData);
     }
-  }, [storedUserData]);
+  }, []);
   //---------------------------------------------------------
   return (
     <AppContext.Provider

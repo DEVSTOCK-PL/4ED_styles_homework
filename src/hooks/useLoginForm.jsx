@@ -19,8 +19,7 @@ const getUsers = async () => {
 
 const useLoginForm = (enqueueSnackbar) => {
   const navigate = useNavigate();
-  const { toggleLogin, updateUserDataContext, trueLogin } =
-    useContext(AppContext);
+  const { updateUserDataContext, trueLogin } = useContext(AppContext);
 
   const { data: users } = useQuery({
     queryKey: ["users"],
