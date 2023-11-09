@@ -1,10 +1,9 @@
 // import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Container from "./styleElements/Container";
-import Heading from "./styleElements/Heading";
-import SupportingText from "./styleElements/SupportingText";
 import PictureCard from "./PictureCard";
-import CenteredLink from "./styleElements/CenteredLink";
+
+import {CenteredLink, Container, Heading, SupportingText} from "./styleElements"
+
 import littleArow from "../images/littleArow.png";
 import carousel from "../images/carousel.png";
 import BreakPoints from "./BreakPoints";
@@ -59,6 +58,7 @@ const ColumnLink = styled(CenteredLink)`
   margin-bottom: 30px;
 `;
 
+
 function Events() {
   return (
     <EventsContainer>
@@ -68,6 +68,7 @@ function Events() {
           Flowbite helps you connect with friends, family and communities of
           people who share your interests.{" "}
         </CenterSupportingText>
+        <PictureCard />
         <PictureCard />
         <CenteredLink>
           <a href="url">View all fundraising events</a>

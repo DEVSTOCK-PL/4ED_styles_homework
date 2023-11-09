@@ -1,23 +1,44 @@
 import styled from "styled-components";
-import Container from "./styleElements/Container";
-import Button from "./styleElements/Button";
-import Heading from "./styleElements/Heading";
-import SupportingText from "./styleElements/SupportingText";
+
+import { Button, Container, Heading, SupportingText } from "./styleElements";
+import {
+  bmw,
+  cocacola,
+  disnay,
+  fedex,
+  intel,
+  nestle,
+  netflix,
+  shell,
+  spotify,
+  stripe,
+  tesla,
+  twitch,
+} from "../images";
+
 import BreakPoints from "./BreakPoints";
 
+import SponsorsCards from "./SponsorCard";
 
-// const NewContainer = styled(Container)`
-//   padding-bottom: 0px;
-//   padding: 0px 0px;
-//   @media (max-width: ${BreakPoints.tablet}) {
-//     width: 100%;
-//     padding: 0px 20px;
-//   }
-// `;
+const NewContainer = styled(Container)`
+max-width: 1440px;
+  padding-bottom: 0px;
+  padding: 0px 0px;
+  @media (max-width: ${BreakPoints.tablet}) {
+    width: 100%;
+    padding: 0px 20px;
+  }
+`;
 
 const CenterHeading = styled(Heading)`
   text-align: center;
+  padding-bottom: 5px;
 `;
+const CenterSupportingText = styled(SupportingText)`
+  text-align: center;
+  padding: 0px;
+`;
+
 const Row = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,13 +98,23 @@ const LargeMessageInput = styled.textarea`
   resize: none;
 `;
 
-const CenterSupportingText = styled(SupportingText)`
-  text-align: center;
+const SponsorsCardsContainer = styled.div`
+  background-color: #1f2a37;
+
+  > div:first-child {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+`;
+
+const SponsorsCardsWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
 `;
 
 function Events() {
   return (
-    <Container>
+    <NewContainer>
       <Row>
         <CenterHeading>Contact us</CenterHeading>
         <CenterSupportingText>
@@ -111,7 +142,41 @@ function Events() {
         </FormContainer>
         <Button>Send message</Button>
       </Row>
-    </Container>
+      <SponsorsCardsContainer>
+        <div>
+          <CenterHeading>Donors, Partners & Sponsors</CenterHeading>
+          <CenterSupportingText>
+            Here at flowbite we focus on markets where technology, innovation,
+          </CenterSupportingText>
+          <CenterSupportingText>
+            and capital can unlock long-term value.
+          </CenterSupportingText>
+        </div>
+
+        <SponsorsCardsWrapper>
+          <div>
+            <SponsorsCards img={stripe} />
+            <SponsorsCards img={intel} />
+            <SponsorsCards img={fedex} />
+          </div>
+          <div>
+            <SponsorsCards img={spotify} />
+            <SponsorsCards img={shell} />
+            <SponsorsCards img={disnay} />
+          </div>
+          <div>
+            <SponsorsCards img={tesla} />
+            <SponsorsCards img={netflix} />
+            <SponsorsCards img={bmw} />
+          </div>
+          <div>
+            <SponsorsCards img={twitch} />
+            <SponsorsCards img={nestle} />
+            <SponsorsCards img={cocacola} />
+          </div>
+        </SponsorsCardsWrapper>
+      </SponsorsCardsContainer>
+    </NewContainer>
   );
 }
 

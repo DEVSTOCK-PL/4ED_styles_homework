@@ -6,7 +6,7 @@ import Button from "./styleElements/Button";
 import BreakPoints from "./BreakPoints";
 
 const Container = styled.div`
-  padding: 20px 0px 60px 0px;
+  /* padding: 20px 0px 60px 0px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -114,7 +114,6 @@ function CardStyles() {
   return (
     <Container>
       <Card>
-        {" "}
         <MockupImage src={mockup1News} alt="mockup.rigth" />{" "}
         <CardContent>
           <div>

@@ -1,16 +1,18 @@
 import styled from "styled-components";
-import Container from "./styleElements/Container";
-import Button from "./styleElements/Button";
-import Heading from "./styleElements/Heading";
-import SupportingText from "./styleElements/SupportingText";
 
+import {Button, CenteredLink, Container, Heading, SupportingText} from "./styleElements"
+
+import PictureCard from "./PictureCard";
 import videoCamera from "../images/videoCamera.png";
 import intel from "../images/intel.png";
 import fedex from "../images/fedex.png";
 import visa from "../images/visa.png";
 import disnay from "../images/disnay.png";
 import carousel from "../images/carousel.png";
+import littleArow from "../images/littleArow.png";
+
 import BreakPoints from "./BreakPoints";
+// import { Form } from "react-router-dom";
 
 const Hero = styled.div`
   display: flex;
@@ -113,10 +115,10 @@ const SocialProof = styled.div`
   }
 `;
 const Stat = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const HorizontalRule = styled.hr`
@@ -143,9 +145,7 @@ function Home2() {
       <Container>
         <Hero>
           <LeftContent>
-            <Heading>
-              Making earth cooler for people, nature, climate
-            </Heading>
+            <Heading>Making earth cooler for people, nature, climate</Heading>
             <SupportingText>
               Protecting the planet and its natural resources for future
               generations, by reducing pollution, promoting sustainability, and
@@ -193,6 +193,11 @@ function Home2() {
             <RowSupportingText>People-Powered Projects</RowSupportingText>
           </Stat>
         </SocialProof>
+        <PictureCard />
+        <CenteredLink>
+          <a href="url">View all fundraising events</a>
+          <img src={littleArow} alt="littleArow-img" />
+        </CenteredLink>
       </Container>
     </>
   );

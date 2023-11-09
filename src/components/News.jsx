@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import Container from "./styleElements/Container";
-import Button from "./styleElements/Button";
-import Heading from "./styleElements/Heading";
-import SupportingText from "./styleElements/SupportingText";
-import littleWhiteArow from "../images/littleWhiteArow.svg";
 
+import {Button, Container, Heading, SupportingText} from "./styleElements"
+
+import littleWhiteArow from "../images/littleWhiteArow.svg";
 import mockup1News from "../images/mockup1News.png";
 import mockup2News from "../images/mockup2News.png";
 import mockup3News from "../images/mockup3News.png";
