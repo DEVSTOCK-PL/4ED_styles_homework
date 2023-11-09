@@ -2,9 +2,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { AppContext } from "../hooks/AppContext";
 
-// import useProfileLogic from "../hooks/useProfileLogic";
-
-const text1 = "BOOK     BOOK      BOOK     zawartość profilu";
+import useProfileLogic from "../hooks/useProfileLogic";
 
 const Container = styled.div`
   width: 100%;
@@ -96,14 +94,80 @@ const Title1 = styled.p`
   }
 `;
 
+const BooksBox = styled.div`
+  display: flex;
+`;
+
+const Card = styled.div`
+  background-color: #232323;
+  width: 200px;
+  height: 300px;
+  border: 3px solid #ec741e;
+  border-radius: 8px;
+  margin-right: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  justify-content: space-between;
+`;
+
+const Author = styled.div`
+  color: green;
+  font-size: 14px;
+`;
+const Title = styled.div`
+  color: #de1c12;
+  font-weight: 600;
+`;
+const Description = styled.div`
+  color: #555;
+  font-weight: 600;
+`;
+const Img = styled.img`
+  background-color: orange;
+  border: 3px solid #5e0606;
+  border-radius: 6px;
+`;
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 500px;
+`;
+
 const Profile = () => {
   const { login } = useContext(AppContext);
+  const { data: booksData } = useProfileLogic();
+  console.log("booksData.data:", booksData.data);
+  const storedUserData = JSON.parse(localStorage.getItem("userToLogin"));
+  if (storedUserData) {
+    console.log("storedUserData.email:", storedUserData.email);
+  }
+  const text1 = `Witaj User! Jesteś aktualnie zalogowany jako ${storedUserData?.name} ${storedUserData?.secondName}, a Twój email to: ${storedUserData?.email}`;
+
   return (
     <Container>
       <Content>
         <Heading>
           <Title1>{login ? text1 : "Zostałeś wylogowany"}</Title1>
         </Heading>
+        {login && (
+          <Body>
+            <Title1>Lista e-booków w Twojej biblioteczce!</Title1>
+            <BooksBox>
+              {booksData?.data &&
+                booksData.data.map((book, _) => (
+                  <Card key={book.id}>
+                    <Author>{book.author}</Author>
+                    <Title>{book.title}</Title>
+                    <Img src={book.image} ale={book.title} />
+                    <Description>{book.description}</Description>
+                  </Card>
+                ))}
+            </BooksBox>
+          </Body>
+        )}
       </Content>
     </Container>
   );

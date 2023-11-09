@@ -94,6 +94,13 @@
       "email": "2222@222.pl",
       "password": "222222",
       "id": 8
+    },
+    {
+      "name": "Stefan",
+      "secondName": "Zaręba",
+      "email": "zreba@zareba.pl",
+      "password": "zzzzzz",
+      "id": 9
     }
   ],
   "books": [

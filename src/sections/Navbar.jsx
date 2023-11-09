@@ -208,16 +208,8 @@ function Navbar() {
     console.log("storedUserData.name:", storedUserData.name);
   }
 
-  const {
-    isDarkTheme,
-    toggleTheme,
-    login,
-    toggleLogin,
-    falseLogin,
-    userDataContext,
-    handleLogout,
-    updateUserDataContext,
-  } = useContext(AppContext);
+  const { isDarkTheme, toggleTheme, login, falseLogin } =
+    useContext(AppContext);
 
   return (
     <NavbarContainer>
