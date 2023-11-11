@@ -2,13 +2,13 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 
-import useSendData from '../../../hooks/useSendData';
+import useRegisterUser from '../../../hooks/useRegisterUser';
 
 import { InputField } from './InputField';
-import { Button } from '../../Button';
 import { Textarea } from './Textarea';
+import { Button } from '../../Button';
 
-const Container = styled.div`
+export const Container = styled.div`
   min-width: 350px;
   width: 40%;
   display: flex;
@@ -20,18 +20,18 @@ const Container = styled.div`
   }
 `;
 
-const Row = styled.div`
+export const Row = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
 `;
 
-const Span = styled.span`
+export const Span = styled.span`
   color: #f00;
   font-size: 14px;
 `;
 
-const StyledTextarea = styled.textarea`
+export const StyledTextarea = styled.textarea`
   padding: 14px 16px;
   border: 1px solid #4b5563;
   border-radius: 8px;
@@ -42,7 +42,7 @@ const StyledTextarea = styled.textarea`
   height: 190px;
 `;
 
-const SendMessageButton = styled(Button)`
+export const FormButton = styled(Button)`
   background-color: #1c64f2;
   padding: 10px 20px;
   border-radius: 8px;
@@ -59,7 +59,11 @@ export const ContactFormFormik = () => {
     description: Yup.string().required('Pole "Your message" jest wymagane.'),
   });
 
-  const handleSubmit = useSendData();
+  const handleSubmit = useRegisterUser(
+    'contact',
+    'Wiadomosc zostala wyslana.',
+    'Wystapil blad. Nie udalo sie wyslac wiadomosci.',
+  );
 
   return (
     <Formik
@@ -102,7 +106,7 @@ export const ContactFormFormik = () => {
               />
               <ErrorMessage name="description" component={Span} />
             </Textarea>
-            <SendMessageButton type="submit">Send message</SendMessageButton>
+            <FormButton type="submit">Send message</FormButton>
           </Row>
         </Form>
       </Container>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from 'styled-components';
 
 import { Heading as HeadingContainer } from '../../Heading';
@@ -21,14 +22,11 @@ const StyledP = styled.p`
   }
 `;
 
-export const Heading = () => {
+export const Heading = ({ h2, p }) => {
   return (
     <HeadingContainer>
-      <StyledH2>Contact us</StyledH2>
-      <StyledP>
-        Got a technical issue? Want to send feedback about a beta feature? Need
-        details about our Business plan? Let us know.
-      </StyledP>
+      <StyledH2>{h2}</StyledH2>
+      <StyledP>{p}</StyledP>
     </HeadingContainer>
   );
 };

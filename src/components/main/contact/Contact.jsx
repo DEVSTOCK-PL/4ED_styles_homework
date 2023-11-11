@@ -1,31 +1,15 @@
-/* eslint-disable react/prop-types */
-import styled from 'styled-components';
-
+import { ContactContainer } from './ContactContainer';
 import { Heading } from './Heading';
 import { ContactFormFormik } from './ContactFormFormik';
 
-const ContactContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 96px 40px;
-  background-color: #111928;
-  border: solid #374151;
-  border-width: 1px 0;
-  gap: 64px;
-
-  @media (max-width: 768px) {
-    padding: 96px 20px;
-  }
-  @media (max-width: 640px) {
-    padding: 32px 10px;
-  }
-`;
-
 export const Contact = () => {
   return (
-    <ContactContainer className="contactContainer">
-      <Heading />
+    <ContactContainer>
+      <Heading
+        h2="Contact us"
+        p="Got a technical issue? Want to send feedback about a beta feature? Need
+        details about our Business plan? Let us know."
+      />
       <ContactFormFormik />
     </ContactContainer>
   );

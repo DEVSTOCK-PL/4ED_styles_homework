@@ -3,6 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { SnackbarProvider } from 'notistack';
 
 import { ThemeContext, useThemeContext } from './hooks/useThemeContext';
+import {
+  LoginUserContext,
+  useLoginUserContext,
+} from './hooks/useLoginUserContext';
 
 import { Router } from './routes/Router';
 
@@ -11,19 +15,20 @@ import './App.css';
 
 function App() {
   const { isDarkMode, setIsDarkMode } = useThemeContext();
-  // console.log(isDarkMode);
+  const { user, setUser } = useLoginUserContext();
   const queryClient = new QueryClient();
-
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
-          <SnackbarProvider>
-            <BrowserRouter>
-              <GlobalStyles isDarkMode={isDarkMode} />
-              <Router />
-            </BrowserRouter>
-          </SnackbarProvider>
+          <LoginUserContext.Provider value={{ user, setUser }}>
+            <SnackbarProvider maxSnack={3}>
+              <BrowserRouter>
+                <GlobalStyles isDarkMode={isDarkMode} />
+                <Router />
+              </BrowserRouter>
+            </SnackbarProvider>
+          </LoginUserContext.Provider>
         </ThemeContext.Provider>
       </QueryClientProvider>
     </>

@@ -17,6 +17,7 @@ const data = [
   { id: crypto.randomUUID(), to: '/events', text: 'EVENTS' },
   { id: crypto.randomUUID(), to: '/contact', text: 'CONTACT' },
   { id: crypto.randomUUID(), to: '/list', text: 'RICKANDMORTY' },
+  { id: crypto.randomUUID(), to: '/profile', text: 'PROFILE' },
 ];
 
 const NavContainer = styled(Container)`
@@ -27,11 +28,9 @@ const NavContainer = styled(Container)`
   }
 
   .link {
-    /* color: #fff; */
     text-decoration: none;
 
     &:active {
-      /* color: #000; */
     }
   }
 
@@ -92,8 +91,6 @@ const StyledImg = styled.img`
 
 export const Nav = () => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
-  console.log(isDarkMode);
-
   return (
     <>
       <NavContainer as="nav" className="desktopNav">
@@ -108,7 +105,11 @@ export const Nav = () => {
         </UlContainer>
       </NavContainer>
       <NavContainer className="mobileNav">
-        <ToggleButton onClick={() => setIsDarkMode((prev) => !prev)}>
+        <ToggleButton
+          onClick={() => {
+            setIsDarkMode((prev) => !prev);
+          }}
+        >
           {isDarkMode ? <LightModeIcon /> : <DarkModeIcon fill="#000" />}
         </ToggleButton>
         <StyledImg src={vector} alt="logo_menu" />

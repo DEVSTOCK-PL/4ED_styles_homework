@@ -1,6 +1,6 @@
-import { CustomerLogos } from '../components/main/customerLogos/CustomerLogos';
-import { Contact } from '../components/main/contact/Contact';
 import { Layout } from '../components/Layout';
+import { Contact } from '../components/main/contact/Contact';
+import { CustomerLogos } from '../components/main/customerLogos/CustomerLogos';
 
 function Contacts() {
   return (

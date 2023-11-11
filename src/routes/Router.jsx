@@ -6,6 +6,9 @@ import Events from './Events';
 import Contacts from './Contact';
 import PageNotFound from './PageNotFound';
 import RickAndMorty from './RickAndMorty';
+import Register from './Register';
+import Login from './Login';
+import Profile from './Profile';
 
 export const Router = () => {
   return (
@@ -16,6 +19,9 @@ export const Router = () => {
       <Route path="/contact" element={<Contacts />} />
       <Route path="/list" element={<RickAndMorty />} />
       <Route path="/list/:id" element={<RickAndMorty />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

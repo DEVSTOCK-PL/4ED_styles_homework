@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { ThemeContext } from '../../hooks/useThemeContext';
 
@@ -42,14 +43,26 @@ const GetStartedButton = styled(Button)`
 export const Login = () => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
   // console.log(isDarkMode);
+  const navigate = useNavigate();
+
+  const handleClickLoginButton = () => {
+    navigate('/login');
+  };
+  const handleClickGetStartedButton = () => {
+    navigate('/register');
+  };
 
   return (
     <LoginContainer className="desktopButtons">
       <ToggleButton onClick={() => setIsDarkMode((prev) => !prev)}>
         {isDarkMode ? <LightModeIcon /> : <DarkModeIcon fill="#000" />}
       </ToggleButton>
-      <LoginButton className="loginButton">Log in</LoginButton>
-      <GetStartedButton>Get started</GetStartedButton>
+      <LoginButton className="loginButton" onClick={handleClickLoginButton}>
+        Log in
+      </LoginButton>
+      <GetStartedButton onClick={handleClickGetStartedButton}>
+        Get started
+      </GetStartedButton>
     </LoginContainer>
   );
 };
