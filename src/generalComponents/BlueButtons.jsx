@@ -23,7 +23,7 @@ onClick: ${(props) =>props.onClick};
 // margin-left:${(props)=>props.marginLeft||"8px"},
 // `
 
-const BlueButton = ({description,backgroundColor,width,height,border,borderRadius,padding,gap,color,fontSize,fontWeight,lineHeight,fontFamily,justifyContent,onClick,alignItems}) => {
+const BlueButton = ({description,backgroundColor,width,height,border,borderRadius,padding,gap,color,fontSize,fontWeight,lineHeight,fontFamily,justifyContent,alignItems}) => {
     return (
         <StyledBlueButtons 
             backgroundColor={backgroundColor}
@@ -40,7 +40,8 @@ const BlueButton = ({description,backgroundColor,width,height,border,borderRadiu
             fontFamily={fontFamily}
             justifyContent={justifyContent}
             alignItems={alignItems}
-            onClick={onClick}>
+            // onClick={onClick}
+        >
             {description}   
             
                 {/* <IconRight marginLeft={marginLeft} src={iconRight}/> */}

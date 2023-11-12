@@ -10,6 +10,7 @@ import FeaturesLink from "../subpages/FeaturesLink";
 import TeamLink from "../subpages/TeamLink";
 import ContactLink from "../subpages/ContactLink";
 import NotFoud from "../subpages/NotFound";
+// import ButtonDonate from "./DonateLeft/ButtonDonate";
 
 const NavbarComponents = styled.div`
 width: 100%;
@@ -116,7 +117,7 @@ const Navbar = () => {
                         <CompanyName>Flowbite</CompanyName>
                     </Link>
                 </PlaceCompanyLogo>
-                <NavLinks>
+                    <NavLinks>
                     <Link to="/company"><LinkName width="73px">Company</LinkName></Link>
                     <Link to="/marketplace"><LinkName width="95px">Marketplace</LinkName></Link>
                     <Link to="/features"><LinkName width="67px">Features</LinkName></Link>
