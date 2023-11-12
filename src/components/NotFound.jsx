@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Button from "./styleElements/Button";
 
+import { Link } from "react-router-dom";
+
+import {Button} from "./styleElements";
 
 const Container = styled.div`
   display: flex;

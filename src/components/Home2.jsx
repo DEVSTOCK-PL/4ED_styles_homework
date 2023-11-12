@@ -1,18 +1,36 @@
+// import videoCamera from "../images/videoCamera.png";
+// import intel from "../images/intel.png";
+// import fedex from "../images/fedex.png";
+// import visa from "../images/visa.png";
+// import disnay from "../images/disnay.png";
+// import carousel from "../images/carousel.png";
+// import littleArow from "../images/littleArow.png";
+
+// import PictureCard from "./PictureCard";
+// import BreakPoints from "./BreakPoints";
+// import { Form } from "react-router-dom";
+
 import styled from "styled-components";
 
-import {Button, CenteredLink, Container, Heading, SupportingText} from "./styleElements"
+import {
+  Button,
+  CenteredLink,
+  Container,
+  Heading,
+  SupportingText,
+} from "./styleElements";
 
-import PictureCard from "./PictureCard";
-import videoCamera from "../images/videoCamera.png";
-import intel from "../images/intel.png";
-import fedex from "../images/fedex.png";
-import visa from "../images/visa.png";
-import disnay from "../images/disnay.png";
-import carousel from "../images/carousel.png";
-import littleArow from "../images/littleArow.png";
+import {
+  videoCamera,
+  intel,
+  fedex,
+  visa,
+  disnay,
+  carousel,
+  littleArow,
+} from "../images";
 
-import BreakPoints from "./BreakPoints";
-// import { Form } from "react-router-dom";
+import { PictureCard, BreakPoints } from "../components";
 
 const Hero = styled.div`
   display: flex;

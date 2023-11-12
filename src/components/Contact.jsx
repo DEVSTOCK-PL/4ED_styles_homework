@@ -1,6 +1,10 @@
+// import BreakPoints from "./BreakPoints";
+// import SponsorsCards from "./SponsorCard";
+
 import styled from "styled-components";
 
 import { Button, Container, Heading, SupportingText } from "./styleElements";
+
 import {
   bmw,
   cocacola,
@@ -16,12 +20,10 @@ import {
   twitch,
 } from "../images";
 
-import BreakPoints from "./BreakPoints";
-
-import SponsorsCards from "./SponsorCard";
+import { BreakPoints,SponsorCard } from "../components";
 
 const NewContainer = styled(Container)`
-max-width: 1440px;
+  max-width: 1440px;
   padding-bottom: 0px;
   padding: 0px 0px;
   @media (max-width: ${BreakPoints.tablet}) {
@@ -100,6 +102,7 @@ const LargeMessageInput = styled.textarea`
 
 const SponsorsCardsContainer = styled.div`
   background-color: #1f2a37;
+  border-bottom: 2px solid #374151;
 
   > div:first-child {
     padding-top: 60px;
@@ -110,6 +113,7 @@ const SponsorsCardsContainer = styled.div`
 const SponsorsCardsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 `;
 
 function Events() {
@@ -155,24 +159,24 @@ function Events() {
 
         <SponsorsCardsWrapper>
           <div>
-            <SponsorsCards img={stripe} />
-            <SponsorsCards img={intel} />
-            <SponsorsCards img={fedex} />
+            <SponsorCard img={stripe} />
+            <SponsorCard img={intel} />
+            <SponsorCard img={fedex} />
           </div>
           <div>
-            <SponsorsCards img={spotify} />
-            <SponsorsCards img={shell} />
-            <SponsorsCards img={disnay} />
+            <SponsorCard img={spotify} />
+            <SponsorCard img={shell} />
+            <SponsorCard img={disnay} />
           </div>
           <div>
-            <SponsorsCards img={tesla} />
-            <SponsorsCards img={netflix} />
-            <SponsorsCards img={bmw} />
+            <SponsorCard img={tesla} />
+            <SponsorCard img={netflix} />
+            <SponsorCard img={bmw} />
           </div>
           <div>
-            <SponsorsCards img={twitch} />
-            <SponsorsCards img={nestle} />
-            <SponsorsCards img={cocacola} />
+            <SponsorCard img={twitch} />
+            <SponsorCard img={nestle} />
+            <SponsorCard img={cocacola} />
           </div>
         </SponsorsCardsWrapper>
       </SponsorsCardsContainer>

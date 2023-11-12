@@ -2,11 +2,16 @@
 import styled from "styled-components";
 import PictureCard from "./PictureCard";
 
-import {CenteredLink, Container, Heading, SupportingText} from "./styleElements"
+import {
+  CenteredLink,
+  Container,
+  Heading,
+  SupportingText,
+} from "./styleElements";
 
-import littleArow from "../images/littleArow.png";
-import carousel from "../images/carousel.png";
-import BreakPoints from "./BreakPoints";
+import { littleArow, carousel } from "../images";
+
+import { BreakPoints } from "../components";
 
 const EventsContainer = styled(Container)`
   padding-bottom: 0px;
@@ -57,7 +62,6 @@ const ColumnLink = styled(CenteredLink)`
   margin-top: 0px;
   margin-bottom: 30px;
 `;
-
 
 function Events() {
   return (

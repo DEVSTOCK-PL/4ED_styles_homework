@@ -10,7 +10,7 @@ import fedex from "../images/fedex.png";
 import intel from "../images/intel.svg";
 import github from "../images/github.png";
 import littleArow from "../images/littleArow.png";
-import littleWhitleArow from "../images/littleWhiteArow.svg";
+import littleWhiteArow from "../images/littleWhiteArow.svg";
 import logo from "../images/logo.png";
 import mockup1News from "../images/mockup1News.png";
 import mockup2News from "../images/mockup2News.png";
@@ -41,7 +41,7 @@ export {
   intel,
   github,
   littleArow,
-  littleWhitleArow,
+  littleWhiteArow,
   logo,
   mockup1News,
   mockup2News,

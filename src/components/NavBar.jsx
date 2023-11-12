@@ -1,16 +1,19 @@
-import {BrowserRouter, Routes, Route,Link} from "react-router-dom"
+// import Home2 from "./Home2";
+// import News from "./News";
+// import Events from "./Events";
+// import Contact from "./Contact";
+// import NotFound from "./NotFound";
+// import Container from "./styleElements/Container";
+// import Button from "./styleElements/Button";
 
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import styled from "styled-components";
-import Home2 from "./Home2";
-// import CostomersLogos from "./CustomerLogos";
-import News from "./News";
-import Events from "./Events";
-import Contact from "./Contact";
-import NotFound from "./NotFound";
-import Container from "./styleElements/Container";
-import Button from "./styleElements/Button";
+import {BrowserRouter, Routes, Route,Link} from "react-router-dom"
+import {Home2, News, Events, Contact, NotFound} from "../components"
+import {Container, Button} from "./styleElements"
+
+
 import WebLogo from "./WebLogo";
 import BreakPoints from "./BreakPoints";
 
@@ -18,6 +21,7 @@ const NavContainer = styled(Container)`
   display: flex;
   align-items: center;
   max-width: none;
+  /* width: 100%; */
   @media (max-width: ${BreakPoints.tablet}) {
     display: none;
   }
@@ -58,7 +62,7 @@ function Navbar() {
       <WebLogo />
       <Nav>
         <NavButtons>
-          <Link to="/Home2">HOME2</Link>
+          <Link to="/Home2">HOME</Link>
         </NavButtons>
         <NavButtons>
         <Link to="/News">NEWS</Link>

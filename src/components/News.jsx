@@ -1,12 +1,22 @@
+// import littleWhiteArow from "../images/littleWhiteArow.svg";
+// import mockup1News from "../images/mockup1News.png";
+// import mockup2News from "../images/mockup2News.png";
+// import mockup3News from "../images/mockup3News.png";
+
+// import BreakPoints from "./BreakPoints";
+
 import styled from "styled-components";
 
-import {Button, Container, Heading, SupportingText} from "./styleElements"
+import { Button, Container, Heading, SupportingText } from "./styleElements";
 
-import littleWhiteArow from "../images/littleWhiteArow.svg";
-import mockup1News from "../images/mockup1News.png";
-import mockup2News from "../images/mockup2News.png";
-import mockup3News from "../images/mockup3News.png";
-import BreakPoints from "./BreakPoints";
+import {
+  littleWhiteArow,
+  mockup1News,
+  mockup2News,
+  mockup3News,
+} from "../images";
+
+import { BreakPoints } from "../components";
 
 const Row = styled.div`
   display: flex;

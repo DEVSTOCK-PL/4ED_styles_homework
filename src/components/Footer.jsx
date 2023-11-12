@@ -1,14 +1,22 @@
+// import Container from "./styleElements/Container";
+// import logo from "../images/logo.png";
+// import socialLinks from "../images/socialLinks.png";
+
+// import BreakPoints from "./BreakPoints";
+
 import styled from "styled-components";
-import Container from "./styleElements/Container";
-import logo from "../images/logo.png";
-import socialLinks from "../images/socialLinks.png";
-import BreakPoints from "./BreakPoints";
+
+import { Container } from "./styleElements";
+
+import { logo, socialLinks } from "../images";
+
+import { BreakPoints } from "../components";
 
 const FooterContainer = styled(Container)`
-  background-color:#1f2a37;
+  background-color: #1f2a37;
   padding: 60px 0px;
   max-width: none;
-`
+`;
 
 const ColumnsWrapper = styled.div`
   display: flex;
