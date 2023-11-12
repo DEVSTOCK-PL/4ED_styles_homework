@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 
 import { ThemeContext } from '../../hooks/useThemeContext';
+import { LoginUserContext } from '../../hooks/useLoginUserContext';
 
 import { Container } from '../Container';
 import { Button } from '../Button';
@@ -17,7 +18,7 @@ const data = [
   { id: crypto.randomUUID(), to: '/events', text: 'EVENTS' },
   { id: crypto.randomUUID(), to: '/contact', text: 'CONTACT' },
   { id: crypto.randomUUID(), to: '/list', text: 'RICKANDMORTY' },
-  { id: crypto.randomUUID(), to: '/profile', text: 'PROFILE' },
+  // { id: crypto.randomUUID(), to: '/profile', text: 'PROFILE' },
 ];
 
 const NavContainer = styled(Container)`
@@ -91,6 +92,8 @@ const StyledImg = styled.img`
 
 export const Nav = () => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+  const { user } = useContext(LoginUserContext);
+
   return (
     <>
       <NavContainer as="nav" className="desktopNav">
@@ -102,6 +105,13 @@ export const Nav = () => {
               </NavLink>
             </Container>
           ))}
+          {user.isLogin && (
+            <Container as="li">
+              <NavLink className="link" to="/profile">
+                PROFILE
+              </NavLink>
+            </Container>
+          )}
         </UlContainer>
       </NavContainer>
       <NavContainer className="mobileNav">

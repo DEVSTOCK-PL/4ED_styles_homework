@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ThemeContext } from '../../hooks/useThemeContext';
+import { LoginUserContext } from '../../hooks/useLoginUserContext';
 
 import { Container } from '../Container';
 import { Button } from '../Button';
@@ -42,7 +43,8 @@ const GetStartedButton = styled(Button)`
 
 export const Login = () => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
-  // console.log(isDarkMode);
+  const { user, setUser } = useContext(LoginUserContext);
+
   const navigate = useNavigate();
 
   const handleClickLoginButton = () => {
@@ -57,12 +59,23 @@ export const Login = () => {
       <ToggleButton onClick={() => setIsDarkMode((prev) => !prev)}>
         {isDarkMode ? <LightModeIcon /> : <DarkModeIcon fill="#000" />}
       </ToggleButton>
-      <LoginButton className="loginButton" onClick={handleClickLoginButton}>
-        Log in
-      </LoginButton>
-      <GetStartedButton onClick={handleClickGetStartedButton}>
-        Get started
-      </GetStartedButton>
+      {user.isLogin ? (
+        <>
+          Jesteś zalogowany jako {user.name}
+          <GetStartedButton onClick={() => setUser({})}>
+            Wyloguj
+          </GetStartedButton>
+        </>
+      ) : (
+        <>
+          <LoginButton className="loginButton" onClick={handleClickLoginButton}>
+            Log in
+          </LoginButton>
+          <GetStartedButton onClick={handleClickGetStartedButton}>
+            Get started
+          </GetStartedButton>
+        </>
+      )}
     </LoginContainer>
   );
 };

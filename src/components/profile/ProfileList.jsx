@@ -20,6 +20,14 @@ const Div = styled(Wrapper)`
   text-align: center;
 `;
 
+const H2 = styled.h2`
+  margin: 10px 0;
+`;
+
+const H3 = styled.h3`
+  margin-top: 10px;
+`;
+
 const fetchData = async (path) => {
   const response = await axios.get(path);
   return response;
@@ -42,9 +50,9 @@ export function ProfileList() {
           data.data?.map(({ id, title, description, author, image }) => (
             <Div key={id}>
               <img src={image} alt="image" />
-              <h2>{title}</h2>
+              <H2>{title}</H2>
               <p>{description}</p>
-              <h3>{author}</h3>
+              <H3>{author}</H3>
             </Div>
           ))
         ) : error ? (
