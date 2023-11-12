@@ -26,28 +26,14 @@ const CustomTextField = styled(TextField)`
     flex-direction: column;
     padding: 13px 20px;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     align-self: stretch;
     border-radius: 8px;
-    width: 100%;
   }
 `
 const CustomTextFieldWrapper = styled.div`
   position: relative;
-
-  & .MuiFilledInput-root {
-    border: 1px solid var(--gray-600, #4b5563);
-    font-size: 16px;
-    line-height: 150%;
-    display: flex;
-    flex-direction: column;
-    padding: 13px 20px;
-    align-items: center;
-    gap: 10px;
-    align-self: stretch;
-    border-radius: 8px;
-    z-index: 1;
-  }
 
   .eye-icon {
     position: relative;

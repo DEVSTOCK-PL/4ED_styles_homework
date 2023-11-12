@@ -37,8 +37,8 @@ export default function App() {
   }
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>
         <Router>
           <UserProvider>
             <GlobalStyle />
@@ -139,7 +139,7 @@ export default function App() {
             </Routes>
           </UserProvider>
         </Router>
-      </ThemeProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   )
 }

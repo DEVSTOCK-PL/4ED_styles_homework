@@ -27,15 +27,12 @@ const CustomTextField = styled(TextField)`
     line-height: 150%;
     display: flex;
     flex-direction: column;
-    padding: 13px 20px;
+    padding: 38px 20px;
     align-items: center;
     gap: 10px;
     align-self: stretch;
     border-radius: 8px;
   }
-  /* & .MuiInputLabel-filled {
-    color: #9ca3af;
-  } */
 `
 const CustomMessageField = styled(TextField)`
   & .MuiFilledInput-root {
@@ -54,9 +51,6 @@ const CustomMessageField = styled(TextField)`
   & .MuiFilledInput-inputMultiline {
     height: 100%;
   }
-  /* & .MuiInputLabel-filled {
-    color: #9ca3af;
-  } */
 `
 
 export default function TextFields() {

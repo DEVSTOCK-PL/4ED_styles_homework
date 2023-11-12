@@ -105,9 +105,12 @@ h2 {
 }
 .contactForm {
     background-color: ${(props) => props.theme.contactFormBg};
-    color: ${(props) => props.theme.contactFormText}
 }
 .contactForm > label {
+    color: ${(props) => props.theme.contactFormText}
+
+}
+#emailInput, #passwordInput, #nameInput, #secondNameInput, #subjectInput, #messageInput{
     color: ${(props) => props.theme.contactFormText}
 
 }
