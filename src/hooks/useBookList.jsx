@@ -12,7 +12,6 @@ function useBookList() {
       const response = await axios.get('http://localhost:3000/books')
       setBooks(response.data)
       setIsLoading(false)
-      console.log(books)
       if (!books) {
         console.error('Error fetching books:', error)
         setIsError(true)

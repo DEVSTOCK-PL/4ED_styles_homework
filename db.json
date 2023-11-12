@@ -11,6 +11,12 @@
       "subject": "Test Snackbar",
       "message": "Message snackbar",
       "id": 2
+    },
+    {
+      "email": "email@email.com",
+      "subject": "Subject",
+      "message": "Message Message",
+      "id": 3
     }
   ],
   "users": [
@@ -55,6 +61,13 @@
       "secondName": "Name",
       "password": "Password",
       "id": 6
+    },
+    {
+      "email": "ef@gh.ok",
+      "name": "ab",
+      "secondName": "cd",
+      "password": "password",
+      "id": 7
     }
   ],
   "books": [
@@ -93,5 +106,33 @@
       "author": "Marek Dąb",
       "image": "https://via.placeholder.com/150?text=Book+5"
     }
-  ]
+  ],
+  "api": {
+    "authenticate": {
+      "POST": {
+        "request": {
+          "body": {
+            "rememberMeToken": "string"
+          }
+        },
+        "response": {
+          "200": {
+            "body": {
+              "user": {
+                "id": "number",
+                "email": "string",
+                "password": "string",
+                "name": "string"
+              }
+            }
+          },
+          "401": {
+            "body": {
+              "error": "string"
+            }
+          }
+        }
+      }
+    }
+  }
 }

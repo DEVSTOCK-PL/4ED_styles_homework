@@ -142,7 +142,6 @@ const RegistrationForm = () => {
   const [isPasswordVisible, setPasswordVisibility] = useState(false)
 
   const togglePasswordVisibility = () => {
-    console.log('Toggling password visibility')
     setPasswordVisibility(!isPasswordVisible)
   }
 

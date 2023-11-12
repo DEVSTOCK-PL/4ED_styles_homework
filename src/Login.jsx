@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import Heading from './contact/Heading'
 import LoginForm from './login/LoginForm'
+import LoginForm2 from './login/LoginForm copy'
 
 const LoginWrapper = styled.div`
   display: flex;
@@ -31,7 +32,8 @@ const Login = () => {
     <LoginWrapper>
       <FormWrapper>
         <Heading>Login below:</Heading>
-        <LoginForm />
+        {/* <LoginForm /> */}
+        <LoginForm2 />
       </FormWrapper>
     </LoginWrapper>
   )
