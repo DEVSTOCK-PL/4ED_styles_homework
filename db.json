@@ -1,0 +1,138 @@
+{
+  "contact": [
+    {
+      "email": "test@email.ok",
+      "subject": "Test",
+      "message": "Test message",
+      "id": 1
+    },
+    {
+      "email": "email@address.com",
+      "subject": "Test Snackbar",
+      "message": "Message snackbar",
+      "id": 2
+    },
+    {
+      "email": "email@email.com",
+      "subject": "Subject",
+      "message": "Message Message",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "lidiabylicka@gmail.com",
+      "name": "Lidia",
+      "secondName": "Bylicka",
+      "password": "12341234",
+      "id": 1
+    },
+    {
+      "email": "lidiabylicka1@gmail.com",
+      "name": "Lidia",
+      "secondName": "Bylicka",
+      "password": "Password",
+      "id": 2
+    },
+    {
+      "email": "jdoe@joe.doe",
+      "name": "John",
+      "secondName": "Doe",
+      "password": "Password123",
+      "id": 3
+    },
+    {
+      "email": "jan@kowalski.eu",
+      "name": "Jan",
+      "secondName": "Kowalski",
+      "password": "jankowalski",
+      "id": 4
+    },
+    {
+      "email": "c@d.eu",
+      "name": "A",
+      "secondName": "B",
+      "password": "12345678",
+      "id": 5
+    },
+    {
+      "email": "email@test.email",
+      "name": "Test",
+      "secondName": "Name",
+      "password": "Password",
+      "id": 6
+    },
+    {
+      "email": "ef@gh.ok",
+      "name": "ab",
+      "secondName": "cd",
+      "password": "password",
+      "id": 7
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Tajemnice przeszłości",
+      "description": "Podróż w głąb historii starożytnej cywilizacji, pełna zagadek i nieodkrytych tajemnic.",
+      "author": "Jan Kowalski",
+      "image": "https://via.placeholder.com/150?text=Book+1"
+    },
+    {
+      "id": 2,
+      "title": "Podróże po nieznanych lądach",
+      "description": "Odkryj nieznane zakątki świata wraz z Anną, która przemierza dżungle, pustynie i oceany.",
+      "author": "Anna Nowak",
+      "image": "https://via.placeholder.com/150?text=Book+2"
+    },
+    {
+      "id": 3,
+      "title": "Nauka i technologia przyszłości",
+      "description": "Spojrzenie na przyszłość nauki i technologii. Jak wyglądać będzie świat za 50 lat?",
+      "author": "Piotr Zięba",
+      "image": "https://via.placeholder.com/150?text=Book+3"
+    },
+    {
+      "id": 4,
+      "title": "Magia w codziennym życiu",
+      "description": "Czy magia istnieje naprawdę? Poznaj fascynujący świat Magdy i jej niezwykłych zdolności.",
+      "author": "Magda Lis",
+      "image": "https://via.placeholder.com/150?text=Book+4"
+    },
+    {
+      "id": 5,
+      "title": "Tajniki kosmosu",
+      "description": "Podróż w głąb wszechświata. Poznaj tajniki czarnych dziur, galaktyk i gwiazd.",
+      "author": "Marek Dąb",
+      "image": "https://via.placeholder.com/150?text=Book+5"
+    }
+  ],
+  "api": {
+    "authenticate": {
+      "POST": {
+        "request": {
+          "body": {
+            "rememberMeToken": "string"
+          }
+        },
+        "response": {
+          "200": {
+            "body": {
+              "user": {
+                "id": "number",
+                "email": "string",
+                "password": "string",
+                "name": "string"
+              }
+            }
+          },
+          "401": {
+            "body": {
+              "error": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

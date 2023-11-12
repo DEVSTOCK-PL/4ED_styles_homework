@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  display: flex;
+  flex-direction: column;
+}
+
+body * {
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  scale: 0.9;
+}
+
+::selection {
+  background-color: #0b5733;
+  color: #eae0bf;
+}
+
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
