@@ -20,36 +20,19 @@ import ExternalLink from "./icons/ExternalLink.jsx";
 import Share from "./icons/Share.jsx";
 import Logo from "./icons/Logo.jsx";
 import VideoCamera from "./icons/VideoCamera.jsx";
+import MoonIcon from "./icons/MoonIcon.jsx";
+import SunIcon from "./icons/SunIcon.jsx";
+import Settings from "./icons/Settings.jsx";
+import EditUserIcon from "./icons/EditUserIcon.jsx";
+import DeleteUserIcon from "./icons/DeleteUserIcon.jsx";
+import XMarkIcon from "./icons/XMarkIcon.jsx";
+import WarningIcon from "./icons/WarningIcon.jsx";
 
+const brandLogos = [Stripe, Spotify, Tesla, Twitch, Intel, Shell, Netflix, Nestle, Fedex, Disney, BmwIcon, CocaCola];
 
+const socialIcons = [Github, Twitter, Dribbble, Facebook];
 
-const brandLogos = [
-  Stripe,
-  Spotify,
-  Tesla,
-  Twitch,
-  Intel,
-  Shell,
-  Netflix,
-  Nestle,
-  Fedex,
-  Disney,
-  BmwIcon,
-  CocaCola,
-]
-
-const socialIcons = [
-  Github,
-  Twitter,
-  Dribbble,
-  Facebook,
-]
-
-const UIIcons = [
-  ArrowNarrowRight,
-  ExternalLink,
-  Share,
-]
+const UIIcons = [ArrowNarrowRight, ExternalLink, Share];
 
 export {
   brandLogos,
@@ -68,16 +51,20 @@ export {
   Shell,
   Spotify,
   Stripe,
-
   Dribbble,
   Facebook,
   Github,
   Twitter,
-
   ArrowNarrowRight,
   ExternalLink,
   Share,
-
   Logo,
-  VideoCamera
-}
+  VideoCamera,
+  MoonIcon,
+  SunIcon,
+  Settings,
+  EditUserIcon,
+  DeleteUserIcon,
+  XMarkIcon,
+  WarningIcon,
+};

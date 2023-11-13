@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {useLoaderData, useParams} from "react-router-dom";
-import {useEffect, useRef, useState} from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
-import {Pagination} from "../components/UI/index.js";
+import { Pagination } from "../components/UI/index.js";
 import FetchError from "../components/Errors/FetchError.jsx";
 
 const EventCardWrapper = styled.div`
@@ -45,8 +45,15 @@ const EventCardWrapper = styled.div`
     }
   }
 `;
+const RMWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: ${({ theme }) => theme.background_1};
+`;
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   max-width: 1280px;
   width: 100%;
   display: flex;
@@ -55,62 +62,67 @@ const Wrapper = styled.section`
   column-gap: 16px;
   flex-wrap: wrap;
   padding: 64px 0;
-`
+`;
 
 const RickAndMortyPage = () => {
+  const [max, setMax] = useState(null);
+  const ref = useRef(null);
+  const {
+    data: {
+      characters: { info, results },
+    },
+  } = useLoaderData();
+  const { page = 1 } = useParams();
 
-  const [max, setMax] = useState(null)
-  const ref = useRef(null)
-  const {data:{characters: {info, results}}} = useLoaderData()
-  const {page = 1} = useParams()
-
-  let elWidth = null
+  let elWidth = null;
 
   const setElWidth = () => {
     if (ref.current) {
-      elWidth = ref.current.getBoundingClientRect().width
+      elWidth = ref.current.getBoundingClientRect().width;
     }
-
-  }
+  };
   const updateMax = () => {
-    const newElWidth = ref.current.getBoundingClientRect().width
+    const newElWidth = ref.current.getBoundingClientRect().width;
     if (Math.abs(elWidth - newElWidth) >= 70) {
-      setMax(Math.floor((newElWidth - 150) / 70))
+      setMax(Math.floor((newElWidth - 150) / 70));
     }
-  }
+  };
 
   useEffect(() => {
-    setElWidth()
-    setMax(Math.floor((elWidth - 150) / 70))
-    window.addEventListener('resize', updateMax)
+    setElWidth();
+    setMax(Math.floor((elWidth - 150) / 70));
+    window.addEventListener("resize", updateMax);
 
     return () => {
-      window.removeEventListener('resize', updateMax)
-    }
-  }, [])
+      window.removeEventListener("resize", updateMax);
+    };
+  }, []);
 
-if(info.pages ){
-  return (
-    <>
-      <Pagination pages={info.pages} max={max} currentPage={Number(page)}/>
-      <Wrapper ref={ref} id='chracters'>
-        {results.map(item => {
-          return (
-            <EventCardWrapper key={item.id}>
-              <img src={item.image} alt={item.name}/>
-              <h1>{item.name}</h1>
-              <p>Status: <span>{item.status}</span></p>
-              <p>Species: <span>{item.species}</span></p>
-            </EventCardWrapper>
-          )
-        })}
-      </Wrapper>
-    </>
-  );
-}else{
-  return <FetchError/>
-}
-
+  if (info.pages) {
+    return (
+      <RMWrapper>
+        <Pagination pages={info.pages} max={max} currentPage={Number(page)} />
+        <Wrapper ref={ref} id="chracters">
+          {results.map((item) => {
+            return (
+              <EventCardWrapper key={item.id}>
+                <img src={item.image} alt={item.name} />
+                <h1>{item.name}</h1>
+                <p>
+                  Status: <span>{item.status}</span>
+                </p>
+                <p>
+                  Species: <span>{item.species}</span>
+                </p>
+              </EventCardWrapper>
+            );
+          })}
+        </Wrapper>
+      </RMWrapper>
+    );
+  } else {
+    return <FetchError />;
+  }
 };
 
 export default RickAndMortyPage;

@@ -2,8 +2,15 @@ import styled from "styled-components";
 
 const btnVariations = {
   primary: `color: #FFFFFF; border: none; background-color: #1A56DB;`,
-  alternative: `color: #9CA3AF; border: 1px solid #4B5563; background-color: #1F2A37;`,
-}
+  delete: {
+    dark: `color: #FFFFFF; border: none; background-color: #af2929;`,
+    light: `color: #FFFFFF; border: none; background-color: #af2929;`,
+  },
+  alternative: {
+    dark: `color: #9CA3AF; border: 1px solid #4B5563; background-color: #1F2A37;`,
+    light: `color: #1F2A37; border: 1px solid #E5E7EB; background-color: #fff;`,
+  },
+};
 
 const ButtonWrapper = styled.button`
   display: flex;
@@ -16,14 +23,14 @@ const ButtonWrapper = styled.button`
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-
-  ${({variant}) => btnVariations[variant] || btnVariations.primary}
+  font-weight: 500;
+  ${({ $variant, theme }) => btnVariations[$variant]?.[theme.btn_1] || btnVariations.primary}
 `;
+const ChildrenWrapper = styled.div``;
 
-
-const Button = ({children, variant, onClick}) => {
+const Button = ({ children, variant, onClick, type }) => {
   return (
-    <ButtonWrapper variant={variant} onClick={onClick}>
+    <ButtonWrapper type={type} $variant={variant} onClick={onClick}>
       {children}
     </ButtonWrapper>
   );

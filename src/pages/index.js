@@ -1,0 +1,9 @@
+export { default as Admin } from "./Admin";
+export { default as Profile } from "./Profile";
+export { default as Home } from "./Home";
+export { default as ContactPage } from "./ContactPage";
+export { default as EventsPage } from "./EventsPage";
+export { default as NewsPage } from "./NewsPage";
+export { default as RickAndMortyPage } from "./RickAndMortyPage";
+export { default as LogInPage } from "./LogInPage";
+export { default as RegisterPage } from "./RegisterPage";

@@ -1,10 +1,17 @@
 import styled from "styled-components";
-import {Button} from "../UI/index.js";
+import { Button } from "../UI/index.js";
 
 import picture1 from "../../../public/img/carousel1.jpeg";
-import {Intel, Fedex, Visa, Disney, VideoCamera} from "../../assets/index.js";
+import { Intel, Fedex, Visa, Disney, VideoCamera } from "../../assets/index.js";
 
 const HeroWrapper = styled.section`
+  background-color: ${({ theme }) => theme.background_1};
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const HeroContainer = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 1280px;
@@ -42,7 +49,7 @@ const BrandLogosContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 48px;
-  
+
   @media (max-width: 640px) {
     height: 32px;
   }
@@ -57,7 +64,7 @@ const Buttons = styled.div`
   }
 `;
 const Sponsors = styled.div`
-  border-top: 1px solid #374151;
+  border-top: 1px solid ${({ theme }) => theme.borderColor};
 
   p {
     color: #6b7280;
@@ -79,7 +86,7 @@ const TitleDesc = styled.div`
   gap: 20px;
 
   h1 {
-    color: #fff;
+    color: ${({ theme }) => theme.text};
     font-size: clamp(20px, 3vw, 48px);
     font-weight: 800;
 
@@ -118,36 +125,38 @@ const Carousel = styled.div`
 const Hero = () => {
   return (
     <HeroWrapper>
-      <LeftContainer>
-        <TitleDesc>
-          <h1>Making earth cooler for people, nature, climate</h1>
-          <p>
-            Protecting the planet and its natural resources for future generations, by reducing pollution, promoting
-            sustainability, and conserving energy and resources.
-          </p>
-        </TitleDesc>
-        <Buttons>
-          <Button>Donate now</Button>
-          <Button variant="alternative">
-            <VideoCamera/>
-            Learn more
-          </Button>
-        </Buttons>
+      <HeroContainer>
+        <LeftContainer>
+          <TitleDesc>
+            <h1>Making earth cooler for people, nature, climate</h1>
+            <p>
+              Protecting the planet and its natural resources for future generations, by reducing pollution, promoting
+              sustainability, and conserving energy and resources.
+            </p>
+          </TitleDesc>
+          <Buttons>
+            <Button>Donate now</Button>
+            <Button variant="alternative">
+              <VideoCamera />
+              Learn more
+            </Button>
+          </Buttons>
 
-        <Sponsors>
-          <p>Sponsors:</p>
-          <BrandLogosContainer>
-            <Intel/>
-            <Fedex/>
-            <Visa/>
-            <Disney/>
-          </BrandLogosContainer>
-        </Sponsors>
-      </LeftContainer>
+          <Sponsors>
+            <p>Sponsors:</p>
+            <BrandLogosContainer>
+              <Intel />
+              <Fedex />
+              <Visa />
+              <Disney />
+            </BrandLogosContainer>
+          </Sponsors>
+        </LeftContainer>
 
-      <Carousel>
-        <img src={picture1}/>
-      </Carousel>
+        <Carousel>
+          <img src={picture1} />
+        </Carousel>
+      </HeroContainer>
     </HeroWrapper>
   );
 };

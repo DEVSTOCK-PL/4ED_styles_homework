@@ -2,18 +2,19 @@ import styled from "styled-components";
 import GoalProgressBar from "./GoalProgressBar.jsx";
 import { Button } from "../UI/index.js";
 import useDonationLogic from "../../hooks/useDonationLogic.jsx";
-import {Share} from "../../assets/index.js";
+import { Share } from "../../assets/index.js";
 
-import ConfettiExplosion from 'react-confetti-explosion';
+import ConfettiExplosion from "react-confetti-explosion";
 
 const EventCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  flex:1;
+  flex: 1;
   max-width: 552px;
-  background-color: #1f2a37;
-  border: 1px solid #374151;
+  background-color: ${({ theme }) => theme.background_2};
+  // border: 1px solid #374151;
+  border: 1px solid ${({ theme }) => theme.borderColor};
   border-radius: 8px;
   padding: 32px;
   @media (max-width: 800px) {
@@ -24,7 +25,7 @@ const EventCardWrapper = styled.div`
     font-size: 18px;
     font-weight: 700;
     line-height: 125%;
-    color: #fff;
+    color: ${({ theme }) => theme.text};
   }
 
   p {
@@ -45,28 +46,39 @@ const ButtonsWrapper = styled.div`
   }
 `;
 const Image = styled.div`
-  background: url(${({ img }) => img}) lightgray no-repeat center center / cover;
+  background: url(${({ $img }) => $img}) lightgray no-repeat center center / cover;
   height: 288px;
   width: 100%;
   border-radius: 8px;
 `;
 
-
-
-const EventCard = ({ data: { title, text, img, goal: {target, raised}, donors } }) => {
-
-  const {isTargetReached, currentFunds, currentDonors, donate} = useDonationLogic({target,raised,donors})
+const EventCard = ({
+  data: {
+    title,
+    text,
+    img,
+    goal: { target, raised },
+    donors,
+  },
+}) => {
+  const { isTargetReached, currentFunds, currentDonors, donate } = useDonationLogic({ target, raised, donors });
 
   return (
     <EventCardWrapper>
-      {isTargetReached && <div className='absolute left-1/2'><ConfettiExplosion  particleCount={500} width='2000'  particleSize={20} duration={5000}/></div>}
-      <Image img={img} />
+      {isTargetReached && (
+        <div className="absolute left-1/2">
+          <ConfettiExplosion particleCount={500} width="2000" particleSize={20} duration={5000} />
+        </div>
+      )}
+      <Image $img={img} />
       <GoalProgressBar target={target} raised={currentFunds} donors={currentDonors} />
       <h1>{title}</h1>
       <p>{text}</p>
       <ButtonsWrapper>
-        {!isTargetReached &&  <Button  onClick={()=> donate()} >Donate now</Button>}
-        <Button  variant='alternative'><Share/> this Fundraiser</Button>
+        {!isTargetReached && <Button onClick={() => donate()}>Donate now</Button>}
+        <Button variant="alternative">
+          <Share /> this Fundraiser
+        </Button>
       </ButtonsWrapper>
     </EventCardWrapper>
   );

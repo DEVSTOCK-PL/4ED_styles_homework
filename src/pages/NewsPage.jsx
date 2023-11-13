@@ -1,11 +1,7 @@
 import CTAPosts from "../components/CTAPosts/CTAPosts.jsx";
 
 const NewsPage = () => {
-  return (
-    <>
-      <CTAPosts/>
-    </>
-  );
+  return <CTAPosts />;
 };
 
 export default NewsPage;

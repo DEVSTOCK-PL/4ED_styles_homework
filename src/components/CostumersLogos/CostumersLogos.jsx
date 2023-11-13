@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {brandLogos, ArrowNarrowRight} from "../../assets/index.js";
+import { brandLogos, ArrowNarrowRight } from "../../assets/index.js";
 
 import Card from "./Card.jsx";
 
@@ -7,11 +7,10 @@ const CostumersLogosWrapper = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-
-  background-color: #1F2A37;
-  border-top: 1px solid #374151;
-  border-bottom: 1px solid #374151;
-`
+  background-color: ${({ theme }) => theme.background_2};
+  border-top: 1px solid ${({ theme }) => theme.borderColor};
+  border-bottom: 1px solid ${({ theme }) => theme.borderColor};
+`;
 
 const Container = styled.div`
   width: 1280px;
@@ -27,7 +26,7 @@ const Container = styled.div`
     gap: 32px;
     padding: 32px 16px;
   }
-`
+`;
 const HeadingWrapper = styled.div`
   width: 672px;
   display: flex;
@@ -43,7 +42,7 @@ const HeadingWrapper = styled.div`
     font-size: 32px;
     font-weight: 800;
     line-height: 125%;
-    color: #FFF;
+    color: ${({ theme }) => theme.text};
     text-align: center;
     @media (max-width: 640px) {
       font-size: 30px;
@@ -55,7 +54,7 @@ const HeadingWrapper = styled.div`
     font-size: 20px;
     font-weight: 300;
     line-height: 150%;
-    color: #9CA3AF;
+    color: #9ca3af;
     text-align: center;
 
     @media (max-width: 640px) {
@@ -67,12 +66,12 @@ const HeadingWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 6px;
-    color: #3F83F8;
+    color: #3f83f8;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
   }
-`
+`;
 const LogosContainer = styled.div`
   width: 100%;
 
@@ -84,21 +83,23 @@ const LogosContainer = styled.div`
   @media (max-width: 640px) {
     row-gap: 20px;
   }
-`
+`;
 
 const CostumersLogos = () => {
-
   return (
     <CostumersLogosWrapper>
       <Container>
         <HeadingWrapper>
           <h1>Donors, Partners & Sponsors</h1>
-          <p>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term
-            value.</p>
-          <span>Become a sponsor <ArrowNarrowRight fill='#3F83F8'/></span>
+          <p>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value.</p>
+          <span>
+            Become a sponsor <ArrowNarrowRight fill="#3F83F8" />
+          </span>
         </HeadingWrapper>
         <LogosContainer>
-          {brandLogos.map((Logo, index) => <Card key={index}  logo={Logo}/>)}
+          {brandLogos.map((Logo, index) => (
+            <Card key={index} logo={Logo} />
+          ))}
         </LogosContainer>
       </Container>
     </CostumersLogosWrapper>
