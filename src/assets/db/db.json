@@ -1,0 +1,93 @@
+{
+  "contact": [
+    {
+      "email": "info@ospsolutions.co.uk",
+      "subject": "test",
+      "message": "test test test",
+      "id": 1
+    },
+    {
+      "email": "thrall84s3@gmail.com",
+      "subject": "asdf",
+      "message": "asdfasdfasfasdfa",
+      "id": 2
+    },
+    {
+      "email": "thrall84s3@gmail.com",
+      "subject": "ddddddddddddddd",
+      "message": "dddddddddddddddddddddddddddddddddd",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "name": "Pawel",
+      "secondName": "Swietek",
+      "email": "thrall84s3@gmail.com",
+      "password": "123456",
+      "role": "Admin",
+      "id": 1
+    },
+    {
+      "name": "Admin",
+      "secondName": "Admin",
+      "email": "admin@admin.pl",
+      "password": "123456",
+      "role": "Admin",
+      "id": 3
+    },
+    {
+      "name": "test",
+      "secondName": "testowy",
+      "email": "test@test.pl",
+      "password": "123456",
+      "role": "User",
+      "id": 4
+    },
+    {
+      "name": "John",
+      "secondName": "Doe",
+      "email": "john.doe@google.com",
+      "password": "123456",
+      "role": "User",
+      "id": 5
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Tajemnice przeszłości",
+      "description": "Podróż w głąb historii starożytnej cywilizacji, pełna zagadek i nieodkrytych tajemnic.",
+      "author": "Jan Kowalski",
+      "image": "https://via.placeholder.com/150?text=Book+1"
+    },
+    {
+      "id": 2,
+      "title": "Podróże po nieznanych lądach",
+      "description": "Odkryj nieznane zakątki świata wraz z Anną, która przemierza dżungle, pustynie i oceany.",
+      "author": "Anna Nowak",
+      "image": "https://via.placeholder.com/150?text=Book+2"
+    },
+    {
+      "id": 3,
+      "title": "Nauka i technologia przyszłości",
+      "description": "Spojrzenie na przyszłość nauki i technologii. Jak wyglądać będzie świat za 50 lat?",
+      "author": "Piotr Zięba",
+      "image": "https://via.placeholder.com/150?text=Book+3"
+    },
+    {
+      "id": 4,
+      "title": "Magia w codziennym życiu",
+      "description": "Czy magia istnieje naprawdę? Poznaj fascynujący świat Magdy i jej niezwykłych zdolności.",
+      "author": "Magda Lis",
+      "image": "https://via.placeholder.com/150?text=Book+4"
+    },
+    {
+      "id": 5,
+      "title": "Tajniki kosmosu",
+      "description": "Podróż w głąb wszechświata. Poznaj tajniki czarnych dziur, galaktyk i gwiazd.",
+      "author": "Marek Dąb",
+      "image": "https://via.placeholder.com/150?text=Book+5"
+    }
+  ]
+}
