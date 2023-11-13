@@ -33,7 +33,7 @@
       "secondName": "Admin",
       "email": "admin@admin.pl",
       "password": "123456",
-      "role": "User",
+      "role": "Admin",
       "id": 3
     },
     {
