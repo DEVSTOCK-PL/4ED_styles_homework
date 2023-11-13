@@ -55,9 +55,13 @@ const SupportText = styled.p`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   gap: 48px;
   align-self: stretch;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Card = styled.div`

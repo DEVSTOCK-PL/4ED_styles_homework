@@ -8,6 +8,10 @@ import Blog from "./Blog/Blog";
 import Contact from "./Contact/Contact";
 import Footer from "./Layout/Footer/Footer";
 import Layout from "./Layout/Layout";
+import RickAndMorty from "./RickAndMorty/RickAndMorty";
+import Register from "./Register/Register";
+import Login from "./Login/Login";
+import Profile from "./Profile/Profile";
 
 export {
   NavbarComponent,
@@ -20,4 +24,8 @@ export {
   Contact,
   Footer,
   Layout,
+  RickAndMorty,
+  Register,
+  Login,
+  Profile,
 };

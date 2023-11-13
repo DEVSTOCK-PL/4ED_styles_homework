@@ -4,6 +4,7 @@ const buttonVersions = {
   primary: `padding: 10px 20px; background: #1a56db; color: white; border: none`,
   secondary: `width: 182px; padding: 12px 20px; color: #9ca3af; border: 1px solid #4b5563; background: #1f2a37;`,
   transparent: `padding: 8px 12px; color: #9ca3af; border: 1px solid #4b5563; background: transparent;`,
+  soloText: `padding: 8px 12px; color: white; border: 0px; background: transparent;`,
 };
 
 const LeftIcon = styled.img`

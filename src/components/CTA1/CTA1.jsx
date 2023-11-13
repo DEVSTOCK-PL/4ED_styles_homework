@@ -10,8 +10,6 @@ const CTA1Container = styled.div`
 
 const CTA1Row = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 1280px;
   align-items: center;
   gap: 80px;
 `;
@@ -24,6 +22,10 @@ const Image = styled.img`
   background: lightgray 50% / cover no-repeat;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const RightContent = styled.div`
@@ -33,6 +35,11 @@ const RightContent = styled.div`
   align-items: flex-start;
   gap: 24px;
   flex-shrink: 0;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 0px 10px;
+  }
 
   & h2 {
     align-self: stretch;

@@ -8,15 +8,25 @@ const HeroContainer = styled.div`
   align-items: center;
   align-self: stretch;
   color: ${({ theme }) => theme.title};
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    align-items: flex-start;
+  }
 `;
 
 const HeroWrapper = styled.div`
   display: flex;
-  width: 1280px;
   align-items: center;
   justify-content: space-between;
   align-items: center;
   gap: 64px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
 `;
 
 const Carousel = styled.img`
@@ -25,6 +35,15 @@ const Carousel = styled.img`
   height: 360px;
   flex-shrink: 0;
   border-radius: 8px;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    width: 75%;
+    height: 176px;
+    margin-top: 16px;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const LeftContent = styled.div`
@@ -33,6 +52,10 @@ const LeftContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   font-family: Inter;
+
+  @media (max-width: 1200px) {
+    width: 80%;
+  }
 `;
 
 const TitleTextWrapper = styled.div`
@@ -65,6 +88,16 @@ const ButtonsWrapper = styled.div`
   justify-content: flex-start;
   padding: 32px 0px;
   margin: 0;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+
+    & > :nth-child(2) {
+      width: 100%;
+    }
+  }
 `;
 
 const SponsorsTitle = styled.div`
@@ -81,14 +114,31 @@ const SponsorsTitle = styled.div`
   font-weight: 500;
   line-height: 150%;
   color: ${({ theme }) => theme.logosText};
+  flex-wrap: wrap;
+
+  & p {
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 1200px) {
+    & p {
+      display: none;
+    }
+  }
 `;
 
 const SponsorsLogos = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-  /* gap: 16px; */
+  /* align-items: center; */
+  /* align-self: stretch; */
+  flex-wrap: wrap;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const Icon = styled.img`
@@ -122,7 +172,7 @@ function HeroComponent({ title, text, buttonText, sponsors, carousel }) {
             )}
           </ButtonsWrapper>
           <SponsorsTitle>
-            Sponsors:
+            <p>Sponsors:</p>
             <SponsorsLogos>
               {sponsors.map((logo, index) => (
                 <img key={index} src={logo} alt="sponsor logo" />

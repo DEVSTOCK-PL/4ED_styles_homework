@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { UserContext } from "../../hooks/UserContext";
 
 const LinksWrapper = styled.ul`
   display: flex;
@@ -7,7 +9,7 @@ const LinksWrapper = styled.ul`
   gap: 32px;
   flex: 1 0 0;
   color: ${({ theme }) => theme.title};
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
     margin: 0;
     padding: 0;
@@ -21,7 +23,6 @@ const Anchor = styled.li`
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-  /* color: white; */
   text-decoration: none;
   list-style: none;
 
@@ -29,7 +30,7 @@ const Anchor = styled.li`
     color: #1a56db;
     font-weight: 900;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
       color: #5680db;
     }
   }
@@ -46,14 +47,20 @@ const StyledLink = styled(Link)`
 
 function NavLinksWrapper({ links }) {
   const { pathname } = useLocation();
+  const { user } = useContext(UserContext);
 
   return (
     <LinksWrapper>
-      {links.map((link, index) => (
-        <Anchor key={index} className={pathname === `/${link}` ? "active" : ""}>
-          <StyledLink to={`/${link}`}>{link}</StyledLink>
+      {links.map(({ label, path }, index) => (
+        <Anchor key={index} className={pathname === `/${path}` ? "active" : ""}>
+          <StyledLink to={`/${path}`}>{label}</StyledLink>
         </Anchor>
       ))}
+      {user && (
+        <Anchor className={pathname === `/profile` ? "active" : ""}>
+          <StyledLink to={`/profile`}>Profile</StyledLink>
+        </Anchor>
+      )}
     </LinksWrapper>
   );
 }

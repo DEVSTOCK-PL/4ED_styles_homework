@@ -13,7 +13,8 @@ const Container = styled.div`
 
 const Head_Descr_Wrapper = styled.div`
   display: flex;
-  width: 672px;
+  width: 100%;
+  max-width: 672px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -55,16 +56,23 @@ const SponsorLink = styled.a`
 `;
 
 const LogosContainer = styled.div`
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 32px 0px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
 `;
 
 const LogoCard = styled.div`
   display: flex;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

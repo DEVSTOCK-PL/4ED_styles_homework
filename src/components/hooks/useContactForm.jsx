@@ -9,7 +9,7 @@ const validationSchema = yup.object({
   message: yup.string().required("Required"),
 });
 
-function useForm() {
+function useContactForm() {
   const mutation = useMutation((values) =>
     axios.post("http://localhost:3000/contact", values)
   );
@@ -29,4 +29,4 @@ function useForm() {
   return { formik, status: mutation.status };
 }
 
-export default useForm;
+export default useContactForm;

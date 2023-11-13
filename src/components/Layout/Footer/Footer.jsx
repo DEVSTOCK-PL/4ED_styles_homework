@@ -84,8 +84,6 @@ const Copyright = styled.p`
 
 const NavLink = styled.a`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 16px;
   align-self: stretch;
   color: ${({ theme }) => theme.text};
@@ -101,14 +99,19 @@ const NavLinks = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   align-self: stretch;
+
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
 `;
 
 function Footer({ footerData }) {
   return (
     <FooterContainer>
       <NavLinks>
-        {footerData.map(({ heading, links }, index) => (
-          <Column key={index}>
+        {footerData.map(({ heading, links }) => (
+          <Column key={heading}>
             <Heading>{heading}</Heading>
             {links.map((link) => (
               <NavLink key={link} to={`/${link}`}>

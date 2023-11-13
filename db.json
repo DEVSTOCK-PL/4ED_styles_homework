@@ -18,5 +18,72 @@
       "message": "adfe",
       "id": 3
     }
+  ],
+  "users": [
+    {
+      "name": "Jakub",
+      "secondName": "Majcherczyk",
+      "email": "lordjimm3@wp.pl",
+      "password": "Test1234@",
+      "id": 1
+    },
+    {
+      "name": "Jakubi",
+      "secondName": "Majcher",
+      "email": "lordjimm@wp.pl",
+      "password": "Test1234@",
+      "id": 2
+    },
+    {
+      "name": "Jak",
+      "secondName": "Majcherc",
+      "email": "lordji@wp.pl",
+      "password": "Test1234@",
+      "id": 3
+    },
+    {
+      "name": "Test",
+      "secondName": "Tested",
+      "email": "test@wp.pl",
+      "password": "Test1234@",
+      "id": 4
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Tajemnice przeszłości",
+      "description": "Podróż w głąb historii starożytnej cywilizacji, pełna zagadek i nieodkrytych tajemnic.",
+      "author": "Jan Kowalski",
+      "image": "https://via.placeholder.com/150?text=Book+1"
+    },
+    {
+      "id": 2,
+      "title": "Podróże po nieznanych lądach",
+      "description": "Odkryj nieznane zakątki świata wraz z Anną, która przemierza dżungle, pustynie i oceany.",
+      "author": "Anna Nowak",
+      "image": "https://via.placeholder.com/150?text=Book+2"
+    },
+    {
+      "id": 3,
+      "title": "Nauka i technologia przyszłości",
+      "description": "Spojrzenie na przyszłość nauki i technologii. Jak wyglądać będzie świat za 50 lat?",
+      "author": "Piotr Zięba",
+      "image": "https://via.placeholder.com/150?text=Book+3"
+    },
+    {
+      "id": 4,
+      "title": "Magia w codziennym życiu",
+      "description": "Czy magia istnieje naprawdę? Poznaj fascynujący świat Magdy i jej niezwykłych zdolności.",
+      "author": "Magda Lis",
+      "image": "https://via.placeholder.com/150?text=Book+4"
+    },
+    {
+      "id": 5,
+      "title": "Tajniki kosmosu",
+      "description": "Podróż w głąb wszechświata. Poznaj tajniki czarnych dziur, galaktyk i gwiazd.",
+      "author": "Marek Dąb",
+      "image": "https://via.placeholder.com/150?text=Book+5"
+    }
   ]
 }

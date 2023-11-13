@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import useForm from "../hooks/useForm";
+import useContactForm from "../hooks/useContactForm";
 import { useSnackbar } from "notistack";
 import Button from "../Reusable/Button";
 
@@ -14,7 +14,6 @@ const ContactContainer = styled.div`
 
 const ContactWrapper = styled.div`
   display: flex;
-  width: 1280px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -26,10 +25,12 @@ const Header = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  width: auto;
 `;
 
 const Heading = styled.h1`
-  width: 672px;
+  width: 100%;
+  max-width: 672px;
   color: ${({ theme }) => theme.title};
   text-align: center;
   font-family: Inter;
@@ -39,10 +40,14 @@ const Heading = styled.h1`
   line-height: 125%; /* 45px */
   letter-spacing: -0.36px;
   margin: 0;
+  @media (min-width: 750px) {
+    width: auto;
+  }
 `;
 
 const SupportingText = styled.p`
-  width: 672px;
+  width: 100%;
+  max-width: 672px;
   color: ${({ theme }) => theme.text};
   text-align: center;
   margin: 0;
@@ -51,14 +56,21 @@ const SupportingText = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  @media (min-width: 750px) {
+    width: auto;
+  }
 `;
 
 const ContactForm = styled.form`
   display: flex;
-  width: 640px;
+  max-width: 640px;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+
+  @media (min-width: 750px) {
+    width: 100%;
+  }
 `;
 
 const Row = styled.div`
@@ -67,6 +79,7 @@ const Row = styled.div`
   align-items: flex-start;
   gap: 32px;
   align-self: stretch;
+  width: 100%;
 `;
 
 const InputField = styled.div`
@@ -75,6 +88,7 @@ const InputField = styled.div`
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
+  width: 100%;
 `;
 
 const Label = styled.label`
@@ -85,6 +99,7 @@ const Label = styled.label`
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
+  width: 100%;
 `;
 
 const Input = styled.input`
@@ -96,6 +111,10 @@ const Input = styled.input`
   border-radius: 8px;
   border: 1px solid #4b5563;
   background: ${({ theme }) => theme.toggleBorder};
+  width: 100%;
+  @media (max-width: 610px) {
+    width: 80%;
+  }
 
   &::placeholder {
     font-size: 16px;
@@ -111,11 +130,17 @@ const TextareaField = styled.div`
   align-items: center;
   gap: 12px;
   align-self: stretch;
+  width: 105%;
+  min-width: 200px;
+
+  @media (max-width: 610px) {
+    width: 85%;
+  }
 `;
 
 const Textarea = styled.textarea`
-  height: 162px !important;
-  width: 640px !important;
+  height: 162px;
+  width: 100%;
   background: ${({ theme }) => theme.toggleBorder};
   border: 1px solid #4b5563;
   border-radius: 8px;
@@ -128,7 +153,7 @@ const Textarea = styled.textarea`
 `;
 
 function Contact() {
-  const { formik, status } = useForm();
+  const { formik, status } = useContactForm();
   const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
@@ -184,7 +209,6 @@ function Contact() {
               />
             </TextareaField>
           </Row>
-
           <Button type="submit" version="primary">
             Send message
           </Button>

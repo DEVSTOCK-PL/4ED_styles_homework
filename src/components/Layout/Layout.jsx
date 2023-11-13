@@ -3,7 +3,13 @@ import { NavbarComponent, Footer } from "../index";
 const projectData = {
   navbar: {
     logo: "../images/img_logo.png",
-    navLinks: ["HOME", "NEWS", "EVENTS", "CONTACT"],
+    navLinks: [
+      { label: "HOME", path: "HOME" },
+      { label: "NEWS", path: "NEWS" },
+      { label: "EVENTS", path: "EVENTS" },
+      { label: "CONTACT", path: "CONTACT" },
+      { label: "RICK_AND_MORTY", path: "list/1" },
+    ],
     cta: "Get Started",
   },
   footer: [

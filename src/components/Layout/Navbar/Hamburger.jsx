@@ -13,7 +13,7 @@ const StyledBurger = styled.div`
   z-index: 20;
   display: none;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -46,14 +46,13 @@ const MenuItems = styled.div`
   display: none;
   margin-right: 15px;
   padding: 20px 0 10px 10px;
-  /* text-align: left; */
 
   &.open {
     display: block;
     position: absolute;
     top: 60px;
     right: 0;
-    width: 120px;
+    width: 140px;
     background-color: #374151;
     box-shadow: 0px 8px 16px 0px rgba(124, 124, 124, 0.2);
     z-index: 1;
