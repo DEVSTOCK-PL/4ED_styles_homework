@@ -127,16 +127,20 @@ const RegisterPage = () => {
       setFieldError("email", "Someone is already using this email");
       return;
     }
-    runQuery.post("/users", values, {
-      onSuccess: () => {
-        enqueueSnackbar("You have successfully registered!", { variant: "success" });
-        resetForm(true);
-        navigate("/login");
-      },
-      onError: () => {
-        enqueueSnackbar("There war an error, try again!", { variant: "error" });
-      },
-    });
+    runQuery.post(
+      "/users",
+      { ...values, role: "User" },
+      {
+        onSuccess: () => {
+          enqueueSnackbar("You have successfully registered!", { variant: "success" });
+          resetForm(true);
+          navigate("/login");
+        },
+        onError: () => {
+          enqueueSnackbar("There war an error, try again!", { variant: "error" });
+        },
+      }
+    );
   };
 
   return (
