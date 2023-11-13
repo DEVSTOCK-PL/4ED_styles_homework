@@ -5,14 +5,19 @@ import styled from 'styled-components';
 
 import { LoginUserContext } from '../../hooks/useLoginUserContext';
 
-const url = 'http://localhost:3000/books';
+const URL = 'http://localhost:3000/books';
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
+
 const Div = styled(Wrapper)`
   width: 25vw;
   margin: 20px;
@@ -38,18 +43,18 @@ export function ProfileList() {
 
   const { data, isPending, error } = useQuery({
     queryKey: ['books'],
-    queryFn: () => fetchData(url),
+    queryFn: () => fetchData(URL),
   });
 
   return (
     <Wrapper>
-      {user.isLogin ? (
+      {user?.isLogin ? (
         isPending ? (
           <h1>Trwa ładowanie...</h1>
         ) : data ? (
           data.data?.map(({ id, title, description, author, image }) => (
             <Div key={id}>
-              <img src={image} alt="image" />
+              <img src={image} alt="bookImage" />
               <H2>{title}</H2>
               <p>{description}</p>
               <H3>{author}</H3>

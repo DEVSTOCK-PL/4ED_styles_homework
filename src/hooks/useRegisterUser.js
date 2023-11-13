@@ -47,7 +47,7 @@ const useRegisterUser = (
         id: Date.now(),
         ...values,
       });
-      console.log('Udało się.', response);
+      // console.log('Udało się.', response);
       if (response.status === 201) {
         snackBar(successMessage, 'success', 3000);
         if (isNavigate) navigate(isNavigate);
@@ -77,21 +77,20 @@ const useRegisterUser = (
       const ifLoginUser = users.some((u) => u.password === values.password);
       const user = users[0];
       if (ifLoginUser) {
-        // setUser((prev) => {
-        //   return { ...prev, isLogin: true };
-        // });
-        setUser({
-          name: user.name,
-          secondName: user.secondName,
-          email: user.email,
-          isLogin: true,
-        });
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            name: user.name,
+            secondName: user.secondName,
+            email: user.email,
+            isLogin: true,
+          }),
+        );
+        setUser(JSON.parse(localStorage.getItem('user')) || { isLogin: false });
         navigate('/profile');
       } else {
+        localStorage.removeItem('user');
         setUser({ isLogin: false });
-        // setUser((prev) => {
-        //   return { ...prev, isLogin: false };
-        // });
         snackBar(
           'Taki użytkownik nie istnieje lub podano nieprawidłowe dane',
           'error',

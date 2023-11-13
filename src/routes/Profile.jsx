@@ -16,12 +16,14 @@ function Profile() {
         <Heading
           h2="Witaj User!"
           p={
-            user.isLogin
+            user?.isLogin
               ? `jesteś aktualnie zalogowany jako ${user.name} ${user.secondName}, a Twój mail to ${user.email}`
               : null
           }
         />
-        {user.isLogin && <Heading h2="Lista e-booków w Twojej biblioteczce!" />}
+        {user?.isLogin && (
+          <Heading h2="Lista e-booków w Twojej biblioteczce!" />
+        )}
         <ProfileList />
       </ContactContainer>
     </Layout>

@@ -2,13 +2,13 @@
   "contact": [
     {
       "id": 1699393637329,
-      "email": "konradpecyna@gmail.com",
+      "email": "konrad@gmail.com",
       "subject": "test",
       "description": "hello"
     },
     {
       "id": 1699396591606,
-      "email": "konradpecyna@gmail.com",
+      "email": "konrad@gmail.com",
       "subject": "test",
       "description": "dziala :)"
     }
@@ -32,7 +32,7 @@
       "id": 1699645012498,
       "name": "Konrad",
       "secondName": "Pecyna",
-      "email": "konradpecyna@gmail.com",
+      "email": "konrad@gmail.com",
       "password": "Konrad1!"
     }
   ],

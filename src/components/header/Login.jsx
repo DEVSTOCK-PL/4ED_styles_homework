@@ -10,7 +10,7 @@ import { Button } from '../Button';
 import DarkModeIcon from '../DarkModeIcon';
 import LightModeIcon from '../LightModeIcon';
 
-const LoginContainer = styled(Container)`
+export const LoginContainer = styled(Container)`
   column-gap: 16px;
 
   @media (max-width: 768px) {
@@ -30,12 +30,12 @@ const ToggleButton = styled(Button)`
   font-size: 14px;
 `;
 
-const LoginButton = styled(Button)`
+export const LoginButton = styled(Button)`
   background-color: transparent;
   font-size: 14px;
 `;
 
-const GetStartedButton = styled(Button)`
+export const GetStartedButton = styled(Button)`
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 14px;
@@ -57,12 +57,17 @@ export const Login = () => {
   return (
     <LoginContainer className="desktopButtons">
       <ToggleButton onClick={() => setIsDarkMode((prev) => !prev)}>
-        {isDarkMode ? <LightModeIcon /> : <DarkModeIcon fill="#000" />}
+        {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
       </ToggleButton>
-      {user.isLogin ? (
+      {user?.isLogin ? (
         <>
           Jesteś zalogowany jako {user.name}
-          <GetStartedButton onClick={() => setUser({})}>
+          <GetStartedButton
+            onClick={() => {
+              localStorage.removeItem('user');
+              setUser({ isLogin: false });
+            }}
+          >
             Wyloguj
           </GetStartedButton>
         </>

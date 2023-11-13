@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 
 import { ThemeContext } from '../../hooks/useThemeContext';
@@ -9,6 +9,7 @@ import { Container } from '../Container';
 import { Button } from '../Button';
 import DarkModeIcon from '../DarkModeIcon';
 import LightModeIcon from '../LightModeIcon';
+import { LoginButton, GetStartedButton } from './Login';
 
 import vector from '../../assets/vector.svg';
 
@@ -72,6 +73,7 @@ const NavContainer = styled(Container)`
     }
     &.mobileNav {
       display: flex;
+      column-gap: 5px;
     }
   }
 `;
@@ -92,7 +94,16 @@ const StyledImg = styled.img`
 
 export const Nav = () => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
-  const { user } = useContext(LoginUserContext);
+  const { user, setUser } = useContext(LoginUserContext);
+
+  const navigate = useNavigate();
+
+  const handleClickLoginButton = () => {
+    navigate('/login');
+  };
+  const handleClickGetStartedButton = () => {
+    navigate('/register');
+  };
 
   return (
     <>
@@ -105,7 +116,7 @@ export const Nav = () => {
               </NavLink>
             </Container>
           ))}
-          {user.isLogin && (
+          {user?.isLogin && (
             <Container as="li">
               <NavLink className="link" to="/profile">
                 PROFILE
@@ -120,8 +131,33 @@ export const Nav = () => {
             setIsDarkMode((prev) => !prev);
           }}
         >
-          {isDarkMode ? <LightModeIcon /> : <DarkModeIcon fill="#000" />}
+          {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
         </ToggleButton>
+        {user?.isLogin ? (
+          <>
+            Jesteś zalogowany jako {user.name}
+            <GetStartedButton
+              onClick={() => {
+                localStorage.removeItem('user');
+                setUser({ isLogin: false });
+              }}
+            >
+              Wyloguj
+            </GetStartedButton>
+          </>
+        ) : (
+          <>
+            <LoginButton
+              className="loginButton"
+              onClick={handleClickLoginButton}
+            >
+              Log in
+            </LoginButton>
+            <GetStartedButton onClick={handleClickGetStartedButton}>
+              Get started
+            </GetStartedButton>
+          </>
+        )}
         <StyledImg src={vector} alt="logo_menu" />
       </NavContainer>
     </>
