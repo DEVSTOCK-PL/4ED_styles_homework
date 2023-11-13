@@ -1,7 +1,7 @@
-import useDonationLogic from "../hooks/useDonationLogic";
-
 import styled from "styled-components";
-
+import useDonationLogic from "../hooks/useDonationLogic";
+import { useContext } from "react";
+import { AppContext } from "../hooks/AppContext";
 import ProgressBar from "../components/ProgressBar";
 
 import image1 from "../assets/foto/mockup2.png";
@@ -360,6 +360,7 @@ const TextSupporting2 = styled.p`
 `;
 
 const CtaTwoDonate = () => {
+  const { isDarkTheme } = useContext(AppContext);
   const {
     donate1,
     donateUp1,
@@ -396,7 +397,12 @@ const CtaTwoDonate = () => {
               <Img src={image1} alt="Trees plantd" />
             </ImgBox>
             <ProgressBarContainer>
-              <ProgressBar donors="3473" colected={donate1} goal="400000" />
+              <ProgressBar
+                donors="3473"
+                colected={donate1}
+                goal="400000"
+                isDarkTheme={isDarkTheme}
+              />
             </ProgressBarContainer>
             <Title2>{textTitle2}</Title2>
             <TextSupporting2>{textSupporting2}</TextSupporting2>
@@ -417,7 +423,12 @@ const CtaTwoDonate = () => {
               <Img src={image88} />
             </ImgBox>
             <ProgressBarContainer>
-              <ProgressBar donors="473" colected={donate2} goal="150000" />
+              <ProgressBar
+                donors="473"
+                colected={donate2}
+                goal="150000"
+                isDarkTheme={isDarkTheme}
+              />
             </ProgressBarContainer>
             <Title2>{textTitle2}</Title2>
             <TextSupporting2>{textSupporting2}</TextSupporting2>
@@ -440,7 +451,12 @@ const CtaTwoDonate = () => {
               <Img src={image88} />
             </ImgBox>
             <ProgressBarContainer>
-              <ProgressBar donors="3473" colected={donate3} goal="400000" />
+              <ProgressBar
+                donors="3473"
+                colected={donate3}
+                goal="400000"
+                isDarkTheme={isDarkTheme}
+              />
             </ProgressBarContainer>
             <Title2>{textTitle2}</Title2>
             <TextSupporting2>{textSupporting2}</TextSupporting2>
@@ -461,7 +477,12 @@ const CtaTwoDonate = () => {
               <Img src={image1} />
             </ImgBox>
             <ProgressBarContainer>
-              <ProgressBar donors="473" colected={donate4} goal="150000" />
+              <ProgressBar
+                donors="473"
+                colected={donate4}
+                goal="150000"
+                isDarkTheme={isDarkTheme}
+              />
             </ProgressBarContainer>
             <Title2>{textTitle2}</Title2>
             <TextSupporting2>{textSupporting2}</TextSupporting2>

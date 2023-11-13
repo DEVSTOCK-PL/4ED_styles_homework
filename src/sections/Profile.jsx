@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { AppContext } from "../hooks/AppContext";
-
 import useProfileLogic from "../hooks/useProfileLogic";
 
 const Container = styled.div`

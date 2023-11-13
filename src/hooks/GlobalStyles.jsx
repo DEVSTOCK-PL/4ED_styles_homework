@@ -1,12 +1,12 @@
+import { createGlobalStyle } from "styled-components";
 import { useContext } from "react";
 import { AppContext } from "./AppContext";
-import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   
   body {
-    background-color: ${(props) => (props.isDarkTheme ? "#111928" : "#559e9e")};
-    color: #FFF;
+    background-color: ${(props) => (props.isDarkTheme ? "#111928" : "#FFF")};
+    color: ${(props) => (props.isDarkTheme ? "#fff" : "#111928")};
     display: flex;
     justify-content: center;
     flex-direction: column;

@@ -32,6 +32,7 @@ const Label = styled.div`
 `;
 
 const LeftItem = styled.div`
+  color: ${(props) => (props.isDarkTheme ? "#fff" : "#111928")};
   width: 178px;
   height: 27px;
   display: flex;
@@ -43,7 +44,7 @@ const Sum = styled.div`
   width: 86px;
   height: 27px;
   font-size: 18px;
-  color: #ffffff;
+  color: ${(props) => (props.isDarkTheme ? "#fff" : "#111928")};
   font-weight: 700;
   line-height: 27px;
   text-align: left;
@@ -91,7 +92,7 @@ const BarProgress = styled.div`
   background-color: #1c64f2;
 `;
 
-const ProgressBar = ({ colected, goal, donors }) => {
+const ProgressBar = ({ colected, goal, donors, isDarkTheme }) => {
   let progress = (colected * 100) / goal;
   let goalK = goal / 1000;
 
@@ -105,7 +106,7 @@ const ProgressBar = ({ colected, goal, donors }) => {
     <Container>
       <Label>
         <LeftItem>
-          <Sum>${formattedColected}</Sum>
+          <Sum isDarkTheme={isDarkTheme}>${formattedColected}</Sum>
           <Goal>of {goalK}k goal</Goal>
         </LeftItem>
         <RightItem>{formattedDonors} donors</RightItem>

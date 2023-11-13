@@ -16,7 +16,6 @@ const Container = styled.div`
   width: 100%;
   max-width: 1440px;
   height: 1444px;
-  /* background-color: #111928; */
   display: flex;
   justify-content: center;
 
@@ -137,7 +136,6 @@ const Buttons = styled.div`
 
 const Title = styled.p`
   width: 100%;
-  color: #fff;
   font-size: 36px;
   line-height: 45px;
   font-weight: 800;

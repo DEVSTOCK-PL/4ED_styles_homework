@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { useContext } from "react";
+import { AppContext } from "../hooks/AppContext";
 import ProgressBar from "../components/ProgressBar";
 
 import image1 from "../assets/foto/mockup2.png";
@@ -18,7 +19,6 @@ const textSupporting2 =
   "Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.";
 
 const Container = styled.div`
-  /* background-color: #111928; */
   width: 100%;
   max-width: 1440px;
   height: 997px;
@@ -188,7 +188,7 @@ const ProgressBarContainer = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: #111928;
+  background-color: transparent;
   width: 280px;
   height: 27px;
   color: #3f83f8;
@@ -295,6 +295,7 @@ const TextSupporting2 = styled.p`
 `;
 
 const CtaTwo = () => {
+  const { isDarkTheme } = useContext(AppContext);
   return (
     <Container>
       <Content>
@@ -308,7 +309,12 @@ const CtaTwo = () => {
               <Img src={image1} alt="Trees plantd" />
             </ImgBox>
             <ProgressBarContainer>
-              <ProgressBar donors="3473" colected="276856" goal="400000" />
+              <ProgressBar
+                donors="3473"
+                colected="276856"
+                goal="400000"
+                isDarkTheme={isDarkTheme}
+              />
             </ProgressBarContainer>
             <Title2>{textTitle2}</Title2>
             <TextSupporting2>{textSupporting2}</TextSupporting2>
@@ -318,7 +324,12 @@ const CtaTwo = () => {
               <Img src={image88} alt="Volunteers" />
             </ImgBox>
             <ProgressBarContainer>
-              <ProgressBar donors="473" colected="36856" goal="150000" />
+              <ProgressBar
+                donors="473"
+                colected="36856"
+                goal="150000"
+                isDarkTheme={isDarkTheme}
+              />
             </ProgressBarContainer>
             <Title2>{textTitle2}</Title2>
             <TextSupporting2>{textSupporting2}</TextSupporting2>

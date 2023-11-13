@@ -117,7 +117,7 @@ const Links = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #fff;
+  color: ${(props) => (props.isDarkTheme ? "#fff" : "#111928")};
 
   &:hover {
     color: #1a56db;
@@ -149,7 +149,7 @@ const Button = styled.button`
   height: 41px;
   background: #1a56db;
   border-radius: 8px;
-  color: #fff;
+  color: ${(props) => (props.isDarkTheme ? "#fff" : "#111928")};
   font-size: 14px;
   line-height: 21px;
   font-weight: 500;
@@ -200,6 +200,7 @@ const GreenLed = styled.div`
   border-radius: 50%;
   background-color: ${(props) => (props.login ? "green" : "red")};
 `;
+
 function Navbar() {
   const { pathname } = useLocation();
   const { open, handleOpen, closeMenu } = useOpenMenuLogic();
@@ -220,33 +221,51 @@ function Navbar() {
         </Logo>
         <Links>
           <LinkItem className={pathname === "/home" && "active"}>
-            <StyledLink to="/home" onClick={closeMenu}>
+            <StyledLink
+              to="/home"
+              onClick={closeMenu}
+              isDarkTheme={isDarkTheme}>
               HOME
             </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/news" && "active"}>
-            <StyledLink to="/news" onClick={closeMenu}>
+            <StyledLink
+              to="/news"
+              onClick={closeMenu}
+              isDarkTheme={isDarkTheme}>
               NEWS
             </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/events" && "active"}>
-            <StyledLink to="/events" onClick={closeMenu}>
+            <StyledLink
+              to="/events"
+              onClick={closeMenu}
+              isDarkTheme={isDarkTheme}>
               EVENTS
             </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/contact" && "active"}>
-            <StyledLink to="/contact" onClick={closeMenu}>
+            <StyledLink
+              to="/contact"
+              onClick={closeMenu}
+              isDarkTheme={isDarkTheme}>
               CONTACT
             </StyledLink>
           </LinkItem>
           <LinkItem className={pathname === "/rickandmorty" && "active"}>
-            <StyledLink to="/rickandmorty" onClick={closeMenu}>
+            <StyledLink
+              to="/rickandmorty"
+              onClick={closeMenu}
+              isDarkTheme={isDarkTheme}>
               RICK & MORTY
             </StyledLink>
           </LinkItem>
           {login && (
             <LinkItem className={pathname === "/profile" && "active"}>
-              <StyledLink to="/profile" onClick={closeMenu}>
+              <StyledLink
+                to="/profile"
+                onClick={closeMenu}
+                isDarkTheme={isDarkTheme}>
                 PROFILE
               </StyledLink>
             </LinkItem>
@@ -258,6 +277,7 @@ function Navbar() {
 
           {login && (
             <ButtonLogIn
+              isDarkTheme={isDarkTheme}
               onClick={async () => {
                 falseLogin();
                 sessionStorage.removeItem("login");
@@ -271,12 +291,14 @@ function Navbar() {
           </ToggleButton>
           {!login && (
             <ButtonLogIn>
-              <StyledLinkLogin to="/login">Log In</StyledLinkLogin>
+              <StyledLinkLogin to="/login" isDarkTheme={isDarkTheme}>
+                Log In
+              </StyledLinkLogin>
             </ButtonLogIn>
           )}
           {!login && (
             <Button>
-              <StyledLinkRegister to="/register">
+              <StyledLinkRegister to="/register" isDarkTheme={isDarkTheme}>
                 Get Started
               </StyledLinkRegister>
             </Button>
