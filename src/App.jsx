@@ -19,7 +19,7 @@ function App() {
       <CtaOne />
       <CustomerLogos/>
       <CtaTwo />  
-      <SectorBlog />
+      <SectorBlog /> 
       <Contact />
       <Footer /> 
     </>

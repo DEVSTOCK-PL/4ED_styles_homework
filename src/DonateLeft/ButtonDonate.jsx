@@ -15,7 +15,7 @@ line-height: 21px;
 const ButtonDonate = ({donateAmount, disabled}) => {
 
     const { donate } = useContext(DonationContext)
-
+    console.log(donate)
     const donateClick = () => {
         donate (donateAmount)
     }

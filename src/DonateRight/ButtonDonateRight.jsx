@@ -14,10 +14,9 @@ line-height: 21px;
 
 const ButtonDonateRight = ({ donateAmount2, disabled }) => {
 
-    const { donate2 } = useContext(DonationContext2)
-   console.log(donate2, "test")
+    const{ donate2 } = useContext(DonationContext2)
     const donateClick2 = () => {
-        donate2 (donateAmount2)
+        donate2(donateAmount2)
 
     }
     return (        

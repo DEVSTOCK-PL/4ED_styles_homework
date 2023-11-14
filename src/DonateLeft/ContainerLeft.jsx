@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { DonationProvider } from "../Logika/DonateContextForAll";
-import { useDonationContext } from "../Logika/DonateContextForAll";
-import ProgressBar from "../components/ProgressBar";
+import ProgressBar from "./ProgressBar";
 import Events from "./EventsDonate";
 import ButtonDonate from "./ButtonDonate"
 import LeftMockup from "../image/LeftMockup.svg"
 import TransparentShareButton from "../generalComponents/TransparentShareButton";
-
+// import { useDonationContext } from "../Logika/DonateContextForAll";
 
 const ProgressBarContainer = styled.div`
 width: 552px;
@@ -102,7 +101,7 @@ flex-direction: row;
 
 const ContainerLeft = ({donations}) => {
     // const { donations } = useDonationContext()
-
+console.log(donations, "w kontext")
     const targetDonations = 400000;
 
     return (

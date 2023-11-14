@@ -4,7 +4,8 @@ import TransparentShareButton from "../generalComponents/TransparentShareButton"
 import RightMockup from "../image/RightMockup.svg"
 import ButtonDonateRight from "./ButtonDonateRight"
 import EventsRight from "./EventsRight";
-import ProgressBar from "../components/ProgressBar";
+import ProgressBarRight from "./ProgressBarRight";
+
 
 const ProgressBarContainer = styled.div`
 width: 552px;
@@ -112,13 +113,13 @@ const ContainerRight = ({donations2}) => {
                     </LeftStripe>
                     <NumberOfDonors>568 donors</NumberOfDonors>
                 </StripeDonate>
-                <ProgressBar donations2={donations2} targetDonations2={targetDonations2}/>
+                <ProgressBarRight donations2={donations2} targetDonations2={targetDonations2}/>
             </ProgressBarContainer>
                 <TitleDescription>Thank you for supporting our lifesaving work.</TitleDescription>
                 <SupportingDescription>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingDescription>
                 <SectionButtonContainer>
                     <SectionButton>
-                        <ButtonDonateRight donateAmount2={10} disabled={false} />
+                        <ButtonDonateRight donateAmount2={500} disabled={false} />
                         <TransparentShareButton description="Share this Fundraiser" />
                     </SectionButton>
                 </SectionButtonContainer>

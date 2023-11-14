@@ -2,18 +2,23 @@ import BlueButton from "../generalComponents/BlueButtons";
 import styled from "styled-components";
 import LogoNavbarFooter from "../image/LogoNavbarFooter.svg"
 import Selector from "../generalComponents/Selector";
-
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useState } from "react";
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom'
 import CompanyLink from "../subpages/CompanyLink";
 import MarketPlaceLink from "../subpages/MarketplaceLink";
 import FeaturesLink from "../subpages/FeaturesLink";
 import TeamLink from "../subpages/TeamLink";
 import ContactLink from "../subpages/ContactLink";
+import ContactClick from "../subpages/Contact/Contact";
 import NotFoud from "../subpages/NotFound";
+import Register from "../subpages/Register/Register";
+import Login from "../subpages/Login/Login";
+import EventsClick from "../subpages/Events/Events";
+import NewsClick from "../subpages/News/NewsClick";
 // import ButtonDonate from "./DonateLeft/ButtonDonate";
 
 const NavbarComponents = styled.div`
-width: 100%;
+max-width: 1440px;
 height: 65px;
 background: #111928;
 display: flex;
@@ -71,11 +76,11 @@ flex-wrap: wrap;
 }
 `
 const LinkName = styled.button`
-height: ${(props)=>props.height||"24px"};
+height: 24px;
 font-family: Inter;
 font-weight: 500;
-font-size: ${(props)=>props.fontSize||'16px'};
-line-height: ${(props)=>props.lineHeight||"24px"};
+font-size: 16px;
+line-height: 24px;
 color: #fff;
 background: #111928;
 display: flex;
@@ -84,7 +89,7 @@ justify-content: center;
 width: ${(props)=>props.width};
 `
 const NavCTA = styled.div`
-width: 100%;
+${'' /* width: 100%; */}
 height: 41px;
 gap: 16px;
 display: flex;
@@ -105,6 +110,7 @@ display: none;
 `
 
 const Navbar = () => {
+
     return (
     <BrowserRouter>
         <NavbarComponents>
@@ -118,15 +124,16 @@ const Navbar = () => {
                     </Link>
                 </PlaceCompanyLogo>
                     <NavLinks>
-                    <Link to="/company"><LinkName width="73px">Company</LinkName></Link>
-                    <Link to="/marketplace"><LinkName width="95px">Marketplace</LinkName></Link>
-                    <Link to="/features"><LinkName width="67px">Features</LinkName></Link>
-                    <Link to="/team"><LinkName width="42px">Team</LinkName></Link>
-                    <Link to='/contact'><LinkName width="62px">Contact</LinkName></Link>
+                    <Link to="/"><LinkName width="49px">HOME</LinkName></Link>
+                    <Link to="/news"><LinkName width="48px">NEWS</LinkName></Link>
+                    {/* <Link to="/features"><LinkName width="67px" display="none">Features</LinkName></Link> */}
+                    <Link to="/events"><LinkName width="64px">EVENTS</LinkName></Link>
+                    <Link to='/contact'><LinkName width="78px" >Contact</LinkName></Link>
+                {/* as={ContactClick} to="/contact" activeClassName="active" */}
                 </NavLinks>
                 <NavCTA>
-                    <LinkName width="15%" lineHeight="21px" fontSize="14px" height="21px">Log In</LinkName>
-                    <BlueButton description="Get started" lineHeight="21px"></BlueButton>
+                    <Link to="/login"><LinkName width="15%" lineHeight="21px" fontSize="14px" height="21px">Log In</LinkName></Link>
+                    <Link to="register"><BlueButton description="Get started" lineHeight="21px" /></Link>
                 </NavCTA>
                 <DivSelector>
                     <Selector />
@@ -134,14 +141,14 @@ const Navbar = () => {
             </NavbarContainer>
         </NavbarComponents>
 
-        <Routes>
-            <Route path="/contact" element={<ContactLink />} />  
-            <Route path="/company" element={<CompanyLink />} />  
-            <Route path="/marketplace" element={<MarketPlaceLink />} />            
-            <Route path="/features" element={<FeaturesLink />} />
-            <Route path="/team" element={<TeamLink />} />  
+     <Routes>
+            <Route path="/login" element={<Login />} />     
+            <Route path="/register" element={<Register />} />
+            <Route path="/contact" element={<ContactClick />} />  
+            <Route path="/events" element={<EventsClick />} />  
+            <Route path="/news" element={<NewsClick />} />            
             <Route path="*" element={<NotFoud />} />        
-        </Routes>
+            </Routes> 
     </BrowserRouter>
     )
 }

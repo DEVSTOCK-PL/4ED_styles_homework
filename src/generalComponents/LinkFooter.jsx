@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link, BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 const StyledLinkFooter = styled.a`

@@ -1,11 +1,14 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 
 }
-
+.app-disabled {
+  filter:  grayscale(100%);
+  pointer-events: none;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
