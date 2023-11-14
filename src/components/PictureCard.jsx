@@ -7,6 +7,7 @@ import { Button } from "./styleElements";
 import { BreakPoints } from "../components";
 
 import useCounter from "./hooks/useDonationLogic";
+
 import PropTypes from "prop-types";
 
 const Card = styled.div`
@@ -96,6 +97,17 @@ const VectorGrayButton = styled(Button)`
     margin-right: 5px;
   }
 `;
+const GoalReachedText = styled.span`
+color: ${({ isReachedGoal }) => (isReachedGoal ? "black" : "transparent")};
+font-size: 20px;
+font-weight: bold;
+margin-top: 0px;
+background-color: ${({ isReachedGoal }) => (isReachedGoal ? " rgb(251 247 18)" : "transparent")};
+/* display: block; */
+padding: 5px;
+text-align: center;
+`;
+
 
 function CardStyles({ imageSrc }) {
   const [count, increment, barWidth] = useCounter();
@@ -108,22 +120,12 @@ function CardStyles({ imageSrc }) {
     }
   }
 
-  const GoalReachedText = styled.span`
-  color: ${({ isReachedGoal }) => (isReachedGoal ? "black" : "transparent")};
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 0px;
-  background-color: ${({ isReachedGoal }) => (isReachedGoal ? " rgb(251 247 18)" : "transparent")};
-  /* display: block; */
-  padding: 5px;
-  text-align: center;
 
-`;
 
 
   return (
     <div>
-      <Card isReachedGoal={isReachedGoal}>
+      <Card >
         <MockupImage src={imageSrc} alt="mockup.rigth" />{" "}
         <CardContent>
           <div>

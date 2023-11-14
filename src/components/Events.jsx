@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 import PictureCard from "./PictureCard";
 
 import {
@@ -16,6 +17,7 @@ import { BreakPoints } from "../components";
 const EventsContainer = styled(Container)`
   padding-bottom: 0px;
 `;
+
 const PictureCardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
