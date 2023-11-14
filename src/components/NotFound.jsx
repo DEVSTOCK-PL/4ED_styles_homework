@@ -21,7 +21,7 @@ function NotFound() {
     <Container>
       <Title>404</Title>
       <h1>Oops! There was an error.</h1>
-      <Link to="/Home2">
+      <Link to="/Home">
         <Button>Go to Home Page</Button>
       </Link>
     </Container>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import externalLink from "../images/externalLink.svg";
 
-const SponsorCard = styled.div`
+const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,17 +40,17 @@ const LogoImg = styled.img`
 
 `;
 
-function SponsorsCards({ img }) {
+function SponsorCard({ img }) {
   return (
-    <SponsorCard>
+    <Card>
       <LogoImg src={img} alt="stripe-logo" />
       <div>Partner since 2015</div>
       <button>
         <img src={externalLink} alt="externalLink" />
         Visit website
       </button>
-    </SponsorCard>
+    </Card>
   );
 }
 
-export default SponsorsCards;
+export default SponsorCard;

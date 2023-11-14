@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+
+import { useState } from "react";
+
 import styled from "styled-components";
-import Button from "./styleElements/Button";
-import Container from "./styleElements/Container";
-import BreakPoints from "./BreakPoints";
+
+import { Container, Button } from "./styleElements";
+
 import WebLogo from "./WebLogo";
+
+import BreakPoints from "./BreakPoints";
+
+import { Link, useLocation } from "react-router-dom";
 
 const NavContainer = styled(Container)`
   display: none;
@@ -17,7 +22,6 @@ const MenuBurger = styled.label`
   top: 0px;
   right: 3rem;
   position: absolute;
-
 `;
 
 const Icon = styled.span`
@@ -57,12 +61,32 @@ const Icon = styled.span`
 `;
 
 const MenuButtons = styled.div`
+  position: absolute;
+ 
   display: flex;
   flex-direction: column;
+  top: 76px;
+  left: 0px;
+  height: calc(80vh - 76px);
+  width: 100%;
+  background-color: #1F2A37;
+  overflow: hidden;
+  transition: all 0.5s ease 0s;
 `;
 
-const BurgerButton = styled(Button)`
-  margin-bottom: 5px;
+const NavButtons = styled(Button)`
+  padding: 15px;
+  background-color: transparent;
+  a {
+    text-decoration: none;
+    color: #ffff;
+  }
+  &.active {
+    a {
+      color: #1a56db;
+      font-weight: 800;
+    }
+  }
 `;
 
 const menuOptions = [
@@ -73,21 +97,14 @@ const menuOptions = [
   "Log in",
   "Get started",
 ];
-// const menuOptions = [
-//   { text: "Home", link: "/" },
-//   { text: "News", link: "/news" },
-//   { text: "Events", link: "/events" },
-//   { text: "Contact", link: "/contact" },
-//   { text: "Log in", link: "/login" },
-//   { text: "Get started", link: "/get-started" },
-// ];
 
 function TestBurger() {
   const [click, setClick] = useState(false);
   const [menu, setMenu] = useState([]);
+  const { pathname } = useLocation();
 
   const handleClick = () => {
-    setClick(!click); // czy menu jest true
+    setClick(!click);
 
     const randomMenu = [];
     while (randomMenu.length < 5) {
@@ -98,6 +115,7 @@ function TestBurger() {
     }
     setMenu(randomMenu);
   };
+
   return (
     <NavContainer>
       <WebLogo />
@@ -107,9 +125,29 @@ function TestBurger() {
 
       {click && (
         <MenuButtons>
-          {menuOptions.map((item, index) => (
-            <BurgerButton key={index}>{item}</BurgerButton>
-          ))}
+          <NavButtons className={pathname === "/Home" && "active"}>
+            <Link to="/Home">HOME</Link>
+          </NavButtons>
+
+          <NavButtons className={pathname === "/News" && "active"}>
+            <Link to="/News">NEWS</Link>
+          </NavButtons>
+
+          <NavButtons className={pathname === "/Events" && "active"}>
+            <Link to="/Events">EVENTS</Link>
+          </NavButtons>
+
+          <NavButtons className={pathname === "/Contact" && "active"}>
+            <Link to="/Contact">CONTACT</Link>
+          </NavButtons>
+
+          <NavButtons className={pathname === "/NotFound" && "active"}>
+            <Link to="/NotFound">Log in</Link>
+          </NavButtons>
+
+          <NavButtons className={pathname === "/NotFound" && "active"}>
+            <Link to="/NotFound">Get started</Link>
+          </NavButtons>
         </MenuButtons>
       )}
     </NavContainer>
@@ -117,5 +155,3 @@ function TestBurger() {
 }
 
 export default TestBurger;
-
-

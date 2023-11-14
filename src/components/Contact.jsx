@@ -1,26 +1,9 @@
-// import BreakPoints from "./BreakPoints";
-// import SponsorsCards from "./SponsorCard";
 
 import styled from "styled-components";
 
 import { Button, Container, Heading, SupportingText } from "./styleElements";
 
-import {
-  bmw,
-  cocacola,
-  disnay,
-  fedex,
-  intel,
-  nestle,
-  netflix,
-  shell,
-  spotify,
-  stripe,
-  tesla,
-  twitch,
-} from "../images";
-
-import { BreakPoints,SponsorCard } from "../components";
+import { BreakPoints,CustomerLogos} from "../components";
 
 const NewContainer = styled(Container)`
   max-width: 1440px;
@@ -100,22 +83,6 @@ const LargeMessageInput = styled.textarea`
   resize: none;
 `;
 
-const SponsorsCardsContainer = styled.div`
-  background-color: #1f2a37;
-  border-bottom: 2px solid #374151;
-
-  > div:first-child {
-    padding-top: 60px;
-    padding-bottom: 40px;
-  }
-`;
-
-const SponsorsCardsWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-`;
-
 function Events() {
   return (
     <NewContainer>
@@ -129,57 +96,27 @@ function Events() {
           <form action="contact" className="">
             <FormInput>
               <label htmlFor="email">Your email</label>
-              <input type="email" placeholder="name@flowbite.com" />
+              <input type="email" id="email" name="email" placeholder="name@flowbite.com" autoCapitalize="email"/>
             </FormInput>
             <FormInput>
               <label htmlFor="subject">Subject</label>
               <input
                 type="text"
+                id="subject"
+                name="text"
+                autoCapitalize="subject"
                 placeholder="Let us know how we can help you"
               />
             </FormInput>
             <FormInput>
               <label htmlFor="message">Your message</label>
-              <LargeMessageInput type="text" />
+              <LargeMessageInput id="message" type="text" name="text" autoCapitalize="message"/>
             </FormInput>
           </form>
         </FormContainer>
         <Button>Send message</Button>
       </Row>
-      <SponsorsCardsContainer>
-        <div>
-          <CenterHeading>Donors, Partners & Sponsors</CenterHeading>
-          <CenterSupportingText>
-            Here at flowbite we focus on markets where technology, innovation,
-          </CenterSupportingText>
-          <CenterSupportingText>
-            and capital can unlock long-term value.
-          </CenterSupportingText>
-        </div>
-
-        <SponsorsCardsWrapper>
-          <div>
-            <SponsorCard img={stripe} />
-            <SponsorCard img={intel} />
-            <SponsorCard img={fedex} />
-          </div>
-          <div>
-            <SponsorCard img={spotify} />
-            <SponsorCard img={shell} />
-            <SponsorCard img={disnay} />
-          </div>
-          <div>
-            <SponsorCard img={tesla} />
-            <SponsorCard img={netflix} />
-            <SponsorCard img={bmw} />
-          </div>
-          <div>
-            <SponsorCard img={twitch} />
-            <SponsorCard img={nestle} />
-            <SponsorCard img={cocacola} />
-          </div>
-        </SponsorsCardsWrapper>
-      </SponsorsCardsContainer>
+      <CustomerLogos/>
     </NewContainer>
   );
 }

@@ -9,12 +9,25 @@ import {
   SupportingText,
 } from "./styleElements";
 
-import { littleArow, carousel } from "../images";
+import { littleArow, carousel, mockup1News, mockupLeft } from "../images";
 
 import { BreakPoints } from "../components";
 
 const EventsContainer = styled(Container)`
   padding-bottom: 0px;
+`;
+const PictureCardsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: ${BreakPoints.desktop}) {
+    padding: 20px;
+  }
+  @media (max-width: ${BreakPoints.tablet}) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+  }
 `;
 
 const HorizontalRule = styled.hr`
@@ -28,6 +41,7 @@ const CenterHeading = styled(Heading)`
 const CenterSupportingText = styled(SupportingText)`
   text-align: center;
 `;
+
 const Blog = styled.div`
   background-color: #1f2a37;
   border-top: 1px solid #374151;
@@ -64,16 +78,27 @@ const ColumnLink = styled(CenteredLink)`
 `;
 
 function Events() {
+
   return (
     <EventsContainer>
       <div>
         <CenterHeading>Fundraising events</CenterHeading>
         <CenterSupportingText>
           Flowbite helps you connect with friends, family and communities of
-          people who share your interests.{" "}
+          people who share your interests.
         </CenterSupportingText>
-        <PictureCard />
-        <PictureCard />
+
+        <PictureCardsContainer>
+          <div>
+            <PictureCard imageSrc={mockup1News} />
+            <PictureCard imageSrc={mockupLeft} />
+          </div>
+          <div>
+            <PictureCard imageSrc={mockupLeft} />
+            <PictureCard imageSrc={mockup1News} />
+          </div>
+        </PictureCardsContainer>
+
         <CenteredLink>
           <a href="url">View all fundraising events</a>
           <img src={littleArow} alt="littleArow-img" />

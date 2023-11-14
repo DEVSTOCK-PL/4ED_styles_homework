@@ -1,42 +1,25 @@
 import styled from "styled-components";
-import mockup1News from "../images/mockup1News.png";
-import mockupLeft from "../images/mockupLeft.png";
-import eventButtonVector from "../images/eventButtonVector.svg";
-import Button from "./styleElements/Button";
-import BreakPoints from "./BreakPoints";
 
-const Container = styled.div`
-  /* padding: 20px 0px 60px 0px; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-content: space-between;
-  @media (max-width: ${BreakPoints.tablet}) {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 0px;
-  }
-`;
+import { eventButtonVector } from "../images";
+
+import { Button } from "./styleElements";
+
+import { BreakPoints } from "../components";
+
+import useCounter from "./hooks/useDonationLogic";
+import PropTypes from "prop-types";
 
 const Card = styled.div`
   background-color: #1f2a37;
-  width: 43%;
+  width: 80%;
   border: 2px solid #374151;
   border-radius: 8px;
   margin-bottom: 40px;
   padding: 30px;
-  @media (max-width: ${BreakPoints.desktop}) {
-    padding: 20px;
-  }
-  @media (max-width: ${BreakPoints.tablet}) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 15px;
-  }
+  background-color: ${(props) => (props.isReachedGoal ? "#05d027" : "#1f2a37")};
 `;
 const MockupImage = styled.img`
-  height: 288px;
+  height: 388px;
   border-radius: 8px;
   width: 100%;
   border-radius: 8px;
@@ -70,12 +53,16 @@ const CardContent = styled.div`
     }
   }
 `;
+
 const Shape = styled.div`
   width: 100%;
   height: 10px;
   border-radius: 2px;
-  background-color: #374151;
-  background: linear-gradient(90deg, #1c64f2 70%, #374151 70%);
+  background: linear-gradient(
+    90deg,
+    #1c64f2 ${({ barWidth }) => barWidth}%,
+    #374151 ${({ barWidth }) => barWidth}%
+  );
   margin-bottom: 10px;
   margin-top: 5px;
 `;
@@ -110,19 +97,43 @@ const VectorGrayButton = styled(Button)`
   }
 `;
 
-function CardStyles() {
+function CardStyles({ imageSrc }) {
+  const [count, increment, barWidth] = useCounter();
+  const isDisabled = count > 400000;
+  const isReachedGoal = count >= 400000;
+
+  const handleIncrement = () => {
+    if (!isDisabled) {
+      increment();
+    }
+  }
+
+  const GoalReachedText = styled.span`
+  color: ${({ isReachedGoal }) => (isReachedGoal ? "black" : "transparent")};
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0px;
+  background-color: ${({ isReachedGoal }) => (isReachedGoal ? " rgb(251 247 18)" : "transparent")};
+  /* display: block; */
+  padding: 5px;
+  text-align: center;
+
+`;
+
+
   return (
-    <Container>
-      <Card>
-        <MockupImage src={mockup1News} alt="mockup.rigth" />{" "}
+    <div>
+      <Card isReachedGoal={isReachedGoal}>
+        <MockupImage src={imageSrc} alt="mockup.rigth" />{" "}
         <CardContent>
           <div>
-            <span>$376,856</span>
+            <span>${count}</span>
             <span>of 400k goal</span>
+            <GoalReachedText isReachedGoal={isReachedGoal}>Goal Secured!!</GoalReachedText>
           </div>
           <div>2,756 donors</div>
         </CardContent>
-        <Shape></Shape>
+        <Shape barWidth={barWidth} ></Shape>
         <CardDescription>
           <p>Thank you for supporting in planting trees work. </p>
           <div>
@@ -132,42 +143,18 @@ function CardStyles() {
           </div>
         </CardDescription>
         <Buttons>
-          <Button>Donate now</Button>
+          <Button onClick={handleIncrement} disabled={isDisabled}>Donate now</Button>
           <VectorGrayButton>
             <img src={eventButtonVector} alt="button-vector" />
             Share this Fundraiser
           </VectorGrayButton>
         </Buttons>
       </Card>
-      <Card>
-        {" "}
-        <MockupImage src={mockupLeft} alt="mockup.rigth" />{" "}
-        <CardContent>
-          <div>
-            <span>$376,856</span>
-            <span>of 400k goal</span>
-          </div>
-          <div>2,756 donors</div>
-        </CardContent>
-        <Shape></Shape>
-        <CardDescription>
-          <p>Thank you for supporting in planting trees work. </p>
-          <div>
-            Our fundraisers are a creative bunch when it comes to taking on
-            challenges, from beard shaves and bake sales to stand-up comedy and
-            streaming marathons. There is something for everyone.
-          </div>
-        </CardDescription>
-        <Buttons>
-          <Button>Donate now</Button>
-          <VectorGrayButton>
-            <img src={eventButtonVector} alt="button-vector" />
-            Share this Fundraiser
-          </VectorGrayButton>
-        </Buttons>
-      </Card>
-    </Container>
+    </div>
   );
 }
+CardStyles.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+};
 
 export default CardStyles;

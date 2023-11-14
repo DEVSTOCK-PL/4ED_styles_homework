@@ -5,5 +5,6 @@ const Container = styled.div`
   padding: 20px 30px;
   background: #111928;
   max-width: 1440px;
+  min-width: 375px;
 `;
 export default Container

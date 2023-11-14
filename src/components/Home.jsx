@@ -1,16 +1,27 @@
-import styled from "styled-components";
-import Container from "./styleElements/Container";
-import Button from "./styleElements/Button";
-import Heading from "./styleElements/Heading";
-import SupportingText from "./styleElements/SupportingText";
 
-import videoCamera from "../images/videoCamera.png";
-import intel from "../images/intel.png";
-import fedex from "../images/fedex.png";
-import visa from "../images/visa.png";
-import disnay from "../images/disnay.png";
-import carousel from "../images/carousel.png";
-import BreakPoints from "./BreakPoints";
+import styled from "styled-components";
+
+import {
+  Button,
+  CenteredLink,
+  Container,
+  Heading,
+  SupportingText,
+} from "./styleElements";
+
+import {
+  mockup1News,
+  mockupLeft,
+  videoCamera,
+  intel,
+  fedex,
+  visa,
+  disnay,
+  carousel,
+  littleArow,
+} from "../images";
+
+import { PictureCard, BreakPoints } from ".";
 
 const Hero = styled.div`
   display: flex;
@@ -59,7 +70,6 @@ const RightPhoto = styled.div`
     }
     @media (max-width: ${BreakPoints.tablet}) {
       width: 100%;
-      /* height: 100%; */
     }
   }
 `;
@@ -105,7 +115,6 @@ const SocialProof = styled.div`
   }
   @media (max-width: ${BreakPoints.smallDesktop}) {
     margin: 40px 100px;
-    /* margin: 0px; */
   }
   @media (max-width: ${BreakPoints.tablet}) {
     display: flex;
@@ -113,10 +122,10 @@ const SocialProof = styled.div`
   }
 `;
 const Stat = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const HorizontalRule = styled.hr`
@@ -136,6 +145,25 @@ const RowSupportingText = styled.div`
     font-weight: 400;
   }
 `;
+const CenterHeading = styled(Heading)`
+  text-align: center;
+`;
+const CenterSupportingText = styled(SupportingText)`
+  text-align: center;
+`;
+const PictureCardsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: ${BreakPoints.desktop}) {
+    padding: 20px;
+  }
+  @media (max-width: ${BreakPoints.tablet}) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+  }
+`;
 
 function Home() {
   return (
@@ -143,9 +171,7 @@ function Home() {
       <Container>
         <Hero>
           <LeftContent>
-            <Heading>
-              Making earth cooler for people, nature, climate
-            </Heading>
+            <Heading>Making earth cooler for people, nature, climate</Heading>
             <SupportingText>
               Protecting the planet and its natural resources for future
               generations, by reducing pollution, promoting sustainability, and
@@ -154,7 +180,6 @@ function Home() {
             <Buttons>
               <Button>Donate now</Button>
               <VideoCameraButton>
-                {" "}
                 <img src={videoCamera} alt="video-camera-logo" />
                 Learn more
               </VideoCameraButton>
@@ -193,6 +218,19 @@ function Home() {
             <RowSupportingText>People-Powered Projects</RowSupportingText>
           </Stat>
         </SocialProof>
+        <CenterHeading>Fundraising events</CenterHeading>
+        <CenterSupportingText>
+          Flowbite helps you connect with friends, family and communities of
+          people who share your interests.
+        </CenterSupportingText>
+        <PictureCardsContainer>
+          <PictureCard imageSrc={mockup1News} />
+          <PictureCard imageSrc={mockupLeft} />
+        </PictureCardsContainer>
+        <CenteredLink>
+          <a href="url">View all fundraising events</a>
+          <img src={littleArow} alt="littleArow-img" />
+        </CenteredLink>
       </Container>
     </>
   );
