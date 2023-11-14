@@ -1,0 +1,156 @@
+{
+  "contact": [
+    {
+      "email": "3846205@gmail.com",
+      "subject": "Pomoc w formularzach",
+      "message": "Poproszę o pomoc w formularzach",
+      "id": 1
+    },
+    {
+      "email": "3846205@gmail.com",
+      "subject": "teraz jak zrobić logowanie",
+      "message": "czyli jak panie prezesie?",
+      "id": 2
+    },
+    {
+      "email": "3846205@gmail.com",
+      "subject": "pytanie 2",
+      "message": "pytanie 2",
+      "id": 3
+    },
+    {
+      "email": "arek@trzeciak.pl",
+      "subject": "Co mam zadane?",
+      "message": "Tylko w zeszycie",
+      "id": 4
+    },
+    {
+      "email": "2222@222.pl",
+      "subject": "Testuje manualnie",
+      "message": "Czy przeszło test?",
+      "id": 5
+    },
+    {
+      "email": "3333@333.pl",
+      "subject": "33333",
+      "message": "333333",
+      "id": 6
+    },
+    {
+      "email": "3846205@gmail.com",
+      "subject": "Dokończ te kolory",
+      "message": "Dokończ w końcu te kolory leniuchu",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "name": "Przemek",
+      "secondName": "Woźniak",
+      "email": "3846205@gmail.com",
+      "password": "qqqqqq",
+      "id": 1,
+      "logIn": null
+    },
+    {
+      "name": "Julia",
+      "secondName": "Romeowa",
+      "email": "julia@julia.pl",
+      "password": "qqqqqq",
+      "id": 2
+    },
+    {
+      "name": "Mateusz",
+      "secondName": "Kosmateusz",
+      "email": "kosmaty@kosmaty.pl",
+      "password": "wwwwww",
+      "id": 3
+    },
+    {
+      "name": "Stefan",
+      "secondName": "Jarzyna",
+      "email": "jarzyna@www.pl",
+      "password": "qqqqqq",
+      "id": 4
+    },
+    {
+      "name": "Juliusz",
+      "secondName": "Cezar",
+      "email": "cezar@cezar.com",
+      "password": "qqqqqq",
+      "id": 5
+    },
+    {
+      "name": "Paweł",
+      "secondName": "Świętek",
+      "email": "pawel@pawel.pl",
+      "password": "qqqqqq",
+      "id": 6
+    },
+    {
+      "name": "Arek",
+      "secondName": "Trzeciak",
+      "email": "arek@trzeciak.pl",
+      "password": "aaaaaa",
+      "id": 7
+    },
+    {
+      "name": "Przemek",
+      "secondName": "Testowy",
+      "email": "2222@222.pl",
+      "password": "222222",
+      "id": 8
+    },
+    {
+      "name": "Stefan",
+      "secondName": "Zaręba",
+      "email": "zreba@zareba.pl",
+      "password": "zzzzzz",
+      "id": 9
+    },
+    {
+      "name": "Kacper",
+      "secondName": "Duchowaty",
+      "email": "duch@duch.pl",
+      "password": "dddddd",
+      "id": 10
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Tajemnice przeszłości",
+      "description": "Podróż w głąb historii starożytnej cywilizacji, pełna zagadek i nieodkrytych tajemnic.",
+      "author": "Jan Kowalski",
+      "image": "https://via.placeholder.com/150?text=Book+1"
+    },
+    {
+      "id": 2,
+      "title": "Podróże po nieznanych lądach",
+      "description": "Odkryj nieznane zakątki świata wraz z Anną, która przemierza dżungle, pustynie i oceany.",
+      "author": "Anna Nowak",
+      "image": "https://via.placeholder.com/150?text=Book+2"
+    },
+    {
+      "id": 3,
+      "title": "Nauka i technologia przyszłości",
+      "description": "Spojrzenie na przyszłość nauki i technologii. Jak wyglądać będzie świat za 50 lat?",
+      "author": "Piotr Zięba",
+      "image": "https://via.placeholder.com/150?text=Book+3"
+    },
+    {
+      "id": 4,
+      "title": "Magia w codziennym życiu",
+      "description": "Czy magia istnieje naprawdę? Poznaj fascynujący świat Magdy i jej niezwykłych zdolności.",
+      "author": "Magda Lis",
+      "image": "https://via.placeholder.com/150?text=Book+4"
+    },
+    {
+      "id": 5,
+      "title": "Tajniki kosmosu",
+      "description": "Podróż w głąb wszechświata. Poznaj tajniki czarnych dziur, galaktyk i gwiazd.",
+      "author": "Marek Dąb",
+      "image": "https://via.placeholder.com/150?text=Book+5"
+    }
+  ]
+}
