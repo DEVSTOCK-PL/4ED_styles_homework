@@ -1,0 +1,32 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`About Component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-beyTiQ iFsJpF"
+  >
+    <div>
+      Licznik: 0
+      <button
+        class="w-8 h-8 m-4 bg-slate-400"
+      >
+        +
+      </button>
+      <button
+        class="w-8 h-8 m-4 bg-slate-400"
+      >
+        -
+      </button>
+      <button
+        class="w-16 h-8 m-4 bg-slate-400"
+      >
+        reset
+      </button>
+    </div>
+    <input
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
