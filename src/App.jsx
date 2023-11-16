@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 
 
 function App() {
+
   return (
     <>
       <Navbar />
@@ -17,10 +18,10 @@ function App() {
       <SocialProof />
       <CtaOne />
       <CustomerLogos/>
-      <CtaTwo />
-      <SectorBlog />
+      <CtaTwo />  
+      <SectorBlog /> 
       <Contact />
-      <Footer />
+      <Footer /> 
     </>
   )
 }
