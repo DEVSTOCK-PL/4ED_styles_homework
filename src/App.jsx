@@ -5,6 +5,8 @@ import CTA1 from './components/cta'
 import CostumerLogos from './components/customerlogos'
 import CTA2 from './components/cta2'
 import Blog from './components/blog'
+import ContactForm from './components/contact'
+import Footer from './components/footer'
 
 function App() {
     return(
@@ -16,6 +18,8 @@ function App() {
             <CostumerLogos />
             <CTA2 />
             <Blog />
+            <ContactForm />
+            <Footer />
         </div>
     )
 }

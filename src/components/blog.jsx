@@ -14,6 +14,12 @@ padding: 96px, 0px, 96px, 0px;
 display: flex;
 align-items: center;
 justify-content: center;
+
+@media (max-width: 640px) {
+    width: 375px;
+    height: 1466px;
+    padding: 32px, 0px;
+}
 `
 const Container = styled.div`
 width: 1280px;
@@ -23,13 +29,24 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-// background-color: red;
+
+@media (max-width: 640px) {
+    width: 375px;
+    height: 1402px;
+    padding: 0px, 16px;
+    gap: 32px;
+}
 `
 const Heading = styled.div`
 width: 576px;
 height: 121px;
 gap: 16px;
 text-align: center;
+
+@media (max-width: 640px) {
+    width: 343px;
+    height: 126spx;
+}
 
 
 h1 {
@@ -38,6 +55,11 @@ h1 {
     line-height: 45px;
     color: #fff;
     margin: 0 auto;
+
+    @media (max-width: 640px) {
+        font-size: 30px;
+        line-height: 37.5px;
+    }
   }
 
   p {
@@ -45,6 +67,11 @@ h1 {
     font-weight: 300;
     line-height: 30px;
     color: #9CA3AF;
+
+    @media (max-width: 640px) {
+        font-size: 16px;
+        line-height: 24px;
+    }
   }
 `
 const Row = styled.div`
@@ -52,23 +79,45 @@ width: 1280px;
 height: 640px;
 display: flex;
 justify-content: space-between;
+
+@media only screen and (max-width: 640px) {
+    .delete {
+        display: none;
+    }
+    width: 343px;
+    height: 1244px;
+    flex-direction: column;
+}
 `
 const Column = styled.div`
 	width: 383px;
 	height: 616px;
 	display: flex;
 	flex-direction: column;
+
+    @media (max-width: 640px) {
+        width: 343px;
+        height: 420px;
+    }
     `
 
 const Separator = styled.div`
 	width: 1px;
 	height: 640px;
 	background-color: #374151;
+
+    @media (max-width: 640px) {
+        display: none;
+    }
     `
 const BlogCard = styled.div`
 width: 383px;
 height: 420px;
-gap: 20px;
+
+@media (max-width: 640px) {
+    width: 343px;
+    height: 420px;
+}
 
 h1 {
     font-weight: 700;
@@ -106,7 +155,7 @@ function Blog () {
                     <p>We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
                 </Heading>
                 <Row>
-                    <Column className="column">
+                    <Column>
                         <img src={CardHeader} alt="CardHeader" />
                         <BlogCard>
                             <h1>SEO Basics: Beginner's Guide to SEO Success</h1>
@@ -115,7 +164,7 @@ function Blog () {
                         </BlogCard>
                     </Column>
                     <Separator></Separator>
-                    <Column className="column">
+                    <Column>
                         <BlogCard>
                             <h1>How to quickly deploy a static website</h1>
                             <p>Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
@@ -126,15 +175,15 @@ function Blog () {
                             <p>Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even.</p>
                             <span>Read more <img src={arrowblue}/></span>
                         </BlogCard>
-                        <BlogCard>
+                        <BlogCard className='delete'>
                             <h1>Spotify's Car Thing available to all premium users</h1>
                             <p>Starting Tuesday any Spotify Premium user can buy the streaming service's first piece of hardware.</p>
                             <span>Read more <img src={arrowblue}/></span>
                         </BlogCard>
                     </Column>
                     <Separator></Separator>
-                    <Column className="column">
-                    <BlogCard>
+                    <Column>
+                        <BlogCard>
                             <h1>How to Rank Higher on Google (6 Easy Steps)</h1>
                             <p>Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
                             <span>Read more <img src={arrowblue}/></span>
@@ -144,7 +193,7 @@ function Blog () {
                             <p>Static websites are now used to bootstrap lots of websites and are becoming the basis. </p>
                             <span>Read more <img src={arrowblue}/></span>
                         </BlogCard>
-                        <BlogCard>
+                        <BlogCard className='delete'>
                             <h1>How to schedule your Tweets to send later</h1>
                             <p>Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even</p>
                             <span>Read more <img src={arrowblue}/></span>

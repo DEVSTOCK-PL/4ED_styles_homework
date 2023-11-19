@@ -1,6 +1,6 @@
 import React from'react'
-
 import styled from 'styled-components'
+
 import Button from '../Reusable/Button'
 import mockup1 from '../assets/image/Mockup1.png'
 import mockup4 from "../assets/image/Mockup4.png"
@@ -18,6 +18,11 @@ padding: 96px, 0px, 96px, 0px;
 display: flex;
 align-items: center;
 justify-content: center;
+
+@media (max-width: 640px) {
+    width: 375px;
+    height: 1707px;
+}
 `
 const Container = styled.div`
 width: 1280px;
@@ -27,6 +32,14 @@ display: flex;
 justify-content: space-between;
 flex-direction: column;
 align-items: center;
+
+@media (max-width: 640px) {
+    width: 375px;
+    height: 1707px;
+    padding: 32px, 16px;
+    gap: 16px;
+    justify-content: center;
+}
 `
 const Heading = styled.div`
 width: 676px;
@@ -34,12 +47,22 @@ height: 121px;
 gap: 16px;
 text-align: center;
 
+@media (max-width: 640px) {
+    width: 343px;
+    height: 126px;
+}
+
 h1 {
     font-size: 36px;
     font-weight: 800;
     line-height: 45px;
     color: #fff;
     margin: 0 auto;
+
+    @media (max-width: 640px) {
+        font-size: 30px;
+        line-height: 37.5px;
+    }
   }
 
   p {
@@ -47,6 +70,11 @@ h1 {
     font-weight: 300;
     line-height: 30px;
     color: #9CA3AF;
+
+    @media (max-width: 640px) {
+       font-size: 16px;
+       line-height: 24px;
+    }
   }
 
 `
@@ -56,6 +84,14 @@ height: 593px;
 gap; 48px;
 display: flex;
 justify-content: space-between;
+
+@media (max-width: 640px) {
+    width: 343px;
+    height: 1458px;
+    flex-direction: column;
+    gap: 16px;
+    // justify-content: center;
+}
 `
 const Card = styled.div`
 width: 616px;
@@ -67,16 +103,23 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-// gap: 16px;
+
+@media (max-width: 640px) {
+    width: 343px;
+    height: 721px;
+}
 
 h1 {
     width: 552px;
-    height: 23px;
     font-weight: 700; 
     font-size: 18px;
     line-height: 22.5px;
-    color: #fff
-    
+    color: #fff;
+
+    @media (max-width: 640px) {
+        width: 303px;
+        height: 46px;
+    }
 }
 
 p {
@@ -85,13 +128,23 @@ p {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #9CA3AF
-   
+    color: #9CA3AF;
+
+    @media (max-width: 640px) {
+        width: 303px;
+        height: 144px;
+    }
 }
 `
 const IMG = styled.div`
-width: 552px;
+    width: 552px;
     height: 288px;
+
+    @media (max-width: 640px) {
+        width: 303px;
+        height: 288px;
+        display: flex;
+    }
 
     img {
     width: 100%;
@@ -104,6 +157,11 @@ const Progress = styled.div`
 width: 552px;
 height: 41px;
 gap: 4px;
+
+@media (max-width: 640px) {
+    width: 303px;
+    height: 41px;
+}
 `
 const Buttons = styled.div`
 width: 347px;
@@ -112,6 +170,20 @@ gap: 16px;
 display: flex;
 position: relative;
 left: -100px;
+
+@media (max-width: 640px) {
+    width: 303px;
+    height: 98px;
+    flex-direction: column;
+    align-items: center;
+    left: 0px;
+}
+
+Button {
+    @media (max-width: 640px) {
+        width: 100%;
+    }
+}
 `
 
 const Fundarising = styled.div`

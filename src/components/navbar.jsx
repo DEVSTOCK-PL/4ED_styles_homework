@@ -1,7 +1,6 @@
-
 import React from 'react'
-
 import styled from 'styled-components'
+
 import Logo from '../assets/image/Logo.png'
 import Button from '../Reusable/Button'
 
@@ -16,6 +15,11 @@ padding: 24px, 0px, 0px, 0px;
 align-items: end;
 justify-content: center;
 font-family: 'Inter', sans-serif;
+
+@media (max-width: 640px) {
+    width: 375px;
+    height: 60px;
+}
 `
 
 const Nav = styled.div`
@@ -27,29 +31,36 @@ align-items: center;
 justify-content: space-between;
 color: white;
 
+@media (max-width: 640px) {
+    width: 343px;
+    height: 36px;
+}
 `
 
 const CompanyLogo = styled.div`
 align-items: center;
-    display: flex;
-    gap: 12px;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
-
+display: flex;
+gap: 12px;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
 `
 
 
 const NavLinks = styled.div`
 display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	width: 876px;
-	height: 24px;
-	gap: 32px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+align-items: center;
+justify-content: flex-start;
+width: 876px;
+height: 24px;
+gap: 32px;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+
+    @media (max-width: 640px) {
+		display: none;
+	}
 `
 
 const LogIn = styled.div`
@@ -75,7 +86,7 @@ function Navbar() {
 					<a>Team</a>
 					<a>Contact</a>
                 </NavLinks>
-                <LogIn>Log In<Button variant='primary' description="Get Started"></Button></LogIn>
+                <LogIn>Log In<Button description="Get Started"></Button></LogIn>
             </Nav>
         </Container>
     )

@@ -10,9 +10,6 @@ const Container = styled.div`
 	@media( max-width: 640px) {
 		width: 303px;
 	}
-	@media (min-width: 641px) and (max-width: 768px) {
-		width: 303px;
-	}
 `
 const Label = styled.div`
 	width: 552px;
@@ -24,9 +21,6 @@ const Label = styled.div`
 	
 	@media( max-width: 640px) {
 		width: 303px;
-	}
-	@media (min-width: 641px) and (max-width: 768px) {
-		width: 403px;
 	}
 `
 const LeftItem = styled.div`
@@ -63,7 +57,7 @@ const RightItem = styled.div`
 	font-size: 12px;
 	text-align: right;
 `
-const BarComplite = styled.div`
+const Complete = styled.div`
 	width: 552px;
 	height: 10px;
 	border-radius: 2px;
@@ -71,9 +65,6 @@ const BarComplite = styled.div`
 	
 	@media( max-width: 640px) {
 		width: 303px;
-	}
-	@media (min-width: 641px) and (max-width: 768px) {
-		width: 403px;
 	}
 `
 const BarProgress = styled.div`
@@ -102,9 +93,9 @@ const ProgressBar = ( {colected, goal, donors} ) => {
 				</LeftItem>
 				<RightItem>{formattedDonors} donors</RightItem>
 			</Label>
-			<BarComplite>
+			<Complete>
 				<BarProgress progress={progress}></BarProgress>
-			</BarComplite>
+			</Complete>
 		</Container>
 	);
 	

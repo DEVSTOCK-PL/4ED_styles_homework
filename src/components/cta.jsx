@@ -1,6 +1,6 @@
 import React from 'react'
-
 import styled from 'styled-components'
+
 import Button from '../Reusable/Button'
 import mockup1 from '../assets/image/Mockup1.png'
 import mockup2 from '../assets/image/Mockup2.png'
@@ -17,6 +17,13 @@ gap: 10px;
 display: flex;
 justify-content: center;
 font-family: 'Inter', sans-serif;
+
+@media (max-width: 640px) {
+    width: 375px;
+    height: 1229px;
+    padding: 0px, 16px, 32px, 16px;
+    gap: 32px;
+}
 `
 const Container = styled.div`
 width: 1280px;
@@ -24,25 +31,41 @@ height: 1348px;
 gap: 64px;
 display: flex;
 flex-direction: column;
+
+@media (max-width: 640px) {
+    width: 375px;
+    height: 1229px;
+    padding: 0px, 16px, 32px, 16px;
+    gap: 32px;
+    align-items: center;
+}
 `
 const Row = styled.div`
 width: 1280px;
 height: 406px;
 gap: 80px;
-// background-color: gray;
 display: flex;
 align-items: center;
+
+@media (max-width: 640px) {
+    width: 343px;
+    height: 365px;
+    align-items: start;
+}
 `
 const Mockup = styled.div`
 width: 540px;
 height: 406px;
 radius: 8px;
+
+@media (max-width: 640px) {
+    display: none;
+}
 `
 const RightContent = styled.div`
 width: 640px;
 height: 260px;
 gap: 24px;
-// background-color: blue;
 
 h1 {
     color: #fff;
@@ -50,6 +73,11 @@ h1 {
     font-weight: 800;
     line-height: 45px;
     margin-top: 6px;
+
+    @media (max-width: 640px) {
+        font-size: 30px;
+        line-height: 37.5px;
+    }
   }
 p {
     color: #9CA3AF;

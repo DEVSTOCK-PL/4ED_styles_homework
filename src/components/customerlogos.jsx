@@ -1,6 +1,6 @@
 import React from 'react'
-
 import styled from 'styled-components'
+
 import Button from '../Reusable/Button'
 import arrowblue from '../assets/icon/ArrowBlue.svg'
 import external from '../assets/icon/external-link.svg'
@@ -25,24 +25,31 @@ const LogosWrapper = styled.div`
   height: 877px;
   display: flex;
   justify-content: center;
-
   background-color: #1F2A37;
   border-top: 1px solid #374151;
   border-bottom: 1px solid #374151;
   font-family: 'Inter', sans-serif;
- 
+
+ @media (max-width: 640px) {
+    width: 375px;
+    height: 1212px;
+}
 `
 
 const Container = styled.div`
   width: 1280px;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  padding: 96px 0;
+  padding: 96px 0px;
 
-
+  @media (max-width: 640px) {
+    width: 375px;
+    height: 1212px;
+    padding: 32px 16px;
+    gap: 32px;
+}
 `
 const HeadingWrapper = styled.div`
   width: 672px;
@@ -51,6 +58,11 @@ const HeadingWrapper = styled.div`
   align-items: center;
   text-align: center;
 
+  @media (max-width: 640px) {
+    width: 343px;
+    height: 204px;
+}
+
 
   h1 {
     font-size: 36px;
@@ -58,6 +70,11 @@ const HeadingWrapper = styled.div`
     line-height: 45px;
     color: #fff;
     margin: 0 auto;
+
+    @media (max-width: 640px) {
+      font-size: 30px;
+      line-height: 37.5px;
+  }
   }
 
   p {
@@ -65,6 +82,12 @@ const HeadingWrapper = styled.div`
     font-weight: 300;
     line-height: 30px;
     color: #9CA3AF;
+
+    @media (max-width: 640px) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
   }
 
   span {
@@ -74,7 +97,7 @@ const HeadingWrapper = styled.div`
     color: #3F83F8;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 24px;
   }
 `
 const LogosContainer = styled.div`
@@ -84,12 +107,25 @@ const LogosContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 32px;
+
+  @media (max-width: 640px) {
+    width: 343px;
+    height: 912px;
+    gap: 24px;
+}
 `
 const Row = styled.div`
 width: 1280px;
 height: 132px;
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
+
+@media (max-width: 640px) {
+  width: 343px;
+  height: 132px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 `
 const Card = styled.div`
   width: 320px;
@@ -97,6 +133,12 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   
+  @media (max-width: 640px) {
+    width: 142px;
+    height: 132px;
+}
+
+
   p {
     color: #6B7280;
     font-size: 16px;
@@ -111,7 +153,7 @@ const Card = styled.div`
 
 function CustomerLogos() {
     return(
-        <LogosWrapper>
+    <LogosWrapper>
       <Container>
         <HeadingWrapper>
           <h1>Donors, Partners & Sponsors</h1>
