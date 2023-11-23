@@ -10,20 +10,22 @@ import {
   mockup3News,
 } from "../images";
 
-import { BreakPoints } from "../components";
+import { breakPoints } from "../components";
+
+const {desktop,smallDesktop,tablet} = breakPoints
 
 const Row = styled.div`
   display: flex;
-  @media (max-width: ${BreakPoints.desktop}) {
+  @media (max-width: ${desktop}) {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
   }
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${smallDesktop}) {
     display: flex;
     align-items: center;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     display: flex;
     flex-direction: column;
   }
@@ -31,7 +33,7 @@ const Row = styled.div`
 const RowReverse = styled(Row)`
   display: flex;
   flex-direction: row-reverse;
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     display: flex;
     flex-direction: column;
   }
@@ -48,16 +50,16 @@ const MocupImage = styled.img`
   height: 406.78px;
   border-radius: 8px;
   padding-right: 50px;
-  @media (max-width: ${BreakPoints.desktop}) {
+  @media (max-width: ${desktop}) {
     width: 440.46px;
     height: 306.78px;
   }
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${smallDesktop}) {
     padding-right: 20px;
     width: 390.46px;
     height: 300.78px;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     width: 100%;
     height: 100%;
   }
@@ -65,10 +67,10 @@ const MocupImage = styled.img`
 const MiddleMocupImage = styled(MocupImage)`
   padding-right: 0px;
   padding-left: 50px;
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${smallDesktop}) {
     padding-left: 20px;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     padding: 0px;
     width: 100%;
     height: 100%;
@@ -77,7 +79,6 @@ const MiddleMocupImage = styled(MocupImage)`
 
 function News() {
   return (
-    <>
       <Container>
         <Row>
           <div>
@@ -141,7 +142,6 @@ function News() {
           </div>
         </Row>
       </Container>
-    </>
   );
 }
 

@@ -1,4 +1,4 @@
-
+import React from "react";
 import styled from "styled-components";
 
 import {
@@ -21,12 +21,14 @@ import {
   littleArow,
 } from "../images";
 
-import { PictureCard, BreakPoints } from ".";
+import { PictureCard, breakPoints } from ".";
+
+const { tablet, smallDesktop, desktop } = breakPoints;
 
 const Hero = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     display: flex;
     flex-direction: column;
   }
@@ -34,7 +36,7 @@ const Hero = styled.div`
 
 const LeftContent = styled.div`
   padding-right: 30px;
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${smallDesktop}) {
     width: 100%;
     padding-right: 0px;
   }
@@ -51,7 +53,7 @@ const VideoCameraButton = styled(Button)`
   display: flex;
 `;
 const RightPhoto = styled.div`
-  @media (max-width: ${BreakPoints.desktop}) {
+  @media (max-width: ${desktop}) {
     display: flex;
     align-items: center;
   }
@@ -59,16 +61,16 @@ const RightPhoto = styled.div`
   img {
     width: 576px;
     height: 360px;
-    @media (max-width: ${BreakPoints.desktop}) {
+    @media (max-width: ${desktop}) {
       width: 476px;
       height: 270px;
     }
-    @media (max-width: ${BreakPoints.smallDesktop}) {
+    @media (max-width: ${smallDesktop}) {
       width: 470px;
       height: 270px;
       margin: 30px 20px;
     }
-    @media (max-width: ${BreakPoints.tablet}) {
+    @media (max-width: ${tablet}) {
       width: 100%;
     }
   }
@@ -95,7 +97,7 @@ const SponsoredLogo = styled.div`
     width: 86px;
     height: 33.36px;
     margin-right: 20px;
-    @media (max-width: ${BreakPoints.smallDesktop}) {
+    @media (max-width: ${smallDesktop}) {
       width: 56px;
       height: 23.36px;
       margin-right: 10px;
@@ -110,13 +112,13 @@ const SocialProof = styled.div`
   margin: 70px 100px;
   border: 2px solid #374151;
   border-radius: 8px;
-  @media (max-width: ${BreakPoints.desktop}) {
+  @media (max-width: ${desktop}) {
     margin: 70px 100px;
   }
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${smallDesktop}) {
     margin: 40px 100px;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     display: flex;
     flex-direction: column;
   }
@@ -140,7 +142,7 @@ const RowSupportingText = styled.div`
   line-height: 24px;
   letter-spacing: 0em;
   text-align: center;
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${breakPoints.smallDesktop}) {
     font-size: 15px;
     font-weight: 400;
   }
@@ -154,10 +156,10 @@ const CenterSupportingText = styled(SupportingText)`
 const PictureCardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: ${BreakPoints.desktop}) {
+  @media (max-width: ${desktop}) {
     padding: 20px;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -166,73 +168,68 @@ const PictureCardsContainer = styled.div`
 `;
 
 function Home() {
+  const statsData = [
+    { heading: "104M", supportingText: "Trees planted" },
+    { heading: "20k+", supportingText: "Partners & Donors" },
+    { heading: "90M", supportingText: "Tonnes of Carbon Stored" },
+    { heading: "50+", supportingText: "People-Powered Projects" },
+  ];
+
   return (
-    <>
-      <Container>
-        <Hero>
-          <LeftContent>
-            <Heading>Making earth cooler for people, nature, climate</Heading>
-            <SupportingText>
-              Protecting the planet and its natural resources for future
-              generations, by reducing pollution, promoting sustainability, and
-              conserving energy and resources.
-            </SupportingText>
-            <Buttons>
-              <Button>Donate now</Button>
-              <VideoCameraButton>
-                <img src={videoCamera} alt="video-camera-logo" />
-                Learn more
-              </VideoCameraButton>
-            </Buttons>
-            <Divider></Divider>
-            <SponsorsText>Sponsors</SponsorsText>
-            <SponsoredLogo>
-              <img src={intel} alt="intel-logo" />
-              <img src={fedex} alt="fedex-logo" />
-              <img src={visa} alt="visa-logo" />
-              <img src={disnay} alt="disnay-logo" />
-            </SponsoredLogo>
-          </LeftContent>
-          <RightPhoto>
-            <img src={carousel} alt="carousel-img" />
-          </RightPhoto>
-        </Hero>
-        <SocialProof>
-          <Stat>
-            <Heading>104M</Heading>
-            <RowSupportingText>Trees planted</RowSupportingText>
-          </Stat>
-          <HorizontalRule />
-          <Stat>
-            <Heading>20k+</Heading>
-            <RowSupportingText>Partners & Donors</RowSupportingText>
-          </Stat>
-          <HorizontalRule />
-          <Stat>
-            <Heading>90M</Heading>
-            <RowSupportingText>Tonnes of Carbon Stored</RowSupportingText>
-          </Stat>
-          <HorizontalRule />
-          <Stat>
-            <Heading>50+</Heading>
-            <RowSupportingText>People-Powered Projects</RowSupportingText>
-          </Stat>
-        </SocialProof>
-        <CenterHeading>Fundraising events</CenterHeading>
-        <CenterSupportingText>
-          Flowbite helps you connect with friends, family and communities of
-          people who share your interests.
-        </CenterSupportingText>
-        <PictureCardsContainer>
-          <PictureCard imageSrc={mockup1News} />
-          <PictureCard imageSrc={mockupLeft} />
-        </PictureCardsContainer>
-        <CenteredLink>
-          <a href="url">View all fundraising events</a>
-          <img src={littleArow} alt="littleArow-img" />
-        </CenteredLink>
-      </Container>
-    </>
+    <Container>
+      <Hero>
+        <LeftContent>
+          <Heading>Making earth cooler for people, nature, climate</Heading>
+          <SupportingText>
+            Protecting the planet and its natural resources for future
+            generations, by reducing pollution, promoting sustainability, and
+            conserving energy and resources.
+          </SupportingText>
+          <Buttons>
+            <Button>Donate now</Button>
+            <VideoCameraButton>
+              <img src={videoCamera} alt="video-camera-logo" />
+              Learn more
+            </VideoCameraButton>
+          </Buttons>
+          <Divider></Divider>
+          <SponsorsText>Sponsors</SponsorsText>
+          <SponsoredLogo>
+            <img src={intel} alt="intel-logo" />
+            <img src={fedex} alt="fedex-logo" />
+            <img src={visa} alt="visa-logo" />
+            <img src={disnay} alt="disnay-logo" />
+          </SponsoredLogo>
+        </LeftContent>
+        <RightPhoto>
+          <img src={carousel} alt="carousel-img" />
+        </RightPhoto>
+      </Hero>
+      <SocialProof>
+        {statsData.map((stat, index) => (
+          <React.Fragment key={index}>
+            <Stat>
+              <Heading>{stat.heading}</Heading>
+              <RowSupportingText>{stat.supportingText}</RowSupportingText>
+            </Stat>
+            {index !== statsData.length - 1 && <HorizontalRule />}
+          </React.Fragment>
+        ))}
+      </SocialProof>
+      <CenterHeading>Fundraising events</CenterHeading>
+      <CenterSupportingText>
+        Flowbite helps you connect with friends, family and communities of
+        people who share your interests.
+      </CenterSupportingText>
+      <PictureCardsContainer>
+        <PictureCard imageSrc={mockup1News} />
+        <PictureCard imageSrc={mockupLeft} />
+      </PictureCardsContainer>
+      <CenteredLink>
+        <a href="url">View all fundraising events</a>
+        <img src={littleArow} alt="littleArow-img" />
+      </CenteredLink>
+    </Container>
   );
 }
 export default Home;

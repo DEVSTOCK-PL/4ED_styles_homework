@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 import SponsorCard from "./SponsorCard";
@@ -21,7 +20,7 @@ import {
   cocacola,
 } from "../images";
 
-import BreakPoints from "./BreakPoints";
+import BreakPoints from "./breakPoints";
 
 const CentredHeading = styled(Heading)`
   text-align: center;
@@ -58,6 +57,13 @@ const Column = styled.div`
 `;
 
 function CostomersLogos() {
+  const data = [
+    [stripe, intel, fedex],
+    [spotify, shell, disnay],
+    [tesla, netflix, bmw],
+    [twitch, nestle, cocacola],
+  ];
+
   return (
     <>
       <CostumersLogosContainer>
@@ -73,26 +79,13 @@ function CostomersLogos() {
           <img src={littleArow} alt="littleArow-img" />
         </CenteredLink>
         <SponsorsCardWrapper>
-          <Column>
-            <SponsorCard img={stripe} />
-            <SponsorCard img={intel} />
-            <SponsorCard img={fedex} />
-          </Column>
-          <Column>
-            <SponsorCard img={spotify} />
-            <SponsorCard img={shell} />
-            <SponsorCard img={disnay} />
-          </Column>
-          <Column>
-            <SponsorCard img={tesla} />
-            <SponsorCard img={netflix} />
-            <SponsorCard img={bmw} />
-          </Column>
-          <Column>
-            <SponsorCard img={twitch} />
-            <SponsorCard img={nestle} />
-            <SponsorCard img={cocacola} />
-          </Column>
+          {data.map((column, columnIndex) => (
+            <Column key={columnIndex}>
+              {column.map((card, cardIndex) => (
+                <SponsorCard key={cardIndex} img={card} />
+              ))}
+            </Column>
+          ))}
         </SponsorsCardWrapper>
       </CostumersLogosContainer>
     </>

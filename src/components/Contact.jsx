@@ -3,13 +3,15 @@ import styled from "styled-components";
 
 import { Button, Container, Heading, SupportingText } from "./styleElements";
 
-import { BreakPoints,CustomerLogos} from "../components";
+import {breakPoints,CustomerLogos} from "../components";
+
+const {tablet} = breakPoints
 
 const NewContainer = styled(Container)`
   max-width: 1440px;
   padding-bottom: 0px;
   padding: 0px 0px;
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     width: 100%;
     padding: 0px 20px;
   }
@@ -31,7 +33,7 @@ const Row = styled.div`
   padding-bottom: 50px;
   width: 60%;
   margin: 0 auto;
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     width: 100%;
   }
   Button {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BreakPoints from "../BreakPoints";
+import BreakPoints from "../breakPoints";
 
 const Heading = styled.div`
   font-size: 36px;

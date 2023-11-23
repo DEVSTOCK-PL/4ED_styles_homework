@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import PictureCard from "./PictureCard";
@@ -12,7 +11,9 @@ import {
 
 import { littleArow, carousel, mockup1News, mockupLeft } from "../images";
 
-import { BreakPoints } from "../components";
+import { breakPoints } from "../components";
+
+const { desktop, smallDesktop, tablet } = breakPoints;
 
 const EventsContainer = styled(Container)`
   padding-bottom: 0px;
@@ -21,10 +22,10 @@ const EventsContainer = styled(Container)`
 const PictureCardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: ${BreakPoints.desktop}) {
+  @media (max-width: ${desktop}) {
     padding: 20px;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -53,7 +54,7 @@ const Blog = styled.div`
 const Row = styled.div`
   background-color: #1f2a37;
   display: flex;
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${smallDesktop}) {
     display: block;
   }
 `;
@@ -67,7 +68,7 @@ const ImageWrapper = styled.div`
 
 const ColumnContainer = styled.div`
   padding: 40px 30px;
-  @media (max-width: ${BreakPoints.smallDesktop}) {
+  @media (max-width: ${smallDesktop}) {
     padding: 0px 30px;
   }
 `;
@@ -80,7 +81,6 @@ const ColumnLink = styled(CenteredLink)`
 `;
 
 function Events() {
-
   return (
     <EventsContainer>
       <div>
@@ -189,7 +189,7 @@ function Events() {
                 <img src={littleArow} alt="littleArow-img" />
               </ColumnLink>
             </div>
-            <div className="3 kolumna">
+            <div>
               <Heading>
                 12 SEO Best Practices That Everyone Should Follow
               </Heading>
@@ -202,7 +202,7 @@ function Events() {
                 <img src={littleArow} alt="littleArow-img" />
               </ColumnLink>
             </div>
-            <div className="3 kolumna">
+            <div>
               <Heading>How to schedule your Tweets to send later</Heading>
               <SupportingText>
                 Static websites are now used to bootstrap lots of websites and

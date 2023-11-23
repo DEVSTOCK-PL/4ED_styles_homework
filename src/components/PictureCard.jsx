@@ -4,14 +4,15 @@ import { eventButtonVector } from "../images";
 
 import { Button } from "./styleElements";
 
-import { BreakPoints } from "../components";
+import { breakPoints } from "../components";
+
+const { tablet, desktop } = breakPoints;
 
 import useCounter from "./hooks/useDonationLogic";
 
 import PropTypes from "prop-types";
 
 const Card = styled.div`
-  background-color: #1f2a37;
   width: 80%;
   border: 2px solid #374151;
   border-radius: 8px;
@@ -24,13 +25,13 @@ const MockupImage = styled.img`
   border-radius: 8px;
   width: 100%;
   border-radius: 8px;
-  @media (max-width: ${BreakPoints.desktop}) {
+  @media (max-width: ${desktop}) {
     height: 250px;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     height: 400px;
   }
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     height: 320px;
   }
 `;
@@ -97,17 +98,17 @@ const VectorGrayButton = styled(Button)`
     margin-right: 5px;
   }
 `;
-const GoalReachedText = styled.span`
-color: ${({ isReachedGoal }) => (isReachedGoal ? "black" : "transparent")};
-font-size: 20px;
-font-weight: bold;
-margin-top: 0px;
-background-color: ${({ isReachedGoal }) => (isReachedGoal ? " rgb(251 247 18)" : "transparent")};
-/* display: block; */
-padding: 5px;
-text-align: center;
-`;
 
+const GoalReachedText = styled.span`
+  color: ${({ isReachedGoal }) => (isReachedGoal ? "black" : "transparent")};
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0px;
+  background-color: ${({ isReachedGoal }) =>
+  isReachedGoal ? " rgb(251 247 18)" : "transparent"};
+  padding: 5px;
+  text-align: center;
+`;
 
 function CardStyles({ imageSrc }) {
   const [count, increment, barWidth] = useCounter();
@@ -118,24 +119,23 @@ function CardStyles({ imageSrc }) {
     if (!isDisabled) {
       increment();
     }
-  }
-
-
-
+  };
 
   return (
     <div>
-      <Card >
+      <Card isReachedGoal={isReachedGoal}>
         <MockupImage src={imageSrc} alt="mockup.rigth" />{" "}
         <CardContent>
           <div>
             <span>${count}</span>
             <span>of 400k goal</span>
-            <GoalReachedText isReachedGoal={isReachedGoal}>Goal Secured!!</GoalReachedText>
+            <GoalReachedText isReachedGoal={isReachedGoal}>
+              Goal Secured!!
+            </GoalReachedText>
           </div>
           <div>2,756 donors</div>
         </CardContent>
-        <Shape barWidth={barWidth} ></Shape>
+        <Shape barWidth={barWidth}></Shape>
         <CardDescription>
           <p>Thank you for supporting in planting trees work. </p>
           <div>
@@ -145,7 +145,9 @@ function CardStyles({ imageSrc }) {
           </div>
         </CardDescription>
         <Buttons>
-          <Button onClick={handleIncrement} disabled={isDisabled}>Donate now</Button>
+          <Button onClick={handleIncrement} disabled={isDisabled}>
+            Donate now
+          </Button>
           <VectorGrayButton>
             <img src={eventButtonVector} alt="button-vector" />
             Share this Fundraiser

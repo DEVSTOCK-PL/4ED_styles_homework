@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 import styled from "styled-components";
@@ -7,13 +6,15 @@ import { Container, Button } from "./styleElements";
 
 import WebLogo from "./WebLogo";
 
-import BreakPoints from "./BreakPoints";
+import breakPoints from "./breakPoints";
+
+const { tablet } = breakPoints;
 
 import { Link, useLocation } from "react-router-dom";
 
 const NavContainer = styled(Container)`
   display: none;
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     display: block;
   }
 `;
@@ -62,14 +63,13 @@ const Icon = styled.span`
 
 const MenuButtons = styled.div`
   position: absolute;
- 
   display: flex;
   flex-direction: column;
   top: 76px;
   left: 0px;
   height: calc(80vh - 76px);
   width: 100%;
-  background-color: #1F2A37;
+  background-color: #1f2a37;
   overflow: hidden;
   transition: all 0.5s ease 0s;
 `;
@@ -89,31 +89,12 @@ const NavButtons = styled(Button)`
   }
 `;
 
-const menuOptions = [
-  "Home",
-  "News",
-  "Events",
-  "Contact",
-  "Log in",
-  "Get started",
-];
-
 function TestBurger() {
   const [click, setClick] = useState(false);
-  const [menu, setMenu] = useState([]);
   const { pathname } = useLocation();
 
   const handleClick = () => {
     setClick(!click);
-
-    const randomMenu = [];
-    while (randomMenu.length < 5) {
-      const randomIndex = Math.floor(Math.random() * menuOptions.length);
-      if (!randomMenu.includes(menuOptions[randomIndex])) {
-        randomMenu.push(menuOptions[randomIndex]);
-      }
-    }
-    setMenu(randomMenu);
   };
 
   return (

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import externalLink from "../images/externalLink.svg";
+
+import { externalLink } from "../images";
 
 const Card = styled.div`
   display: flex;
@@ -37,9 +38,9 @@ const Card = styled.div`
 const LogoImg = styled.img`
   height: 53px;
   width: 100px;
-
 `;
 
+// eslint-disable-next-line react/prop-types
 function SponsorCard({ img }) {
   return (
     <Card>

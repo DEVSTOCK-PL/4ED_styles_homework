@@ -1,7 +1,5 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import NavBarBurger from "./components/NavBarBurger";
+import { NavBar,Footer,NavBarBurger} from "./components";
 
 import {
   Home,

@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import { Link, useLocation } from "react-router-dom";
 
-import { BreakPoints } from "../components";
+import { breakPoints } from "../components";
 
 import { Container, Button } from "./styleElements";
 
@@ -15,7 +15,7 @@ const NavContainer = styled(Container)`
   display: flex;
   align-items: center;
   max-width: none;
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${breakPoints.tablet}) {
     display: none;
   }
 `;

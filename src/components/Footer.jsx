@@ -1,30 +1,29 @@
-// import Container from "./styleElements/Container";
-// import logo from "../images/logo.png";
-// import socialLinks from "../images/socialLinks.png";
-
-// import BreakPoints from "./BreakPoints";
-
 import styled from "styled-components";
 
 import { Container } from "./styleElements";
 
 import { logo, socialLinks } from "../images";
 
-import { BreakPoints } from "../components";
+import { breakPoints } from "../components";
+
+const { tablet, mobile } = breakPoints;
 
 const FooterContainer = styled(Container)`
   background-color: #1f2a37;
   padding: 60px 0px;
   max-width: none;
+  @media (max-width: ${mobile}) {
+    margin: 0 auto;
+  }
 `;
 
 const ColumnsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: ${BreakPoints.tablet}) {
+  @media (max-width: ${tablet}) {
     flex-wrap: wrap;
   }
-  @media (max-width: ${BreakPoints.mobile}) {
+  @media (max-width: ${mobile}) {
     display: flex;
     flex-direction: column;
   }
@@ -81,45 +80,36 @@ const LogoSocial = styled.div`
 `;
 
 function Footer() {
+  const columnsData = [
+    ["COMPANY", "About", "Premium", "Blog", "Affiliate Program", "Get Coupon"],
+    [
+      "HELP AND SUPPORT",
+      "Contact Us",
+      "Knowledge Center",
+      "Premium Support",
+      "Sponsorships",
+    ],
+    ["Learning", "Learn Hub", "Manuals", "Tutorials", "Communities"],
+    [
+      "RESOURCES",
+      "Third-Party Tools",
+      "Illustrations",
+      "Themesberg",
+      "Bluehost",
+      "Stock Photos",
+    ],
+    ["LEGAL", "Privacy Policy", "Terms & Conditions", "EULA"],
+  ];
   return (
     <FooterContainer>
       <ColumnsWrapper>
-        <Column>
-          <div>COMPAMY</div>
-          <div>About</div>
-          <div>Premium</div>
-          <div>Blog</div>
-          <div>Affiliate Program</div>
-          <div>Get Coupon</div>
-        </Column>
-        <Column>
-          <div>HELP AND SUPPORT</div>
-          <div>Contact Us</div>
-          <div>Knowledge Center</div>
-          <div>Premium Support</div>
-          <div>Sponsorships</div>
-        </Column>
-        <Column>
-          <div>Learning</div>
-          <div>Learn Hub</div>
-          <div>Manuals</div>
-          <div>Tutorials</div>
-          <div>Communities</div>
-        </Column>
-        <Column>
-          <div>RESOURCES</div>
-          <div>Third-Party Tools</div>
-          <div>Illustrations</div>
-          <div>Themesberg</div>
-          <div>Bluehost</div>
-          <div>Stock Photos</div>
-        </Column>
-        <Column>
-          <div>LEGAL</div>
-          <div>Privacy Policy</div>
-          <div>Terms & Conditions</div>
-          <div>EULA</div>
-        </Column>
+        {columnsData.map((column, columnIndex) => (
+          <Column key={columnIndex}>
+            {column.map((item, itemIndex) => (
+              <div key={itemIndex}>{item}</div>
+            ))}
+          </Column>
+        ))}
       </ColumnsWrapper>
       <LogoSocial>
         <div>
