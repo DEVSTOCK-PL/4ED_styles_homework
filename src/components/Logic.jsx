@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const useDonationState = (targetDonations) => {
+export const useDonationState = (targetDonations) => {
     const [donations, setDonations] = useState(0);
 
     const handleDonation = (donate) => {
@@ -9,4 +9,5 @@ const useDonationState = (targetDonations) => {
     const meterDonate = (donations / targetDonations) * 100;
     return { donations, meterDonate, handleDonation };
 }
-export default useDonationState
+
+

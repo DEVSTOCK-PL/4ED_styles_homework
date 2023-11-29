@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ArrowLink from "../image/ArrowLink.svg"
+import { ArrowLink } from "../image/indexImage";
 import React from "react";
 
 const StyledLinkButton = styled.a`
@@ -15,7 +15,7 @@ flex-direction: ${(props)=>props.flexDirection};
 justify-content: ${(props)=>props.justifyContent};
 align-items: ${(props)=>props.alignItems};
 cursor: pointer;
-URL: ${(props) => props.URL};
+url: ${(props) => props.url};
 `
 const VectorInButton = styled.svg`
 width: ${(props) => props.width || "20px"};
@@ -25,9 +25,9 @@ justify-content: ${(props)=>props.justifyContent||"space-between"};
 align-items: ${(props)=>props.alignItems||"center"};
 `
 
-const LinkButton = ({ width, height, description, fontWeight, fontSize, lineHeight, background, URL, display,justifyContent, flexDirection, alignItems}) => {
+const LinkButton = ({ width, height, description, fontWeight, fontSize, lineHeight, background, url, display,justifyContent, flexDirection, alignItems}) => {
     const linkClick = () => {
-        window.location.href = URL;
+        window.location.href = url;
     }
     return (
         <StyledLinkButton

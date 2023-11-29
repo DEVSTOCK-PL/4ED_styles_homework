@@ -1,13 +1,6 @@
-import Hero from './components/Hero'
-import Navbar from './components/Navbar'
-import SocialProof from './components/SocialProof'
-import CtaOne from './components/CTA_1'
-import CustomerLogos from './components/CustomerLogos'
-import CtaTwo from './components/CTA_2'
-import SectorBlog from './components/Blog'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { SocialProof, SectorBlog, Footer, Hero, CtaOne, CtaTwo, Contact, Navbar, CustomerLogos } from "./components/indexComponents"
 
+import "../src/App.css"
 
 function App() {
 
@@ -17,11 +10,11 @@ function App() {
       <Hero />
       <SocialProof />
       <CtaOne />
-      <CustomerLogos/>
+      <CustomerLogos/> 
       <CtaTwo />  
       <SectorBlog /> 
       <Contact />
-      <Footer /> 
+      <Footer />
     </>
   )
 }
