@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 import Events from "./EventsDonate";
 import ButtonDonate from "./ButtonDonate"
 import LeftMockup from "../image/LeftMockup.svg"
-import TransparentShareButton from "../generalComponents/TransparentShareButton";
+import TransparentShareButton from "../generalComponents/Buttons/TransparentShareButton";
 // import { useDonationContext } from "../Logika/DonateContextForAll";
 
 const ProgressBarContainer = styled.div`

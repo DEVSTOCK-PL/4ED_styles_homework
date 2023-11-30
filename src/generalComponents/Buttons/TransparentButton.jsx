@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import Extlink from "../image/Extlink.svg"
+import { Extlink } from "../../image/indexImage";
 
 const StyledTransparentButton = styled.button`
 width: 122px;
 height: 34px;
 border-radius: 8px;
-${'' /* padding: 8px 12px 8px 12px; */}
 background: #1f2a37;
 border: 1px solid #4b5563;
 font-family: Inter;

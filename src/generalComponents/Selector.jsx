@@ -6,9 +6,6 @@ display: block;
 width: 23.1px;
 height: 19.8px;
 color: #FFF;`
- /* display: none;
-@media (max-width: 375px) {
-    display: block; */
 
 const OptionSelector = styled.div`
 width: 23.1px;

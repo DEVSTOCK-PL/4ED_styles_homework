@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Share from "../image/Share.svg"
+import { Share } from "../../image/indexImage";
 
 const StyledTransparentShareButton = styled.button`
 width: 210px;

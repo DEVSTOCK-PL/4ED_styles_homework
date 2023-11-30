@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import CameraSVG from "../image/CameraSVG.svg"
+import { CameraSVG } from "../../image/indexImage";
 
 const StyledGrayButton = styled.button`
 width: ${(props) => props.width || "182px"};
@@ -11,7 +11,7 @@ background: ${(props) => props.background || "#1F2A37"};
 padding:${(props) => props.padding || "12px,20px,12px,20px"};
 font-family: "Inter";
 weight-family: ${(props) => props.weightFamily || "500"};
-font-size:${(props) => props.fontSize || "16pz"};
+font-size:${(props) => props.fontSize || "16px"};
 color: #9CA3AF;
 display: "flex";
 justify-content: center;

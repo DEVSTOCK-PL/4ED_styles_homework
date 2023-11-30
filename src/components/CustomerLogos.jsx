@@ -1,25 +1,15 @@
-import styled from "styled-components";
-import LinkButton from "../generalComponents/LinkButton";
-import HeadingText from "../generalComponents/HeadingText";
-import SupportingText from "../generalComponents/SupportingText";
-import Stripe from "../image/Stripe.svg"
-import Spotify from "../image/Spotify.svg"
-import Tesla from "../image/Tesla.svg"
-import Twitch from "../image/Twitch.svg"
-import Intel from "../image/Intel.svg"
-import Shell from "../image/Shell.svg"
-import Netflix from "../image/Netflix.svg"
-import Nestle from "../image/Nestle.svg"  
-import Fedex from "../image/Fedex.svg"
-import Disney from "../image/Disney.svg"
-import BMW from "../image/BMW.svg"
-import CocaCola from "../image/CocaCola.svg"
-import TransparentButton from "../generalComponents/TransparentButton";
 import { Link } from 'react-router-dom';
+import styled from "styled-components";
+
+import { SupportingText, LinkButton, HeadingText, TransparentButton } from '../generalComponents/indexGeneralComponents';
+import { Stripe, Spotify, Tesla, Twitch, Intel, Shell, Netflix, Nestle, Fedex, Disney, BMW, CocaCola } from "../image/indexImage";
+import { breakpoints } from "./breakpoints";
+
 import NewSponsor from "../subpages/NewSponsor";
 
 const StyledCustomerLogos = styled.div`
-width: 1440px;
+width: 100%;
+min-width: 1440px;
 height: 877px;
 border: 1px; 0px 96px 0px;
 gap: 64px;
@@ -29,42 +19,90 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    height: auto;
+    margin: 0 32px;
+    padding: 40px 0px;
+    }
 `
 const HeadingCustomerLogos = styled.div`
-width:672px;
+width: 100%;
+min-width:672px;
 height: 161px;
 gap: 16px;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+@media screen and (max-width: ${breakpoints.s}) {
+    height: auto;
+}
 `
 const ContainerCustomerLogos = styled.div`
-width: 1280px;
-heigh: 460px;
+width: 100%;
+min-width: 1280px;
+height: 460px;
 gap: 32px;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
 align-items: center;
+
+@media screen and (max-width: ${breakpoints.s}) {
+    height: auto;
+    flex-wrap: wrap;
+
+}
 `
 const RowCustomerLogos = styled.div`
-width: 1280px;
+width: 100%;
+min-width: 1280px;
 height: 132px;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
+
+@media screen and (max-width: ${breakpoints.s}) {
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px 30px;
+    }
 `
 const CardCustomerLogos = styled.div`
 width: 320px;
-heigh: 132px;
+height: 132px;
 border-radius: 8px;
 gap: 20px;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+@media screen and (max-width: ${breakpoints.s}) {
+    width: 142px;
+    height: auto;
+    padding: 20px 80px;
+    display: flex; 
+}
+`
+const TechCard = styled(CardCustomerLogos)`
+width: 100%;
+min-width: 343px;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+#media screen and (max-width: ${breakpoints.s}) {
+    width: 343px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
 `
 const LogoCustomerLogos = styled.svg`
 width: ${(props) => props.width};
@@ -85,7 +123,6 @@ align-items: center;
 const TextCustomerLogos = styled.div`
 width: ${(props) => props.width||"142px"};
 height: ${(props) => props.height || "20px"};
-font-family: Inter;
 font-weight:400;
 font-size: 16px;
 line-height: 20px;
@@ -105,6 +142,7 @@ const CustomerLogos = () => {
             </HeadingCustomerLogos>
             <ContainerCustomerLogos>
                 <RowCustomerLogos>
+                    <TechCard>
                     <CardCustomerLogos>
                         <LogoTextContainer>
                             <LogoCustomerLogos width="80px"><image xlinkHref={Stripe} /></LogoCustomerLogos>
@@ -117,6 +155,8 @@ const CustomerLogos = () => {
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
                         <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>
                     </CardCustomerLogos>
+                    </TechCard>
+                    <TechCard>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="153px"><image xlinkHref={Tesla}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
@@ -127,8 +167,10 @@ const CustomerLogos = () => {
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
                         <a href="https://www.twitch.tv/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
+                    </TechCard>
                 </RowCustomerLogos>
                 <RowCustomerLogos>
+                    <TechCard>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="87px"><image xlinkHref={Intel}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
@@ -139,6 +181,8 @@ const CustomerLogos = () => {
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
                         <a href="https://www.shell.pl/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
+                    </TechCard>
+                    <TechCard>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="107px"><image xlinkHref={Netflix}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
@@ -149,8 +193,10 @@ const CustomerLogos = () => {
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
                         <a href="https://www.nestle.pl/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
+                    </TechCard>    
                 </RowCustomerLogos>
-                <RowCustomerLogos>    
+                <RowCustomerLogos>  
+                    <TechCard>    
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="112px"><image xlinkHref={Fedex}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
@@ -161,6 +207,8 @@ const CustomerLogos = () => {
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
                         <a href="https://www.disney.pl/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
+                    </TechCard>
+                    <TechCard>
                     <CardCustomerLogos>
                         <LogoCustomerLogos width="38px"><image xlinkHref={BMW}/></LogoCustomerLogos>
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
@@ -171,6 +219,7 @@ const CustomerLogos = () => {
                         <TextCustomerLogos>Partner since 2015</TextCustomerLogos>
                         <a href="https://www.coca-colacompany.com/" target="_blank" rel="noopener noreferrer"><TransparentButton description="Visit website"/></a>  
                     </CardCustomerLogos>
+                    </TechCard>    
                 </RowCustomerLogos>
             </ContainerCustomerLogos>
         </StyledCustomerLogos>

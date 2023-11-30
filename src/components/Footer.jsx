@@ -1,76 +1,107 @@
 import styled from "styled-components";
-import LinkFooter from "../generalComponents/LinkFooter";
-import LogoNavbarFooter from "../image/LogoNavbarFooter.svg"
-import Githubgray from "../image/Githubgray.svg"
-import Twittergray from "../image/Twittergray.svg"
-import Dribbblegray from "../image/Dribbblegray.svg"
-import Facebookgray from "../image/Facebookgray.svg"
+
+import { LogoNavbarFooter, Githubgray, Dribbblegray, Twittergray,Facebookgray } from "../image/indexImage";
+import { breakpoints } from "./breakpoints";
 
 const StyledFooter = styled.div`
-width: 1440px;
-height: 569px;
+width: 100%;
+min-width: 1440px;
+min-height: 569px;
 background: #1F2A37;
 border-top: 1px #374151;
 display: flex; 
 justify-content: center;
 align-items: center;
+margin: 0 auto;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    height: auto;
+    margin: 0 32px;
+    flex-wrap: wrap;
+    align-items: center;
+}
 `
 const ContainerFooter = styled.div`
-width: 1280px;
+width: 100%;
+max-width: ${breakpoints.l};
 height: 409px;
 display: flex;
 flex-direction: column;
 align-items: center;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    padding: 32px;
+    height: auto;
+    display: flex; 
+    align-items: center;}
+
 `
 const NavContainerFooter = styled.div`
-width: 1280px;
+width:100%;
+max-width: ${breakpoints.l};
 height: 221px;
 display: flex;
 justify-content: space-between;
-`
+
+@media screen and (min-width: ${breakpoints.s}) and (max-width: ${breakpoints.m}) {
+    flex-wrap: wrap;
+    height: auto;
+    align-items: center;
+}
+@media screen and (max-width: ${breakpoints.s}) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+`;
 const ColumnOne = styled.div`
-width: 176px;
+max-width: 176px;
 height: 221px;
 display: flex;
 flex-direction: column;
 align-items: start;
 justify-content: space-between;
-`
-const ColumnTwo = styled.div`
-width: 176px;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    align-items: center;
+    height: auto;
+    justify-content: space-evenly;
+}
+`;
+const ColumnTwo = styled(ColumnOne)`
 height: 181px;
-display: flex;
-flex-direction: column;
-align-items: start;
-justify-content: space-between;
-`
-const ColumnThree = styled.div`
-width: 176px;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    height: auto;
+    justify-content: space-evenly;
+}
+`;
+const ColumnThree = styled(ColumnOne)`
 height: 181px;
-display: flex;
-flex-direction: column;
-align-items: start;
-justify-content: space-between;
-`
-const ColumnFour = styled.div`
-width: 176px;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    height: auto;
+    justify-content: space-evenly;
+}
+`;
+const ColumnFour = styled(ColumnOne)`
 height: 221px;
-display: flex;
-flex-direction: column;
-align-items: start;
-justify-content: space-between;
-`
-const ColumnFive = styled.div`
-width: 176px;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    height: auto;
+    justify-content: space-evenly;
+}
+`;
+const ColumnFive = styled(ColumnOne)`
 height: 141px;
-display: flex;
-flex-direction: column;
-align-items: start;
-justify-content: space-between;
-`
+
+@media screen and (max-width: ${breakpoints.m}) {
+    height: auto;
+    justify-content: space-evenly;
+}
+`;
 const HeadingInColumn = styled.div`
 height: 21px;
-font-family: Inter;
 font-weight: 600;
 font-size: 14px;
 line-height: 21px;
@@ -78,58 +109,115 @@ display: flex;
 justify-content: start;
 align-items: center;
 color: #FFF;
-`
+
+@media screen and (min-width: ${breakpoints.s}) and (max-width: ${breakpoints.m}) {
+    font-size: 14px;
+    line-height: 21px;
+    height: 21px;
+}
+@media screen and (max-width: ${breakpoints.s}) {
+    font-size: 14px;
+    line-height: 21px;
+    height: 21px;
+
+}
+`;
 const LogoAndSocialLink = styled.div`
-width: 384px;
+max-width: 384px;
 height: 124px;
 display: flex;
 flex-direction:column;
 justify-content: space-between;
 align-items: center;
 margin-top: 64px;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    flex-direction: inherit;
+    align-items: center;
+}
 `
 const LogoContainer = styled.div`
-width: 144px;
+max-width: 1440px;
 height: 36px;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    align-items: center;
+}
 `
 const LogoStyled = styled.svg`
-width: 32px;
-height: 32px;
+max-width: 32px;
+max-height: 32px;
 `
 const LogoText = styled.div`
-width: 100px;
-height: 36px;
-font-family: Inter;
+max-width: 100px;
+max-height: 36px;
 font-weight: 600;
 font-size: 24px;
 line-height: 36px;
 color: #FFF;
+display: flex;
+align-items: center;
+padding: 6px;
+
+@media screen and (min-width: ${breakpoints.s}) and (max-width: ${breakpoints.m}) {
+    font-size: 22px;
+    line-height: 28px;
+    height: 32px;
+    padding: 4px;
+}
+@media screen and (max-width: ${breakpoints.s}) {
+    font-size: 20px;
+    line-height: 20px;
+    height: 32px;
+}
 `
 const CopyrightContainer = styled.div`
-width: 384px;
+max-width: 384px;
 height: 24px;
-font-family: Inter;
 font-size: 16px;
 line-height: 24px;
 font-weight: 400;
 text-align: center;
 color: #9CA3AF;
+
+@media screen and (max-width: ${breakpoints.m}) {
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+}
 `
 const SocialLinksConatiner = styled.div`
-width: 156px;
+max-width: 156px;
 height: 24px;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 `
 const LogoPlace = styled.svg`
-width: 24px;
-height: 24px;
+max-width: 24px;
+max-height: 24px;
 `
-
+const NewLink = styled.a`
+height: 24px;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #9CA3AF;
+@media screen and (min-width: ${breakpoints.s}) and (max-width: ${breakpoints.m}) {
+    font-size: 16px;
+    line-height: 24px;
+    height: 24px;
+    padding: 4px;
+}
+@media screen and (max-width: ${breakpoints.s}) {
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+}
+`
 const Footer = () => {
     return (
         <StyledFooter>
@@ -137,39 +225,39 @@ const Footer = () => {
                 <NavContainerFooter>
                     <ColumnOne>
                         <HeadingInColumn>COMPANY</HeadingInColumn>
-                        <LinkFooter description="About" />
-                        <LinkFooter description="Premium" />
-                        <LinkFooter description="Blog" />
-                        <LinkFooter description="Affiliate Program" />
-                        <LinkFooter description="Get Coupon" />
+                        <NewLink>About</NewLink>
+                        <NewLink>Premium</NewLink>
+                        <NewLink>Blog</NewLink>
+                        <NewLink>Affiliate Program</NewLink>
+                        <NewLink>Get Coupon</NewLink>
                     </ColumnOne>
                     <ColumnTwo>
                         <HeadingInColumn>Help and support</HeadingInColumn>
-                        <LinkFooter description="Contact Us" />
-                        <LinkFooter description="Knowledge Center" />
-                        <LinkFooter description="Premium Support" />
-                        <LinkFooter description="Sponsorships" />
+                        <NewLink>Contact Us</NewLink>
+                        <NewLink>Knowledge Center</NewLink>
+                        <NewLink>Premium Support</NewLink>
+                        <NewLink>Sponsorships</NewLink>
                     </ColumnTwo>
                     <ColumnThree>
                         <HeadingInColumn>Learning</HeadingInColumn>
-                        <LinkFooter description="Learn Hub" />
-                        <LinkFooter description="Manuals" />
-                        <LinkFooter description="Tutorials" />
-                        <LinkFooter description="Communities" />
+                        <NewLink>Learn Hub</NewLink>
+                        <NewLink>Manuals</NewLink>
+                        <NewLink>Tutorials</NewLink>
+                        <NewLink>Communities</NewLink>
                     </ColumnThree>
                     <ColumnFour>
                         <HeadingInColumn>RESOURCES</HeadingInColumn>
-                        <LinkFooter description="Third-Party Tools" />
-                        <LinkFooter description="Illustrations" />
-                        <LinkFooter description="Themesberg" />
-                        <LinkFooter description="Bluehost" />
-                        <LinkFooter description="Stock Photos" />
+                        <NewLink>Third-Party Tools</NewLink>
+                        <NewLink>Illustrations</NewLink>
+                        <NewLink>Themesberg</NewLink>
+                        <NewLink>Bluehost</NewLink>
+                        <NewLink>Stock Photos</NewLink>
                     </ColumnFour>
                     <ColumnFive>
                         <HeadingInColumn>LEGAL</HeadingInColumn>
-                        <LinkFooter description="Privacy Policy" />
-                        <LinkFooter description="Terms & Conditions" />
-                        <LinkFooter description="EULA" />
+                        <NewLink>Privacy Policy</NewLink>
+                        <NewLink>Terms & Conditions</NewLink>
+                        <NewLink>EULA</NewLink>
                     </ColumnFive>
                 </NavContainerFooter>
                 <LogoAndSocialLink>
