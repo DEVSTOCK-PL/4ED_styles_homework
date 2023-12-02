@@ -1,9 +1,6 @@
-import CompanyLink from "./CompanyLink";
-import ContactLink from "./ContactLink";
-import FeaturesLink from "./FeaturesLink";
-import MarketPlaceLink from "./MarketplaceLink";
-import NewSponsor from "./NewSponsor";
 import NotFoud from "./NotFound";
-import TeamLink from "./TeamLink";
+import Login from "./Login/Login";
+import Register from "./Register/Register";
+import ProfileCard from "./Profile/Profile";
 
-export {CompanyLink, ContactLink, FeaturesLink, MarketPlaceLink, NewSponsor, NotFoud, TeamLink}
+export { Register, Login, NotFoud, ProfileCard }

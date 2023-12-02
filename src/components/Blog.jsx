@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { BlogCard } from "../image/indexImage";
 
-import { HeadingText, SupportingText, LinkButton } from "../generalComponents/indexGeneralComponents";
+import { LinkButton } from "../generalComponents/indexGeneralComponents";
 import { breakpoints } from "./breakpoints";
 
 const StyledBlog = styled.div`
@@ -22,18 +22,6 @@ align-items: center;
     height: auto;
     margin: 0 32px;
 }
-`
-const HeadTitle = styled(HeadingText)`
-height: 45px;
-display: flex; 
-justify-content: center;
-align-items: center;
-`
-const HeadText = styled(SupportingText)`
-height: 60px;
-display: flex;
-justify-content: center;
-align-items: center;
 `
 const ContainerBlog = styled.div`
 width: 100%;
@@ -142,6 +130,24 @@ height: 184px;
 gap: 20px;
 justify-content: center;
 `
+const HeadTitle = styled.div`
+width: 576px;
+height: 45px;
+display: flex; 
+justify-content: center;
+align-items: center;
+font-size: 36px;
+font-weight: 800;
+line-height: 45px;
+color: #FFF;
+`
+const HeadText = styled(HeadTitle)`
+height: 60px;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+color: #9CA3AF;
+`
 const BlogTitle = styled.div`
 width: 383.33px;
 height: 60px;
@@ -167,8 +173,8 @@ const SectorBlog = () => {
             <ContainerBlog>
                 <SectorDescription>
                     <HeadingAndSupporting>
-                        <HeadTitle description="Latest news & events" />
-                        <HeadText description="We use an agile approach to test assumptions and connect with the needs of your audience early and often." />
+                        <HeadTitle>Latest news & events</HeadTitle>
+                        <HeadText>We use an agile approach to test assumptions and connect with the needs of your audience early and often.</HeadText>
                     </HeadingAndSupporting>
                 </SectorDescription>
                 <RowBlog>

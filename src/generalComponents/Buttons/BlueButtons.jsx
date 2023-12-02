@@ -18,7 +18,7 @@ align-items: center;
 onClick: ${(props) =>props.onClick};
 `
 
-const BlueButtons = ({ description, width, onClick, }) => {
+const BlueButtons = ({ width, description, onClick }) => {
     return (
         <StyledBlueButtons 
             width={width}

@@ -25,7 +25,7 @@ padding: 20px 0px 0px 0px;
 
 const HeroContainer = styled.div`
 width: 100%;
-min-width: 1280px;
+max-width: 1280px;
 height: 434px;
 display: flex;
 flex-direction: row;

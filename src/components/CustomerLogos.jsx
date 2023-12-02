@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
-import { SupportingText, LinkButton, HeadingText, TransparentButton } from '../generalComponents/indexGeneralComponents';
+import { LinkButton, TransparentButton } from '../generalComponents/indexGeneralComponents';
 import { Stripe, Spotify, Tesla, Twitch, Intel, Shell, Netflix, Nestle, Fedex, Disney, BMW, CocaCola } from "../image/indexImage";
 import { breakpoints } from "./breakpoints";
 
-import NewSponsor from "../subpages/NewSponsor";
 
 const StyledCustomerLogos = styled.div`
 width: 100%;
@@ -42,7 +41,7 @@ align-items: center;
 `
 const ContainerCustomerLogos = styled.div`
 width: 100%;
-min-width: 1280px;
+max-width: 1280px;
 height: 460px;
 gap: 32px;
 display: flex;
@@ -131,14 +130,32 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
+const TitleText = styled.div`
+width: 672px;
+height: 45px;
+font-size: 36px;
+font-weight: 800;
+line-height: 45px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #FFF;
+`
+const PreviewText = styled(TitleText)`
+height: 60px;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+color: #9CA3AF;
+`
 
 const CustomerLogos = () => {
     return (
         <StyledCustomerLogos>
             <HeadingCustomerLogos>
-                <HeadingText width="672px" height="45px" description="Donors, Partners & Sponsors" display="flex" justifyContent="center" alignItems="center"></HeadingText>
-                <SupportingText width="672px" height="60px" description="Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value." display="flex" justifyContent="center" alignItems="center"></SupportingText>
-                <LinkButton description="Become a sponsor" width="168px" height="24px"><NewSponsor/></LinkButton>
+                <TitleText>Donors, Partners & Sponsors</TitleText>
+                <PreviewText>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value.</PreviewText>
+                <LinkButton description="Become a sponsor" width="168px" height="24px"></LinkButton>
             </HeadingCustomerLogos>
             <ContainerCustomerLogos>
                 <RowCustomerLogos>

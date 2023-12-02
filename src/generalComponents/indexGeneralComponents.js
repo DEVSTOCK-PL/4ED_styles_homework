@@ -6,8 +6,8 @@ import TransparentButton from "./Buttons/TransparentButton"
 import TransparentShareButton from "./Buttons/TransparentShareButton"
 import HeadingText from "./TextStyle/HeadingText"
 import SupportingText from "./TextStyle/SupportingText"
-import LinkButton from "./LinkButton"
-import LinkFooter from "./LinkFooter"
+import LinkButton from "./Buttons/LinkButton"
+import LinkFooter from "./Buttons/LinkFooter"
 import Selector from "./Selector"
 
 export { Selector, LinkButton, LinkFooter, HeadingText, SupportingText, BlueButtons, BlueButtonDifferentColor, BlueButtonSmallFont, GrayButton, TransparentButton, TransparentShareButton }

@@ -19,7 +19,6 @@ onClick: ${(props) =>props.onClick};
 `
 
 const BlueButtonDifferentColor = ({description,width, onClick,}) => {
-    console.log(width, "aaa")
     return (
         <StyledBlueButtonsDifferentColor 
             width={width}

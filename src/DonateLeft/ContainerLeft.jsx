@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { DonationProvider } from "../Logika/DonateContextForAll";
-import ProgressBar from "./ProgressBar";
+// import ProgressBar from "./ProgressBar";
 import Events from "./EventsDonate";
 import ButtonDonate from "./ButtonDonate"
 import LeftMockup from "../image/LeftMockup.svg"
@@ -99,9 +99,10 @@ display: flex;
 flex-direction: row;
 `
 
-const ContainerLeft = ({donations}) => {
+const ContainerLeft = () => {
+    // {donations} w nawias powyzej
     // const { donations } = useDonationContext()
-console.log(donations, "w kontext")
+// console.log(donations, "w kontext")
     const targetDonations = 400000;
 
     return (
@@ -115,7 +116,7 @@ console.log(donations, "w kontext")
                         </LeftStripe>
                         <NumberOfDonors>2,756 donors</NumberOfDonors>
                     </StripeDonate>
-                <ProgressBar donations={donations} targetDonations={targetDonations} />
+                {/* <ProgressBar donations={donations} targetDonations={targetDonations} /> */}
                 </ProgressBarContainer>
                 <TitleDescription>Thank you for supporting in planting trees work. </TitleDescription>
                 <SupportingDescription>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingDescription>

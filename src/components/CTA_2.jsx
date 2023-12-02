@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { HeadingText, SupportingText, TransparentShareButton, LinkButton } from "../generalComponents/indexGeneralComponents";
+import { TransparentShareButton, LinkButton } from "../generalComponents/indexGeneralComponents";
 import { LeftMockup, Shape, RightMockup } from "../image/indexImage";
 
-// import useDonationState from "./Logic.jsx"
 import { breakpoints } from "./breakpoints";
 
 const StyledCtaTwo = styled.div`
@@ -146,22 +145,30 @@ display: flex;
 justify-content: end;
 align-items: center;
 `
-const TitleInTop = styled(HeadingText)`
+const TitleInTop = styled.div`
     width: 640px;
     height: 45px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 45px;
     display: flex;
     justify-content: center;
+    color: #FFF;
 
 @media screen and (max-width: ${breakpoints.xs}) {
     font-size: 30px;
     line-height: 45px;
 }
 `
-const PreviewInTop = styled(SupportingText)`
+const PreviewInTop = styled.div`
 width: 640px;
 height: 60px;
 display: flex;
 justify-content: center;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+color: #9CA3AF;
 
 @media screen and (max-width: ${breakpoints.xs}) {
     font-size: 16px;
@@ -240,8 +247,8 @@ const CtaTwo = () => {
             <ContainerCtaTwo>
                 <TopContainer>
                     <HeadingCtaTwo>
-                        <TitleInTop description="Fundraising events"></TitleInTop>
-                        <PreviewInTop description="Flowbite helps you connect with friends, family and communities of people who share your interests." />
+                        <TitleInTop>Fundraising events</TitleInTop>
+                        <PreviewInTop>Flowbite helps you connect with friends, family and communities of people who share your interests.</PreviewInTop>
                     </HeadingCtaTwo>
                 </TopContainer>
                 <CenterContainer>
@@ -263,7 +270,8 @@ const CtaTwo = () => {
                             <SupportingDescription>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingDescription>
                             <SectionButtonContainer>
                                 <SectionButton>
-                                    <BlueButtons onClick={()=>handleDonation(1000)}>Donate now</BlueButtons>
+                                    {/* onClick={()=>handleDonation(1000)} */}
+                                    <BlueButtons >Donate now</BlueButtons>
                                     <TransparentShareButton description="Share this Fundraiser" />
                                 </SectionButton>
                             </SectionButtonContainer>    

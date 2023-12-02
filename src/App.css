@@ -1,11 +1,17 @@
 #root {
-  max-width: 1440px;
+  width: 100%;
+  min-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-body{
-  font-family: Inter;
+  background: #111928;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
 }
+body {
+  background: #111928;
+  height: 100%;
 }
 .app-disabled {
   filter:  grayscale(100%);

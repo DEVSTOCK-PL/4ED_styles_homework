@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ArrowLink } from "../image/indexImage";
+import { ArrowLink } from "../../image/indexImage";
 import React from "react";
 
 const StyledLinkButton = styled.a`

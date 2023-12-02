@@ -47,5 +47,6 @@ import BlogCard from "../image/BlogCard.png"
 import HeroCarousel from "../image/HeroCarousel.png"
 import VectorPng from "../image/VectorPng.png"
 import CameraButton from "../image/CameraButton.svg"
+import Book from "../image/Book.png"
 
-export { ArrowLink, CameraButton, VectorPng, HeroCarousel, BlogCard, CTAOneTopMockup, CTAOneCenterMockup, CTAOneBottomMockup, CTARightMockup, CTALeftMockup, VisaHero, VectorButton, Vector, Twitch, Tesla, Stripe, Spotify, Shape, Share, Shell, RightMockup, Rectangle1731, Rectangle1730, Rectangle1729, Netflix, Nestle, MockupThree, MockupTwo, MockupOne, Menu, LeftMockup, Intel, IntelHero, IconRight, FedexHero, Fedex, Disney, DisneyHero, Extlink, BMW, CameraSVG, CardHeader, Carousel, CocaCola, LogoNavbarFooter, Githubgray, Twittergray, Dribbblegray, Facebookgray}
+export { ArrowLink, Book, CameraButton, VectorPng, HeroCarousel, BlogCard, CTAOneTopMockup, CTAOneCenterMockup, CTAOneBottomMockup, CTARightMockup, CTALeftMockup, VisaHero, VectorButton, Vector, Twitch, Tesla, Stripe, Spotify, Shape, Share, Shell, RightMockup, Rectangle1731, Rectangle1730, Rectangle1729, Netflix, Nestle, MockupThree, MockupTwo, MockupOne, Menu, LeftMockup, Intel, IntelHero, IconRight, FedexHero, Fedex, Disney, DisneyHero, Extlink, BMW, CameraSVG, CardHeader, Carousel, CocaCola, LogoNavbarFooter, Githubgray, Twittergray, Dribbblegray, Facebookgray}

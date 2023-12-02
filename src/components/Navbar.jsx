@@ -1,12 +1,8 @@
-import { BrowserRouter, Routes, Route, Link, Form } from 'react-router-dom'
-import React from 'react';
+import { Link } from 'react-router-dom'
 import styled from "styled-components";
-
 import { BlueButtons, Selector } from '../generalComponents/indexGeneralComponents.js';
-import { CompanyLink, ContactLink, FeaturesLink, MarketPlaceLink, NotFoud, TeamLink } from "../subpages/indexSubpages.js"
 import { LogoNavbarFooter } from '../image/indexImage';
 import { breakpoints } from './breakpoints';
-
 
 const NavbarComponents = styled.div`
 width: 100%;
@@ -24,7 +20,7 @@ align-items: flex-end;
 ` 
 const NavbarContainer = styled.div`
 width: 88.88%;
-min-width: 1280px;
+max-width: 1280px;
 height: 41px;
 gap: 64px;
 display: flex;
@@ -84,14 +80,15 @@ justify-content: center;
 width: ${(props)=>props.width};
 `
 const LinkNameCTA = styled(LinkName)`
-width: 15%;
+min-width: 45px;
 line-height: 21px;
 font-size: 14px;
 height: 21px;
 `
 
 const NavCTA = styled.div`
-${'' /* width: 100%; */}
+width: 100%;
+min-width: 174px;
 height: 41px;
 gap: 16px;
 display: flex;
@@ -113,8 +110,7 @@ display: none;
 
 const Navbar = () => {
 
-    return (
-    <BrowserRouter>
+    return (            
         <NavbarComponents>
             <NavbarContainer>
                 <PlaceCompanyLogo>
@@ -126,30 +122,32 @@ const Navbar = () => {
                     </Link>
                 </PlaceCompanyLogo>
                 <NavLinks>
-                    <Link to="/"><LinkName width="73px" >Home</LinkName></Link>
-                    <Link to="/news" ><LinkName>NEWS</LinkName></Link>  
-                    <Link to="/events" ><LinkName>EVENTS</LinkName></Link>    
-                    <Link to="/contact" ><LinkName>CONTACT</LinkName></Link>    
+                    <Link to="/">
+                        <LinkName width="73px" >Home</LinkName>
+                    </Link>
+                    <Link to="/news" >
+                        <LinkName>NEWS</LinkName>
+                    </Link>  
+                    <Link to="/events" >
+                        <LinkName>EVENTS</LinkName>
+                    </Link>    
+                    <Link to="/contact" >
+                        <LinkName>CONTACT</LinkName>
+                    </Link>    
                </NavLinks>
                 <NavCTA>
-                    <LinkNameCTA>Log In</LinkNameCTA>
-                    <BlueButtons description="Get started" lineHeight="21px"></BlueButtons>
+                    <Link to="/login">
+                        <LinkNameCTA>Log In</LinkNameCTA>
+                    </Link>
+                    <Link to="/get-started">
+                        <BlueButtons description="Get started" lineHeight="21px"></BlueButtons>
+                    </Link>               
                 </NavCTA>
                 <DivSelector>
                     <Selector />
                 </DivSelector>
             </NavbarContainer>
         </NavbarComponents>
-
-     <Routes>
-            <Route path="/login" element={<Login />} />     
-            <Route path="/register" element={<Register />} />
-            <Route path="/contact" element={<ContactClick />} />  
-            <Route path="/events" element={<EventsClick />} />  
-            <Route path="/news" element={<NewsClick />} />            
-            <Route path="*" element={<NotFoud />} />        
-            </Routes> 
-    </BrowserRouter>
     )
 }
 export default Navbar
