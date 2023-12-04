@@ -49,7 +49,10 @@ const Navigation = ({ toggleTheme }) => {
         <NavItem className={pathname === "/" && "active"}>
           <Link to="/">Home</Link>
         </NavItem>
-        <NavItem className={pathname === "/styles" && "active"}>
+        <NavItem className={pathname === "/user" && "active"}>
+          <Link to="/user">User</Link>
+        </NavItem>
+        {/* <NavItem className={pathname === "/styles" && "active"}>
           <Link to="/styles">Style</Link>
         </NavItem>
         <NavItem className={pathname === "/about" && "active"}>
@@ -72,7 +75,7 @@ const Navigation = ({ toggleTheme }) => {
         </NavItem>
         <NavItem className={pathname === "/register" && "active"}>
           <Link to="/register">register</Link>
-        </NavItem>
+        </NavItem> */}
       </NavList>
     </Nav>
   );
