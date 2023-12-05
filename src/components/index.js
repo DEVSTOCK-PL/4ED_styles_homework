@@ -1,8 +1,9 @@
-import Home from "./Home";
-import News from "./News";
-import Events from "./Events";
-import Contact from "./Contact";
-import NotFound from "./NotFound";
+import Home from "./subpages/Home";
+import News from "./subpages/News";
+import Events from "./subpages/Events";
+import Contact from "./subpages/Contact";
+import List from "./subpages/List";
+import NotFound from "./subpages/NotFound";
 import breakPoints from "./breakPoints";
 import PictureCard from "./PictureCard";
 import SponsorCard from "./SponsorCard";
@@ -10,12 +11,14 @@ import CustomerLogos from "./CustomerLogos";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import NavBarBurger from "./NavBarBurger";
+import FormikForm from "./subpages/FormikForm";
 
 export {
   Home,
   News,
   Events,
   Contact,
+  List,
   NotFound,
   breakPoints,
   PictureCard,
@@ -24,4 +27,5 @@ export {
   NavBar,
   Footer,
   NavBarBurger,
+  FormikForm,
 };

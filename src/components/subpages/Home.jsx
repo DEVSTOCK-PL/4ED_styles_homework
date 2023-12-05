@@ -1,13 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+import { useContext } from "react";
+import { StyleContext } from "../../App";
+
+import { colors } from "../colors";
+
 import {
   Button,
   CenteredLink,
   Container,
   Heading,
   SupportingText,
-} from "./styleElements";
+} from "../styleElements";
 
 import {
   mockup1News,
@@ -19,9 +24,9 @@ import {
   disnay,
   carousel,
   littleArow,
-} from "../images";
+} from "../../images";
 
-import { PictureCard, breakPoints } from ".";
+import { PictureCard, breakPoints } from "..";
 
 const { tablet, smallDesktop, desktop } = breakPoints;
 
@@ -48,7 +53,7 @@ const Buttons = styled.div`
   margin-bottom: 20px;
 `;
 const VideoCameraButton = styled(Button)`
-  background-color: #1f2a37;
+  background-color: ${(props) => props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
   color: #9ca3af;
   display: flex;
 `;
@@ -105,7 +110,7 @@ const SponsoredLogo = styled.div`
   }
 `;
 const SocialProof = styled.div`
-  background-color: #1f2a37;
+  background-color: ${(props) => props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
   display: flex;
   justify-content: space-evenly;
   padding: 12px 0px;
@@ -168,6 +173,8 @@ const PictureCardsContainer = styled.div`
 `;
 
 function Home() {
+  const darkTheme = useContext(StyleContext);
+
   const statsData = [
     { heading: "104M", supportingText: "Trees planted" },
     { heading: "20k+", supportingText: "Partners & Donors" },
@@ -187,7 +194,7 @@ function Home() {
           </SupportingText>
           <Buttons>
             <Button>Donate now</Button>
-            <VideoCameraButton>
+            <VideoCameraButton darkTheme = {darkTheme}>
               <img src={videoCamera} alt="video-camera-logo" />
               Learn more
             </VideoCameraButton>
@@ -205,7 +212,7 @@ function Home() {
           <img src={carousel} alt="carousel-img" />
         </RightPhoto>
       </Hero>
-      <SocialProof>
+      <SocialProof darkTheme={darkTheme}>
         {statsData.map((stat, index) => (
           <React.Fragment key={index}>
             <Stat>

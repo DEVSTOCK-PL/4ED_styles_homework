@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
-import {Button} from "./styleElements";
+import { Button } from "../styleElements";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
-`
+`;
 const Title = styled.h1`
   font-size: 76px;
   width: 800;

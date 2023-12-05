@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+import { useContext } from "react";
+import { StyleContext } from "../App";
+
+import { colors } from "./colors";
+
 import { Container } from "./styleElements";
 
 import { logo, socialLinks } from "../images";
@@ -9,7 +14,7 @@ import { breakPoints } from "../components";
 const { tablet, mobile } = breakPoints;
 
 const FooterContainer = styled(Container)`
-  background-color: #1f2a37;
+  background-color: ${(props) => (props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo)};
   padding: 60px 0px;
   max-width: none;
   @media (max-width: ${mobile}) {
@@ -41,6 +46,7 @@ const Column = styled.div`
 
   div:first-child {
     color: #ffff;
+    color: ${(props) => (props.darkTheme ? "white" : "black")};
     font-size: 14px;
     font-weight: 600;
     line-height: 25px;
@@ -80,6 +86,8 @@ const LogoSocial = styled.div`
 `;
 
 function Footer() {
+  const darkTheme = useContext(StyleContext);
+
   const columnsData = [
     ["COMPANY", "About", "Premium", "Blog", "Affiliate Program", "Get Coupon"],
     [
@@ -101,10 +109,10 @@ function Footer() {
     ["LEGAL", "Privacy Policy", "Terms & Conditions", "EULA"],
   ];
   return (
-    <FooterContainer>
+    <FooterContainer darkTheme = {darkTheme}>
       <ColumnsWrapper>
         {columnsData.map((column, columnIndex) => (
-          <Column key={columnIndex}>
+          <Column darkTheme={darkTheme} key={columnIndex}>
             {column.map((item, itemIndex) => (
               <div key={itemIndex}>{item}</div>
             ))}

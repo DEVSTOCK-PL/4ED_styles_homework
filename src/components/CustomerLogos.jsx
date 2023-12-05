@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import { useContext } from "react";
+import { StyleContext } from "../App";
+
 import SponsorCard from "./SponsorCard";
 
 import { Heading, CenteredLink, SupportingText } from "./styleElements";
@@ -22,6 +25,8 @@ import {
 
 import BreakPoints from "./breakPoints";
 
+import { colors } from "./colors";
+
 const CentredHeading = styled(Heading)`
   text-align: center;
   padding-bottom: 10px;
@@ -36,6 +41,7 @@ const CostumersLogosContainer = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   background-color: #1f2a37;
+  background-color: ${(props) => (props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo)};
   border-bottom: 1px solid#4B5563;
   border-top: 1px solid#4B5563;
   width: 100%;
@@ -57,6 +63,9 @@ const Column = styled.div`
 `;
 
 function CostomersLogos() {
+
+  const darkTheme = useContext(StyleContext);
+
   const data = [
     [stripe, intel, fedex],
     [spotify, shell, disnay],
@@ -66,7 +75,7 @@ function CostomersLogos() {
 
   return (
     <>
-      <CostumersLogosContainer>
+      <CostumersLogosContainer darkTheme={darkTheme}>
         <CentredHeading>Donors, Partners & Sponsors</CentredHeading>
         <CenterSupportingText>
           Here at flowbite we focus on markets where technology, innovation,

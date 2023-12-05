@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+import { useContext } from "react";
+import { StyleContext } from "../App";
+
+import { colors } from "./colors";
+
 import { externalLink } from "../images";
 
 const Card = styled.div`
@@ -19,7 +24,7 @@ const Card = styled.div`
   button {
     display: flex;
     justify-content: center;
-    background-color: #1f2a37;
+    background-color: ${(props) => props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
     width: 124px;
     height: 34px;
     padding: 8px 12px;
@@ -42,8 +47,11 @@ const LogoImg = styled.img`
 
 // eslint-disable-next-line react/prop-types
 function SponsorCard({ img }) {
+
+  const darkTheme = useContext(StyleContext);
+
   return (
-    <Card>
+    <Card darkTheme = {darkTheme}>
       <LogoImg src={img} alt="stripe-logo" />
       <div>Partner since 2015</div>
       <button>

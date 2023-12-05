@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Button = styled.button`
+  color: #ffff;
   margin-right: 10px;
-  color: #ffffff;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -14,6 +14,4 @@ const Button = styled.button`
   transition: border-color 0.25s;
 `;
 
-
 export default Button;
-

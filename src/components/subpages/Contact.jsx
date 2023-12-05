@@ -1,11 +1,15 @@
-
 import styled from "styled-components";
 
-import { Button, Container, Heading, SupportingText } from "./styleElements";
+import { useContext } from "react";
+import { StyleContext } from "../../App";
 
-import {breakPoints,CustomerLogos} from "../components";
+import { colors } from "../colors";
 
-const {tablet} = breakPoints
+import { Button, Container, Heading, SupportingText } from "../styleElements";
+
+import { breakPoints, CustomerLogos } from "..";
+
+const { tablet } = breakPoints;
 
 const NewContainer = styled(Container)`
   max-width: 1440px;
@@ -59,7 +63,9 @@ const FormInput = styled.div`
   input {
     color: #ffffff;
     font-size: 16px;
-    background-color: #4b5563;
+    /* background-color: #4b5563; */
+    background-color: #c6d0dd;
+    background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
     border-radius: 8px;
     border: 1px solid #4b5563;
     width: 100%;
@@ -75,7 +81,9 @@ const FormInput = styled.div`
 `;
 
 const LargeMessageInput = styled.textarea`
-  background-color: #4b5563;
+  /* background-color: #4b5563; */
+  background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
+  background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
   width: 100%;
   height: 162px;
   color: #ffffff;
@@ -86,6 +94,8 @@ const LargeMessageInput = styled.textarea`
 `;
 
 function Events() {
+  const darkTheme = useContext(StyleContext);
+
   return (
     <NewContainer>
       <Row>
@@ -94,13 +104,19 @@ function Events() {
           Got a technical issue? Want to send feedback about a beta feature?
           Need details about our Business plan? Let us know.
         </CenterSupportingText>
-        <FormContainer>
+        <FormContainer darkTheme={darkTheme}>
           <form action="contact" className="">
-            <FormInput>
+            <FormInput darkTheme={darkTheme}>
               <label htmlFor="email">Your email</label>
-              <input type="email" id="email" name="email" placeholder="name@flowbite.com" autoCapitalize="email"/>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="name@flowbite.com"
+                autoCapitalize="email"
+              />
             </FormInput>
-            <FormInput>
+            <FormInput darkTheme={darkTheme}>
               <label htmlFor="subject">Subject</label>
               <input
                 type="text"
@@ -112,13 +128,19 @@ function Events() {
             </FormInput>
             <FormInput>
               <label htmlFor="message">Your message</label>
-              <LargeMessageInput id="message" type="text" name="text" autoCapitalize="message"/>
+              <LargeMessageInput
+                darkTheme={darkTheme}
+                id="message"
+                type="text"
+                name="text"
+                autoCapitalize="message"
+              />
             </FormInput>
           </form>
         </FormContainer>
         <Button>Send message</Button>
       </Row>
-      <CustomerLogos/>
+      <CustomerLogos />
     </NewContainer>
   );
 }

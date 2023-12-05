@@ -1,17 +1,23 @@
 import styled from "styled-components";
 
-import PictureCard from "./PictureCard";
+import { useContext } from "react";
+
+import { StyleContext } from "../../App";
+
+import { colors } from "../colors";
+
+import PictureCard from "../PictureCard";
 
 import {
   CenteredLink,
   Container,
   Heading,
   SupportingText,
-} from "./styleElements";
+} from "../styleElements";
 
-import { littleArow, carousel, mockup1News, mockupLeft } from "../images";
+import { littleArow, carousel, mockup1News, mockupLeft } from "../../images";
 
-import { breakPoints } from "../components";
+import { breakPoints } from "..";
 
 const { desktop, smallDesktop, tablet } = breakPoints;
 
@@ -41,18 +47,18 @@ const HorizontalRule = styled.hr`
 const CenterHeading = styled(Heading)`
   text-align: center;
 `;
+<div id="root"></div>;
 const CenterSupportingText = styled(SupportingText)`
   text-align: center;
 `;
 
 const Blog = styled.div`
-  background-color: #1f2a37;
+  background-color: ${(props) => (props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo)};
   border-top: 1px solid #374151;
   border-bottom: 2px solid #374151;
   padding: 50px 0px;
 `;
 const Row = styled.div`
-  background-color: #1f2a37;
   display: flex;
   @media (max-width: ${smallDesktop}) {
     display: block;
@@ -67,6 +73,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ColumnContainer = styled.div`
+  background-color: ${(props) => (props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo)};
   padding: 40px 30px;
   @media (max-width: ${smallDesktop}) {
     padding: 0px 30px;
@@ -81,6 +88,8 @@ const ColumnLink = styled(CenteredLink)`
 `;
 
 function Events() {
+
+  const darkTheme = useContext(StyleContext)
   return (
     <EventsContainer>
       <div>
@@ -106,14 +115,14 @@ function Events() {
           <img src={littleArow} alt="littleArow-img" />
         </CenteredLink>
       </div>
-      <Blog>
+      <Blog darkTheme = {darkTheme}>
         <CenterHeading>Latest news & events</CenterHeading>
         <CenterSupportingText>
           We use an agile approach to test assumptions and connect with the
           needs of your audience early and often.
         </CenterSupportingText>
         <Row>
-          <ColumnContainer>
+          <ColumnContainer darkTheme = {darkTheme}>
             <div>
               <ImageWrapper>
                 <img src={carousel} alt="carusel-img" />
@@ -133,7 +142,7 @@ function Events() {
 
           <HorizontalRule />
 
-          <ColumnContainer>
+          <ColumnContainer darkTheme = {darkTheme}>
             <div>
               <Heading>How to quickly deploy a static website</Heading>
               <SupportingText>
@@ -176,7 +185,7 @@ function Events() {
 
           <HorizontalRule />
 
-          <ColumnContainer>
+          <ColumnContainer darkTheme = {darkTheme}>
             <div>
               <Heading>How to Rank Higher on Google (6 Easy Steps)</Heading>
               <SupportingText>

@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+import { useContext } from "react";
+import { StyleContext } from "../App";
+
+import { colors } from "./colors";
+
 import { eventButtonVector } from "../images";
 
 import { Button } from "./styleElements";
@@ -15,10 +20,18 @@ import PropTypes from "prop-types";
 const Card = styled.div`
   width: 80%;
   border: 2px solid #374151;
+  border-color: ${(props) => (props.darkTheme ? "#374151" : "#b1c9ed")};
   border-radius: 8px;
   margin-bottom: 40px;
   padding: 30px;
-  background-color: ${(props) => (props.isReachedGoal ? "#05d027" : "#1f2a37")};
+  background-color: ${(props) =>
+    props.darkTheme
+      ? props.isReachedGoal
+        ? "#17e239"
+        : "#1f2a37"
+      : props.isReachedGoal
+      ? "#17e239"
+      : colors.LightBackgroundColorTwo};
 `;
 const MockupImage = styled.img`
   height: 388px;
@@ -47,6 +60,7 @@ const CardContent = styled.div`
   span {
     &:nth-child(1) {
       color: #ffff;
+      color: ${(props) => (props.darkTheme ? "#ffff" : colors.LightFontColor)};
       font-size: 18px;
       font-weight: 700;
       line-height: 27px;
@@ -77,6 +91,7 @@ const CardDescription = styled.div`
 
   p {
     color: #ffff;
+    color: ${(props) => (props.darkTheme ? "#ffff" : colors.LightFontColor)};
     font-size: 18px;
     font-weight: 700;
     line-height: 23px;
@@ -91,6 +106,8 @@ const Buttons = styled.div`
 const VectorGrayButton = styled(Button)`
   border: 1px solid #4b5563;
   background-color: #1f2a37;
+  background-color: ${(props) =>
+    props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
   color: #9ca3af;
   display: flex;
   align-items: center;
@@ -105,12 +122,14 @@ const GoalReachedText = styled.span`
   font-weight: bold;
   margin-top: 0px;
   background-color: ${({ isReachedGoal }) =>
-  isReachedGoal ? " rgb(251 247 18)" : "transparent"};
+    isReachedGoal ? " rgb(251 247 18)" : "transparent"};
   padding: 5px;
   text-align: center;
 `;
 
 function CardStyles({ imageSrc }) {
+  const darkTheme = useContext(StyleContext);
+
   const [count, increment, barWidth] = useCounter();
   const isDisabled = count > 400000;
   const isReachedGoal = count >= 400000;
@@ -123,9 +142,9 @@ function CardStyles({ imageSrc }) {
 
   return (
     <div>
-      <Card isReachedGoal={isReachedGoal}>
+      <Card darkTheme={darkTheme} isReachedGoal={isReachedGoal}>
         <MockupImage src={imageSrc} alt="mockup.rigth" />{" "}
-        <CardContent>
+        <CardContent darkTheme={darkTheme}>
           <div>
             <span>${count}</span>
             <span>of 400k goal</span>
@@ -136,7 +155,7 @@ function CardStyles({ imageSrc }) {
           <div>2,756 donors</div>
         </CardContent>
         <Shape barWidth={barWidth}></Shape>
-        <CardDescription>
+        <CardDescription darkTheme = {darkTheme}>
           <p>Thank you for supporting in planting trees work. </p>
           <div>
             Our fundraisers are a creative bunch when it comes to taking on
@@ -148,7 +167,7 @@ function CardStyles({ imageSrc }) {
           <Button onClick={handleIncrement} disabled={isDisabled}>
             Donate now
           </Button>
-          <VectorGrayButton>
+          <VectorGrayButton darkTheme={darkTheme}>
             <img src={eventButtonVector} alt="button-vector" />
             Share this Fundraiser
           </VectorGrayButton>
