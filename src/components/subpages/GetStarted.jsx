@@ -58,8 +58,9 @@ const Error = styled.div`
   color: red;
 `;
 
-
 const validationSchema = Yup.object({
+  name: Yup.string().min(3, "minimum 5 chars").required("required"),
+  secondName: Yup.string().min(3, "minimum 5 chars").required("required"),
   email: Yup.string().email("Invalid email").required("required"),
   password: Yup.string().min(5, "minimum 5 chars").required("required"),
 });
@@ -81,17 +82,19 @@ const sendUser = async (user) => {
   const users = await fetchUsers(); //dostęp do aktualnej listy użytowników
   const emailExists = users.some((u) => u.email === user.email);
   if (emailExists) {
-    alert("Mail wykorzystany");
+    const message = "The email is already in use.";
+    enqueueSnackbar(message, { autoHideDuration: 2000, variant: "error" });
     return;
   } else {
     const response = await axios.post("http://localhost:3000/users", user);
     console.log("response", response);
+    const message = "Form submitted successfully!";
+    enqueueSnackbar(message, { autoHideDuration: 2000, variant: "success" });
     return response.data;
   }
 };
 
 const GetStarted = () => {
-
   const darkTheme = useContext(StyleContext);
   //blog
 
@@ -111,6 +114,8 @@ const GetStarted = () => {
   const formik = useFormik({
     initialValues: {
       // można dodać logikę która dłóżej przechowuje wartość formularza
+      name: "",
+      secondName: "",
       email: "",
       password: "",
     },
@@ -129,11 +134,39 @@ const GetStarted = () => {
     <Wrapper>
       <div>
         <SnackbarProvider />
-        <button onClick={() => enqueueSnackbar("That was easy!")}>
-          Show snackbar
-        </button>
       </div>
       <form onSubmit={formik.handleSubmit}>
+        <Wrapper>
+          <Label htmlFor="name">Name</Label>
+          <Input
+            darkTheme={darkTheme}
+            placeholder="Name"
+            name="name"
+            type="text"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+          />
+          {formik.touched.name && formik.errors.name ? (
+            <Error>{formik.errors.name}</Error>
+          ) : null}
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="secondName">Second Name</Label>
+          <Input
+            darkTheme={darkTheme}
+            placeholder="Second Name"
+            name="secondName" // Zmiana nazwy na "secondName"
+            type="text"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.secondName} // Różna wartość dla drugiego imienia
+          />
+          {formik.touched.secondName && formik.errors.secondName ? (
+            <Error>{formik.errors.secondName}</Error>
+          ) : null}
+        </Wrapper>
+
         <Wrapper>
           <Label htmlFor="Email">Email</Label>
           <Input
@@ -163,22 +196,8 @@ const GetStarted = () => {
             <Error>{formik.errors.password}</Error>
           ) : null}
         </Wrapper>
-        {/* <Wrapper>
-          <Label htmlFor="message">Message</Label>
-          <Textarea
-            type="message"
-            id="message"
-            onChange={formik.handleChange}
-            value={formik.values.message}
-          />
-          {formik.touched.message && formik.errors.message ? (
-            <Error>{formik.errors.message}</Error>
-          ) : null}
-        </Wrapper> */}
-
 
         <FormikButton type="submit">Send message</FormikButton>
-        
       </form>
 
       {/* {data.map(({ id, title, image, author }) => (

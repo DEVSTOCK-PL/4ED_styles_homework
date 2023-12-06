@@ -1,44 +1,30 @@
 {
   "users": [
     {
-      "email": "max@gmail.com",
-      "password": "max1234",
+      "email": "costam@gmail.com",
+      "password": "cos1234",
       "id": 1
     },
     {
-      "email": "piotrek@gmail.com",
-      "password": "piotrek1234",
+      "email": "elo320@gmail.com",
+      "password": "siemka1234",
+      "name": "Piotr",
+      "secondName": "Zmuda",
       "id": 2
     },
     {
-      "email": "piotrek2@gmail.com",
-      "password": "piotrek1234",
+      "email": "cos@gmail.com",
+      "password": "costam",
+      "name": "Edek",
+      "secondName": "Edkowski",
       "id": 3
     },
     {
-      "email": "elo@gmail.com",
-      "password": "elo1234",
+      "name": "a",
+      "secondName": "b",
+      "email": "abcd@gmail.com",
+      "password": "siemka",
       "id": 4
-    },
-    {
-      "email": "costam@gmail.com",
-      "password": "costam",
-      "id": 5
-    },
-    {
-      "email": "cos22tam@gmail.com",
-      "password": "elo1234",
-      "id": 6
-    },
-    {
-      "email": "edc@gmail.com",
-      "password": "edc332",
-      "id": 7
-    },
-    {
-      "email": "kamil@gmail.com",
-      "password": "kamil",
-      "id": 8
     }
   ],
   "people": [],
