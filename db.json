@@ -1,4 +1,75 @@
 {
   "users": [
+    {
+      "email": "max@gmail.com",
+      "password": "max1234",
+      "id": 1
+    },
+    {
+      "email": "piotrek@gmail.com",
+      "password": "piotrek1234",
+      "id": 2
+    },
+    {
+      "email": "piotrek2@gmail.com",
+      "password": "piotrek1234",
+      "id": 3
+    },
+    {
+      "email": "elo@gmail.com",
+      "password": "elo1234",
+      "id": 4
+    },
+    {
+      "email": "costam@gmail.com",
+      "password": "costam",
+      "id": 5
+    },
+    {
+      "email": "cos22tam@gmail.com",
+      "password": "elo1234",
+      "id": 6
+    },
+    {
+      "email": "edc@gmail.com",
+      "password": "edc332",
+      "id": 7
+    },
+    {
+      "email": "kamil@gmail.com",
+      "password": "kamil",
+      "id": 8
+    }
+  ],
+  "people": [],
+  "posts": [
+    {
+      "id": 1,
+      "title": "pierwszy post",
+      "description": "opis pierwszego posta w naszym zestawie",
+      "author": "Jan Kowalski",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "title": "drugi post",
+      "description": "opis drugiego posta w naszym zestawie",
+      "author": "Anna Nowak",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "title": "trzeci post",
+      "description": "opis trzeciego posta w naszym zestawie",
+      "author": "Piotr Zięba",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "title": "czwarty post",
+      "description": "opis czwartego posta w naszym zestawie",
+      "author": "Magda Lis",
+      "image": "https://via.placeholder.com/150"
+    }
   ]
 }

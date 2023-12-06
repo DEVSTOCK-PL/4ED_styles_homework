@@ -103,7 +103,7 @@ function Navbar({ toggleTheme }) {
           <Link to="/NotFound">Log in</Link>
         </Button>
         <Button>
-          <Link to="/NotFound">Get started</Link>
+          <Link to="/GetStarted">Get started</Link>
         </Button>
       </ActionButton>
     </NavContainer>

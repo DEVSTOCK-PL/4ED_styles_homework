@@ -12,6 +12,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import NavBarBurger from "./NavBarBurger";
 import FormikForm from "./subpages/FormikForm";
+import GetStarted from "./subpages/GetStarted";
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   Footer,
   NavBarBurger,
   FormikForm,
+  GetStarted,
 };
