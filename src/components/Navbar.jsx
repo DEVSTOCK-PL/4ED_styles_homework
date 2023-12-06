@@ -61,7 +61,6 @@ width: 100%;
 height: 24px;
 gap: 32px;
 display: flex;
-flex-wrap: wrap;
 
 @media screen and (max-width: ${breakpoints.xs}) {
     display: none;
@@ -133,7 +132,10 @@ const Navbar = () => {
                     </Link>    
                     <Link to="/contact" >
                         <LinkName>CONTACT</LinkName>
-                    </Link>    
+                    </Link>  
+                    <Link to="/fun" >
+                        <LinkName>Rick&Morty</LinkName>
+                    </Link>
                </NavLinks>
                 <NavCTA>
                     <Link to="/login">

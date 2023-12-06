@@ -90,7 +90,8 @@ const Login = () => {
                 <div>
                     <InputForm>
                         <InputRow>
-                           <LabelInput>Your email</LabelInput>                                 <InputLogin type="email" id="email" name="email" placeholder="Email"/>
+                            <LabelInput>Your email</LabelInput>
+                            <InputLogin type="email" id="email" name="email" placeholder="Email" />
                         </InputRow>
                         <InputRow>
                             <LabelInput>Password</LabelInput>
