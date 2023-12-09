@@ -1,4 +1,3 @@
-/* color: ${({ theme }) => (theme ? '#a91111' : '#000000')};  */
 
 import "./App.css";
 
@@ -20,7 +19,6 @@ import {
   Contact,
   List,
   NotFound,
-  FormikForm,
   NavBar,
   Footer,
   NavBarBurger,
@@ -65,7 +63,6 @@ function App() {
             <Route path="/List/characters" element={<List />} />
             <Route path="/List/locations" element={<List />} />
             <Route path="/List/episodes" element={<List />} />
-            <Route path="/FormikForm" element={<FormikForm />} />
             <Route path="/GetStarted" element={<GetStarted />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

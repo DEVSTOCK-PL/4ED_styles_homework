@@ -38,7 +38,7 @@ const Row = styled.div`
   width: 60%;
   margin: 0 auto;
   @media (max-width: ${tablet}) {
-    width: 100%;
+    width: 90%;
   }
   Button {
     width: 160px;
@@ -63,7 +63,6 @@ const FormInput = styled.div`
   input {
     color: #ffffff;
     font-size: 16px;
-    /* background-color: #4b5563; */
     background-color: #c6d0dd;
     background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
     border-radius: 8px;
@@ -81,7 +80,6 @@ const FormInput = styled.div`
 `;
 
 const LargeMessageInput = styled.textarea`
-  /* background-color: #4b5563; */
   background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
   background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
   width: 100%;

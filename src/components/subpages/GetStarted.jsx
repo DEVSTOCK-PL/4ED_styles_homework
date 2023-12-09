@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { StyleContext } from "../../App";
 
-import { useFormAction } from "react-router-dom";
 import * as Yup from "yup";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
@@ -18,7 +17,7 @@ import { colors } from "../colors";
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -34,20 +33,10 @@ const Input = styled.input`
   margin: 10px;
 `;
 
-// const Textarea = styled.textarea`
-//   background-color: #4b5563;
-//   color: #ffff;
-//   border-radius: 8px;
-//   width: 300px;
-//   height: 80px;
-//   border: 1px solid black;
-//   margin: 10px;
-// `;
-
 const Label = styled.label`
   text-align: center;
   height: 20px;
-  width: 100px;
+  /* width: 100px; */
   font-size: 16px;
 `;
 const FormikButton = styled(Button)`
@@ -134,6 +123,7 @@ const GetStarted = () => {
     <Wrapper>
       <div>
         <SnackbarProvider />
+        <h2>Zarejestuj się</h2>
       </div>
       <form onSubmit={formik.handleSubmit}>
         <Wrapper>
@@ -183,7 +173,7 @@ const GetStarted = () => {
           ) : null}
         </Wrapper>
         <Wrapper>
-          <Label htmlFor="password">Passwo</Label>
+          <Label htmlFor="password">Password</Label>
           <Input
             darkTheme={darkTheme}
             placeholder="password"
@@ -199,14 +189,6 @@ const GetStarted = () => {
 
         <FormikButton type="submit">Send message</FormikButton>
       </form>
-
-      {/* {data.map(({ id, title, image, author }) => (
-        <div key= {id}>
-            {title}
-            {author}
-            <img src={image} alt ="image"/>
-        </div>
-      ))} */}
     </Wrapper>
   );
 };

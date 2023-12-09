@@ -11,8 +11,10 @@ import CustomerLogos from "./CustomerLogos";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import NavBarBurger from "./NavBarBurger";
-import FormikForm from "./subpages/FormikForm";
 import GetStarted from "./subpages/GetStarted";
+import ThemeSwitcher from "./ThemeSwitcher";
+import ActionButtons from "./ActionButtons"
+import { colors } from "./colors";
 
 export {
   Home,
@@ -28,6 +30,8 @@ export {
   NavBar,
   Footer,
   NavBarBurger,
-  FormikForm,
   GetStarted,
+  ThemeSwitcher,
+  ActionButtons,
+  colors,
 };

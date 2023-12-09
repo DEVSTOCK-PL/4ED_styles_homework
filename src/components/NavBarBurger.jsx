@@ -5,16 +5,13 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { StyleContext } from "../App";
 
-
-import { colors } from "./colors";
-
 import { Container, Button } from "./styleElements";
 
-import WebLogo from "./WebLogo";
-
-import breakPoints from "./breakPoints";
+import { breakPoints, ThemeSwitcher, ActionButtons, colors } from ".";
 
 const { tablet } = breakPoints;
+
+import WebLogo from "./WebLogo";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -30,22 +27,10 @@ const MenuBurger = styled.label`
   right: 3rem;
   position: absolute;
 `;
-const ThemeButton = styled.button`
-  font-size: 16px;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  background-color: ${(props) => (props.darkTheme ? "white" : "#1a56db")};
-  color: ${(props) => (props.darkTheme ? "black" : "white")};
-`;
-
 
 const Icon = styled.span`
   position: relative;
   bottom: 20px;
-  /* background-color: ${(props) => (props.clicked ? "transparent" : "white")}; */
   background-color: ${(props) => (props.darkTheme ? "white" : "#1a56db")};
   width: 3rem;
   height: 3px;
@@ -90,7 +75,8 @@ const MenuButtons = styled.div`
   right: 0px;
   height: calc(80vh - 76px);
   width: 50%;
-  background-color: ${(props) => (props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo)};
+  background-color: ${(props) =>
+    props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
   overflow: hidden;
   transition: all 0.5s ease 0s;
 `;
@@ -112,7 +98,7 @@ const NavButtons = styled(Button)`
 
 function TestBurger({ toggleTheme }) {
   const darkTheme = useContext(StyleContext);
-  console.log("elo", darkTheme)
+  console.log("elo", darkTheme);
 
   const [click, setClick] = useState(false);
   const { pathname } = useLocation();
@@ -124,9 +110,8 @@ function TestBurger({ toggleTheme }) {
   return (
     <NavContainer>
       <WebLogo />
-      <ThemeButton onClick={toggleTheme} darkTheme={darkTheme}>
-        {darkTheme ? "Dark mode" : "White mode"}
-      </ThemeButton>
+
+      <ThemeSwitcher darkTheme={darkTheme} toggleTheme={toggleTheme} />
       <MenuBurger htmlFor="navi-toggle" onClick={handleClick}>
         <Icon darkTheme={darkTheme} clicked={click}>
           &nbsp;
@@ -135,37 +120,41 @@ function TestBurger({ toggleTheme }) {
 
       {click && (
         <MenuButtons darkTheme={darkTheme}>
-          <NavButtons darkTheme={darkTheme} className={pathname === "/Home" ? "active" : ""}>
+          <NavButtons
+            darkTheme={darkTheme}
+            className={pathname === "/Home" ? "active" : ""}
+          >
             <Link to="/Home">HOME</Link>
           </NavButtons>
 
-          <NavButtons darkTheme={darkTheme} className={pathname === "/News" ? "active" : ""}>
+          <NavButtons
+            darkTheme={darkTheme}
+            className={pathname === "/News" ? "active" : ""}
+          >
             <Link to="/News">NEWS</Link>
           </NavButtons>
 
-          <NavButtons darkTheme={darkTheme} className={pathname === "/Events" ? "active" : ""}>
+          <NavButtons
+            darkTheme={darkTheme}
+            className={pathname === "/Events" ? "active" : ""}
+          >
             <Link to="/Events">EVENTS</Link>
           </NavButtons>
 
-          <NavButtons darkTheme={darkTheme} className={pathname === "/Contact" ? "active" : ""}>
+          <NavButtons
+            darkTheme={darkTheme}
+            className={pathname === "/Contact" ? "active" : ""}
+          >
             <Link to="/Contact">CONTACT</Link>
           </NavButtons>
 
-          <NavButtons darkTheme={darkTheme} className={pathname === "/List" ? "active" : ""}>
+          <NavButtons
+            darkTheme={darkTheme}
+            className={pathname === "/List" ? "active" : ""}
+          >
             <Link to="/List">List</Link>
           </NavButtons>
-
-          <NavButtons darkTheme={darkTheme} className={pathname === "/FormikForm" ? "active" : ""}>
-            <Link to="/FormikForm">Formik</Link>
-          </NavButtons>
-
-          <NavButtons darkTheme={darkTheme} className={pathname === "/NotFound" ? "active" : ""}>
-            <Link to="/NotFound">Log in</Link>
-          </NavButtons>
-
-          <NavButtons darkTheme={darkTheme} className={pathname === "/NotFound" ? "active" : ""}>
-            <Link to="/NotFound">Get started</Link>
-          </NavButtons>
+          <ActionButtons column />
         </MenuButtons>
       )}
     </NavContainer>
