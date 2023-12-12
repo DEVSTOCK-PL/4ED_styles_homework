@@ -1,18 +1,20 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styled from "styled-components";
 import { BlueButtons, Selector } from '../generalComponents/indexGeneralComponents.js';
 import { LogoNavbarFooter } from '../image/indexImage';
 import { breakpoints } from './breakpoints';
+import { useContext } from 'react';
+import { StyleContext } from '../App.jsx';
 
 const NavbarComponents = styled.div`
 width: 100%;
 min-width: 1440px;
 height: 65px;
-background: #111928;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: flex-end;
+background: ${(props)=>(props.darkTheme ? "yellow" : "#111928")};
 
 @media screen and (max-width: ${breakpoints.m}){
     margin: 0 32px;
@@ -106,11 +108,18 @@ display: none;
     width: 177px;
 }
 `
+const SwitchBackground = styled.button`
+width: 20px;
+height: 10px;
+background: ${(props) => (props.darkTheme ? "white" : "blue")};
+`
 
-const Navbar = () => {
+const Navbar = ({toggleTheme}) => {
+
+    const darkTheme = useContext(StyleContext)
 
     return (            
-        <NavbarComponents>
+        <NavbarComponents darkTheme={darkTheme} >
             <NavbarContainer>
                 <PlaceCompanyLogo>
                     <Link to="/">    
@@ -143,7 +152,8 @@ const Navbar = () => {
                     </Link>
                     <Link to="/get-started">
                         <BlueButtons description="Get started" lineHeight="21px"></BlueButtons>
-                    </Link>               
+                    </Link>   
+                    <SwitchBackground onClick={toggleTheme} darkTheme={darkTheme} />
                 </NavCTA>
                 <DivSelector>
                     <Selector />

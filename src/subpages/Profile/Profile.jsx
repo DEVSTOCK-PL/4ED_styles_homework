@@ -1,6 +1,9 @@
 import styled from "styled-components";
-
+import { useState, useEffect, useContext } from "react";
 import { Book } from "../../image/indexImage";
+import { UserContext } from "../../Hooks/UserContext";
+import { useNavigate } from "react-router-dom";
+
 
 const Container = styled.div`
 width: auto;
@@ -94,17 +97,50 @@ font-weight: 400;
 line-height: 24px;
 color: #9CA3AF;
 `
+const Button = styled.button`
+width: 80px;
+height: 30px;
+background: green;
+color: #fff;
+margin: 10px 20px;
+`
 
 
 const ProfileCard = () => {
+
+    const { user, login,  logout } = useContext(UserContext)
+
+    const navigate = useNavigate();
+    const [booksCard, setBooksCard] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("http://localhost:4000/books")
+                setBooksCard(response.data)
+            } catch (error) {
+                console.error("Blad pobierania")
+            }
+        }
+        fetchData();
+    }, []);
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login")
+    }
+    
     return (
+        <UserContext.Provider>
         <Container>
+            <Button onClick={handleLogout}>Logout</Button>
             <ContactCantainer>
                 <ContainerTitle>
-                    <TitleContactContainer>Witaj user!{/* ${user} */}</TitleContactContainer>
+                    <TitleContactContainer>{`Witaj user ${user}`}</TitleContactContainer>
                 </ContainerTitle>
                 <ContainerText>
-                    <PreviewContactContainer>jesteś aktualnie zalogowany jako Imię Nazwisko, a Twój mail to {/* ${email} */}example@gmail.com</PreviewContactContainer>
+                    {/* ponizej dopisac do userow name, secondName oraz email */}
+                    <PreviewContactContainer>jesteś aktualnie zalogowany jako {user} , a Twój mail to {user}</PreviewContactContainer>
                 </ContainerText>
             </ContactCantainer>
             <FeaturesContainer>
@@ -115,7 +151,7 @@ const ProfileCard = () => {
                     <BookCard>
                         <ImageBook><img src={Book}/></ImageBook>
                         <ContentBook>
-                            <TitleBook></TitleBook>
+                                <TitleBook>{booksCard.title}</TitleBook>
                             <DescriptionBook></DescriptionBook>
                             <AuthorBook></AuthorBook>
                         </ContentBook>
@@ -154,7 +190,8 @@ const ProfileCard = () => {
                     </BookCard>
                 </LibraryContainer>
             </FeaturesContainer>
-        </Container>    
+            </Container>  
+        </UserContext.Provider>    
     )
 }
 export default ProfileCard

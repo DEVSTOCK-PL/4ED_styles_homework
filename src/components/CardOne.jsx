@@ -12,6 +12,7 @@ background: #1f2a37;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: space-evenly;
 `
 const MockupContainer = styled.svg`
 width: 552px;
@@ -56,10 +57,10 @@ border-radius: 8px;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #1C64F2;
 font-size: 14px;
 line-height: 21px;
-color: #FFF;
+background-color: ${(props)=>(props.disabled ? "#9CA3AF" : "#1C64F2" )};
+color: ${(props)=>(props.disabled ? "#EF350D" : "#FFF")};
 font-weight: 500;
 padding: 10px 20px 10px 20px;
 `
@@ -67,26 +68,28 @@ padding: 10px 20px 10px 20px;
 
 export const CardOne = ({progress}) => {
     const targetDonations = 400000
-    const [wynik1, setWynik1] = useState(0)
+    const [donate1, setDonate1] = useState(0)
     const handleClick1 = () => {
-        if (wynik1 + 50000 <= targetDonations) {
-            setWynik1(wynik1 + 50000)
+        if (donate1 + 50000 <= targetDonations) {
+            setDonate1(donate1 + 50000)
         }
     }
-    let donations = wynik1
+    let donations = donate1;
+
+    const isDisabled = donate1 >= targetDonations;
 
     return (
         <CardOneStyled>
             <MockupContainer><image xlinkHref={ LeftMockup } /></MockupContainer>
             <ProgressBarContainer>
-                {wynik1}
+                {donate1}
             <ProgressBar donations={donations} targetDonations={targetDonations}></ProgressBar>
             </ProgressBarContainer>
             <HeadingCard>Thank you for supporting in planting trees work. </HeadingCard>
             <SupportingCard>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingCard>
             <SectorButton>
                 <ButtonLine>
-                    <BlueButton onClick={handleClick1}>Donate now</BlueButton>
+                    <BlueButton disabled={isDisabled} onClick={handleClick1}>Donate now</BlueButton>
                     <TransparentShareButton description="Share this Fundraiser"/>
                 </ButtonLine>
             </SectorButton>
@@ -96,26 +99,29 @@ export const CardOne = ({progress}) => {
 
 export const CardTwo = ({ progress }) => {
     const targetDonations = 150000
-    const [wynik2, setWynik2] = useState(0)
+    const [donate2, setDonate2] = useState(0)
     const handleClick2 = () => {
-        if (wynik2 + 30000 <= targetDonations) {
-            setWynik2(wynik2 + 30000)
+        if (donate2 + 30000 <= targetDonations) {
+            setDonate2(donate2 + 30000)
         }
     }
-    let donations = wynik2
+    let donations = donate2
+
+    const isDisabled = donate2 >= targetDonations;
+
 
     return (
         <CardOneStyled>
             <MockupContainer><image xlinkHref={ RightMockup } /></MockupContainer>
             <ProgressBarContainer>
-                {wynik2}
+                {donate2}
             <ProgressBar donations={donations} targetDonations={targetDonations}></ProgressBar>
             </ProgressBarContainer>
             <HeadingCard>Thank you for supporting in planting trees work. </HeadingCard>
             <SupportingCard>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingCard>
             <SectorButton>
                 <ButtonLine>
-                    <BlueButton onClick={handleClick2}>Donate now</BlueButton>
+                    <BlueButton disabled={isDisabled} onClick={handleClick2}>Donate now</BlueButton>
                     <TransparentShareButton description="Share this Fundraiser"/>
                 </ButtonLine>
             </SectorButton>
@@ -125,26 +131,28 @@ export const CardTwo = ({ progress }) => {
 
 export const CardThree = ({ progress }) => {
     const targetDonations = 400000
-    const [wynik3, setWynik3] = useState(0)
+    const [donate3, setDonate3] = useState(0)
     const handleClick3 = () => {
-        if (wynik3 + 50000 <= targetDonations) {
-            setWynik3(wynik3 + 50000)
+        if (donate3 + 50000 <= targetDonations) {
+            setDonate3(donate3 + 50000)
         }
     }
-    let donations = wynik3
+    let donations = donate3
+
+    const isDisabled = donate3 >= targetDonations;
 
     return (
         <CardOneStyled>
             <MockupContainer><image xlinkHref={ LeftMockup } /></MockupContainer>
             <ProgressBarContainer>
-                {wynik3}
+                {donate3}
             <ProgressBar donations={donations} targetDonations={targetDonations}></ProgressBar>
             </ProgressBarContainer>
             <HeadingCard>Thank you for supporting in planting trees work. </HeadingCard>
             <SupportingCard>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingCard>
             <SectorButton>
                 <ButtonLine>
-                    <BlueButton onClick={handleClick3}>Donate now</BlueButton>
+                    <BlueButton disabled={isDisabled} onClick={handleClick3}>Donate now</BlueButton>
                     <TransparentShareButton description="Share this Fundraiser"/>
                 </ButtonLine>
             </SectorButton>
@@ -154,26 +162,29 @@ export const CardThree = ({ progress }) => {
 
 export const CardFour = ({ progress }) => {
     const targetDonations = 150000
-    const [wynik4, setWynik4] = useState(0)
+    const [donate4, setDonate4] = useState(0)
     const handleClick4 = () => {
-        if (wynik4 + 30000 <= targetDonations) {
-            setWynik4(wynik4 + 30000)
+        if (donate4 + 30000 <= targetDonations) {
+            setDonate4(donate4 + 30000)
         }
     }
-        let donations = wynik4
+    let donations = donate4
+    
+    const isDisabled = donate4 >= targetDonations;
+
 
     return (
         <CardOneStyled>
             <MockupContainer><image xlinkHref={ RightMockup } /></MockupContainer>
             <ProgressBarContainer>
-                {wynik4}
+                {donate4}
             <ProgressBar donations={donations} targetDonations={targetDonations}></ProgressBar>
             </ProgressBarContainer>
             <HeadingCard>Thank you for supporting in planting trees work. </HeadingCard>
             <SupportingCard>Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales to stand-up comedy and streaming marathons. There is something for everyone.</SupportingCard>
             <SectorButton>
                 <ButtonLine>
-                    <BlueButton onClick={handleClick4}>Donate now</BlueButton>
+                    <BlueButton disabled={isDisabled} onClick={handleClick4}>Donate now</BlueButton>
                     <TransparentShareButton description="Share this Fundraiser"/>
                 </ButtonLine>
             </SectorButton>

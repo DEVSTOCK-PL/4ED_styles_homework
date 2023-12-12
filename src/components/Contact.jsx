@@ -1,5 +1,7 @@
 import styled from "styled-components";
-
+import { useFormik } from "formik";
+import * as Yup from "yup";
+ 
 import { BlueButtonDifferentColor } from "../generalComponents/indexGeneralComponents.js"
 import { breakpoints } from "./breakpoints";
 
@@ -143,8 +145,46 @@ line-height: 30px;
     padding: 5px;
 }
 `
+const Error = styled.div`
+color: #EF350D;
+`
 
 const Contact = () => {
+
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            subject: "",
+            message: "",
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().email("Nieprawidłowy format").required("Pole jest wymagane"),
+            subject: Yup.string().required("Pole jest wymagane"),
+            message: Yup.string().required("Pole jest wymagane"),
+        }),
+        onSubmit: async (values, {resetForm}) => {
+            try {
+                const response = await fetch("http://localhost:4000/message", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(values),
+                })
+                if (response.ok) {
+                    console.log("sukces")
+                } else {
+                    console.log("Błąd zapisu")
+                }
+            }
+            catch (error) {
+                console.error("Błąd wysyłania danych")
+            }
+            resetForm();
+        }
+    })
+
+
     return (
         <StyledContact>
             <ContactContainer>
@@ -153,23 +193,57 @@ const Contact = () => {
                     <Supporting>Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</Supporting>
                 </HeadingContact>
                 <FormContact>
+                    <form onSubmit={formik.handleSubmit}>
                     <RowInFormContact>
                         <SectorInput>
-                            <LabelInFormContact>Your email</LabelInFormContact>
-                            <InputStyleText placeholder="name@flowbite.com" />
+                            <LabelInFormContact htmlFor="email">Your email</LabelInFormContact>
+                                <InputStyleText
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    onChange={formik.handleChange}
+                                    value={formik.values.email}
+                                    placeholder="name@flowbite.com" />
+                                {formik.touched.email && formik.errors.email ? (
+                                    <Error>
+                                        {formik.errors.email}
+                                    </Error>
+                                    ) : null}
                         </SectorInput>
                         <SectorInput>
-                            <LabelInFormContact>Subject</LabelInFormContact>
-                            <InputStyleText placeholder="Let us know how we can help you" />
+                            <LabelInFormContact htmlFor="subject">Subject</LabelInFormContact>
+                                <InputStyleText
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    onChange={formik.handleChange}
+                                    value={formik.values.subject}
+                                    placeholder="Let us know how we can help you" />
+                                {formik.touched.subject && formik.errors.subject ? (
+                                    <Error>
+                                        {formik.errors.subject}
+                                    </Error>
+                                ) : null}
                         </SectorInput>
                     </RowInFormContact>
                     <SectorMesage>
-                        <LabelInFormContact>Your message</LabelInFormContact>
-                            <ImputMessage />
+                        <LabelInFormContact htmlFor="message">Your message</LabelInFormContact>
+                            <ImputMessage 
+                                type="text"
+                                id="message"
+                                name="message"
+                                onChange={formik.handleChange}
+                                value={formik.values.message} />
+                            {formik.touched.message && formik.errors.message ? (
+                                <Error>
+                                    {formik.errors.message}
+                                </Error>
+                            ): null}
                     </SectorMesage>
                     <ButtonInContactForm>
-                        <BlueButtonDifferentColor width="139px" description="Send message" />
+                        <BlueButtonDifferentColor type="submit" width="139px" description="Send message" />
                     </ButtonInContactForm>
+                    </form>
                 </FormContact>
             </ContactContainer>
         </StyledContact>

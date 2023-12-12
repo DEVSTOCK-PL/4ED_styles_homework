@@ -9,7 +9,6 @@ const ENDPOINTS = {
     episodes: "https://rickandmortyapi.com/api/episode",
 };
 
-// const ENDPOINT = ENDPOINTS.characters
 
 const useLogic = (category) => {
     const [data, setData] = useState(null);

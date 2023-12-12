@@ -1,7 +1,11 @@
-import React from "react";
-import { Link } from 'react-router-dom'
-
+import { useState, useContext, useEffect }  from "react";
+import { Link, useNavigate } from 'react-router-dom'
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import axios from "axios"
+import { UserContext } from "../../Hooks/UserContext";
 import styled from "styled-components";
+import { TransparentButton } from "../../generalComponents/indexGeneralComponents";
 
 const ContactContainer = styled.div`
 width: 100%;
@@ -81,26 +85,93 @@ display: flex;
 align-items: center;
 justify-content: center;
 `
+const Error = styled.div`
+color: #EF350D;
+`
 
 const Login = () => {
+
+    const navigate = useNavigate();
+    const [isValidUser, setIsValidUser] = useState(false)
+
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().email("Nieprawidłowy format").required("Pole jest wymagane"),
+            password: Yup.string().min(3, "Hasło musi mieć conajmniej 3 znaki").max(20, "Hasło moe mieć nie więcej ni 20 znaków").required("Pole jest wymagane"),
+        }),
+        onSubmit: async (values, { resetForm }) => {
+            console.log(values, "wartosc wprowadzona w formularzu")
+            try {
+                const response = await axios.get("http://localhost:4000/users")
+                const users = response.data;
+
+                const user = users.find((u) => u.email.toLowerCase() === values.email.toLowerCase() && u.password === values.password);
+
+                if (user) {
+                    console.log("uzytkownik:", user);
+                    setIsValidUser(true);
+                    navigate("/profile")
+                } else {
+                    console.log("nie ma go w bazie");
+                    setIsValidUser(false);
+                }
+            }
+            catch (error) {
+                console.error("Błąd wysyłania danych", error)
+                setIsValidUser(false)
+                return;
+            }
+        resetForm();
+    }
+    })
+
     return (
         <ContactContainer>
             <div>
                 <div>Zaloguj się</div>
                 <div>
+                    <form onSubmit={formik.handleSubmit}>
                     <InputForm>
                         <InputRow>
-                            <LabelInput>Your email</LabelInput>
-                            <InputLogin type="email" id="email" name="email" placeholder="Email" />
+                            <LabelInput htmlFor="email">Your email</LabelInput>
+                            <InputLogin
+                                type="email"
+                                id="email"
+                                name="email"
+                                onChange={formik.handleChange}
+                                value={formik.values.email}    
+                                placeholder="Email" />
+                                {formik.touched.email && formik.errors.email ? (
+                                    <Error>
+                                        {formik.errors.email}
+                                    </Error>
+                            ) : null}    
                         </InputRow>
                         <InputRow>
-                            <LabelInput>Password</LabelInput>
-                            <InputLogin type="password" id="password" name="password" placeholder="Password" />
+                            <LabelInput htmlFor="password">Password</LabelInput>
+                            <InputLogin
+                                type="password"
+                                id="password"
+                                name="password"
+                                onChange={formik.handleChange}
+                                value={formik.values.password}    
+                                placeholder="Password" />
+                                {formik.touched.password && formik.errors.password ? (
+                                    <Error>
+                                        {formik.errors.password}
+                                    </Error>
+                                ) : null}    
                         </InputRow>
-                    </InputForm>
-                    <Link to="/profile">
-                    <LoginButton>Login</LoginButton>
+                        </InputForm>
+                        <Link to={ isValidUser && formik.isValid && formik.values.email && formik.values.password
+                            ? "/profile" : "/login"} >
+                            <LoginButton type="button" onClick={formik.handleSubmit} disabled={!formik.isValid}>Login</LoginButton>
                     </Link>
+                    </form>
                 </div>
             </div>
         </ContactContainer>
