@@ -92,7 +92,8 @@ color: #EF350D;
 const Login = () => {
 
     const navigate = useNavigate();
-    const [isValidUser, setIsValidUser] = useState(false)
+    const { login } = useContext(UserContext);
+    const [isValidUser, setIsValidUser] = useState(false);
 
     const formik = useFormik({
         initialValues: {
@@ -105,6 +106,7 @@ const Login = () => {
         }),
         onSubmit: async (values, { resetForm }) => {
             console.log(values, "wartosc wprowadzona w formularzu")
+            
             try {
                 const response = await axios.get("http://localhost:4000/users")
                 const users = response.data;
@@ -114,11 +116,13 @@ const Login = () => {
                 if (user) {
                     console.log("uzytkownik:", user);
                     setIsValidUser(true);
+                    login(user);
                     navigate("/profile")
                 } else {
                     console.log("nie ma go w bazie");
                     setIsValidUser(false);
                 }
+                console.log(user.email, 'Email', user.password, "haslo")
             }
             catch (error) {
                 console.error("Błąd wysyłania danych", error)
@@ -167,10 +171,7 @@ const Login = () => {
                                 ) : null}    
                         </InputRow>
                         </InputForm>
-                        <Link to={ isValidUser && formik.isValid && formik.values.email && formik.values.password
-                            ? "/profile" : "/login"} >
                             <LoginButton type="button" onClick={formik.handleSubmit} disabled={!formik.isValid}>Login</LoginButton>
-                    </Link>
                     </form>
                 </div>
             </div>

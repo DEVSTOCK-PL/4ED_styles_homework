@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { useState, useEffect, useContext } from "react";
 import { Book } from "../../image/indexImage";
-import { UserContext } from "../../Hooks/UserContext";
+import { UserContext, UserProvider } from "../../Hooks/UserContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios"
 
 
 const Container = styled.div`
@@ -108,7 +109,8 @@ margin: 10px 20px;
 
 const ProfileCard = () => {
 
-    const { user, login,  logout } = useContext(UserContext)
+    const { user, logout } = useContext(UserContext)
+    console.log(user, "user nowy w profile")
 
     const navigate = useNavigate();
     const [booksCard, setBooksCard] = useState([]);
@@ -124,23 +126,21 @@ const ProfileCard = () => {
         }
         fetchData();
     }, []);
-
     const handleLogout = () => {
         logout();
         navigate("/login")
     }
     
     return (
-        <UserContext.Provider>
+        <UserProvider>
         <Container>
             <Button onClick={handleLogout}>Logout</Button>
             <ContactCantainer>
                 <ContainerTitle>
-                    <TitleContactContainer>{`Witaj user ${user}`}</TitleContactContainer>
+                        <TitleContactContainer>{`Witaj user ${user.name}`}</TitleContactContainer>
                 </ContainerTitle>
                 <ContainerText>
-                    {/* ponizej dopisac do userow name, secondName oraz email */}
-                    <PreviewContactContainer>jesteś aktualnie zalogowany jako {user} , a Twój mail to {user}</PreviewContactContainer>
+                        <PreviewContactContainer>{`jesteś aktualnie zalogowany jako ${user.name} ${user.secondName} , a Twój mail to ${user.email}`}</PreviewContactContainer>
                 </ContainerText>
             </ContactCantainer>
             <FeaturesContainer>
@@ -191,7 +191,7 @@ const ProfileCard = () => {
                 </LibraryContainer>
             </FeaturesContainer>
             </Container>  
-        </UserContext.Provider>    
+        </UserProvider>
     )
 }
 export default ProfileCard

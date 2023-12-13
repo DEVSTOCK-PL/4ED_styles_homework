@@ -47,6 +47,8 @@ function App() {
     setDarkTheme((prev)=>!prev)
   }
 
+
+
   return (
     <QueryClientProvider client={queryClient}>
       <StyleContext.Provider value={darkTheme}>
@@ -63,7 +65,7 @@ function App() {
           <Route path='/fun/characters' element={<RickAndMorty />} />
           <Route path='/fun/locations' element={<RickAndMorty />} />
           <Route path='/fun/episodes' element={<RickAndMorty />} />
-          <Route path='login' element={<Login />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/get-started' element={<Register />} />
           <Route path='/profile' element={<Profile />} />
         </Routes>
