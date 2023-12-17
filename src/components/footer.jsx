@@ -2,10 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Flowbite from '../assets/image/Logo.png'
-import Facebook from '../assets/icon/facebook.svg'
-import Dribble from '../assets/icon/dribbble.svg'
-import Twitter from '../assets/icon/twitter.svg'
-import Git from '../assets/icon/github.svg'
+import { facebook, dribbble, twitter, github } from '../assets/icon/icon'
 
 const Foot = styled.div`
 background-color: #1F2A37;
@@ -115,68 +112,53 @@ gap: 20px;
 display: flex;
 justify-content: space-between;
 `
-
+const navigationData = [
+    {
+        category: 'COMPANY',
+        links: ['About', 'Premium', 'Blog', 'Affiliate Program', 'Get Coupon']
+    },
+    {
+        category: 'HELP AND SUPPORT',
+        links: ['Contact Us', 'Knowledge Center', 'Premium Support', 'SponsorShips']
+    },
+    {
+        category: 'LEARNING',
+        links: ['Learn Hub', 'Manuals', 'Tutorials', 'Communities']
+    },
+    {
+        category: 'RESOURCES',
+        links: ['Third-Party Tools', 'Illustrations', 'Themesberg', 'Bluehost', 'Stock Photos']
+    },
+    {
+        category: 'LEGAL',
+        links: ['Privacy Policy', 'Terms & Conditions', 'EULA']
+    },
+]
 
 function Footer() {
     return(
         <Foot>
             <Container>
                 <NavLinks>
-                    <Column height='221px'>
-                     <h1>COMPANY</h1>
-                     <Links>
-                      <Link>About</Link>
-                      <Link>Premium</Link>
-                      <Link>Blog</Link>
-                      <Link>Affiliate Program</Link>
-                      <Link>Get Coupon</Link>
-                     </Links>
-                    </Column>
-                    <Column>
-                     <h1>HELP AND SUPPORT</h1>
-                     <Links>
-                      <Link>Contact Us</Link>
-                      <Link>Knowledge Center</Link>
-                      <Link>Premium Support</Link>
-                      <Link>SponsorShips</Link>
-                     </Links>
-                    </Column>
-                    <Column>
-                    <h1>LEARNING</h1>
-                     <Links>
-                      <Link>Learn Hub</Link>
-                      <Link>Manuals</Link>
-                      <Link>Tutorials</Link>
-                      <Link>Communities</Link>
-                     </Links>
-                    </Column>
-                    <Column>
-                    <h1>RESOURCES</h1>
-                     <Links>
-                      <Link>Third-Party Tools</Link>
-                      <Link>Illustrations</Link>
-                      <Link>Themesberg</Link>
-                      <Link>Bluehost</Link>
-                      <Link>Stock Photos</Link>
-                     </Links>
-                    </Column>
-                    <Column>
-                    <h1>LEGAL</h1>
-                     <Links>
-                      <Link>Privacy Policy</Link>
-                      <Link>Terms & Conditions</Link>
-                      <Link>EULA</Link>
-                     </Links>
-                    </Column>
+                    {navigationData.map((category, index) => (
+                        <Column key={index}>
+                            <h1>{category.category}</h1>
+                            <Links>
+                              {category.links.map((link, linkIndex) => (
+                                <Link key={linkIndex}>{link}</Link>
+                              ))}
+                            </Links>
+                        </Column>
+                    ))}
                 </NavLinks>
                 <SocialLinks>
                     <Logo><img src={Flowbite} alt="Flowbite logo" /><p>Flowbite</p></Logo>
                     <span>2022 Flowbite, Inc. All rights reserved.</span>
                     <Socials>
-                        <img src={Git} alt="Github" />
-                        <img src={Twitter} alt="Twitter" />
-                        <img src={Dribble} alt="Dribble" />
-                        <img src={Facebook} alt="Facebook" />
+                        <img src={github} alt="Github" />
+                        <img src={twitter} alt="Twitter" />
+                        <img src={dribbble} alt="Dribble" />
+                        <img src={facebook} alt="Facebook" />
                     </Socials>
                 </SocialLinks>
             </Container>

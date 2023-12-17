@@ -2,11 +2,9 @@ import React from'react'
 import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
-import mockup1 from '../assets/image/Mockup1.png'
-import mockup4 from "../assets/image/Mockup4.png"
-import arrowblue from '../assets/icon/ArrowBlue.svg'
+import { mockup1, mockup4 } from '../assets/image/image'
+import { arrowblue, share } from '../assets/icon/icon'
 import ProgressBar from '../Reusable/progressbar'
-import share from '../assets/icon/Share.svg'
 
 const CTA = styled.div`
 background-color: #111928;

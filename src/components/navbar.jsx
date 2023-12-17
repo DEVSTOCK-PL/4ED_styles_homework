@@ -4,12 +4,11 @@ import styled from 'styled-components'
 import Logo from '../assets/image/Logo.png'
 import Button from '../Reusable/Button'
 
-
 const Container = styled.div`
 background-color: #111928;
 display: flex;
 position: relative;
-width: 1440px;
+width: 100%;
 height: 65px;
 padding: 24px, 0px, 0px, 0px;
 align-items: end;
@@ -23,7 +22,6 @@ font-family: 'Inter', sans-serif;
 `
 
 const Nav = styled.div`
-// background-color: #fff;
 width: 1280px;
 height: 41px;
 display: flex;

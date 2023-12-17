@@ -55,11 +55,8 @@ div {
   }
 
   @media (max-width: 640px) {
-
     width: 100%;
     flex-direction: column;
-
-
 
     div:not(:last-of-type) {
       border-right: none
@@ -81,20 +78,28 @@ font-weight: 400;
 color: #9CA3AF;
 `
 
+const socialProofData = [
+  { number: '104M', text: 'Trees planted' },
+  { number: '20k+', text: 'Partners & Donors' },
+  { number: '90M', text: 'Tonnes of Carbon Stored' },
+  { number: '50+', text: 'People-Powered Projects' },
+];
 
 function Social() {
-    return(
-        <SocialProof>
-            <Container>
-                <Row>
-                <div><Header>104M</Header><P>Trees planted</P></div>
-                <div><Header>20k+</Header><P>Partners & Donors</P></div>
-                <div><Header>90M</Header><P>Tonnes of Carbon Stored</P></div>
-                <div><Header>50+</Header><P>People-Powered Projects</P></div>
-                </Row>
-            </Container>
-        </SocialProof>
-    )
+  return (
+    <SocialProof>
+      <Container>
+        <Row>
+          {socialProofData.map((item, index) => (
+            <div key={index}>
+              <Header>{item.number}</Header>
+              <P>{item.text}</P>
+            </div>
+          ))}
+        </Row>
+      </Container>
+    </SocialProof>
+  );
 }
 
-export default Social
+export default Social;

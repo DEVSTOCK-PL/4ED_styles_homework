@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
-import mockup1 from '../assets/image/Mockup1.png'
-import mockup2 from '../assets/image/Mockup2.png'
-import mockup3 from '../assets/image/Mockup3.png'
+import { mockup1, mockup2, mockup3 } from '../assets/image/image'
 import arrowwhite from '../assets/icon/ArrowWhite.svg'
 
 const CTA = styled.div`

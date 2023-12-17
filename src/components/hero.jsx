@@ -3,13 +3,8 @@ import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
 import VideoCamera from '../assets/icon/video-camera.svg'
-import Intel from '../assets/brandlogo/Intel.png'
-import Fedex from '../assets/brandlogo/Fedex.png'
-import Visa from '../assets/brandlogo/Visa.png'
-import Disney from '../assets/brandlogo/Disney.png'
+import { intel, fedex, visa, disney } from '../assets/brandlogo/brandlogo'
 import carousel from '../assets/image/Carousel.png'
-
-
 
 const Hero = styled.div`
 background-color: #111928;
@@ -183,10 +178,10 @@ function Heroo() {
                     </Buttons>
                 <Sponsors><p>Sponsors:</p>
                     <SponsorLogos>
-                        <img src={Intel} alt="Logo Intel" />
-                        <img src={Fedex} alt="Logo Fedex" />
-                        <img src={Visa} alt="Logo Visa" />
-                        <img src={Disney} alt="Logo Disney" />
+                        <img src={intel} alt="Logo Intel" />
+                        <img src={fedex} alt="Logo Fedex" />
+                        <img src={visa} alt="Logo Visa" />
+                        <img src={disney} alt="Logo Disney" />
                     </SponsorLogos>
                 </Sponsors>
                 </LeftContent>

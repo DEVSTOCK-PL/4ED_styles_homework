@@ -7,7 +7,7 @@ import arrowblue from '../assets/icon/ArrowBlue.svg'
 const BLOG = styled.div`
 background-color: #1F2A37;
 font-family: 'Inter', sans-serif;
-width: 1440px;
+width: 100%;
 height: 1017px;
 gap: 10px;
 padding: 96px, 0px, 96px, 0px; 
@@ -22,7 +22,7 @@ justify-content: center;
 }
 `
 const Container = styled.div`
-width: 1280px;
+width: 100%;
 height: 825px;
 gap: 64px;
 display: flex;

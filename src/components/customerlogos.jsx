@@ -2,26 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
-import arrowblue from '../assets/icon/ArrowBlue.svg'
-import external from '../assets/icon/external-link.svg'
-import stripe from '../assets/brandlogo/Stripe.png'
-import spotify from '../assets/brandlogo/Spotify.png'
-import tesla from '../assets/brandlogo/Tesla.png'
-import twitch from '../assets/brandlogo/Twitch.png'
-import intel from '../assets/brandlogo/Intel.png'
-import shell from '../assets/brandlogo/Shell.png'
-import netflix from '../assets/brandlogo/Netflix.png'
-import nestle from '../assets/brandlogo/Nestle.png'
-import fedex from '../assets/brandlogo/Fedex.png'
-import disney from '../assets/brandlogo/Disney.png'
-import bmw from '../assets/brandlogo/BMW.png'
-import cola from '../assets/brandlogo/Coca-Cola.png'
-
-
-
+import { arrowblue, external } from '../assets/icon/icon'
+import { stripe, spotify, tesla, twitch, intel, shell, netflix, nestle, fedex, disney, bmw, cola } from '../assets/brandlogo/brandlogo'
 
 const LogosWrapper = styled.div`
-  width: 1440px;
+  width: 100%;
   height: 877px;
   display: flex;
   justify-content: center;
@@ -37,7 +22,7 @@ const LogosWrapper = styled.div`
 `
 
 const Container = styled.div`
-  width: 1280px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +37,7 @@ const Container = styled.div`
 }
 `
 const HeadingWrapper = styled.div`
-  width: 672px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +86,7 @@ const HeadingWrapper = styled.div`
   }
 `
 const LogosContainer = styled.div`
-  width: 1280px;
+  width: 100%;
   height: 460px;
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +100,7 @@ const LogosContainer = styled.div`
 }
 `
 const Row = styled.div`
-width: 1280px;
+width: 100%;
 height: 132px;
 display: flex;
 justify-content: space-around;
@@ -128,7 +113,7 @@ justify-content: space-around;
 }
 `
 const Card = styled.div`
-  width: 320px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,7 +122,6 @@ const Card = styled.div`
     width: 142px;
     height: 132px;
 }
-
 
   p {
     color: #6B7280;
@@ -148,9 +132,6 @@ const Card = styled.div`
   }
 
 `
-
-
-
 function CustomerLogos() {
     return(
     <LogosWrapper>
@@ -216,8 +197,6 @@ function CustomerLogos() {
             <Button description='Visit website' color='#9CA3AF' backgroundColor='#1F2A37' width='122px' height='34px' border='1px solid #4B5563' iconLeft={external} fontSize='12px' fontWeight='500'/>
             </Card>
           </Row>
-          
-
         </LogosContainer>
       </Container>
     </LogosWrapper>
