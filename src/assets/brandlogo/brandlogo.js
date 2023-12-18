@@ -1,0 +1,15 @@
+import stripe from '../brandlogo/Stripe.png'
+import spotify from '../brandlogo/Spotify.png'
+import tesla from '../brandlogo/Tesla.png'
+import twitch from '../brandlogo/Twitch.png'
+import intel from '../brandlogo/Intel.png'
+import shell from '../brandlogo/Shell.png'
+import netflix from '../brandlogo/Netflix.png'
+import nestle from '../brandlogo/Nestle.png'
+import fedex from '../brandlogo/Fedex.png'
+import disney from '../brandlogo/Disney.png'
+import bmw from '../brandlogo/BMW.png'
+import cola from '../brandlogo/Coca-Cola.png'
+import visa from '../brandlogo/Visa.png'
+
+export { stripe, spotify, tesla, twitch, intel, shell, netflix, nestle, fedex, disney, bmw, cola, visa}
