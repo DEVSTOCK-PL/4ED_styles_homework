@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "email": "costam@gmail.com",
+      "password": "cos1234",
+      "id": 1
+    },
+    {
+      "name": "Edek",
+      "secondName": "Edek2",
+      "email": "edek@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "name": "Piotr",
+      "secondName": "Zmuda",
+      "email": "elo@gmail.com",
+      "password": "12345",
+      "id": 3
+    }
+  ],
+  "people": [],
+  "posts": [
+    {
+      "id": 1,
+      "title": "pierwszy post",
+      "description": "opis pierwszego posta w naszym zestawie",
+      "author": "Jan Kowalski",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "title": "drugi post",
+      "description": "opis drugiego posta w naszym zestawie",
+      "author": "Anna Nowak",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "title": "trzeci post",
+      "description": "opis trzeciego posta w naszym zestawie",
+      "author": "Piotr Zięba",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "title": "czwarty post",
+      "description": "opis czwartego posta w naszym zestawie",
+      "author": "Magda Lis",
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
+}

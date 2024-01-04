@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import "./App.css";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { createContext, useState } from "react";
+
+import { createGlobalStyle } from "styled-components";
+
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
+import { colors } from "./components/colors";
+
+import {
+  Home,
+  News,
+  Events,
+  Contact,
+  List,
+  NotFound,
+  NavBar,
+  Footer,
+  NavBarBurger,
+  GetStarted,
+} from "./components";
+
+export const StyleContext = createContext();
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }) =>
+      theme ? "#111928" : colors.LightBackgroundColorOne};
+    color: ${({ theme }) => (theme ? "#FFFFFF" : colors.LightFontColor)};
+  }
+  a {
+    text-decoration: none;
+    color:${({ theme }) => (theme ? "#FFFFFF" : colors.LightFontColor)}; 
+  }
+`;
+
+const queryClient = new QueryClient();
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkTheme((prev) => !prev);
+    console.log(darkTheme);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <QueryClientProvider client = {queryClient}>
+      <StyleContext.Provider value={darkTheme}>
+        <GlobalStyle theme={darkTheme} />
+        <Router>
+          <NavBarBurger toggleTheme={toggleTheme} />
+          <NavBar toggleTheme={toggleTheme} />
+          <Routes>
+            <Route path="Home/" element={<Home />} />
+            <Route path="/News" element={<News />} />
+            <Route path="/Events" element={<Events />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/List" element={<List />} />
+            <Route path="/List/characters" element={<List />} />
+            <Route path="/List/locations" element={<List />} />
+            <Route path="/List/episodes" element={<List />} />
+            <Route path="/GetStarted" element={<GetStarted />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </StyleContext.Provider>
+    </QueryClientProvider>
+  );
 }
 
-export default App
+export default App;
