@@ -1,14 +1,11 @@
 import styled from "styled-components";
-// eslint-disable-next-line no-unused-vars
 import { useContext } from "react";
-import { StyleContext } from "../App";
 
-import { GlobalStyle } from "../App";
+import { StyleContext, GlobalStyle } from "../App";
 
 import { Link, useLocation } from "react-router-dom";
 
 import { breakPoints, ActionButtons } from "../components";
-
 import { Container } from "./styleElements";
 
 import { ThemeSwitcher } from "../components";

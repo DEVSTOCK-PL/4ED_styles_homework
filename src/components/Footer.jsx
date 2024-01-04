@@ -1,14 +1,11 @@
 import styled from "styled-components";
-
 import { useContext } from "react";
+
 import { StyleContext } from "../App";
 
 import { colors } from "./colors";
-
 import { Container } from "./styleElements";
-
 import { logo, socialLinks } from "../images";
-
 import { breakPoints } from "../components";
 
 const { tablet, mobile } = breakPoints;

@@ -1,19 +1,15 @@
 import { useState } from "react";
-
 import styled from "styled-components";
-
 import { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import { StyleContext } from "../App";
 
 import { Container, Button } from "./styleElements";
-
 import { breakPoints, ThemeSwitcher, ActionButtons, colors } from ".";
-
-const { tablet } = breakPoints;
-
 import WebLogo from "./WebLogo";
 
-import { Link, useLocation } from "react-router-dom";
+const { tablet } = breakPoints;
 
 const NavContainer = styled(Container)`
   display: none;

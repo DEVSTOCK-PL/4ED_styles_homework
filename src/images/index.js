@@ -1,13 +1,22 @@
-import bmw from "../images/bmw.svg";
+import Stripe from "./SponsorIcons/Stripe";
+import Intel from "./SponsorIcons/Intel";
+import Fedex from "./SponsorIcons/Fedex";
+import Spotify from "./SponsorIcons/Spotify";
+import Shell from "./SponsorIcons/Shell";
+import Disnay from "./SponsorIcons/Disnay";
+import Tesla from "./SponsorIcons/Tesla";
+import Netflix from "./SponsorIcons/Netflix";
+import Bmw from "./SponsorIcons/Bmw";
+import Visa from "./SponsorIcons/Visa";
+import Cocacola from "./SponsorIcons/Cocacola";
+import Nestle from "./SponsorIcons/Nestle";
+import Twitch from "./SponsorIcons/Twitch";
+
 import carousel from "../images/carousel.png";
-import cocacola from "../images/cocacola.svg";
-import disnay from "../images/disnay.svg";
 import dribbble from "../images/dribbble.png";
 import eventButtonVector from "../images/eventButtonVector.svg";
 import externalLink from "../images/externalLink.svg";
 import facebook from "../images/facebook.png";
-import fedex from "../images/fedex.png";
-import intel from "../images/intel.svg";
 import github from "../images/github.png";
 import littleArow from "../images/littleArow.png";
 import littleWhiteArow from "../images/littleWhiteArow.svg";
@@ -17,28 +26,29 @@ import mockup2News from "../images/mockup2News.png";
 import mockup3News from "../images/mockup3News.png";
 import mockupLeft from "../images/mockupLeft.png";
 import mockupRight from "../images/mockupRight.png";
-import nestle from "../images/nestle.svg";
-import netflix from "../images/netflix.svg";
-import shell from "../images/shell.svg";
 import socialLinks from "../images/socialLinks.png";
-import spotify from "../images/spotify.svg";
-import stripe from "../images/stripe.svg";
-import tesla from "../images/tesla.svg";
-import twitch from "../images/twitch.svg";
 import videoCamera from "../images/videoCamera.png";
-import visa from "../images/visa.png";
+
 
 export {
-  bmw,
-  carousel,
-  cocacola,
-  disnay,
+  Stripe,
+  Intel,
+  Fedex,
+  Tesla,
+  Bmw,
+  Netflix,
+  Disnay,
+  Shell,
+  Spotify,
+  Visa,
+  Cocacola,
+  Nestle,
+  Twitch,
   dribbble,
   eventButtonVector,
   externalLink,
   facebook,
-  fedex,
-  intel,
+  carousel,
   github,
   littleArow,
   littleWhiteArow,
@@ -48,14 +58,6 @@ export {
   mockup3News,
   mockupLeft,
   mockupRight,
-  nestle,
-  netflix,
-  shell,
   socialLinks,
-  spotify,
-  stripe,
-  tesla,
-  twitch,
   videoCamera,
-  visa,
 };

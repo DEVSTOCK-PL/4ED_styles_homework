@@ -1,6 +1,7 @@
 import styled from "styled-components";
-
 import { useContext } from "react";
+
+import { useFormik } from "formik";
 import { StyleContext } from "../../App";
 
 import * as Yup from "yup";
@@ -11,8 +12,6 @@ import axios from "axios";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 
 import { Button } from "../styleElements";
-import { useFormik } from "formik";
-
 import { colors } from "../colors";
 
 const Wrapper = styled.div`

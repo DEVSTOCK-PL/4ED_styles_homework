@@ -1,15 +1,14 @@
 import styled from "styled-components";
-
 import { useContext } from "react";
-import { StyleContext } from "../../App";
 
-import { colors } from "../colors";
+import { StyleContext } from "../../App";
 
 import { Button, Container, Heading, SupportingText } from "../styleElements";
 
 import { breakPoints, CustomerLogos } from "..";
 
 const { tablet } = breakPoints;
+import { colors } from "../colors";
 
 const NewContainer = styled(Container)`
   max-width: 1440px;
@@ -64,7 +63,8 @@ const FormInput = styled.div`
     color: #ffffff;
     font-size: 16px;
     background-color: #c6d0dd;
-    background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
+    background-color: ${(props) =>
+      props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree};
     border-radius: 8px;
     border: 1px solid #4b5563;
     width: 100%;
@@ -80,8 +80,10 @@ const FormInput = styled.div`
 `;
 
 const LargeMessageInput = styled.textarea`
-  background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
-  background-color: ${(props) => (props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree)};
+  background-color: ${(props) =>
+    props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree};
+  background-color: ${(props) =>
+    props.darkTheme ? "#4b5563" : colors.LightBackgroundColorThree};
   width: 100%;
   height: 162px;
   color: #ffffff;

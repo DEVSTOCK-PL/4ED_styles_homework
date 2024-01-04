@@ -4,8 +4,6 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { StyleContext } from "../../App";
 
-import { colors } from "../colors";
-
 import {
   Button,
   CenteredLink,
@@ -13,21 +11,20 @@ import {
   Heading,
   SupportingText,
 } from "../styleElements";
-
 import {
   mockup1News,
   mockupLeft,
   videoCamera,
-  intel,
-  fedex,
-  visa,
-  disnay,
+  Intel,
+  Fedex,
+  Visa,
+  Disnay,
   carousel,
   littleArow,
 } from "../../images";
 
 import { PictureCard, breakPoints } from "..";
-
+import { colors } from "../colors";
 const { tablet, smallDesktop, desktop } = breakPoints;
 
 const Hero = styled.div`
@@ -53,7 +50,8 @@ const Buttons = styled.div`
   margin-bottom: 20px;
 `;
 const VideoCameraButton = styled(Button)`
-  background-color: ${(props) => props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
+  background-color: ${(props) =>
+    props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
   color: #9ca3af;
   display: flex;
 `;
@@ -97,7 +95,7 @@ const SponsoredLogo = styled.div`
   justify-content: space-between;
   padding-top: 10px;
 
-  img {
+  & > svg {
     display: block;
     width: 86px;
     height: 33.36px;
@@ -109,8 +107,10 @@ const SponsoredLogo = styled.div`
     }
   }
 `;
+
 const SocialProof = styled.div`
-  background-color: ${(props) => props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
+  background-color: ${(props) =>
+    props.darkTheme ? "#1f2a37" : colors.LightBackgroundColorTwo};
   display: flex;
   justify-content: space-evenly;
   padding: 12px 0px;
@@ -194,7 +194,7 @@ function Home() {
           </SupportingText>
           <Buttons>
             <Button>Donate now</Button>
-            <VideoCameraButton darkTheme = {darkTheme}>
+            <VideoCameraButton darkTheme={darkTheme}>
               <img src={videoCamera} alt="video-camera-logo" />
               Learn more
             </VideoCameraButton>
@@ -202,10 +202,10 @@ function Home() {
           <Divider></Divider>
           <SponsorsText>Sponsors</SponsorsText>
           <SponsoredLogo>
-            <img src={intel} alt="intel-logo" />
-            <img src={fedex} alt="fedex-logo" />
-            <img src={visa} alt="visa-logo" />
-            <img src={disnay} alt="disnay-logo" />
+            <Intel />
+            <Fedex />
+            <Visa />
+            <Disnay />
           </SponsoredLogo>
         </LeftContent>
         <RightPhoto>

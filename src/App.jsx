@@ -4,7 +4,6 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { createContext, useState } from "react";
-export const StyleContext = createContext();
 
 import { createGlobalStyle } from "styled-components";
 
@@ -24,6 +23,8 @@ import {
   NavBarBurger,
   GetStarted,
 } from "./components";
+
+export const StyleContext = createContext();
 
 export const GlobalStyle = createGlobalStyle`
   body {

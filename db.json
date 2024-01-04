@@ -11,6 +11,13 @@
       "email": "edek@gmail.com",
       "password": "12345",
       "id": 2
+    },
+    {
+      "name": "Piotr",
+      "secondName": "Zmuda",
+      "email": "elo@gmail.com",
+      "password": "12345",
+      "id": 3
     }
   ],
   "people": [],
