@@ -7,7 +7,7 @@ import { facebook, dribbble, twitter, github } from '../assets/icon/icon'
 const Foot = styled.div`
 background-color: #1F2A37;
 font-family: 'Inter', sans-serif;
-width: 1440px;
+width: 100%;
 height: 569px;
 padding: 96px, 0px, 64px, 0px;
 display: flex;

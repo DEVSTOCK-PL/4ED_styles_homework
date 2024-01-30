@@ -6,7 +6,7 @@ import Button from '../Reusable/Button'
 const Contact = styled.div`
 background-color: #111928;
 font-family: 'Inter', sans-serif;
-width: 1440px;
+width: 100%;
 height: 855px;
 gap: 10px;
 padding: 96px, 0px, 96px, 0px;

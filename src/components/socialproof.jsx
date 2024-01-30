@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const SocialProof = styled.div`
 background-color: #111928;
-width: 1440px;
+width: 100%;
 height: 213px;
 padding: 0px, 0px, 96px, 0px;
 border: 1px, 0px, 1px, 0px;

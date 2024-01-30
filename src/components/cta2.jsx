@@ -9,7 +9,7 @@ import ProgressBar from '../Reusable/progressbar'
 const CTA = styled.div`
 background-color: #111928;
 font-family: 'Inter', sans-serif;
-width: 1440px;
+width: 100%;
 height: 997px;
 gap: 10px; 
 padding: 96px, 0px, 96px, 0px;
@@ -232,9 +232,9 @@ function CTA2() {
                     </Buttons>
                     </Card>
                 </Cards>
-                <Fundarising>
+                {/* <Fundarising>
                 <span>View all fundarising events <img src={arrowblue}/></span>
-                </Fundarising>
+                </Fundarising> */}
             </Container>
         </CTA>
     )

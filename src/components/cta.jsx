@@ -7,7 +7,7 @@ import arrowwhite from '../assets/icon/ArrowWhite.svg'
 
 const CTA = styled.div`
 background-color: #111928;
-width: 1440px;
+width: 100%;
 height: 1444px;
 border: 1px, 0px, 1px, 0px;
 padding: 0px, 0px, 96px, 0px;

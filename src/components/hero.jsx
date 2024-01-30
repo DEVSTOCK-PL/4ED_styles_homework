@@ -8,7 +8,7 @@ import carousel from '../assets/image/Carousel.png'
 
 const Hero = styled.div`
 background-color: #111928;
-width: 1440px;
+width: 100%;
 height: 626px;
 padding: 96px, 0px, 96px, 0px;
 display: flex;

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import Logo from '../assets/image/Logo.png'
 import Button from '../Reusable/Button'
@@ -61,6 +62,11 @@ line-height: 24px;
 	}
 `
 
+const LinkStyled = styled(Link)`
+text-decoration: none; 
+color: #fff;
+`
+
 const LogIn = styled.div`
 display: flex;
     align-items: center;
@@ -78,11 +84,10 @@ function Navbar() {
                     <img width="32px" height="32px" src={Logo} alt="Logo firmy" />Logo
                 </CompanyLogo>
                 <NavLinks>
-                <a>Company</a>
-					<a>Marketplace</a>
-					<a>Features</a>
-					<a>Team</a>
-					<a>Contact</a>
+                    <LinkStyled to="/home">Home</LinkStyled>
+					<LinkStyled to="/news">News</LinkStyled>
+                    <LinkStyled to="/events">Events</LinkStyled>
+                    <LinkStyled to="/contact">Contact</LinkStyled>
                 </NavLinks>
                 <LogIn>Log In<Button description="Get Started"></Button></LogIn>
             </Nav>
@@ -93,14 +98,4 @@ function Navbar() {
 
 export default Navbar
 
-
-// function Navbar() {
-//     return(
-//         <Container>
-//             <img src={Logo} alt="logo" />
-//         </Container>
-//     )
-// }
-
-// export default Navbar
 
