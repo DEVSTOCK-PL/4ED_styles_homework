@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Flowbite from '../assets/image/Logo.png'
-import { facebook, dribbble, twitter, github } from '../assets/icon/icon'
+import { facebook, dribbble, twitter, github } from '../assets/icon'
 
 const Foot = styled.div`
 background-color: #1F2A37;

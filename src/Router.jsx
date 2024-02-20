@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Layout, Home, News, Events, Contact, NotFound } from './separated/separated'
+import { Layout, Home, News, Events, Contact, NotFound } from './separated'
 
 function RouterApp () {
     return (
         <BrowserRouter>
             <Routes>
-              <Route path='/' element={<Layout />} />
+              <Route path='/' />
               <Route path='/home' element={<Layout><Home /></Layout>} />
               <Route path='/news' element={<Layout><News /></Layout>} />
               <Route path='/events' element={<Layout><Events /></Layout>} />

@@ -2,8 +2,8 @@ import React from'react'
 import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
-import { mockup1, mockup4 } from '../assets/image/image'
-import { arrowblue, share } from '../assets/icon/icon'
+import { mockup1, mockup4 } from '../assets/image'
+import { arrowblue, share } from '../assets/icon'
 import ProgressBar from '../Reusable/progressbar'
 
 const CTA = styled.div`

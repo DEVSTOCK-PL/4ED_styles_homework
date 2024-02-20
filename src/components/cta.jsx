@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
-import { mockup1, mockup2, mockup3 } from '../assets/image/image'
+import { mockup1, mockup2, mockup3 } from '../assets/image'
 import arrowwhite from '../assets/icon/ArrowWhite.svg'
 
 const CTA = styled.div`
@@ -24,7 +24,8 @@ font-family: 'Inter', sans-serif;
 }
 `
 const Container = styled.div`
-width: 1280px;
+width: 100%;
+max-width: 1280px;
 height: 1348px;
 gap: 64px;
 display: flex;

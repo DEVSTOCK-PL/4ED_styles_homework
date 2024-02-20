@@ -16,6 +16,7 @@ const StyledButton = styled.button`
 	padding: 0;
 	margin-left: 0px;
 	justify-content: ${(props) => props.justifyContent || 'center'};
+	cursor: pointer;
 `
 const IconLeft = styled.img`
 	margin-right: ${(props) => props.marginRight || '8px'};		

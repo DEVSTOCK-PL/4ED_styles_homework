@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
-import { arrowblue, external } from '../assets/icon/icon'
-import { stripe, spotify, tesla, twitch, intel, shell, netflix, nestle, fedex, disney, bmw, cola } from '../assets/brandlogo/brandlogo'
+import { arrowblue, external } from '../assets/icon'
+import { stripe, spotify, tesla, twitch, intel, shell, netflix, nestle, fedex, disney, bmw, cola } from '../assets/brandlogo'
 
 const LogosWrapper = styled.div`
   width: 100%;
@@ -132,6 +132,8 @@ const Card = styled.div`
   }
 
 `
+
+
 function CustomerLogos() {
     return(
     <LogosWrapper>
@@ -203,5 +205,56 @@ function CustomerLogos() {
     )
 }
 
-export default CustomerLogos
+
+// const logosData = [
+//   { src: stripe, alt: 'stripe', partnerSince: 2015 },
+//   { src: spotify, alt: 'spotify', partnerSince: 2015 },
+//   { src: tesla, alt: 'tesla', partnerSince: 2015 },
+//   { src: twitch, alt: 'twitch', partnerSince: 2015 },
+//   { src: intel, alt: 'intel', partnerSince: 2015 },
+//   { src: shell, alt: 'shell', partnerSince: 2015 },
+//   { src: netflix, alt: 'netflix', partnerSince: 2015 },
+//   { src: nestle, alt: 'nestle', partnerSince: 2015 },
+//   { src: fedex, alt: 'fedex', partnerSince: 2015 },
+//   { src: disney, alt: 'disney', partnerSince: 2015 },
+//   { src: bmw, alt: 'bmw', partnerSince: 2015 },
+//   { src: cola, alt: 'cola', partnerSince: 2015 }
+// ];
+
+// function CustomerLogos() {
+//   return (
+//     <LogosWrapper>
+//       <Container>
+//         <HeadingWrapper>
+//           <h1>Donors, Partners & Sponsors</h1>
+//           <p>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value.</p>
+//           <span>Become a sponsor <img src={arrowblue} alt="arrow" /></span>
+//         </HeadingWrapper>
+//         <LogosContainer>
+//           {logosData.map((logo, index) => (
+//             <Row key={index}>
+//               <Card>
+//                 <img src={logo.src} alt={logo.alt} />
+//                 <p>Partner since {logo.partnerSince}</p>
+//                 <Button
+//                   description='Visit website'
+//                   color='#9CA3AF'
+//                   backgroundColor='#1F2A37'
+//                   width='122px'
+//                   height='34px'
+//                   border='1px solid #4B5563'
+//                   iconLeft={external}
+//                   fontSize='12px'
+//                   fontWeight='500'
+//                 />
+//               </Card>
+//             </Row>
+//           ))}
+//         </LogosContainer>
+//       </Container>
+//     </LogosWrapper>
+//   );
+// }
+
+export default CustomerLogos;
 

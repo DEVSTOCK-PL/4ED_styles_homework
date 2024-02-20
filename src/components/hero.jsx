@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Button from '../Reusable/Button'
 import VideoCamera from '../assets/icon/video-camera.svg'
-import { intel, fedex, visa, disney } from '../assets/brandlogo/brandlogo'
+import { intel, fedex, visa, disney } from '../assets/brandlogo'
 import carousel from '../assets/image/Carousel.png'
 
 const Hero = styled.div`

@@ -144,8 +144,6 @@ span {
 }
 `
 
-
-
 function Blog () {
     return(
         <BLOG>
@@ -205,4 +203,73 @@ function Blog () {
     )
 }
 
-export default Blog
+// function Blog() {
+//     const blogPosts = [
+//         {
+//             title: "SEO Basics: Beginner's Guide to SEO Success",
+//             content: "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.",
+//             className: "",
+//             readMoreText: "Read more",
+//         },
+//         {
+//             title: "How to quickly deploy a static website",
+//             content: "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.",
+//             className: "",
+//             readMoreText: "Read more",
+//         },
+//         {
+//             title: "What is SEO? Search Engine Optimization Explained",
+//             content: "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even.",
+//             className: "",
+//             readMoreText: "Read more",
+//         },
+//         {
+//             title: "Spotify's Car Thing available to all premium users",
+//             content: "Starting Tuesday any Spotify Premium user can buy the streaming service's first piece of hardware.",
+//             className: "delete",
+//             readMoreText: "Read more",
+//         },
+//         {
+//             title: "How to Rank Higher on Google (6 Easy Steps)",
+//             content: "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.",
+//             className: "",
+//             readMoreText: "Read more",
+//         },
+//         {
+//             title: "12 SEO Best Practises That Everyone Should Follow",
+//             content: "Static websites are now used to bootstrap lots of websites and are becoming the basis.",
+//             className: "",
+//             readMoreText: "Read more",
+//         },
+//         {
+//             title: "How to schedule your Tweets to send later",
+//             content: "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even",
+//             className: "delete",
+//             readMoreText: "Read more",
+//         },
+//     ];
+
+//     return (
+//         <BLOG>
+//             <Container>
+//                 <Heading>
+//                     <h1>Latest news & events</h1>
+//                     <p>We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+//                 </Heading>
+//                 <Row>
+//                     {blogPosts.map((post, index) => (
+//                         <Column key={index}>
+//                             <BlogCard className={post.className}>
+//                                 <h1>{post.title}</h1>
+//                                 <p>{post.content}</p>
+//                                 <span>{post.readMoreText} <img src={arrowblue}/></span>
+//                             </BlogCard>
+//                         </Column>
+//                     ))}
+//                 </Row>
+//             </Container>
+//         </BLOG>
+//     );
+// }
+
+export default Blog;
